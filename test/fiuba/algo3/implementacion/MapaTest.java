@@ -6,7 +6,7 @@ import org.junit.Test;
 public class MapaTest {
 
 	@Test
-	public void doFooShouldReturnFoo(){
+	public void deberiaRetornarMapa(){
         Mapa unMapa = new Mapa();
         String result = unMapa.doMapa();
         Assert.assertEquals("Mapa", result);
