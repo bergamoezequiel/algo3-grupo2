@@ -2,24 +2,25 @@ package fiuba.algo3.implementacion;
 
 import static org.junit.Assert.*;
 
+
 import org.junit.Test;
 
 
 public class MapaTest {
 
 	@Test
-	public void testDeberiaPoderCrearUnMapaConCiertoTamaño(){
-		Mapa unMapa = new Mapa(3,4);
-		assertEquals(3, unMapa.getCantidadDeColumnas());
-		assertEquals(4, unMapa.getCantidadDeFilas());
+	public void testDeberiaPoderCrearUnMapaConCiertoLarga(){
+		Mapa mapa = new Mapa(4,3);
+		assertEquals(4, mapa.getCantidadDeFilas());
+		assertEquals (3, mapa.getCantidadDeColumnas());
 	}
 	
 	@Test 
-	public void testAlCrearUnMapaDeberiaTenerTodasLasCeldasSinVehiculos(){
-		Mapa unMapa = new Mapa (3,3);
-		for (int i = 0; i < unMapa.getCantidadDeColumnas(); i++) {
-			for (int j = 0; j < unMapa.getCantidadDeFilas(); j++) {
-				assertEquals (null, unMapa.getVehiculoEnPosicion(i, j));
+	public void testDeberiaTenerTodasLasCeldasSinVehiculos(){
+		Mapa mapa = new Mapa (5,3);
+		for (int i = 0; i < mapa.getCantidadDeFilas(); i++) {
+			for (int j = 0; j < mapa.getCantidadDeColumnas(); j++) {
+				assertEquals (null, mapa.getVehiculoEnPosicion(i, j));
 			}			
 		}
 							
@@ -27,14 +28,11 @@ public class MapaTest {
 	
 	@Test
 	public void testDeberiaPoderPonerUnVehiculoEnUnaCeldaDelMapa(){
-		Mapa unMapa = new Mapa (3,3);
+		Mapa mapa = new Mapa (3,2);
 		Vehiculo unVehiculo = new Vehiculo();
-		unMapa.setVehiculoEnPosicion(unVehiculo, 0, 0);
+		mapa.setVehiculoEnPosicion(unVehiculo, 1, 0);
 		
-		assertEquals (unVehiculo, unMapa.getVehiculoEnPosicion(0, 0));
+		assertEquals (unVehiculo , mapa.getVehiculoEnPosicion(1, 0));
 	}
-
-	
-
 	
 }

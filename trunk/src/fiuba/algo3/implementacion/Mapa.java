@@ -6,18 +6,18 @@ public class Mapa {
 	
 	
 	private ArrayList<ArrayList<Celda>> celdas;
-	private int columnas;
 	private int filas;
+	private int columnas;
 	
 	/*
-	 * OJO:  COLUMNAS x CELDAS son las dimensiones.
-	 * ¿No serian COLUMNAS X FILAS? (PIPPO)
+	 *   Lo cambie a Filas x Columnas ( mas natural) (era Columnas x Filas antes)
+	 * 
 	 */
-	public Mapa(int columnas, int filas) {
+	public Mapa(int filas, int columnas) {
 		this.celdas = new ArrayList<ArrayList<Celda>>();
-		for (int i =0; i<columnas ; i++){
+		for (int i =0; i<filas ; i++){
 			ArrayList<Celda> fila = new ArrayList<Celda>();
-			for (int j = 0; j < filas; j++){
+			for (int j = 0; j < columnas; j++){
 				fila.add(new Celda());
 			}
 			this.celdas.add(fila);
@@ -28,11 +28,12 @@ public class Mapa {
 		
 	}
 
-	public Celda getCeldaEnPos(int columna, int fila) {
-		ArrayList<Celda> col = this.celdas.get(columna);
-		return col.get(fila);
+	public Celda getCeldaEnPos(int fila, int columna) {
+		ArrayList<Celda> col = this.celdas.get(fila);
+		return col.get(columna);
 	}
-			
+		
+	
 	public int getCantidadDeFilas() {
 		return this.filas;
 	}
@@ -41,12 +42,12 @@ public class Mapa {
 		return this.columnas;
 	}
 	
-	public void setVehiculoEnPosicion(Vehiculo unVehiculo, int columna, int fila){
-		this.getCeldaEnPos(columna, fila).setVehiculo(unVehiculo);
+	public void setVehiculoEnPosicion(Vehiculo unVehiculo, int fila, int columna){
+		this.getCeldaEnPos(fila, columna).setVehiculo(unVehiculo);
 	}
 	
-	public Vehiculo getVehiculoEnPosicion (int columna, int fila){
-		return ( this.getCeldaEnPos(columna, fila).getVehiculo() );
+	public Vehiculo getVehiculoEnPosicion (int fila, int columna){
+		return ( this.getCeldaEnPos(fila, columna).getVehiculo() );
 	}
 	
 }
