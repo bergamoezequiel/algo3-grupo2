@@ -19,7 +19,7 @@ public class MapaTest {
 		Mapa mapa = new Mapa (3,3);
 		for (int i = 0; i < mapa.getCantidadDeColumnas(); i++) {
 			for (int j = 0; j < mapa.getCantidadDeFilas(); j++) {
-				assertEquals (null, mapa.getCeldaEnPos(1,1).getVehiculo());
+				assertEquals (null, mapa.getVehiculoEnPosicion(i, j));
 			}			
 		}
 							
@@ -29,9 +29,9 @@ public class MapaTest {
 	public void testDeberiaPoderPonerUnVehiculoEnUnaCeldaDelMapa(){
 		Mapa mapa = new Mapa (3,3);
 		Vehiculo unVehiculo = new Vehiculo();
-		mapa.getCeldaEnPos(2, 1).setVehiculo(unVehiculo);
+		mapa.setVehiculoEnPosicion(unVehiculo, 0, 0);
 		
-		assertEquals (unVehiculo , mapa.getCeldaEnPos(2 , 1).getVehiculo());
+		assertEquals (unVehiculo , mapa.getVehiculoEnPosicion(0, 0));
 	}
 
 	

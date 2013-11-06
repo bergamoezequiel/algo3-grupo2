@@ -42,4 +42,12 @@ public class Mapa {
 		return this.columnas;
 	}
 	
+	public void setVehiculoEnPosicion(Vehiculo unVehiculo, int columna, int fila){
+		this.getCeldaEnPos(columna, fila).setVehiculo(unVehiculo);
+	}
+	
+	public Vehiculo getVehiculoEnPosicion (int columna, int fila){
+		return ( this.getCeldaEnPos(columna, fila).getVehiculo() );
+	}
+	
 }
