@@ -2,6 +2,7 @@ package fiuba.algo3.implementacion;
 
 import java.util.ArrayList;
 
+
 public class Mapa {
 	
 	
@@ -49,5 +50,22 @@ public class Mapa {
 	public Vehiculo getVehiculoEnPosicion (int fila, int columna){
 		return ( this.getCeldaEnPos(fila, columna).getVehiculo() );
 	}
+	
+	/*public Posicion getPosicionDelVehiculo (Vehiculo unVehiculo){
+		
+		Posicion unaPosicion = new Posicion();
+		
+		for (int i =0; i<this.getCantidadDeFilas() ; i++){
+			for (int j = 0; j < this.getCantidadDeColumnas(); j++){
+				if (this.getVehiculoEnPosicion(i, j) == unVehiculo ){
+					unaPosicion.setFila(i);
+					unaPosicion.setColumna(j);
+					break;
+				}
+			}		
+		}
+		
+		return unaPosicion;		
+	}*/	
 	
 }

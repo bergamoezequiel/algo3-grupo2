@@ -2,6 +2,7 @@ package fiuba.algo3.implementacion;
 
 import static org.junit.Assert.*;
 
+
 import org.junit.Test;
 
 public class MapaTest {
@@ -31,6 +32,19 @@ public class MapaTest {
 		
 		assertEquals (unVehiculo, unMapa.getVehiculoEnPosicion(1, 0));
 	}
+	
+	/*@Test
+	public void testDeberiaDeolverLaPosicionDelAuto(){
+		Mapa unMapa = new Mapa (3,2);
+		Vehiculo unVehiculo = new Vehiculo ();
+		Posicion unaPosicion = new Posicion();
+		
+		unMapa.setVehiculoEnPosicion(unVehiculo, 2, 2);
+		unaPosicion = unMapa.getPosicionDelVehiculo(unVehiculo);
+		
+		assertEquals (unaPosicion.getColumna(), 2);
+		assertEquals (unaPosicion.getFila(), 2);		
+	}*/
 	
 	/*@Test(expected=IndexOutOfBoundsException.class)
 	public void testDeberiaLanzarExcepcionAlUbicarVehiculoFueraDeRango() { 
