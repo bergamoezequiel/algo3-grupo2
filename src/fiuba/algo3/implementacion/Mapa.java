@@ -6,12 +6,12 @@ public class Mapa {
 	
 	
 	private ArrayList<ArrayList<Celda>> celdas;
-	private int filas;
 	private int columnas;
+	private int filas;
 	
 	/*
 	 * OJO:  COLUMNAS x CELDAS son las dimensiones.
-	 * 
+	 * ¿No serian COLUMNAS X FILAS? (PIPPO)
 	 */
 	public Mapa(int columnas, int filas) {
 		this.celdas = new ArrayList<ArrayList<Celda>>();
@@ -32,8 +32,7 @@ public class Mapa {
 		ArrayList<Celda> col = this.celdas.get(columna);
 		return col.get(fila);
 	}
-		
-	
+			
 	public int getCantidadDeFilas() {
 		return this.filas;
 	}
