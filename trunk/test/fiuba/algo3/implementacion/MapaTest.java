@@ -8,18 +8,18 @@ import org.junit.Test;
 public class MapaTest {
 
 	@Test
-	public void testDeberiaPoderCrearUnMapaConCiertoLarga(){
-		Mapa mapa = new Mapa(3,3);
-		assertEquals(3, mapa.getCantidadDeFilas());
-		assertEquals (3, mapa.getCantidadDeColumnas());
+	public void testDeberiaPoderCrearUnMapaConCiertoTamaño(){
+		Mapa unMapa = new Mapa(3,4);
+		assertEquals(3, unMapa.getCantidadDeColumnas());
+		assertEquals(4, unMapa.getCantidadDeFilas());
 	}
 	
 	@Test 
-	public void testDeberiaTenerTodasLasCeldasSinVehiculos(){
-		Mapa mapa = new Mapa (3,3);
-		for (int i = 0; i < mapa.getCantidadDeColumnas(); i++) {
-			for (int j = 0; j < mapa.getCantidadDeFilas(); j++) {
-				assertEquals (null, mapa.getVehiculoEnPosicion(i, j));
+	public void testAlCrearUnMapaDeberiaTenerTodasLasCeldasSinVehiculos(){
+		Mapa unMapa = new Mapa (3,3);
+		for (int i = 0; i < unMapa.getCantidadDeColumnas(); i++) {
+			for (int j = 0; j < unMapa.getCantidadDeFilas(); j++) {
+				assertEquals (null, unMapa.getVehiculoEnPosicion(i, j));
 			}			
 		}
 							
@@ -27,11 +27,11 @@ public class MapaTest {
 	
 	@Test
 	public void testDeberiaPoderPonerUnVehiculoEnUnaCeldaDelMapa(){
-		Mapa mapa = new Mapa (3,3);
+		Mapa unMapa = new Mapa (3,3);
 		Vehiculo unVehiculo = new Vehiculo();
-		mapa.setVehiculoEnPosicion(unVehiculo, 0, 0);
+		unMapa.setVehiculoEnPosicion(unVehiculo, 0, 0);
 		
-		assertEquals (unVehiculo , mapa.getVehiculoEnPosicion(0, 0));
+		assertEquals (unVehiculo, unMapa.getVehiculoEnPosicion(0, 0));
 	}
 
 	
