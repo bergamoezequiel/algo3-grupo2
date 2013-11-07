@@ -1,8 +1,10 @@
 package fiuba.algo3.implementacion;
 
 import static org.junit.Assert.*;
+
 import org.junit.Ignore;
 import org.junit.Test;
+
 
 public class MapaTest {
 	@Test
@@ -53,6 +55,18 @@ public class MapaTest {
 		assertEquals(unMapa.getPosicionDelVehiculo(unVehiculo).getColumna(), 1);
 	}
 	
+	@Test
+	public void testDeberiaPoderEliminarUnVehiculoDelMapa (){
+		Mapa unMapa = new Mapa (3,2);
+		Vehiculo unVehiculo = new Vehiculo(unMapa);
+		unMapa.setVehiculoEnPosicion(unVehiculo, 1, 0);
+		
+		assertEquals (unVehiculo, unMapa.getVehiculoEnPosicion(1, 0));
+		
+		unMapa.eliminarVehiculo(unVehiculo);
+		assertEquals(null, unMapa.getVehiculoEnPosicion(1, 0));
+	}
+	
 	/*@Ignore
 	@Test(expected=UbicacionEnMapaExcepcion.class)
 	public void testDeberiaLanzarExcepcionAlUbicarVehiculoFueraDeRango(){
@@ -69,3 +83,4 @@ public class MapaTest {
 
 	
 }
+

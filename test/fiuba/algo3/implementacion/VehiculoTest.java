@@ -3,6 +3,7 @@ package fiuba.algo3.implementacion;
 import org.junit.Assert;
 import org.junit.Test;
 
+
 public class VehiculoTest {
 
 	@Test
