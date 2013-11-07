@@ -5,25 +5,30 @@ public class Posicion {
 	private int fila;
 	private int columna;
 	
-	public Posicion(){
-		this.fila= 0;
-		this.columna= 0;
-		
+	public Posicion(int unaFila, int unaColumna){
+		this.fila = unaFila;
+		this.columna = unaColumna;	
 	}
 	
-	public void setFila(int fila){
-		this.fila= fila;
+	
+	public void setFila(int unaFila){
+		this.fila = unaFila;
 	}
 	
-	public void setColumna (int columna){
-		this.columna = columna;
+	public void setColumna(int unaColumna){
+		this.columna = unaColumna;
 	}
 	
-	public int getFila (){
+	public void setPosicion(int unaFila, int unaColumna){
+		this.setFila(unaFila);
+		this.setColumna(unaColumna);
+	}
+	
+	public int getFila(){
 		return this.fila;
 	}
 	
-	public int getColumna (){
+	public int getColumna(){
 		return this.columna;
 	}
 
