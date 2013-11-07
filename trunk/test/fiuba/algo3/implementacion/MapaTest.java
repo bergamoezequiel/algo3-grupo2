@@ -1,8 +1,7 @@
 package fiuba.algo3.implementacion;
 
 import static org.junit.Assert.*;
-
-
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class MapaTest {
@@ -27,43 +26,38 @@ public class MapaTest {
 	@Test
 	public void testDeberiaPoderPonerUnVehiculoEnUnaCeldaDelMapa(){
 		Mapa unMapa = new Mapa (3,2);
-		Vehiculo unVehiculo = new Vehiculo();
+		Vehiculo unVehiculo = new Vehiculo(unMapa);
 		unMapa.setVehiculoEnPosicion(unVehiculo, 1, 0);
 		
 		assertEquals (unVehiculo, unMapa.getVehiculoEnPosicion(1, 0));
 	}
 	
-	/*@Test
-	public void testDeberiaDeolverLaPosicionDelAuto(){
-		Mapa unMapa = new Mapa (3,2);
-		Vehiculo unVehiculo = new Vehiculo ();
-		Posicion unaPosicion = new Posicion();
-		
+	@Test
+	public void testGetVehiculoEnPosicion(){
+		Mapa unMapa = new Mapa (3,3);
+		Vehiculo unVehiculo = new Vehiculo(unMapa);
 		unMapa.setVehiculoEnPosicion(unVehiculo, 2, 2);
-		unaPosicion = unMapa.getPosicionDelVehiculo(unVehiculo);
 		
-		assertEquals (unaPosicion.getColumna(), 2);
-		assertEquals (unaPosicion.getFila(), 2);		
-	}*/
+		assertEquals(unMapa.getVehiculoEnPosicion(0,0), null);
+		assertEquals(unMapa.getVehiculoEnPosicion(2,2), unVehiculo);		
+	}
 	
-	/*@Test(expected=IndexOutOfBoundsException.class)
-	public void testDeberiaLanzarExcepcionAlUbicarVehiculoFueraDeRango() { 
-		Mapa unMapa = new Mapa(3,4);
-		Vehiculo unVehiculo = new Vehiculo();
-		unMapa.setVehiculoEnPosicion(unVehiculo, -1, -1);
-	}*/
+	@Test
+	public void testDeberiaDevolverLaPosicionDelAuto(){
+		Mapa unMapa = new Mapa (3,3);
+		Vehiculo unVehiculo = new Vehiculo(unMapa);
+		
+		unMapa.setVehiculoEnPosicion(unVehiculo, 2, 1);
+		
+		assertEquals(unMapa.getPosicionDelVehiculo(unVehiculo).getFila(), 2);
+		assertEquals(unMapa.getPosicionDelVehiculo(unVehiculo).getColumna(), 1);
+	}
 	
-	/*@Test
-	public void testDeberiaLanzarUbicacionEnMapaExcepcion() {
-		 thrown.expect(UbicacionEnMapaExcepcion.class);
-		 throw new UbicacionEnMapaExcepcion("Hola");
-	}*/
-	
-	/*Test en desarrollo
-	/*@Test(expected=UbicacionEnMapaExcepcion.class)
+	/*@Ignore
+	@Test(expected=UbicacionEnMapaExcepcion.class)
 	public void testDeberiaLanzarExcepcionAlUbicarVehiculoFueraDeRango(){
 		Mapa unMapa = new Mapa(3,4);
-		Vehiculo unVehiculo = new Vehiculo();
+		Vehiculo unVehiculo = new Vehiculo(unMapa);
 		try{
 			unMapa.setVehiculoEnPosicion(unVehiculo, 3, 4);
 		}
@@ -71,7 +65,7 @@ public class MapaTest {
 			assertEquals(e.getMessage(), "La ubicacion esta fuera del rango del mapa.");
 		}
 
-	} */
+	}*/
 
 	
 }
