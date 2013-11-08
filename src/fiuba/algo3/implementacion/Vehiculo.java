@@ -17,11 +17,5 @@ public class Vehiculo extends ContenidoDeCelda{
 		return this.movimientos;
 	}
 	
-	public void avanzar(){
-		Posicion miPosicion = mapa.getPosicionDelVehiculo(this);
-		Posicion nuevaPosicion = new Posicion(miPosicion.getFila()+2, miPosicion.getColumna());
-		mapa.eliminarVehiculo(this);
-		mapa.setVehiculoEnPosicion(this, nuevaPosicion.getFila(), nuevaPosicion.getColumna());
-		this.movimientos += this.penalizacionDeAvance;
-	}
+	
 }
