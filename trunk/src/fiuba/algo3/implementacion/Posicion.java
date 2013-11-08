@@ -18,7 +18,8 @@ public class Posicion {
 	public int getY(){
 		return this.y;
 	}
-
+	
+	@Override
 	public boolean equals (Object unObjeto) {
 		boolean boEquals = false;
 		if (unObjeto instanceof Posicion) {
