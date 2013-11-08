@@ -2,10 +2,11 @@ package fiuba.algo3.implementacion;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Ignore;
 
 
 public class VehiculoTest {
-
+	@Ignore
 	@Test
 	public void vehiculoDeberiaTener0MovimientosAlCrearse(){
         Mapa unMapa = new Mapa(3,3);
@@ -13,6 +14,7 @@ public class VehiculoTest {
         Assert.assertEquals(0, unVehiculo.getMovimientos());
 	}
 	
+	@Ignore
 	@Test
 	public void vehiculoAlAvanzarDeberiaAumentarSuMovimientoEnUnoYCambiarSuPosicion(){
         Mapa unMapa = new Mapa(3,3);

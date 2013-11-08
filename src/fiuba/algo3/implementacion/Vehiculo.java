@@ -1,7 +1,7 @@
 package fiuba.algo3.implementacion;
 
 
-public class Vehiculo{
+public class Vehiculo extends ContenidoDeCelda{
 	
 	private int penalizacionDeAvance;
 	private int movimientos;

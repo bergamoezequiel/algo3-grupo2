@@ -10,20 +10,6 @@ public class Posicion {
 		this.columna = unaColumna;	
 	}
 	
-	
-	public void setFila(int unaFila){
-		this.fila = unaFila;
-	}
-	
-	public void setColumna(int unaColumna){
-		this.columna = unaColumna;
-	}
-	
-	public void setPosicion(int unaFila, int unaColumna){
-		this.setFila(unaFila);
-		this.setColumna(unaColumna);
-	}
-	
 	public int getFila(){
 		return this.fila;
 	}
@@ -32,4 +18,14 @@ public class Posicion {
 		return this.columna;
 	}
 
+	public boolean equals (Object unObjeto) {
+		boolean boEquals = false;
+		if (unObjeto instanceof Posicion) {
+			Posicion unaPosicion = (Posicion) unObjeto;
+			if ( this.getFila() == unaPosicion.getFila() && this.getColumna() == unaPosicion.getColumna() ) {
+				boEquals = true;
+			}
+		}
+		return boEquals;
+	}
 }
