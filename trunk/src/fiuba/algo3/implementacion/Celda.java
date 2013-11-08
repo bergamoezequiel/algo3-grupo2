@@ -2,21 +2,27 @@ package fiuba.algo3.implementacion;
 
 public class Celda{
 	
-	private Vehiculo vehiculo;
+	private Posicion posicion;
+	private ContenidoDeCelda contenido;
 	
-	public Celda(){
-		this.vehiculo = null;
+	public Celda(Posicion unaPosicion){
+		this.posicion = unaPosicion;
+		this.contenido = null;
 	}
 	
-	public Vehiculo getVehiculo () {
-		return this.vehiculo;
-	}
-	
-	public void setVehiculo(Vehiculo unVehiculo) {
-		this.vehiculo = unVehiculo;
+	public ContenidoDeCelda getContenido () {
+		return this.contenido;
 	}
 
-	public void eliminarVehiculo() {
-		this.vehiculo = null;
+	public Object getPosicion () {
+		return this.posicion;
+	}
+	
+	public void setObjeto(ContenidoDeCelda unObjeto) {
+		this.contenido = unObjeto;
+	}
+
+	public void desligarseDeSuObjeto() {
+		this.contenido = null;
 	}
 }

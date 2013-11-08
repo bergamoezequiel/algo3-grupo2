@@ -2,24 +2,22 @@ package fiuba.algo3.implementacion;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Ignore;
 
 public class CeldaTest{
 
 	@Test
-	public void testDeberiaInicializarceLaCeldaSinNingunVehiculo(){
-		Celda celda = new Celda();
-		Assert.assertEquals(null, celda.getVehiculo());	
+	public void testDeberiaInicializarceLaCeldaSinObjeto(){
+		Celda celda = new Celda(new Posicion(2,3));
+		Assert.assertNull(celda.getContenido());	
 	}
 	
 	@Test
-	public void testDeberiaPoderPonerUnVehiculoEnUnaCelda(){
-		Mapa unMapa = new Mapa(2,2);
-		Vehiculo unVehiculo = new Vehiculo(unMapa);
-		Celda unaCelda = unMapa.getCeldaEnPos(0,0);
-
-		unaCelda.setVehiculo(unVehiculo);
-		
-		Assert.assertEquals (unVehiculo, unaCelda.getVehiculo());	
+	public void testDeberiaPonerUnObjetoEnLaCelda(){
+		Celda unaCelda = new Celda(new Posicion(2,3));		
+		ContenidoDeCelda unObjeto = new ContenidoDeCelda();
+		unaCelda.setObjeto(unObjeto);
+		Assert.assertEquals(unObjeto, unaCelda.getContenido());	
 	}
 
 }
