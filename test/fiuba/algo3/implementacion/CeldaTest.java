@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.Ignore;
 
 
+
 public class CeldaTest{
 
 	@Test
@@ -19,7 +20,7 @@ public class CeldaTest{
 	public void testDeberiaPonerUnObjetoEnLaCelda(){
 		Celda unaCelda = new Celda(new Posicion(2,3));		
 		ContenidoDeCelda unObjeto = new ContenidoDeCelda();
-		unaCelda.setObjeto(unObjeto);
+		unaCelda.setContenido(unObjeto);
 		Assert.assertEquals(unObjeto, unaCelda.getContenido());	
 	}
 	
@@ -27,11 +28,11 @@ public class CeldaTest{
 	public void testDeberiaPonerUnObjetoEnUnaCeldaYQuitarlo(){
 		Celda unaCelda = new Celda (new Posicion (2,3));
 		Vehiculo unVehiculo = new Vehiculo(new Mapa(0,0));		
-		unaCelda.setObjeto(unVehiculo);
+		unaCelda.setContenido(unVehiculo);
 		
 		assertEquals (unaCelda.getContenido(), unVehiculo);
 		
-		unaCelda.desligarseDeSuObjeto();
+		unaCelda.desligarseDeSuContenido();
 		
 		assertEquals (unaCelda.getContenido(), null);
 	}

@@ -1,28 +1,29 @@
 package fiuba.algo3.implementacion;
 
+
 public class Posicion {
 	
-	private int fila;
-	private int columna;
+	private int x;
+	private int y;
 	
 	public Posicion(int unaFila, int unaColumna){
-		this.fila = unaFila;
-		this.columna = unaColumna;	
+		this.x = unaFila;
+		this.y = unaColumna;	
 	}
 	
-	public int getFila(){
-		return this.fila;
+	public int getX(){
+		return this.x;
 	}
 	
-	public int getColumna(){
-		return this.columna;
+	public int getY(){
+		return this.y;
 	}
 
 	public boolean equals (Object unObjeto) {
 		boolean boEquals = false;
 		if (unObjeto instanceof Posicion) {
 			Posicion unaPosicion = (Posicion) unObjeto;
-			if ( this.getFila() == unaPosicion.getFila() && this.getColumna() == unaPosicion.getColumna() ) {
+			if ( this.getX() == unaPosicion.getX() && this.getY() == unaPosicion.getY() ) {
 				boEquals = true;
 			}
 		}

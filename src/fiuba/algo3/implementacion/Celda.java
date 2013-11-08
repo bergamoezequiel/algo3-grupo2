@@ -1,5 +1,6 @@
 package fiuba.algo3.implementacion;
 
+
 public class Celda{
 	
 	private Posicion posicion;
@@ -18,11 +19,11 @@ public class Celda{
 		return this.posicion;
 	}
 	
-	public void setObjeto(ContenidoDeCelda unObjeto) {
+	public void setContenido(ContenidoDeCelda unObjeto) {
 		this.contenido = unObjeto;
 	}
 
-	public void desligarseDeSuObjeto() {
+	public void desligarseDeSuContenido() {
 		this.contenido = null;
 	}
 }

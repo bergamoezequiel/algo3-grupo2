@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.junit.Ignore;
 
 
+
+
 public class MapaTest {
 	@Test
 	public void testDeberiaPoderCrearUnMapaConCiertaDimension(){
