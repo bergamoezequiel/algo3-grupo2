@@ -4,13 +4,14 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.Ignore;
 
+
 public class PosicionTest {
 	
 	@Test
 	public void testDeberiaDevolverSusParametrosCorrectamente(){
 		Posicion unaPosicion = new Posicion(2,1);
-		Assert.assertEquals(2, unaPosicion.getFila());
-		Assert.assertEquals(1, unaPosicion.getColumna());
+		Assert.assertEquals(2, unaPosicion.getX());
+		Assert.assertEquals(1, unaPosicion.getY());
 	}
 	
 	@Test

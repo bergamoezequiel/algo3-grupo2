@@ -3,8 +3,9 @@ package fiuba.algo3.implementacion;
 import java.util.ArrayList;
 
 
+
 public class Mapa {
-        
+    
 	private ArrayList<ArrayList<Celda>> celdas;
 	private int filas;
 	private int columnas;
@@ -33,8 +34,8 @@ public class Mapa {
 	}
    
 	public Celda getCeldaEnPosicion(Posicion unaPosicion) {
-		ArrayList<Celda> col = this.celdas.get(unaPosicion.getFila());
-		return col.get(unaPosicion.getColumna());
+		ArrayList<Celda> col = this.celdas.get(unaPosicion.getX());
+		return col.get(unaPosicion.getY());
 	}
     
-}		
+}	
