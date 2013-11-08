@@ -5,12 +5,14 @@ import org.junit.Test;
 import org.junit.Ignore;
 
 
+
 public class VehiculoTest {
-	@Ignore
+
 	@Test
 	public void vehiculoDeberiaTener0MovimientosAlCrearse(){
-      
-        Assert.assertEquals(0, 0);
+		
+		Vehiculo unVehiculo = new Vehiculo (new Mapa(0,0));
+        Assert.assertEquals(0, unVehiculo.getMovimientos());
 	}
 	/*
 	@Ignore
