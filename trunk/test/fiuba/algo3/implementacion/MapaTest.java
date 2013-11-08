@@ -20,7 +20,7 @@ public class MapaTest {
 		Assert.assertEquals(unaCelda.getPosicion() , new Posicion(3,2));
 	}	
 	
-	@Ignore
+	/*@Ignore
 	@Test 
 	public void testAlCrearUnMapaDeberiaTenerTodasLasCeldasSinObjetos(){
 		Mapa unMapa = new Mapa (5,3);
@@ -78,6 +78,6 @@ public class MapaTest {
 		Assert.assertEquals(null, unMapa.getVehiculoEnPosicion(1, 0));
 	}
 
-	
+*/	
 }
 
