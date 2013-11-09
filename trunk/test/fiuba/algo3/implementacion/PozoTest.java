@@ -9,7 +9,7 @@ public class PozoTest {
         Pozo unPozo= new Pozo();
         Moto unaMoto=new Moto();
         Conductor unConductor= new Conductor(unaMoto);
-        unPozo.InteractuarCon(unConductor,unaMoto);
+        unPozo.interactuarCon(unConductor,unaMoto);
         Assert.assertEquals(3,unConductor.getMovimientos());
 	
 	}
@@ -19,7 +19,7 @@ public class PozoTest {
         Pozo unPozo= new Pozo();
         Auto unAuto=new Auto();
         Conductor unConductor= new Conductor(unAuto);
-        unPozo.InteractuarCon(unConductor,unAuto);
+        unPozo.interactuarCon(unConductor,unAuto);
         Assert.assertEquals(3,unConductor.getMovimientos());
 	
 	}
@@ -29,7 +29,7 @@ public class PozoTest {
         Pozo unPozo= new Pozo();
         TodoTerreno unTodoTerreno=new TodoTerreno();
         Conductor unConductor= new Conductor(unTodoTerreno);
-        unPozo.InteractuarCon(unConductor,unTodoTerreno);
+        unPozo.interactuarCon(unConductor,unTodoTerreno);
         Assert.assertEquals(0,unConductor.getMovimientos());
 	}
 	
