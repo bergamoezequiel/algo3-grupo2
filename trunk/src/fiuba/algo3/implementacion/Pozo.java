@@ -13,8 +13,8 @@ public class Pozo extends Obstaculo {
 		return this.penalizacion;
 	}
 
-	public void InteractuarCon(Conductor unVehiculo, Vehiculo unTipoDeVehiculo) {
-		// TODO Auto-generated method stub
+	public void InteractuarCon(Conductor unConductor, Moto UnaMoto) {
+		unConductor.aumentarMovimientosEn(3);
 		
 	}
 	

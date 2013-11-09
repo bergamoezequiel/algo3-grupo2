@@ -14,6 +14,10 @@ public class Conductor extends ContenidoDeCelda{
 		this.vehiculo = unVehiculo;
 	}
 	
+	public void cambiarDeVehiculo(Vehiculo unVehiculo){
+		this.vehiculo=unVehiculo;
+	}
+	
 	public int getMovimientos(){
 		return this.movimientos;
 	}
