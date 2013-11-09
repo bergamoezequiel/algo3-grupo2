@@ -25,7 +25,7 @@ public class PozoTest {
 	}
 	
 	@Test
-	public void ElPozoTendriaQuePenalizarALosTodoTerrno(){
+	public void ElPozoNoTendriaQuePenalizarALosTodoTerreno(){
         Pozo unPozo= new Pozo();
         TodoTerreno unTodoTerreno=new TodoTerreno();
         Conductor unConductor= new Conductor(unTodoTerreno);
@@ -33,8 +33,22 @@ public class PozoTest {
         Assert.assertEquals(0,unConductor.getMovimientos());
 	
 	}
+	public void ElPozoDeberiaDejarPasarALasMotos(){
+		Pozo unPozo= new Pozo();
+		Moto unaMoto= new Moto();
+		Assert.assertEquals(true,unPozo.dejaPasar(unaMoto));
+	}
 	
+	public void ElPozoDeberiaDejarPasarALosAutos(){
+		Pozo unPozo= new Pozo();
+		Auto unAuto= new Auto();
+		Assert.assertEquals(true,unPozo.dejaPasar(unAuto));
+	}
 	
-	
+	public void ElPozoDeberiaDejarPasarALosTodoTerreno(){
+		Pozo unPozo= new Pozo();
+		TodoTerreno unTodoTerreno=new TodoTerreno();
+		Assert.assertEquals(true,unPozo.dejaPasar(unTodoTerreno));
+	}
 
 }
