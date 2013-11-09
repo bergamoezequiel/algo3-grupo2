@@ -33,9 +33,16 @@ public class Mapa {
     	return this.columnas;
 	}
    
+	public boolean posicionValida(Posicion unaPosicion) {
+        return (unaPosicion.getX() < filas && unaPosicion.getX() >= 0) && 
+        		(unaPosicion.getY() < columnas && unaPosicion.getY() >= 0);
+	}
+	
 	public Celda getCeldaEnPosicion(Posicion unaPosicion) {
-		ArrayList<Celda> col = this.celdas.get(unaPosicion.getX());
-		return col.get(unaPosicion.getY());
+		if (posicionValida (unaPosicion)){
+			ArrayList<Celda> col = this.celdas.get(unaPosicion.getX());
+			return col.get(unaPosicion.getY());
+		}
 	}
     
 }	
