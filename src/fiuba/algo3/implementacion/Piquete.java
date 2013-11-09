@@ -13,22 +13,27 @@ public class Piquete extends Obstaculo {
 		return this.penalizacion;
 	}
 
-	public void InteractuarCon(Conductor unConductor, Moto UnaMoto) {
+	public void interactuarCon(Conductor unConductor, Moto UnaMoto) {
 		unConductor.aumentarMovimientosEn(this.penalizacion);
 
 	}
-	public void InteractuarCon(Conductor unConductor, Auto unAuto) {
+	public void interactuarCon(Conductor unConductor, Auto unAuto) {
 
 	}
-	public void InteractuarCon(Conductor unConductor, TodoTerreno unTodoTerreno){
-       }
+	public void interactuarCon(Conductor unConductor, TodoTerreno unTodoTerreno){
+	}
 
 	public boolean dejaPasar(Moto unaMoto){
-		return true;}
-	public boolean dejaPasar(Auto unAuto){
-		return false;}
-	public boolean dejaPasar(TodoTerreno unTodoTerreno){
-		return false;}
+		return true;
 	}
+	
+	public boolean dejaPasar(Auto unAuto){
+		return false;
+	}
+	
+	public boolean dejaPasar(TodoTerreno unTodoTerreno){
+		return false;
+	}
+}
 
 
