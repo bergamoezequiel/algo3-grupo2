@@ -23,7 +23,7 @@ public class Mapa {
     		this.filas = filas;             
     	}
             
-    }           
+	}          
     
 	public int getCantidadDeFilas() {
 		return this.filas;
@@ -39,10 +39,10 @@ public class Mapa {
 	}
 	
 	public Celda getCeldaEnPosicion(Posicion unaPosicion) {
-		if (posicionValida (unaPosicion)){
+	/*	if (posicionValida (unaPosicion)){*/
 			ArrayList<Celda> col = this.celdas.get(unaPosicion.getX());
 			return col.get(unaPosicion.getY());
-		}
+		/*}*/
 	}
     
-}	
+}
