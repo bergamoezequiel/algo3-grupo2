@@ -15,20 +15,26 @@ public class Pozo extends Obstaculo {
 
 	public void InteractuarCon(Conductor unConductor, Moto UnaMoto) {
 		unConductor.aumentarMovimientosEn(this.penalizacion);
-		
 	}
+	
 	public void InteractuarCon(Conductor unConductor, Auto unAuto) {
 		unConductor.aumentarMovimientosEn(this.penalizacion);
 	}
+	
 	public void InteractuarCon(Conductor unConductor, TodoTerreno unTodoTerreno){
-       }
+	}
 
 	public boolean dejaPasar(Moto unaMoto){ 
-		return true;}
-	public boolean dejaPasar(Auto unAuto){ 
-		return true;}
-	public boolean dejaPasar(TodoTerreno unTodoTerreno){ 
-		return true;}
+		return true;
 	}
+	
+	public boolean dejaPasar(Auto unAuto){ 
+		return true;
+	}
+	
+	public boolean dejaPasar(TodoTerreno unTodoTerreno){ 
+		return true;
+	}
+}
 
 
