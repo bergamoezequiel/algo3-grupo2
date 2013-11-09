@@ -23,6 +23,12 @@ public class Pozo extends Obstaculo {
 	public void InteractuarCon(Conductor unConductor, TodoTerreno unTodoTerreno){
        }
 
+	public boolean dejaPasar(Moto unaMoto){ 
+		return true;}
+	public boolean dejaPasar(Auto unAuto){ 
+		return true;}
+	public boolean dejaPasar(TodoTerreno unTodoTerreno){ 
+		return true;}
 	}
 
 
