@@ -19,6 +19,15 @@ public class ConductorTest {
 	}
 	
 	@Test
+	public void conductorDeberiaPoderCambiarDeVehiculo(){
+		
+		Auto unAuto = new Auto();
+		Conductor unConductor = new Conductor(unAuto);
+		Moto unaMoto= new Moto();
+		unConductor.cambiarDeVehiculo(unaMoto);
+		Assert.assertEquals(unaMoto, unConductor.getVehiculo());
+	}
+	@Test
 	public void vehiculoDeberiaCrearseConUnaPenalizacionDeAvanceIgualAUno(){
 		Auto unAuto = new Auto();
 		Conductor unConductor = new Conductor(unAuto);
