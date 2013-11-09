@@ -5,9 +5,22 @@ import org.junit.Test;
 
 public class PozoTest {
 	@Test
-	public void ElPozoTendriaQuePenalizarCon3Movimientos(){
+	public void ElPozoTendriaQuePenalizarCon3MovimientosALasMotos(){
         Pozo unPozo= new Pozo();
-        Assert.assertEquals(3, unPozo.obtenerPenalizacion());
+        Moto unaMoto=new Moto();
+        Conductor unConductor= new Conductor(unaMoto);
+        unPozo.InteractuarCon(unConductor,unaMoto);
+        Assert.assertEquals(3,unConductor.getMovimientos());
+	
+	}
+	
+	@Test
+	public void ElPozoTendriaQuePenalizarCon3MovimientosALosAutos(){
+        Pozo unPozo= new Pozo();
+        Auto unAuto=new Auto();
+        Conductor unConductor= new Conductor(unAuto);
+        unPozo.InteractuarCon(unConductor,unAuto);
+        Assert.assertEquals(3,unConductor.getMovimientos());
 	
 	}
 
