@@ -35,7 +35,7 @@ public class ConductorTest {
 	}
 
 	@Test
-	public void vehiculoAlAvanzarDeberiaDesplazarseDosPosiciones(){
+	public void vehiculoAlAvanzarDeberiaDesplazarseDosPosicionesSiNoSeEncuentraObstaculosOSorpresas(){
 		Mapa unMapa = new Mapa(new Coordenada(3, 3));
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Conductor unConductor = new Conductor(new Auto());		
