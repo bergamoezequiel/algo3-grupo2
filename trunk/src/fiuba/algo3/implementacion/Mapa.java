@@ -10,39 +10,34 @@ public class Mapa {
 	private int filas;
 	private int columnas;
 
-
-	public Mapa(int filas, int columnas) {
-    	this.celdas = new ArrayList<ArrayList<Celda>>();
-    	for (int i =0; i<filas ; i++){
-    		ArrayList<Celda> fila = new ArrayList<Celda>();
-    		for (int j = 0; j < columnas; j++){
-    			fila.add(new Celda(new Posicion(i, j)));
-    		}
-    		this.celdas.add(fila);
-    		this.columnas = columnas;
-    		this.filas = filas;             
+	public Mapa(Coordenada unaDimension) {
+		this.celdas = new ArrayList<ArrayList<Celda>>();
+		this.filas = unaDimension.getY();
+		this.columnas = unaDimension.getX();
+		for (int x = 0; x<this.columnas ; x++){
+			ArrayList<Celda> columna = new ArrayList<Celda>();
+			for (int y = 0; y < this.filas; y++){
+				columna.add(new Celda(this, new Coordenada(x, y)));
+			}
+			this.celdas.add(columna);            
     	}
-            
-	}          
-    
+	}
+
 	public int getCantidadDeFilas() {
 		return this.filas;
 	}
-    
+
 	public int getCantidadDeColumnas() {
-    	return this.columnas;
+		return this.columnas;
 	}
-   
-	public boolean posicionValida(Posicion unaPosicion) {
-        return (unaPosicion.getX() < filas && unaPosicion.getX() >= 0) && 
-        		(unaPosicion.getY() < columnas && unaPosicion.getY() >= 0);
+
+	public Celda getCeldaEn(Coordenada unaCoordenada) {
+		ArrayList<Celda> fila = this.celdas.get(unaCoordenada.getX());
+		return fila.get(unaCoordenada.getY());
 	}
 	
-	public Celda getCeldaEnPosicion(Posicion unaPosicion) {
-	/*	if (posicionValida (unaPosicion)){*/
-			ArrayList<Celda> col = this.celdas.get(unaPosicion.getX());
-			return col.get(unaPosicion.getY());
-		/*}*/
-	}
-    
-}
+	public boolean coordenadaValida(Coordenada unaCoordenada) {
+		return (unaCoordenada.getX() < this.getCantidadDeFilas() && unaCoordenada.getX() >= 0) &&
+			(unaCoordenada.getY() < this.getCantidadDeColumnas() && unaCoordenada.getY() >= 0);
+		}
+}	

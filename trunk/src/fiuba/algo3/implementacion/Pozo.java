@@ -1,15 +1,21 @@
 package fiuba.algo3.implementacion;
 
-public class Pozo implements Obstaculo {
-	int movimientos;
+public class Pozo extends Obstaculo {
+	int penalizacion;
 	
 	
 	public Pozo() {
-		this.movimientos=3;
+		super();
+		this.penalizacion = 3;
 	}
 
 	public int obtenerPenalizacion(){
-		return this.movimientos;
+		return this.penalizacion;
+	}
+
+	public void InteractuarCon(Conductor unVehiculo, Vehiculo unTipoDeVehiculo) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	}

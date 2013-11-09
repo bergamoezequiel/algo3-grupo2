@@ -1,5 +1,7 @@
 package fiuba.algo3.implementacion;
 
-public interface Obstaculo {
-	int obtenerPenalizacion();
+public abstract class Obstaculo extends ContenidoDeCelda implements Interactuable{
+	public Obstaculo(){
+		super();
+	}
 }

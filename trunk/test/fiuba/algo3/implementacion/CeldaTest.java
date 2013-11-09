@@ -1,40 +1,48 @@
 package fiuba.algo3.implementacion;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.Ignore;
-
-
 
 public class CeldaTest{
 
 	@Test
 	public void testDeberiaInicializarceLaCeldaSinObjeto(){
-		Celda celda = new Celda(new Posicion(2,3));
-		Assert.assertNull(celda.getContenido());	
+		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(0,0));
+		Assert.assertNull(unaCelda.getContenido());
+	}
+
+	@Test
+	public void testDeberiaInicializarceLaCeldaEnUnaCoordenada(){
+		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(1, 2));
+		Assert.assertEquals(new Coordenada(1, 2), unaCelda.getCoordenada());
 	}
 	
 	@Test
-	public void testDeberiaPonerUnObjetoEnLaCelda(){
-		Celda unaCelda = new Celda(new Posicion(2,3));		
-		ContenidoDeCelda unObjeto = new ContenidoDeCelda();
-		unaCelda.setContenido(unObjeto);
-		Assert.assertEquals(unObjeto, unaCelda.getContenido());	
+	public void testDeberiaAgregarUnContenidoALaCelda(){
+		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(1, 2));		
+		Conductor unContenido = new Conductor(new Auto());
+		unaCelda.agregarContenido(unContenido);
+		Assert.assertEquals(unContenido, unaCelda.getContenido());
+		Assert.assertEquals(unaCelda, unContenido.getCelda());	
 	}
 	
 	@Test
-	public void testDeberiaPonerUnObjetoEnUnaCeldaYQuitarlo(){
-		Celda unaCelda = new Celda (new Posicion (2,3));
-		Vehiculo unVehiculo = new Vehiculo(new Mapa(0,0));		
-		unaCelda.setContenido(unVehiculo);
+	public void testDeberiaAgregarYLuegoQuitarUnContenidoDeLaCelda(){
+		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(1, 2));
+		Conductor unVehiculo = new Conductor(new Auto());		
+		unaCelda.agregarContenido(unVehiculo);
 		
-		assertEquals (unaCelda.getContenido(), unVehiculo);
+		Assert.assertEquals (unVehiculo, unaCelda.getContenido());
+		Assert.assertEquals (unaCelda, unVehiculo.getCelda());
 		
-		unaCelda.desligarseDeSuContenido();
+		unaCelda.quitarContenido();
 		
-		assertEquals (unaCelda.getContenido(), null);
+		Assert.assertNull (unaCelda.getContenido());
+		Assert.assertNull (unVehiculo.getCelda());
 	}
 
 }
