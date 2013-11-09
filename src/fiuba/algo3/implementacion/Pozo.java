@@ -14,11 +14,11 @@ public class Pozo extends Obstaculo {
 	}
 
 	public void InteractuarCon(Conductor unConductor, Moto UnaMoto) {
-		unConductor.aumentarMovimientosEn(3);
+		unConductor.aumentarMovimientosEn(this.penalizacion);
 		
 	}
 	public void InteractuarCon(Conductor unConductor, Auto unAuto) {
-		unConductor.aumentarMovimientosEn(3);
+		unConductor.aumentarMovimientosEn(this.penalizacion);
 	}
 	public void InteractuarCon(Conductor unConductor, TodoTerreno unTodoTerreno){
        }
