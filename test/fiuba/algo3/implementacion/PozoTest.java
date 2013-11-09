@@ -11,7 +11,6 @@ public class PozoTest {
         Conductor unConductor= new Conductor(unaMoto);
         unPozo.interactuarCon(unConductor,unaMoto);
         Assert.assertEquals(3,unConductor.getMovimientos());
-	
 	}
 	
 	@Test

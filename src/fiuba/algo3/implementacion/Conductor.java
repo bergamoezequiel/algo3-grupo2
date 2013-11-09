@@ -49,14 +49,15 @@ public class Conductor extends ContenidoDeCelda{
 	
 	public void avanzarEnDireccion(Direccion unaDireccion) {
 		ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(unaDireccion).getContenido();
+		ObjetoEncontrable unObjetoEncontrable = (ObjetoEncontrable) contenidoVecino;
 		
-		if (contenidoVecino == null){
+		if (unObjetoEncontrable == null){
 			this.desplazarseASiguienteEsquina(unaDireccion);
 		}
 		/*else
 		{
-			contenidoVecino.interactuarCon(this, this.getVehiculo());
-			if (contenidoVecino.dejaPasar(this)) {
+			unObjetoEncontrable.interactuarCon(this, this.getVehiculo());
+			if (unObjetoEncontrable.dejaPasar(this.getVehiculo())) {
 				this.desplazarseASiguienteEsquina(unaDireccion);
 			}
 		}*/
