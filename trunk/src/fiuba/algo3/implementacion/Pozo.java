@@ -19,7 +19,10 @@ public class Pozo extends Obstaculo {
 	}
 	public void InteractuarCon(Conductor unConductor, Auto unAuto) {
 		unConductor.aumentarMovimientosEn(3);
-	}	
+	}
+	public void InteractuarCon(Conductor unConductor, TodoTerreno unTodoTerreno){
+       }
+
 	}
 
 

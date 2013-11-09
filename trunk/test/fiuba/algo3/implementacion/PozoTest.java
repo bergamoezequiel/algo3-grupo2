@@ -23,5 +23,18 @@ public class PozoTest {
         Assert.assertEquals(3,unConductor.getMovimientos());
 	
 	}
+	
+	@Test
+	public void ElPozoTendriaQuePenalizarALosTodoTerrno(){
+        Pozo unPozo= new Pozo();
+        TodoTerreno unTodoTerreno=new TodoTerreno();
+        Conductor unConductor= new Conductor(unTodoTerreno);
+        unPozo.InteractuarCon(unConductor,unTodoTerreno);
+        Assert.assertEquals(0,unConductor.getMovimientos());
+	
+	}
+	
+	
+	
 
 }
