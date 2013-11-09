@@ -7,15 +7,15 @@ public class ConductorTest {
 
 	@Test
 	public void vehiculoDeberiaTener0MovimientosAlCrearse(){
-		Conductor unVehiculo = new Conductor(new Auto());
-		Assert.assertEquals(0, unVehiculo.getMovimientos());
+		Conductor unConductor = new Conductor(new Auto());
+		Assert.assertEquals(0, unConductor.getMovimientos());
 	}
 	
 	@Test
 	public void vehiculoDeberiaCrearseConUnTipoDeVehiculoAuto(){
 		Auto unAuto = new Auto();
-		Conductor unVehiculo = new Conductor(unAuto);
-		Assert.assertEquals(unAuto, unVehiculo.getVehiculo());
+		Conductor unConductor = new Conductor(unAuto);
+		Assert.assertEquals(unAuto, unConductor.getVehiculo());
 	}
 	
 	@Test
