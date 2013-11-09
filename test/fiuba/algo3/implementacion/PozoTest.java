@@ -31,20 +31,23 @@ public class PozoTest {
         Conductor unConductor= new Conductor(unTodoTerreno);
         unPozo.InteractuarCon(unConductor,unTodoTerreno);
         Assert.assertEquals(0,unConductor.getMovimientos());
-	
 	}
+	
+	@Test
 	public void ElPozoDeberiaDejarPasarALasMotos(){
 		Pozo unPozo= new Pozo();
 		Moto unaMoto= new Moto();
 		Assert.assertEquals(true,unPozo.dejaPasar(unaMoto));
 	}
 	
+	@Test
 	public void ElPozoDeberiaDejarPasarALosAutos(){
 		Pozo unPozo= new Pozo();
 		Auto unAuto= new Auto();
 		Assert.assertEquals(true,unPozo.dejaPasar(unAuto));
 	}
 	
+	@Test
 	public void ElPozoDeberiaDejarPasarALosTodoTerreno(){
 		Pozo unPozo= new Pozo();
 		TodoTerreno unTodoTerreno=new TodoTerreno();
