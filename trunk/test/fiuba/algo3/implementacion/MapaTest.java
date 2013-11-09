@@ -3,6 +3,9 @@ package fiuba.algo3.implementacion;
 import org.junit.Assert;
 import org.junit.Test;
 
+import fiuba.algo3.implementacion.Coordenada;
+import fiuba.algo3.implementacion.Mapa;
+
 public class MapaTest {
 	@Test
 	public void testDeberiaPoderCrearUnMapaConCiertaDimension(){
@@ -16,6 +19,13 @@ public class MapaTest {
 		Mapa unMapa = new Mapa(new Coordenada(4, 3));
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(3, 2));
 		Assert.assertEquals(new Coordenada(3, 2), unaCelda.getCoordenada());
+	}
+	
+	@Test
+	public void testDeberiaSerInvalidaLaCoordenada(){
+		Mapa unMapa = new Mapa (new Coordenada (4,4));
+		Coordenada unaCoordenada = new Coordenada (5,5);
+		Assert.assertEquals (false, unMapa.coordenadaValida(unaCoordenada));
 	}
 }
 
