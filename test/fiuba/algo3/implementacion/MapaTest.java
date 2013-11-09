@@ -2,84 +2,66 @@ package fiuba.algo3.implementacion;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.Ignore;
-
-
-
 
 public class MapaTest {
 	@Test
 	public void testDeberiaPoderCrearUnMapaConCiertaDimension(){
-		Mapa unMapa = new Mapa(4, 3);
-		Assert.assertEquals(4, unMapa.getCantidadDeFilas());
-		Assert.assertEquals(3, unMapa.getCantidadDeColumnas());
+		Mapa unMapa = new Mapa(new Coordenada(4, 3));
+		Assert.assertEquals(3, unMapa.getCantidadDeFilas());
+		Assert.assertEquals(4, unMapa.getCantidadDeColumnas());
 	}
 	
 	@Test
-	public void testDeberiaObtenerCeldaDeUnaPosicion(){
-		Mapa unMapa = new Mapa(4, 3);
-		Celda unaCelda = unMapa.getCeldaEnPosicion(new Posicion(3,2));
-		Assert.assertEquals(unaCelda.getPosicion() , new Posicion(3,2));
-	}	
-	
-	/*@Ignore
-	@Test 
-	public void testAlCrearUnMapaDeberiaTenerTodasLasCeldasSinObjetos(){
-		Mapa unMapa = new Mapa (5,3);
-		for (int i = 0; i < unMapa.getCantidadDeFilas(); i++) {
-			for (int j = 0; j < unMapa.getCantidadDeColumnas(); j++) {
-				Assert.assertEquals (null, unMapa.getObjetoEnPosicion(i, j));
-			}			
-		}
-							
+	public void testDeberiaObtenerCeldaDeUnaCoordenada(){
+		Mapa unMapa = new Mapa(new Coordenada(4, 3));
+		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(3, 2));
+		Assert.assertEquals(new Coordenada(3, 2), unaCelda.getCoordenada());
 	}
-	
-	@Ignore
-	@Test
-	public void testDeberiaPoderPonerUnVehiculoEnUnaCeldaDelMapa(){
-		Mapa unMapa = new Mapa (3,2);
-		Vehiculo unVehiculo = new Vehiculo(unMapa);
-		unMapa.setVehiculoEnPosicion(unVehiculo, 1, 0);
-		
-		Assert.assertEquals (unVehiculo, unMapa.getVehiculoEnPosicion(1, 0));
-	}
-	
-	@Ignore
-	@Test
-	public void testGetVehiculoEnPosicion(){
-		Mapa unMapa = new Mapa (3,3);
-		Vehiculo unVehiculo = new Vehiculo(unMapa);
-		unMapa.setVehiculoEnPosicion(unVehiculo, 2, 2);
-		
-		Assert.assertEquals(unMapa.getVehiculoEnPosicion(0,0), null);
-		Assert.assertEquals(unMapa.getVehiculoEnPosicion(2,2), unVehiculo);		
-	}
-	
-	@Ignore
-	@Test
-	public void testDeberiaDevolverLaPosicionDelAuto(){
-		Mapa unMapa = new Mapa (3,3);
-		Vehiculo unVehiculo = new Vehiculo(unMapa);
-		
-		unMapa.setVehiculoEnPosicion(unVehiculo, 2, 1);
-		
-		Assert.assertEquals(unMapa.getPosicionDelVehiculo(unVehiculo).getFila(), 2);
-		Assert.assertEquals(unMapa.getPosicionDelVehiculo(unVehiculo).getColumna(), 1);
-	}
-	
-	@Ignore
-	@Test
-	public void testDeberiaPoderEliminarUnVehiculoDelMapa (){
-		Mapa unMapa = new Mapa (3,2);
-		Vehiculo unVehiculo = new Vehiculo(unMapa);
-		unMapa.setVehiculoEnPosicion(unVehiculo, 1, 0);
-		
-		Assert.assertEquals (unVehiculo, unMapa.getVehiculoEnPosicion(1, 0));
-		
-		unMapa.eliminarVehiculo(unVehiculo);
-		Assert.assertEquals(null, unMapa.getVehiculoEnPosicion(1, 0));
-	}
-
-*/	
 }
 
+/*
+Mapa unMapa = new Mapa(3,3);
+Celda unaCelda = unMapa.getCeldaEnPosicion(new Posicion(0,0));
+Conductor unVehiculo = new Conductor();
+unaCelda.setContenido(unVehiculo);
+unVehiculo.avanzar(new Derecha());
+
+
+
+///Metodo avanzar() de Conductor//
+void avanzar(){
+cotenidoDeAlLado = celda.getVecino(new Derecha()).getContenido();
+if (contenido == null){
+	this.moverASiguienteEsquina(derecha);
+}
+else
+{
+contenidoDeAlLado.interactuarCon(this, this.getTipoDeVehiculo());
+if contenidoDeAlLado.dejaPasar(this) {
+			this.moverASiguienteEsquina(derecha);
+}
+}
+}
+
+
+//interactuarCon (Del Pozo)//
+void interactuarCon(Vehicuilo unVehiculo, Moto unaMoto){
+	unVehiculo.incrementarMovimientos(this.getPenalizacion());
+}
+
+void interactuarCon(Vehicuilo unVehiculo, Auto unAuto){
+	unVehiculo.incrementarMovimientos(this.getPenalizacion());
+}
+
+void interactuarCon(Vehicuilo unVehiculo, 4x4 una4x4){
+
+}
+
+//Metodo moverASiguienteEsquina de Conductor//
+void moverASiguienteEsquina(derecha){
+nuevaCelda = unVehiculo.getCelda().getVecinoDerecha().getVecinoDerecha();
+	unaCelda.desligarDeSuContenido();
+nuevaCelda.setContenido(unVehiculo);
+this.incrementarMovimientosEn(this.getPenalizacionDeAvance());
+}
+*/

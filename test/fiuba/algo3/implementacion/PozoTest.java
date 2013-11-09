@@ -2,7 +2,6 @@ package fiuba.algo3.implementacion;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.Ignore;
 
 public class PozoTest {
 	@Test
