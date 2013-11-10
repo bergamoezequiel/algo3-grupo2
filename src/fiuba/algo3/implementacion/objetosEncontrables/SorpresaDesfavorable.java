@@ -7,27 +7,28 @@ import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 import fiuba.algo3.implementacion.vehiculos.Vehiculo;
 
 public class SorpresaDesfavorable extends Sorpresa {
-	int penalizacion;
+	double penalizacion;
 	
 	public SorpresaDesfavorable() {
 		super();
-		this.penalizacion = 2;
+		this.penalizacion = 0.2;
 	}
 	
 	@Override
 	public void interactuarCon(Conductor unConductor, Moto unaMoto) {
 	
-		unConductor.aumentarMovimientosEn (this.penalizacion);
+		unConductor.aumentarMovimientosEn ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
 	}
 	
 	@Override
 	public void interactuarCon(Conductor unConductor, Auto unAuto) {
-		unConductor.aumentarMovimientosEn (this.penalizacion);
+		unConductor.aumentarMovimientosEn ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
 	}
 	
 	@Override
 	public void interactuarCon(Conductor unConductor, TodoTerreno unTodoTerreno){
-		unConductor.aumentarMovimientosEn (this.penalizacion);
+	/*Redondea el valor a un numero entero*/
+		unConductor.aumentarMovimientosEn ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
        }
 
 	/*No Afecta al Paso de Vehiculos*/
