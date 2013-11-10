@@ -9,7 +9,7 @@ public class AutoTest {
 		Assert.assertEquals(1, 1);
 	}
 	
-	/*@Test
+	@Test
 	public void autoAlAvanzarYEncontrarUnPozoDeberiaPenalizarseCon3MovimientosYDesplazarse2Posiciones(){
 		Mapa unMapa = new Mapa(new Coordenada(3, 1));
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
@@ -26,5 +26,5 @@ public class AutoTest {
 		Assert.assertEquals(celdaInicial.getVecino(derecha).getVecino(derecha).getCoordenada(), unConductor.getCelda().getCoordenada());
 		//Revisa que se penzalice con 3 movimientos por el pozo mas 1 por el avance.
 		Assert.assertEquals(unConductor.getPenalizacionDeAvance()+unPozo.obtenerPenalizacion(), unConductor.getMovimientos());
-	}*/
+	}
 }

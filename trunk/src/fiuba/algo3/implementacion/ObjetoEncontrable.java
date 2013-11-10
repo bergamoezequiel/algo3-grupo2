@@ -5,7 +5,4 @@ public abstract class ObjetoEncontrable extends ContenidoDeCelda implements Inte
 	public ObjetoEncontrable(){
 		super();
 	}
-	
-	//public abstract void interactuarCon();	
-	//public abstract boolean dejaPasar(Vehiculo unVehiculo);
 }

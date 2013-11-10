@@ -1,7 +1,6 @@
 package fiuba.algo3.implementacion;
 
 public class CambioDeVehiculo extends Sorpresa {
-	
 
 	public CambioDeVehiculo() {
 		super();
