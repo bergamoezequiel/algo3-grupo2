@@ -2,8 +2,21 @@ package fiuba.algo3.implementacion;
 
 import static org.junit.Assert.*;
 
-
 import org.junit.Test;
+
+import fiuba.algo3.implementacion.coordenadas.Arriba;
+import fiuba.algo3.implementacion.coordenadas.Coordenada;
+import fiuba.algo3.implementacion.coordenadas.Derecha;
+import fiuba.algo3.implementacion.coordenadas.Direccion;
+import fiuba.algo3.implementacion.coordenadas.Izquierda;
+import fiuba.algo3.implementacion.mapa.Celda;
+import fiuba.algo3.implementacion.mapa.Mapa;
+import fiuba.algo3.implementacion.objetosEncontrables.CambioDeVehiculo;
+import fiuba.algo3.implementacion.objetosEncontrables.Piquete;
+import fiuba.algo3.implementacion.objetosEncontrables.Pozo;
+import fiuba.algo3.implementacion.vehiculos.Auto;
+import fiuba.algo3.implementacion.vehiculos.Conductor;
+import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 
 public class TestIntegrador {
 
