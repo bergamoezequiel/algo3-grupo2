@@ -1,5 +1,4 @@
 package fiuba.algo3.implementacion.objetosEncontrables;
-import java.util.Random;
 
 import fiuba.algo3.implementacion.vehiculos.Auto;
 import fiuba.algo3.implementacion.vehiculos.Conductor;
