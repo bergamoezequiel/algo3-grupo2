@@ -11,7 +11,7 @@ import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 
 public class ControlPolicialTest {
 	@Test
-	public void ElPozoTendriaQuePenalizarCon3MovimientosALasMotos(){
+	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALasMotos(){
         ControlPolicial unControl = new ControlPolicial();
         Moto unaMoto=new Moto();
         Conductor unConductor= new Conductor(unaMoto);
@@ -20,7 +20,7 @@ public class ControlPolicialTest {
 	}
 	
 	@Test
-	public void ElPozoTendriaQuePenalizarCon3MovimientosALosAutos(){
+	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALosAutos(){
 		ControlPolicial unControl = new ControlPolicial();
         Auto unAuto=new Auto();
         Conductor unConductor= new Conductor(unAuto);
@@ -30,7 +30,7 @@ public class ControlPolicialTest {
 	}
 	
 	@Test
-	public void ElPozoNoTendriaQuePenalizarALosTodoTerreno(){
+	public void ElControlPolicialTendriaQuePenalizarALosTodoTerreno(){
 		ControlPolicial unControl = new ControlPolicial();
         TodoTerreno unTodoTerreno=new TodoTerreno();
         Conductor unConductor= new Conductor(unTodoTerreno);
