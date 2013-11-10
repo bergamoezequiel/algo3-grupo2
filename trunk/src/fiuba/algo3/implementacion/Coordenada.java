@@ -35,8 +35,8 @@ public class Coordenada {
 	}
 	
 	public double calcularDistancia(Coordenada unaCoordenada){
-		int distanciaXAlCuadrado = ( (this.getX() - unaCoordenada.getX() ) * ( this.getX() - unaCoordenada.getX() ) );
-		int distanciaYAlCuadrado = ( (this.getY() - unaCoordenada.getY() ) * ( this.getY() - unaCoordenada.getY() ) );
+		double distanciaXAlCuadrado = Math.pow(this.getX() - unaCoordenada.getX(), 2);
+		double distanciaYAlCuadrado = Math.pow(this.getY() - unaCoordenada.getY(), 2);;
 		return Math.sqrt(distanciaXAlCuadrado + distanciaYAlCuadrado);
 	}
 		
