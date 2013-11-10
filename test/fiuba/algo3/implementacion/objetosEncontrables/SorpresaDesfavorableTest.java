@@ -1,8 +1,15 @@
 package fiuba.algo3.implementacion.objetosEncontrables;
 
+import static org.junit.Assert.*;
+
 import org.junit.Assert;
 import org.junit.Test;
 
+import fiuba.algo3.implementacion.coordenadas.Coordenada;
+import fiuba.algo3.implementacion.coordenadas.Derecha;
+import fiuba.algo3.implementacion.coordenadas.Direccion;
+import fiuba.algo3.implementacion.mapa.Celda;
+import fiuba.algo3.implementacion.mapa.Mapa;
 import fiuba.algo3.implementacion.vehiculos.Auto;
 import fiuba.algo3.implementacion.vehiculos.Conductor;
 import fiuba.algo3.implementacion.vehiculos.Moto;
@@ -40,6 +47,68 @@ public class SorpresaDesfavorableTest {
 		
 		unaSorpresaDesfavorable.interactuarCon(unConductor, unAuto);
 		Assert.assertEquals(10, unConductor.getMovimientos());
+	}
+	
+	@Test
+	public void deberiaAumentarLosMovimientosDelAutoAlPasarPorUnaSorpresa(){
+		Mapa unMapa = new Mapa(new Coordenada(10, 10));
+		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
+		Conductor unConductor = new Conductor(new Auto());		
+		celdaInicial.agregarContenido(unConductor);
+		
+		Direccion derecha= new Derecha();
+		SorpresaDesfavorable unaSorpresaDesfavorable= new SorpresaDesfavorable();
+		Celda celdaFinal = unMapa.getCeldaEn(new Coordenada(3, 0));
+		celdaFinal.agregarContenido(unaSorpresaDesfavorable);
+		
+		//No agarra la sorpresa desfavorable todavia.
+		unConductor.avanzarEnDireccion(derecha);
+		
+		//Agarra la sopresa desfavorable.
+		unConductor.avanzarEnDireccion(derecha);
+		
+		assertEquals (3 , unConductor.getMovimientos());
+	}
+	
+	@Test
+	public void deberiaAumentarLosMovimientosDeLaMotoAlPasarPorUnaSorpresa(){
+		Mapa unMapa = new Mapa(new Coordenada(10, 10));
+		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
+		Conductor unConductor = new Conductor(new Moto());		
+		celdaInicial.agregarContenido(unConductor);
+		
+		Direccion derecha= new Derecha();
+		SorpresaDesfavorable unaSorpresaDesfavorable= new SorpresaDesfavorable();
+		Celda celdaFinal = unMapa.getCeldaEn(new Coordenada(3, 0));
+		celdaFinal.agregarContenido(unaSorpresaDesfavorable);
+		
+		//No agarra la sorpresa desfavorable todavia.
+		unConductor.avanzarEnDireccion(derecha);
+		
+		//Agarra la sopresa desfavorable.
+		unConductor.avanzarEnDireccion(derecha);
+		
+		assertEquals (3 , unConductor.getMovimientos());
+	}
+	
+	public void deberiaAumentarLosMovimientosDeLaTodoTerrenoAlPasarPorUnaSorpresa(){
+		Mapa unMapa = new Mapa(new Coordenada(10, 10));
+		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
+		Conductor unConductor = new Conductor(new TodoTerreno());		
+		celdaInicial.agregarContenido(unConductor);
+		
+		Direccion derecha= new Derecha();
+		SorpresaDesfavorable unaSorpresaDesfavorable= new SorpresaDesfavorable();
+		Celda celdaFinal = unMapa.getCeldaEn(new Coordenada(3, 0));
+		celdaFinal.agregarContenido(unaSorpresaDesfavorable);
+		
+		//No agarra la sorpresa desfavorable todavia.
+		unConductor.avanzarEnDireccion(derecha);
+		
+		//Agarra la sopresa desfavorable.
+		unConductor.avanzarEnDireccion(derecha);
+		
+		assertEquals (3 , unConductor.getMovimientos());
 	}
 
 
