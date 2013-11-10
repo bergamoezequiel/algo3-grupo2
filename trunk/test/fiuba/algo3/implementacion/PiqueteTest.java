@@ -5,10 +5,6 @@ import org.junit.Test;
 
 public class PiqueteTest {
 	@Test
-	public void ABC(){
-		Assert.assertEquals(1, 1);
-	}
-	/*@Test
 	public void ElPiqueteTendriaQuePenalizarCon2MovimientosALasMotos(){
 		Piquete unPiquete= new Piquete();
 		Moto unaMoto=new Moto();
@@ -55,6 +51,5 @@ public class PiqueteTest {
 		Piquete unPiquete=new Piquete();
 		TodoTerreno unTodoTerreno=new TodoTerreno();
 		Assert.assertEquals(false,unPiquete.dejaPasar(unTodoTerreno));
-	}*/
-
+	}
 }
