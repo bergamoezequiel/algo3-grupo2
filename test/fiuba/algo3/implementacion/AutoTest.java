@@ -4,11 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class AutoTest {
-	@Test
-	public void ABC(){
-		Assert.assertEquals(1, 1);
-	}
-	
+
 	@Test
 	public void autoAlAvanzarYEncontrarUnPozoDeberiaPenalizarseCon3MovimientosYDesplazarse2Posiciones(){
 		Mapa unMapa = new Mapa(new Coordenada(3, 1));
