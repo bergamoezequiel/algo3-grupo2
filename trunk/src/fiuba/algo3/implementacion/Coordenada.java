@@ -33,4 +33,11 @@ public class Coordenada {
 	public Coordenada sumar(Coordenada unaCoordenada){
 		return new Coordenada (this.x+unaCoordenada.getX(), this.y+unaCoordenada.getY());
 	}
+	
+	public double calcularDistancia(Coordenada unaCoordenada){
+		int distanciaXAlCuadrado = ( (this.getX() - unaCoordenada.getX() ) * ( this.getX() - unaCoordenada.getX() ) );
+		int distanciaYAlCuadrado = ( (this.getY() - unaCoordenada.getY() ) * ( this.getY() - unaCoordenada.getY() ) );
+		return Math.sqrt(distanciaXAlCuadrado + distanciaYAlCuadrado);
+	}
+		
 }

@@ -54,11 +54,10 @@ public class Conductor extends ContenidoDeCelda{
 		if (unObjetoEncontrable == null){
 			this.desplazarseASiguienteEsquina(unaDireccion);
 		}
-		else
-		{
-			this.getVehiculo().interactuar(unObjetoEncontrable, this);
+		else{			
 			if (this.getVehiculo().meDejanPasar(unObjetoEncontrable)) {
 				this.desplazarseASiguienteEsquina(unaDireccion);
+			    this.getVehiculo().interactuar(unObjetoEncontrable, this);
 			}
 		}
 	}

@@ -26,5 +26,18 @@ public class CoordenadaTest {
 		Coordenada sumaDeCoordenadas = unaCoordenada.sumar(otraCoordenada);
 		Assert.assertEquals(new Coordenada(4, 2), sumaDeCoordenadas);
 	}
+	
+	@Test
+	public void testDeberiaCalcularSuDistanciaConOtraCoordenada(){
+		Coordenada unaCoordenada = new Coordenada(0,0);
+		Coordenada otraCoordenada = new Coordenada(0,0);
+		Assert.assertTrue(unaCoordenada.calcularDistancia(otraCoordenada)==0);
+		unaCoordenada = new Coordenada(0,0);
+		otraCoordenada = new Coordenada(0,1);
+		Assert.assertTrue(unaCoordenada.calcularDistancia(otraCoordenada)==1);
+		unaCoordenada = new Coordenada(0,0);
+		otraCoordenada = new Coordenada(1,1);
+		Assert.assertTrue(unaCoordenada.calcularDistancia(otraCoordenada)==Math.sqrt(2));
+	}
 
 }
