@@ -19,7 +19,7 @@ public class ConductorTest {
 		Assert.assertEquals(unAuto, unConductor.getVehiculo());
 	}
 	
-	@Test
+	/*@Test
 	public void conductorDeberiaPoderCambiarDeVehiculo(){
 		
 		Auto unAuto = new Auto();
@@ -27,7 +27,7 @@ public class ConductorTest {
 		Moto unaMoto= new Moto();
 		unConductor.cambiarDeVehiculo(unaMoto);
 		Assert.assertEquals(unaMoto, unConductor.getVehiculo());
-	}
+	}*/
 	@Test
 	public void vehiculoDeberiaCrearseConUnaPenalizacionDeAvanceIgualAUno(){
 		Auto unAuto = new Auto();
@@ -48,18 +48,18 @@ public class ConductorTest {
 		Assert.assertEquals(new Coordenada (2, 0) , unConductor.getCelda().getCoordenada());
 
 		//Avanza para arriba.
-		/*Direccion arriba = new Arriba ();
+		Direccion arriba = new Arriba ();
 		unConductor.avanzarEnDireccion(arriba);
-		Assert.assertEquals(new Coordenada (2, 2), unConductor.getCelda().getCoordenada());*/
+		Assert.assertEquals(new Coordenada (2, 2), unConductor.getCelda().getCoordenada());
 		
 		//Avanza para la izquierda.
-		/*Direccion izquierda = new Izquierda ();
+		Direccion izquierda = new Izquierda ();
 		unConductor.avanzarEnDireccion(izquierda);
-		Assert.assertEquals (new Coordenada(0, 2) , unConductor.getCelda().getCoordenada());*/
+		Assert.assertEquals (new Coordenada(0, 2) , unConductor.getCelda().getCoordenada());
 		
 		//Avanza para Abajo.
-		/*Direccion abajo = new Abajo();
+		Direccion abajo = new Abajo();
 		unConductor.avanzarEnDireccion(abajo);
-		Assert.assertEquals (new Coordenada(0, 0) , unConductor.getCelda().getCoordenada());*/
+		Assert.assertEquals (new Coordenada(0, 0) , unConductor.getCelda().getCoordenada());
 	}
 }

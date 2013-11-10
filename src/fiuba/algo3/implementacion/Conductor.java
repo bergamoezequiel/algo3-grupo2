@@ -20,7 +20,7 @@ public class Conductor extends ContenidoDeCelda{
 	}
 	
 	public void cambiarDeVehiculo(Vehiculo unVehiculo){
-		this.vehiculo=unVehiculo;
+		this.vehiculo = unVehiculo;
 	}
 	
 	public int getMovimientos(){
@@ -54,13 +54,13 @@ public class Conductor extends ContenidoDeCelda{
 		if (unObjetoEncontrable == null){
 			this.desplazarseASiguienteEsquina(unaDireccion);
 		}
-		/*else
+		else
 		{
-			unObjetoEncontrable.interactuarCon(this, this.getVehiculo());
-			if (unObjetoEncontrable.dejaPasar(this.getVehiculo())) {
+			this.getVehiculo().interactuar(unObjetoEncontrable, this);
+			if (this.getVehiculo().meDejanPasar(unObjetoEncontrable)) {
 				this.desplazarseASiguienteEsquina(unaDireccion);
 			}
-		}*/
+		}
 	}
 	
 }
