@@ -4,7 +4,6 @@ import fiuba.algo3.implementacion.vehiculos.Auto;
 import fiuba.algo3.implementacion.vehiculos.Conductor;
 import fiuba.algo3.implementacion.vehiculos.Moto;
 import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
-import fiuba.algo3.implementacion.vehiculos.Vehiculo;
 
 public class SorpresaDesfavorable extends Sorpresa {
 	double penalizacion;
@@ -14,22 +13,56 @@ public class SorpresaDesfavorable extends Sorpresa {
 		this.penalizacion = 0.2;
 	}
 	
+	
+	/*
+	 * En caso de que el producto de los movimientos con el porcentaje de la penalizacion
+	 * sea menor a 1, se le agrega siempre 1 movimiento extra.
+	 */
 	@Override
 	public void interactuarCon(Conductor unConductor, Moto unaMoto) {
-	
-		unConductor.aumentarMovimientosEn ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
+		int penalizacionAAgregar = ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
+		
+		if (penalizacionAAgregar < 1){
+			unConductor.aumentarMovimientosEn (1);
+		} else{
+			unConductor.aumentarMovimientosEn (penalizacionAAgregar);
+		}
 	}
 	
+
+	
+	/*
+	 * En caso de que el producto de los movimientos con el porcentaje de la penalizacion
+	 * sea menor a 1, se le agrega siempre 1 movimiento extra.
+	 */
 	@Override
 	public void interactuarCon(Conductor unConductor, Auto unAuto) {
-		unConductor.aumentarMovimientosEn ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
+		int penalizacionAAgregar = ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
+		
+		if (penalizacionAAgregar < 1){
+			unConductor.aumentarMovimientosEn (1);
+		} else{
+			unConductor.aumentarMovimientosEn (penalizacionAAgregar);
+		}
 	}
 	
+	
+	/*
+	 * En caso de que el producto de los movimientos con el porcentaje de la penalizacion
+	 * sea menor a 1, se le agrega siempre 1 movimiento extra.
+	 */
 	@Override
 	public void interactuarCon(Conductor unConductor, TodoTerreno unTodoTerreno){
 	/*Redondea el valor a un numero entero*/
-		unConductor.aumentarMovimientosEn ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
-       }
+		int penalizacionAAgregar = ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
+		
+		if (penalizacionAAgregar < 1){
+			unConductor.aumentarMovimientosEn (1);
+		} else{
+			unConductor.aumentarMovimientosEn (penalizacionAAgregar);
+		}
+	}
+	
 
 	/*No Afecta al Paso de Vehiculos*/
 	
