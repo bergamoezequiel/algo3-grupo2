@@ -53,10 +53,14 @@ public class CeldaTest{
 	
 	@Test
 	public void testDeberiaDecirmeSiCiertasCeldasSonVisiblesONo(){
-		Mapa unMapa = new Mapa(new Coordenada(50, 50));
-		Coordenada coordenadaConductor = new Coordenada(24, 24);
-		Celda unaCelda = unMapa.getCeldaEn(coordenadaConductor);
 		Conductor unConductor = new Conductor(new Auto());		
+		
+		//Creo un mapa con el doble de tamaño del alcance de vision del conductor.
+		//Ubico al conductor en el centro del mapa.
+		Mapa unMapa = new Mapa(new Coordenada(unConductor.getAlcanceDeVision()*2+2, unConductor.getAlcanceDeVision()*2+2));
+		Coordenada coordenadaConductor = new Coordenada(unConductor.getAlcanceDeVision(), unConductor.getAlcanceDeVision());
+		Celda unaCelda = unMapa.getCeldaEn(coordenadaConductor);
+		
 		unaCelda.agregarContenido(unConductor);
 		
 		Celda celdaVisibleDerecha = unMapa.getCeldaEn(coordenadaConductor.sumar(new Coordenada(unConductor.getAlcanceDeVision(), 0)));
