@@ -29,58 +29,12 @@ public class MapaTest {
 		Assert.assertEquals (false, unMapa.coordenadaValida(unaCoordenada));
 	}
 	
-	@Test(expected = CoordenadaFueraDeRangoException.class) 
-	public void testDeberiaLanzarExcepcionsiPidoUnaCeldaEnUnaCoordenadaFueraDeRango(){
-		Mapa unMapa = new Mapa (new Coordenada (4,4));
-		Coordenada unaCoordenada = new Coordenada (5,5);
+	@Test(expected = UbicacionEnMapaException.class) 
+	public void testDeberiaLanzarExcepcionSiPidoUnaCeldaEnUnaCoordenadaFueraDeRango(){
+		Mapa unMapa = new Mapa (new Coordenada (4, 4));
+		//La ubicacion 4, 4 esta fuera del mapa, el mapa va de (0,0) a (3,3)
+		Coordenada unaCoordenada = new Coordenada (4, 4);
 		unMapa.getCeldaEn(unaCoordenada);
 	}
 	
 }
-
-/*
-Mapa unMapa = new Mapa(3,3);
-Celda unaCelda = unMapa.getCeldaEnPosicion(new Posicion(0,0));
-Conductor unVehiculo = new Conductor();
-unaCelda.setContenido(unVehiculo);
-unVehiculo.avanzar(new Derecha());
-
-
-
-///Metodo avanzar() de Conductor//
-void avanzar(){
-cotenidoDeAlLado = celda.getVecino(new Derecha()).getContenido();
-if (contenido == null){
-	this.moverASiguienteEsquina(derecha);
-}
-else
-{
-contenidoDeAlLado.interactuarCon(this, this.getTipoDeVehiculo());
-if contenidoDeAlLado.dejaPasar(this) {
-			this.moverASiguienteEsquina(derecha);
-}
-}
-}
-
-
-//interactuarCon (Del Pozo)//
-void interactuarCon(Vehicuilo unVehiculo, Moto unaMoto){
-	unVehiculo.incrementarMovimientos(this.getPenalizacion());
-}
-
-void interactuarCon(Vehicuilo unVehiculo, Auto unAuto){
-	unVehiculo.incrementarMovimientos(this.getPenalizacion());
-}
-
-void interactuarCon(Vehicuilo unVehiculo, 4x4 una4x4){
-
-}
-
-//Metodo moverASiguienteEsquina de Conductor//
-void moverASiguienteEsquina(derecha){
-nuevaCelda = unVehiculo.getCelda().getVecinoDerecha().getVecinoDerecha();
-	unaCelda.desligarDeSuContenido();
-nuevaCelda.setContenido(unVehiculo);
-this.incrementarMovimientosEn(this.getPenalizacionDeAvance());
-}
-*/

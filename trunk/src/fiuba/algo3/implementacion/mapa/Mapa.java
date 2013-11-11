@@ -31,9 +31,9 @@ public class Mapa {
 		return this.columnas;
 	}
 
-	public Celda getCeldaEn(Coordenada unaCoordenada) throws CoordenadaFueraDeRangoException  {
-		if ((unaCoordenada.getX()>this.columnas)||(unaCoordenada.getY()>this.filas)){
-			throw new CoordenadaFueraDeRangoException();
+	public Celda getCeldaEn(Coordenada unaCoordenada) throws UbicacionEnMapaException  {
+		if (unaCoordenada.getX() >= this.columnas || unaCoordenada.getY() >= this.filas){
+			throw new UbicacionEnMapaException();
 		}
 		ArrayList<Celda> fila = this.celdas.get(unaCoordenada.getX());
 		return fila.get(unaCoordenada.getY());
