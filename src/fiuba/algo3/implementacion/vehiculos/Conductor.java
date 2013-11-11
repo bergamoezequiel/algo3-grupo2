@@ -40,6 +40,13 @@ public class Conductor extends ContenidoDeCelda{
 		this.movimientos += unosMovimientos;
 	}
 	
+	public void disminuirMovimientosEn(int unosMovimientos){
+		if ((this.movimientos - unosMovimientos)<=0) {
+			this.movimientos=0;
+		}
+		this.movimientos = this.movimientos - unosMovimientos;
+	}
+	
 	public void desplazarseASiguienteEsquina(Direccion unaDireccion){
 		Celda celdaInicial = this.getCelda();
 		celdaInicial.quitarContenido();
