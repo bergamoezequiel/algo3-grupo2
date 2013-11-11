@@ -45,7 +45,7 @@ public class SorpresaFavorableTest {
 		
 		unConductor.aumentarMovimientosEn(8);
 		
-		unaSorpresaFavorable.interactuarCon(unConductor, unAuto);
+		unaSorpresaFavorable.interactuarConAuto(unConductor);
 		Assert.assertEquals(6, unConductor.getMovimientos());
 	}
 	

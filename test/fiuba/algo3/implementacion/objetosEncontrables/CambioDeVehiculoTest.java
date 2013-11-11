@@ -38,7 +38,7 @@ public class CambioDeVehiculoTest {
 		TodoTerreno unTodoTerreno = new TodoTerreno();
 		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
 		
-		unCambioDeVehiculo.interactuarCon(unConductor, unAuto);
+		unCambioDeVehiculo.interactuarConAuto(unConductor);
 		Assert.assertEquals(unTodoTerreno, unConductor.getVehiculo());
 		}
 	
@@ -49,7 +49,7 @@ public class CambioDeVehiculoTest {
 		Auto unAuto = new Auto();
 		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
 		
-		unCambioDeVehiculo.interactuarCon(unConductor, unaMoto);
+		unCambioDeVehiculo.interactuarConMoto(unConductor);
 		Assert.assertEquals(unAuto, unConductor.getVehiculo());
 		}
 	
@@ -60,7 +60,7 @@ public class CambioDeVehiculoTest {
 		Moto unaMoto = new Moto();
 		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
 		
-		unCambioDeVehiculo.interactuarCon(unConductor, unTodoTerreno);
+		unCambioDeVehiculo.interactuarConTodoTerreno(unConductor);
 		Assert.assertEquals(unaMoto, unConductor.getVehiculo());
 		}
 }
