@@ -53,24 +53,26 @@ public class CeldaTest{
 	
 	@Test
 	public void testDeberiaDecirmeSiCiertasCeldasSonVisiblesONo(){
-		Mapa unMapa = new Mapa(new Coordenada(10, 10));
-		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(2, 2));
+		Mapa unMapa = new Mapa(new Coordenada(50, 50));
+		Coordenada coordenadaConductor = new Coordenada(24, 24);
+		Celda unaCelda = unMapa.getCeldaEn(coordenadaConductor);
 		Conductor unConductor = new Conductor(new Auto());		
 		unaCelda.agregarContenido(unConductor);
 		
-		Celda celdaVisible = unMapa.getCeldaEn(new Coordenada(6, 2));
-		Assert.assertTrue (celdaVisible.esVisiblePara(unConductor));
-		
-		celdaVisible = unMapa.getCeldaEn(new Coordenada(2, 6));
-		Assert.assertTrue (celdaVisible.esVisiblePara(unConductor));
+		Celda celdaVisibleDerecha = unMapa.getCeldaEn(coordenadaConductor.sumar(new Coordenada(unConductor.getAlcanceDeVision(), 0)));
+		Assert.assertTrue (celdaVisibleDerecha.esVisiblePara(unConductor));	
 
-		celdaVisible = unMapa.getCeldaEn(new Coordenada(2, 6));
-		Assert.assertTrue (celdaVisible.esVisiblePara(unConductor));
+		Celda celdaVisibleIzquierda = unMapa.getCeldaEn(coordenadaConductor.sumar(new Coordenada(-unConductor.getAlcanceDeVision(), 0)));
+		Assert.assertTrue (celdaVisibleIzquierda.esVisiblePara(unConductor));
+
+		Celda celdaVisibleArriba = unMapa.getCeldaEn(coordenadaConductor.sumar(new Coordenada(0, unConductor.getAlcanceDeVision())));
+		Assert.assertTrue (celdaVisibleArriba.esVisiblePara(unConductor));
+
+		Celda celdaVisibleAbajo = unMapa.getCeldaEn(coordenadaConductor.sumar(new Coordenada(0, -unConductor.getAlcanceDeVision())));
+		Assert.assertTrue (celdaVisibleAbajo.esVisiblePara(unConductor));
 		
-		celdaVisible = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Assert.assertTrue (celdaVisible.esVisiblePara(unConductor));		
-		
-		Celda celdaFueraDeRango = unMapa.getCeldaEn(new Coordenada(7, 2));
+		//A la celda de la derecha que es visible y esta en el limite miramos una celda mas y deberia ser invisible.
+		Celda celdaFueraDeRango = unMapa.getCeldaEn(celdaVisibleDerecha.getCoordenada().sumar(new Coordenada(1,0)));
 		Assert.assertFalse (celdaFueraDeRango.esVisiblePara(unConductor));
 	}
 
