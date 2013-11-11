@@ -28,6 +28,14 @@ public class MapaTest {
 		Coordenada unaCoordenada = new Coordenada (5,5);
 		Assert.assertEquals (false, unMapa.coordenadaValida(unaCoordenada));
 	}
+	
+	@Test(expected = CoordenadaFueraDeRangoException.class) 
+	public void testDeberiaLanzarExcepcionsiPidoUnaCeldaEnUnaCoordenadaFueraDeRango(){
+		Mapa unMapa = new Mapa (new Coordenada (4,4));
+		Coordenada unaCoordenada = new Coordenada (5,5);
+		unMapa.getCeldaEn(unaCoordenada);
+	}
+	
 }
 
 /*
