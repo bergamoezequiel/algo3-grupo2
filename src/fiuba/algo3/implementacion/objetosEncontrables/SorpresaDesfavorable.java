@@ -10,7 +10,7 @@ public class SorpresaDesfavorable extends Sorpresa {
 	
 	public SorpresaDesfavorable() {
 		super();
-		this.penalizacion = 0.2;
+		this.penalizacion = 0.25;
 	}
 	
 	
