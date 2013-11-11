@@ -15,7 +15,7 @@ public class PiqueteTest {
 		Piquete unPiquete= new Piquete();
 		Moto unaMoto=new Moto();
 		Conductor unConductor= new Conductor(unaMoto);
-		unPiquete.interactuarCon(unConductor,unaMoto);
+		unPiquete.interactuarConMoto(unConductor);
 		Assert.assertEquals(2,unConductor.getMovimientos());
 	}
 
@@ -24,7 +24,7 @@ public class PiqueteTest {
 		Piquete unPiquete=new Piquete();
 		Auto unAuto=new Auto();
 		Conductor unConductor= new Conductor(unAuto);
-		unPiquete.interactuarCon(unConductor,unAuto);
+		unPiquete.interactuarConAuto(unConductor);
 		Assert.assertEquals(0,unConductor.getMovimientos());
 
 	}
@@ -34,7 +34,7 @@ public class PiqueteTest {
 		Piquete unPiquete=new Piquete();
 		TodoTerreno unTodoTerreno=new TodoTerreno();
 		Conductor unConductor= new Conductor(unTodoTerreno);
-		unPiquete.interactuarCon(unConductor,unTodoTerreno);
+		unPiquete.interactuarConTodoTerreno(unConductor);
 		Assert.assertEquals(0,unConductor.getMovimientos());
 	}
 	

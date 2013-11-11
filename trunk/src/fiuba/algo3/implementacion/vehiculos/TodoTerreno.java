@@ -6,7 +6,7 @@ public class TodoTerreno extends Vehiculo {
 
 	@Override
 	public void interactuar(ObjetoEncontrable unObjetoEncontrable,	Conductor unConductor) {
-		unObjetoEncontrable.interactuarCon(unConductor, this);
+		unObjetoEncontrable.interactuarConTodoTerreno(unConductor);
 	}
 
 	@Override

@@ -18,16 +18,16 @@ public class Piquete extends Obstaculo {
 	}
 	
 	@Override
-	public void interactuarCon(Conductor unConductor, Moto UnaMoto) {
+	public void interactuarConMoto(Conductor unConductor) {
 		unConductor.aumentarMovimientosEn(this.obtenerPenalizacion());
 	}
 	
 	@Override
-	public void interactuarCon(Conductor unConductor, Auto unAuto) {
+	public void interactuarConAuto(Conductor unConductor) {
 	}
 	
 	@Override
-	public void interactuarCon(Conductor unConductor, TodoTerreno unTodoTerreno){
+	public void interactuarConTodoTerreno(Conductor unConductor){
 	}
 
 	@Override

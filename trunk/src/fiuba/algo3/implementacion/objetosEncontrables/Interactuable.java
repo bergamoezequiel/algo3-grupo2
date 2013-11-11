@@ -6,9 +6,9 @@ import fiuba.algo3.implementacion.vehiculos.Moto;
 import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 
 public interface Interactuable {
-	void interactuarCon(Conductor unConductor, Auto unAuto);
-	void interactuarCon(Conductor unConductor, Moto unaMoto);
-	void interactuarCon(Conductor unConductor, TodoTerreno unTodoTerreno);
+	void interactuarConAuto(Conductor unConductor);
+	void interactuarConMoto(Conductor unConductor);
+	void interactuarConTodoTerreno(Conductor unConductor);
 	boolean dejaPasar(Auto unAuto);
 	boolean dejaPasar(Moto unaMoto);
 	boolean dejaPasar(TodoTerreno unTodoTerreno);

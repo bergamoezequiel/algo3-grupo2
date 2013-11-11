@@ -45,7 +45,7 @@ public class SorpresaDesfavorableTest {
 		
 		unConductor.aumentarMovimientosEn(8);
 		
-		unaSorpresaDesfavorable.interactuarCon(unConductor, unAuto);
+		unaSorpresaDesfavorable.interactuarConAuto(unConductor);
 		Assert.assertEquals(10, unConductor.getMovimientos());
 	}
 	

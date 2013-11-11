@@ -30,7 +30,7 @@ public class ConductorTest {
 		Assert.assertEquals(unAuto, unConductor.getVehiculo());
 	}
 	
-	/*@Test
+	@Test
 	public void conductorDeberiaPoderCambiarDeVehiculo(){
 		
 		Auto unAuto = new Auto();
@@ -38,7 +38,7 @@ public class ConductorTest {
 		Moto unaMoto= new Moto();
 		unConductor.cambiarDeVehiculo(unaMoto);
 		Assert.assertEquals(unaMoto, unConductor.getVehiculo());
-	}*/
+	}
 	@Test
 	public void vehiculoDeberiaCrearseConUnaPenalizacionDeAvanceIgualAUno(){
 		Auto unAuto = new Auto();

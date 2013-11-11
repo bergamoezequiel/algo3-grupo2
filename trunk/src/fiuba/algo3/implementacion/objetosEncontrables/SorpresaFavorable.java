@@ -19,7 +19,7 @@ public class SorpresaFavorable extends Sorpresa {
 	 * sea menor a 1, se le agrega siempre 1 movimiento extra.
 	 */
 	@Override
-	public void interactuarCon(Conductor unConductor, Moto unaMoto) {
+	public void interactuarConMoto(Conductor unConductor) {
 		int penalizacionADescontar = ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
 		
 		if (penalizacionADescontar < 1){
@@ -36,7 +36,7 @@ public class SorpresaFavorable extends Sorpresa {
 	 * sea menor a 1, se le agrega siempre 1 movimiento extra.
 	 */
 	@Override
-	public void interactuarCon(Conductor unConductor, Auto unAuto) {
+	public void interactuarConAuto(Conductor unConductor) {
 		int penalizacionADescontar = ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
 		
 		if (penalizacionADescontar < 1){
@@ -53,7 +53,7 @@ public class SorpresaFavorable extends Sorpresa {
 	 * sea menor a 1, se le agrega siempre 1 movimiento extra.
 	 */
 	@Override
-	public void interactuarCon(Conductor unConductor, TodoTerreno unTodoTerreno){
+	public void interactuarConTodoTerreno(Conductor unConductor){
 	/*Redondea el valor a un numero entero*/
 		int penalizacionADescontar = ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
 		

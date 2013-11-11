@@ -15,7 +15,7 @@ public class ControlPolicialTest {
         ControlPolicial unControl = new ControlPolicial();
         Moto unaMoto=new Moto();
         Conductor unConductor= new Conductor(unaMoto);
-        unControl.interactuarCon(unConductor,unaMoto);
+        unControl.interactuarConMoto(unConductor);
         Assert.assertEquals(3,unConductor.getMovimientos());
 	}
 	
@@ -24,17 +24,17 @@ public class ControlPolicialTest {
 		ControlPolicial unControl = new ControlPolicial();
         Auto unAuto=new Auto();
         Conductor unConductor= new Conductor(unAuto);
-        unControl.interactuarCon(unConductor,unAuto);
+        unControl.interactuarConAuto(unConductor);
         Assert.assertEquals(3,unConductor.getMovimientos());
 	
 	}
 	
 	@Test
-	public void ElControlPolicialTendriaQuePenalizarALosTodoTerreno(){
+	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALosTodoTerreno(){
 		ControlPolicial unControl = new ControlPolicial();
         TodoTerreno unTodoTerreno=new TodoTerreno();
         Conductor unConductor= new Conductor(unTodoTerreno);
-        unControl.interactuarCon(unConductor,unTodoTerreno);
+        unControl.interactuarConTodoTerreno(unConductor);
         Assert.assertEquals(3,unConductor.getMovimientos());
 	}
 	
