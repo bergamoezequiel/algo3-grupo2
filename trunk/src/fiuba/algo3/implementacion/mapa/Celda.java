@@ -10,6 +10,9 @@ public class Celda{
 	private ContenidoDeCelda contenido;
 	private Mapa mapa;
 	
+	//Equivale a 2 cuadras a la redonda.
+	private final int distanciaMaximaEstablecida = 4;
+	
 	public Celda(Mapa unMapa, Coordenada unaCoordenada){
 		this.coordenada = unaCoordenada;
 		this.contenido = null;
@@ -38,5 +41,11 @@ public class Celda{
 		Coordenada coordenadaVecina = this.getCoordenada().sumar(unaDireccion.getDireccionComoCoordenada());
 		Celda celdaVecina = this.mapa.getCeldaEn(coordenadaVecina);
 		return celdaVecina;
+	}
+	
+	public boolean esVisiblePara (Celda unaCelda){
+		double distanciaEntreCoordes = this.getCoordenada().calcularDistancia(unaCelda.getCoordenada());
+		return (distanciaEntreCoordes <= this.distanciaMaximaEstablecida);
+		
 	}
 }

@@ -1,5 +1,6 @@
 package fiuba.algo3.implementacion.coordenadas;
 
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -40,6 +41,14 @@ public class CoordenadaTest {
 		unaCoordenada = new Coordenada(0,0);
 		otraCoordenada = new Coordenada(1,1);
 		Assert.assertTrue(unaCoordenada.calcularDistancia(otraCoordenada)==Math.sqrt(2));
+	}
+	
+	@Test
+	public void testLaDistanciaEntreEstasCoordenadasDeberiaSer4(){
+		Coordenada unaCoordenada = new Coordenada(2,2);
+		Coordenada otraCoordenada = new Coordenada(2,6);
+		
+		Assert.assertTrue(unaCoordenada.calcularDistancia(otraCoordenada)== 4);		
 	}
 
 }
