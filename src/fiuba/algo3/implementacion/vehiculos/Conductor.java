@@ -11,6 +11,7 @@ public class Conductor extends ContenidoDeCelda{
 	
 	private int penalizacionDeAvance;
 	private int movimientos;
+	private int alcanceDeVision;
 	private Vehiculo vehiculo;
 	
 	public Conductor(Vehiculo unVehiculo){
@@ -18,6 +19,7 @@ public class Conductor extends ContenidoDeCelda{
 		this.movimientos = 0;
 		this.penalizacionDeAvance = 1;
 		this.vehiculo = unVehiculo;
+		this.alcanceDeVision = 4;
 	}
 	
 	public void cambiarDeVehiculo(Vehiculo unVehiculo){
@@ -34,6 +36,10 @@ public class Conductor extends ContenidoDeCelda{
 	
 	public int getPenalizacionDeAvance(){
 		return this.penalizacionDeAvance;
+	}
+	
+	public int getAlcanceDeVision(){
+		return this.alcanceDeVision;
 	}
 	
 	public void aumentarMovimientosEn(int unosMovimientos){

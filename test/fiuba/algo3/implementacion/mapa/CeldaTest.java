@@ -55,23 +55,23 @@ public class CeldaTest{
 	public void testDeberiaDecirmeSiCiertasCeldasSonVisiblesONo(){
 		Mapa unMapa = new Mapa(new Coordenada(10, 10));
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(2, 2));
-		Conductor unVehiculo = new Conductor(new Auto());		
-		unaCelda.agregarContenido(unVehiculo);
+		Conductor unConductor = new Conductor(new Auto());		
+		unaCelda.agregarContenido(unConductor);
 		
 		Celda celdaVisible = unMapa.getCeldaEn(new Coordenada(6, 2));
-		Assert.assertTrue (celdaVisible.esVisiblePara(unaCelda));
+		Assert.assertTrue (celdaVisible.esVisiblePara(unConductor));
 		
 		celdaVisible = unMapa.getCeldaEn(new Coordenada(2, 6));
-		Assert.assertTrue (celdaVisible.esVisiblePara(unaCelda));
+		Assert.assertTrue (celdaVisible.esVisiblePara(unConductor));
 
 		celdaVisible = unMapa.getCeldaEn(new Coordenada(2, 6));
-		Assert.assertTrue (celdaVisible.esVisiblePara(unaCelda));
+		Assert.assertTrue (celdaVisible.esVisiblePara(unConductor));
 		
 		celdaVisible = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Assert.assertTrue (celdaVisible.esVisiblePara(unaCelda));		
+		Assert.assertTrue (celdaVisible.esVisiblePara(unConductor));		
 		
 		Celda celdaFueraDeRango = unMapa.getCeldaEn(new Coordenada(7, 2));
-		Assert.assertFalse (celdaFueraDeRango.esVisiblePara(unaCelda));
+		Assert.assertFalse (celdaFueraDeRango.esVisiblePara(unConductor));
 	}
 
 }

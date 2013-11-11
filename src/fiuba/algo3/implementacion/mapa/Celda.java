@@ -2,6 +2,7 @@ package fiuba.algo3.implementacion.mapa;
 
 import fiuba.algo3.implementacion.coordenadas.Coordenada;
 import fiuba.algo3.implementacion.coordenadas.Direccion;
+import fiuba.algo3.implementacion.vehiculos.Conductor;
 
 
 public class Celda{
@@ -43,9 +44,10 @@ public class Celda{
 		return celdaVecina;
 	}
 	
-	public boolean esVisiblePara (Celda unaCelda){
-		double distanciaEntreCoordes = this.getCoordenada().calcularDistancia(unaCelda.getCoordenada());
-		return (distanciaEntreCoordes <= this.distanciaMaximaEstablecida);
+	public boolean esVisiblePara (Conductor unConductor){
+		Celda celdaConductor = unConductor.getCelda();
+		double distanciaEntreCoordenadas = this.getCoordenada().calcularDistancia(celdaConductor.getCoordenada());
+		return (distanciaEntreCoordenadas <= unConductor.getAlcanceDeVision());
 		
 	}
 }
