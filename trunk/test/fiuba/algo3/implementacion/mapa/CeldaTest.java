@@ -54,7 +54,6 @@ public class CeldaTest{
 	@Test
 	public void testDeberiaDecirmeSiCiertasCeldasSonVisiblesONo(){
 		Conductor unConductor = new Conductor(new Auto());		
-		
 		//Creo un mapa con el doble de tamaño del alcance de vision del conductor.
 		//Ubico al conductor en el centro del mapa.
 		Mapa unMapa = new Mapa(new Coordenada(unConductor.getAlcanceDeVision()*2+2, unConductor.getAlcanceDeVision()*2+2));

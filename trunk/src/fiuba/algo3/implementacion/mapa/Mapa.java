@@ -32,7 +32,7 @@ public class Mapa {
 	}
 
 	public Celda getCeldaEn(Coordenada unaCoordenada) throws UbicacionEnMapaException  {
-		if (unaCoordenada.getX() >= this.columnas || unaCoordenada.getY() >= this.filas){
+		if (unaCoordenada.getX()<0 || unaCoordenada.getY()<0 || unaCoordenada.getX()>this.columnas-1 || unaCoordenada.getY()>this.filas-1){
 			throw new UbicacionEnMapaException();
 		}
 		ArrayList<Celda> fila = this.celdas.get(unaCoordenada.getX());

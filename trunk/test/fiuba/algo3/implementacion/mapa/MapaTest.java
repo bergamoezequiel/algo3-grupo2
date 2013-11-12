@@ -37,4 +37,12 @@ public class MapaTest {
 		unMapa.getCeldaEn(unaCoordenada);
 	}
 	
+	@Test(expected = UbicacionEnMapaException.class) 
+	public void testDeberiaLanzarExcepcionSiPidoUnaCeldaEnUnaCoordenadaFueraDeRango2(){
+		Mapa unMapa = new Mapa (new Coordenada (4, 4));
+		//La ubicacion 4, 4 esta fuera del mapa, el mapa va de (0,0) a (3,3)
+		Coordenada unaCoordenada = new Coordenada (-1, -1);
+		unMapa.getCeldaEn(unaCoordenada);
+	}
+	
 }
