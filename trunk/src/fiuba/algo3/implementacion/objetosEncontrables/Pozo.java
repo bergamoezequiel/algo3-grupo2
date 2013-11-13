@@ -20,17 +20,17 @@ public class Pozo extends Obstaculo {
 
 	@Override
 	public void interactuarConAuto(Conductor unConductor) {
-		unConductor.aumentarMovimientosEn(this.obtenerPenalizacion());		
+		unConductor.variarMovimientosEn(this.obtenerPenalizacion());		
 	}
 
 	@Override
 	public void interactuarConMoto(Conductor unConductor) {
-		unConductor.aumentarMovimientosEn(this.obtenerPenalizacion());		
+		unConductor.variarMovimientosEn(this.obtenerPenalizacion());		
 	}
 	
 	@Override
 	public void interactuarConTodoTerreno(Conductor unConductor) {
-		unConductor.aumentarMovimientosEn(0);	
+		unConductor.variarMovimientosEn(0);	
 	}
 	
 	@Override

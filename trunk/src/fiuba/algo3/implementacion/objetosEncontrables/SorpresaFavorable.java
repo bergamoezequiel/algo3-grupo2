@@ -10,64 +10,29 @@ public class SorpresaFavorable extends Sorpresa {
 	
 	public SorpresaFavorable() {
 		super();
-		this.penalizacion = 0.2;
+		this.penalizacion = -0.2;
+	}
+
+	public void aplicarPenalizacion(Conductor unConductor){
+		int penalizacionAAgregar = ((int) Math.floor(unConductor.getMovimientos()*this.penalizacion));
+		unConductor.variarMovimientosEn(penalizacionAAgregar);
 	}
 	
-	
-	/*
-	 * En caso de que el producto de los movimientos con el porcentaje de la penalizacion
-	 * sea menor a 1, se le agrega siempre 1 movimiento extra.
-	 */
 	@Override
 	public void interactuarConMoto(Conductor unConductor) {
-		int penalizacionADescontar = ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
-		
-		if (penalizacionADescontar < 1){
-			unConductor.disminuirMovimientosEn(1);
-		} else{
-			unConductor.disminuirMovimientosEn (penalizacionADescontar);
-		}
+		aplicarPenalizacion(unConductor);
 	}
 	
-
-	
-	/*
-	 * En caso de que el producto de los movimientos con el porcentaje de la penalizacion
-	 * sea menor a 1, se le agrega siempre 1 movimiento extra.
-	 */
 	@Override
 	public void interactuarConAuto(Conductor unConductor) {
-		int penalizacionADescontar = ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
-		
-		if (penalizacionADescontar < 1){
-			unConductor.disminuirMovimientosEn(1);
-		} else{
-			unConductor.disminuirMovimientosEn (penalizacionADescontar);
-		}
+		aplicarPenalizacion(unConductor);
 	}
 	
-	
-	
-	/*
-	 * En caso de que el producto de los movimientos con el porcentaje de la penalizacion
-	 * sea menor a 1, se le agrega siempre 1 movimiento extra.
-	 */
 	@Override
 	public void interactuarConTodoTerreno(Conductor unConductor){
-	/*Redondea el valor a un numero entero*/
-		int penalizacionADescontar = ((int) Math.round(unConductor.getMovimientos()*this.penalizacion));
-		
-		if (penalizacionADescontar < 1){
-			unConductor.disminuirMovimientosEn(1);
-		} else{
-			unConductor.disminuirMovimientosEn (penalizacionADescontar);
-		}
+		aplicarPenalizacion(unConductor);
 	}
-		
-	
 
-	/*No Afecta al Paso de Vehiculos*/
-	
 	@Override
 	public boolean dejaPasar(Moto unaMoto) {
 		return true;

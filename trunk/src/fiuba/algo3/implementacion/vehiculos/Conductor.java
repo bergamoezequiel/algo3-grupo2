@@ -41,19 +41,13 @@ public class Conductor extends ContenidoDeCelda{
 	public int getAlcanceDeVision(){
 		return this.alcanceDeVision;
 	}
-	
-	
-	//Preguntarle a Nico Paez si dejamos dos metodos o los unificamos.
-	public void aumentarMovimientosEn(int unosMovimientos){
-		this.movimientos += unosMovimientos;
-	}
-	
-	public void disminuirMovimientosEn(int unosMovimientos){
-		if ((this.movimientos - unosMovimientos)<=0) {
+
+	public void variarMovimientosEn(int unosMovimientos){
+		if ((this.movimientos + unosMovimientos)<=0) {
 			this.movimientos=0;
 		}
 		else{
-			this.movimientos = this.movimientos - unosMovimientos;
+			this.movimientos += unosMovimientos;
 		}
 	}
 	
@@ -62,7 +56,7 @@ public class Conductor extends ContenidoDeCelda{
 		celdaInicial.quitarContenido();
 		Celda celdaFinal = celdaInicial.getVecino(unaDireccion).getVecino(unaDireccion);
 		celdaFinal.agregarContenido(this);
-		this.aumentarMovimientosEn(this.getPenalizacionDeAvance());
+		this.variarMovimientosEn(this.getPenalizacionDeAvance());
 	}
 	
 	public void avanzarEnDireccion(Direccion unaDireccion) {
@@ -75,8 +69,8 @@ public class Conductor extends ContenidoDeCelda{
 		else{			
 			if (this.getVehiculo().meDejanPasar(unObjetoEncontrable)) {
 				this.desplazarseASiguienteEsquina(unaDireccion);
-			    this.getVehiculo().interactuar(unObjetoEncontrable, this);
 			}
+			this.getVehiculo().interactuar(unObjetoEncontrable, this);
 		}
 	}
 	
