@@ -42,6 +42,8 @@ public class Conductor extends ContenidoDeCelda{
 		return this.alcanceDeVision;
 	}
 	
+	
+	//Preguntarle a Nico Paez si dejamos dos metodos o los unificamos.
 	public void aumentarMovimientosEn(int unosMovimientos){
 		this.movimientos += unosMovimientos;
 	}
@@ -50,7 +52,9 @@ public class Conductor extends ContenidoDeCelda{
 		if ((this.movimientos - unosMovimientos)<=0) {
 			this.movimientos=0;
 		}
-		this.movimientos = this.movimientos - unosMovimientos;
+		else{
+			this.movimientos = this.movimientos - unosMovimientos;
+		}
 	}
 	
 	public void desplazarseASiguienteEsquina(Direccion unaDireccion){
