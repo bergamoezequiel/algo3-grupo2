@@ -38,6 +38,22 @@ public class ControlPolicialTest {
         Assert.assertEquals(3,unConductor.getMovimientos());
 	}
 	
+	@Test
+	public void elControlPolicialNoTendriaQueDejarPasarANadie(){
+		/*
+		 * No deja pasar a nadie por como fue definida la funcion RANDOM().
+		 */
+		ControlPolicial unControlPolicial = new ControlPolicial();
+		Auto unAuto = new Auto();
+		Moto unaMoto = new Moto();
+		TodoTerreno unTodoTerreno = new TodoTerreno();
+		
+		Assert.assertEquals (false, unControlPolicial.dejaPasar(unAuto));
+		Assert.assertEquals (false, unControlPolicial.dejaPasar(unaMoto));
+		Assert.assertEquals (false, unControlPolicial.dejaPasar(unTodoTerreno));
+		
+	}
+	
 	
 
 }
