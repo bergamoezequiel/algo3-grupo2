@@ -91,6 +91,7 @@ public class SorpresaDesfavorableTest {
 		assertEquals (3 , unConductor.getMovimientos());
 	}
 	
+	@Test
 	public void deberiaAumentarLosMovimientosDeLaTodoTerrenoAlPasarPorUnaSorpresa(){
 		Mapa unMapa = new Mapa(new Coordenada(10, 10));
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));

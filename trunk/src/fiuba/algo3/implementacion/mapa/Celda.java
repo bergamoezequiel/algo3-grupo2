@@ -11,8 +11,7 @@ public class Celda{
 	private ContenidoDeCelda contenido;
 	private Mapa mapa;
 	
-	//Equivale a 2 cuadras a la redonda.
-	private final int distanciaMaximaEstablecida = 4;
+
 	
 	public Celda(Mapa unMapa, Coordenada unaCoordenada){
 		this.coordenada = unaCoordenada;
