@@ -8,10 +8,9 @@ import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 public class ControlPolicial extends Obstaculo {
 	int penalizacion;
 	/*Probabilidad de quedar demorados por el control policial*/
-	final double probabilidadAuto = 0.5;
-	final double probabilidadMoto = 0.7;
-	final double probabilidadTodoTerreno = 0.3;
-	
+	final double probabilidadDePasarMoto = 0.7;
+	final double probabilidadDePasarAuto = 0.5;
+	final double probabilidadDePasarTodoTerreno = 0.3;
 	
 	/*
 	 * Este metodo debera ser borrado, se creo solamente para que los tests
@@ -42,41 +41,36 @@ public class ControlPolicial extends Obstaculo {
     	unConductor.variarMovimientosEn(this.obtenerPenalizacion());		
     }
 
-   @Override
-   public void interactuarConTodoTerreno(Conductor unConductor) {
-	   unConductor.variarMovimientosEn(this.obtenerPenalizacion());	
-   }
-   
-   @Override
-	public boolean dejaPasar(Auto unAuto) {
-		//double valorAletorio = Math.random();
-		double valorAletorio = this.RANDOM();
-		if (valorAletorio <= (this.probabilidadAuto)){
-			return true;
-		}
-		else
-			return false;
-	}
+    @Override
+    public void interactuarConTodoTerreno(Conductor unConductor) {
+    	unConductor.variarMovimientosEn(this.obtenerPenalizacion());	
+    }
 
+    public boolean probabilidadDePasarSegunVehiculo(double probabilidad){
+    	boolean puedePasar;
+    	//double valorAletorio = Math.random();
+    	double valorAletorio = this.RANDOM();
+    	if (valorAletorio <= probabilidad){
+    		puedePasar = true;
+    	}
+    	else{
+    		puedePasar = false;
+    	}
+    	return puedePasar;
+    }
+    
 	@Override
 	public boolean dejaPasar(Moto unaMoto) {
-		//double valorAletorio = Math.random();
-		double valorAletorio = this.RANDOM();
-		if (valorAletorio <= (this.probabilidadMoto)){
-			return true;
-		}
-		else
-			return false;
+		return probabilidadDePasarSegunVehiculo(this.probabilidadDePasarMoto);
 	}
 
+    @Override
+	public boolean dejaPasar(Auto unAuto) {
+		return probabilidadDePasarSegunVehiculo(this.probabilidadDePasarAuto);
+	}
+	
 	@Override
 	public boolean dejaPasar(TodoTerreno unTodoTerreno) {
-		//double valorAletorio = Math.random();
-		double valorAletorio = this.RANDOM();
-		if (valorAletorio <= (this.probabilidadTodoTerreno)){
-			return true;
-		}
-		else
-			return false;
+		return probabilidadDePasarSegunVehiculo(this.probabilidadDePasarTodoTerreno);
 	}
 }
