@@ -12,19 +12,13 @@ public class Coordenada {
 
 	@Override
 	public boolean equals (Object unObjeto) {
-		boolean sonIguales;
+		boolean sonIguales = false;
 		
 		if (unObjeto instanceof Coordenada) {
 			Coordenada unaCoordenada = (Coordenada) unObjeto;
 			if ( this.getX() == unaCoordenada.getX() && this.getY() == unaCoordenada.getY() ) {
 				sonIguales = true;
 			}
-			else{
-				sonIguales = false;
-			}
-		}
-		else{
-			sonIguales = false;
 		}
 		return sonIguales;
 	}
