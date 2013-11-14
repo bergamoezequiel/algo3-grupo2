@@ -63,7 +63,15 @@ public class Conductor extends ContenidoDeCelda{
 		ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(unaDireccion).getContenido();
 		ObjetoEncontrable unObjetoEncontrable = (ObjetoEncontrable) contenidoVecino;
 		
-		if (unObjetoEncontrable == null){
+		if (unObjetoEncontrable == null || this.getVehiculo().meDejanPasar(unObjetoEncontrable)){
+			this.desplazarseASiguienteEsquina(unaDireccion);
+		}
+		
+		if (unObjetoEncontrable != null){
+			this.getVehiculo().interactuar(unObjetoEncontrable, this);
+		}
+
+		/*if (unObjetoEncontrable == null){
 			this.desplazarseASiguienteEsquina(unaDireccion);
 		}
 		else{			
@@ -71,7 +79,7 @@ public class Conductor extends ContenidoDeCelda{
 				this.desplazarseASiguienteEsquina(unaDireccion);
 			}
 			this.getVehiculo().interactuar(unObjetoEncontrable, this);
-		}
+		}*/
 	}
 	
 }
