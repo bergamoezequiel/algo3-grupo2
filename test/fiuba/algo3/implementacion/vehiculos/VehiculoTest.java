@@ -13,4 +13,11 @@ public class VehiculoTest {
 		Auto otroAuto = new Auto();
 		Assert.assertEquals(unAuto, otroAuto);
 	}
+	
+	@Test
+	public void testNotEquals(){
+		Auto unAuto = new Auto();
+		Moto unaMoto = new Moto();
+		Assert.assertFalse(unAuto.equals(unaMoto));
+	}
 }
