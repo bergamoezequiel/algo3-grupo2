@@ -39,7 +39,7 @@ public class ControlPolicialTest {
 	}
 	
 	@Test
-	public void elControlPolicialNoTendriaQueDejarPasarANadie(){
+	public void elControlPolicialSoloTendriaQueDejarPasarALaMoto(){
 		/*
 		 * No deja pasar a nadie por como fue definida la funcion RANDOM().
 		 */
@@ -49,8 +49,9 @@ public class ControlPolicialTest {
 		TodoTerreno unTodoTerreno = new TodoTerreno();
 		
 		Assert.assertEquals (false, unControlPolicial.dejaPasar(unAuto));
-		Assert.assertEquals (false, unControlPolicial.dejaPasar(unaMoto));
 		Assert.assertEquals (false, unControlPolicial.dejaPasar(unTodoTerreno));
+		
+		Assert.assertEquals (true, unControlPolicial.dejaPasar(unaMoto));
 		
 	}
 	

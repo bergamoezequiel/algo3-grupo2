@@ -18,8 +18,8 @@ public class ControlPolicial extends Obstaculo {
 	 * para testear un RANDOM.
 	 * 
 	 */
-	private int RANDOM() {
-		return 1;
+	private double RANDOM(double numero) {
+		return numero;
 	}
 	
 	public ControlPolicial() {
@@ -49,7 +49,7 @@ public class ControlPolicial extends Obstaculo {
     public boolean probabilidadDePasarSegunVehiculo(double probabilidad){
     	boolean puedePasar;
     	//double valorAletorio = Math.random();
-    	double valorAletorio = this.RANDOM();
+    	double valorAletorio = this.RANDOM(0.6);
     	if (valorAletorio <= probabilidad){
     		puedePasar = true;
     	}
