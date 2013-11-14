@@ -23,6 +23,22 @@ public class CoordenadaTest {
 	}
 	
 	@Test
+	public void testDeberianSerDistintosDosObjetosCoordenadasSiTienenDistintosParametros(){
+		Coordenada unaCoordenada = new Coordenada(2,1);
+		Coordenada otraCoordenada = new Coordenada(4,4);
+		Assert.assertFalse(unaCoordenada.equals(otraCoordenada));
+	}
+	
+	@Test
+	public void testDeberiaDevolverFalsoSiComparoCoordenadasConDirecciones(){
+		Coordenada unaCoordenada = new Coordenada(2,1);
+		Direccion arriba = new Arriba();
+		
+		Assert.assertFalse(unaCoordenada.equals(arriba));
+		
+	}
+	
+	@Test
 	public void testSumarDosCoordenadas(){
 		Coordenada unaCoordenada = new Coordenada(2,1);
 		Coordenada otraCoordenada = new Coordenada(2,1);
