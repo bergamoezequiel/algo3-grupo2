@@ -5,7 +5,7 @@ import fiuba.algo3.implementacion.vehiculos.Conductor;
 import fiuba.algo3.implementacion.vehiculos.Moto;
 import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 
-public class ControlPolicial extends Obstaculo {
+public class ControlPolicial extends ObjetoEncontrable {
 	int penalizacion;
 	/*Probabilidad de quedar demorados por el control policial*/
 	final double probabilidadDePasarMoto = 0.7;

@@ -5,7 +5,7 @@ import fiuba.algo3.implementacion.vehiculos.Conductor;
 import fiuba.algo3.implementacion.vehiculos.Moto;
 import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 
-public class Pozo extends Obstaculo {
+public class Pozo extends ObjetoEncontrable {
 	int penalizacion;
 	
 	
