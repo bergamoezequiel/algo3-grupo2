@@ -1,11 +1,12 @@
 package fiuba.algo3.implementacion.objetosEncontrables;
 
+import fiuba.algo3.implementacion.mapa.ContenidoDeCelda;
 import fiuba.algo3.implementacion.vehiculos.Auto;
 import fiuba.algo3.implementacion.vehiculos.Conductor;
 import fiuba.algo3.implementacion.vehiculos.Moto;
 import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 
-public class Pozo extends ObjetoEncontrable {
+public class Pozo extends ContenidoDeCelda implements Interactuable{
 	int penalizacion;
 	
 	

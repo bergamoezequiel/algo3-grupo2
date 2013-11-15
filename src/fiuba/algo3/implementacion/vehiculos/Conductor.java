@@ -3,7 +3,7 @@ package fiuba.algo3.implementacion.vehiculos;
 import fiuba.algo3.implementacion.coordenadas.Direccion;
 import fiuba.algo3.implementacion.mapa.Celda;
 import fiuba.algo3.implementacion.mapa.ContenidoDeCelda;
-import fiuba.algo3.implementacion.objetosEncontrables.ObjetoEncontrable;
+import fiuba.algo3.implementacion.objetosEncontrables.*;
 import fiuba.algo3.implementacion.vehiculos.Vehiculo;
 
 
@@ -61,7 +61,7 @@ public class Conductor extends ContenidoDeCelda{
 	
 	public void avanzarEnDireccion(Direccion unaDireccion) {
 		ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(unaDireccion).getContenido();
-		ObjetoEncontrable unObjetoEncontrable = (ObjetoEncontrable) contenidoVecino;
+		Interactuable unObjetoEncontrable = (Interactuable) contenidoVecino;
 		
 		if (unObjetoEncontrable == null || this.getVehiculo().meDejanPasar(unObjetoEncontrable)){
 			this.desplazarseASiguienteEsquina(unaDireccion);

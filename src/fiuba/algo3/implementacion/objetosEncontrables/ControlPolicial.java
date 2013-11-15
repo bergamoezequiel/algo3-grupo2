@@ -1,11 +1,12 @@
 package fiuba.algo3.implementacion.objetosEncontrables;
 
+import fiuba.algo3.implementacion.mapa.ContenidoDeCelda;
 import fiuba.algo3.implementacion.vehiculos.Auto;
 import fiuba.algo3.implementacion.vehiculos.Conductor;
 import fiuba.algo3.implementacion.vehiculos.Moto;
 import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 
-public class ControlPolicial extends ObjetoEncontrable {
+public class ControlPolicial extends ContenidoDeCelda implements Interactuable {
 	int penalizacion;
 	/*Probabilidad de quedar demorados por el control policial*/
 	final double probabilidadDePasarMoto = 0.7;
