@@ -1,6 +1,6 @@
 package fiuba.algo3.implementacion.vehiculos;
 
-import fiuba.algo3.implementacion.objetosEncontrables.ObjetoEncontrable;
+import fiuba.algo3.implementacion.objetosEncontrables.*;
 
 public abstract class Vehiculo{
 
@@ -16,7 +16,7 @@ public abstract class Vehiculo{
 		return boEquals;
 	}
 	
-	public abstract void interactuar(ObjetoEncontrable unObjetoEncontrable, Conductor unConductor);
-	public abstract boolean meDejanPasar(ObjetoEncontrable unObjetoEncontrable);
+	public abstract void interactuar(Interactuable unObjetoEncontrable, Conductor unConductor);
+	public abstract boolean meDejanPasar(Interactuable unObjetoEncontrable);
 
 }
