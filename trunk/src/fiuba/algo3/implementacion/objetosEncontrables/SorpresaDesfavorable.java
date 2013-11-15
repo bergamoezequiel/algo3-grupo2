@@ -33,20 +33,7 @@ public class SorpresaDesfavorable extends Sorpresa {
 		this.aplicarPenalizacion(unConductor);
 	}	
 
-	@Override
-	public boolean dejaPasar(Moto unaMoto) {
-		return true;
-	}
 
-	@Override
-	public boolean dejaPasar(Auto unAuto) {
-		return true;
-	}
-
-	@Override
-	public boolean dejaPasar(TodoTerreno unTodoTerreno) {
-		return true;
-	}
 }
 
 
