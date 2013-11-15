@@ -5,7 +5,7 @@ import fiuba.algo3.implementacion.vehiculos.Conductor;
 import fiuba.algo3.implementacion.vehiculos.Moto;
 import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 
-public class Piquete extends Obstaculo {
+public class Piquete extends ObjetoEncontrable {
 	int penalizacion;
 
 	public Piquete() {
