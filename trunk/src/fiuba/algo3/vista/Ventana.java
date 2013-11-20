@@ -1,66 +1,90 @@
 package fiuba.algo3.vista;
+
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridLayout;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.Observable;
+import java.util.Observer;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
-import fiuba.algo3.modelo.coordenadas.Coordenada;
-import fiuba.algo3.modelo.mapa.Mapa;
+import javax.swing.SwingUtilities;
 
 
-public class Ventana extends JPanel {
+public class Ventana extends JFrame implements KeyListener, Observer {
 	
-	private int MARGEN_IZQUIERDO= 100;
-	private int MARGEN_SUPERIOR = 75;
-	private int DIMENSION_CUADRADO = 40;
-
-	public void paint(Graphics g) {
-  
-		Graphics2D g2 = (Graphics2D) g;
-		
-    
-		Mapa unMapa = new Mapa(new Coordenada(11, 11));
-		int filaActual = 0;
-		int columnaActual = 0;
-		
-		//Pintando todo de Gris.
-		for (int i = 0; i < unMapa.getCantidadDeFilas(); i++) {
-			for (int j = 0; j < unMapa.getCantidadDeColumnas(); j++) {
-				g.setColor(Color.darkGray);
-				g.fillRect(MARGEN_IZQUIERDO + columnaActual, MARGEN_SUPERIOR + filaActual, DIMENSION_CUADRADO, DIMENSION_CUADRADO);
-				columnaActual +=DIMENSION_CUADRADO;    
+	public Ventana(){	
+		setTitle("Juego GPS CHALLENGE");
+		setSize(640, 640); // Resolucion de la ventana
+		setLocationRelativeTo(null); // Ubica la ventana en el centro de la pantalla
+		inicializarConCosas();
+	}
+	
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				Ventana unaVentana = new Ventana(); 
+				unaVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				unaVentana.getContentPane(); 
+				unaVentana.setResizable(false);
+				unaVentana.setVisible(true);               
 			}
-			filaActual += DIMENSION_CUADRADO;
-			columnaActual = 0;
-		}  
-    
-		
-		//Pintando las MANZANAS de naranja.
-		filaActual = DIMENSION_CUADRADO;
-		columnaActual = DIMENSION_CUADRADO;
-		for ( int i = 1; i < unMapa.getCantidadDeFilas(); i+=2 ) {
-			for (int j = 1; j < unMapa.getCantidadDeColumnas(); j+=2) {
-				g.setColor(Color.orange);
-				g.fillRect(MARGEN_IZQUIERDO + columnaActual, MARGEN_SUPERIOR + filaActual, DIMENSION_CUADRADO, DIMENSION_CUADRADO);
-				columnaActual +=DIMENSION_CUADRADO*2;       
-			}  
-			filaActual +=DIMENSION_CUADRADO*2;
-			columnaActual = DIMENSION_CUADRADO;
-		}    
+		});
 	}
 
-  
-  public static void main(String[] args) {
+	public void inicializarConCosas(){
+		JMenuBar menu = new JMenuBar();
+		JMenu opciones= new JMenu("Opciones");
+		JMenu aboutUs= new JMenu("About us");
+				
+		JMenuItem opcionGuardar = new JMenuItem("Guardar");
+		JMenuItem opcionVerPuntaje= new JMenuItem("Ver Puntaje");
+		JMenuItem opcionSalir = new JMenuItem("Salir"); 
+		//aboutUs.addMenuListener(new AboutUsListener());
+		//this.salir=opcionSalir;
+		opciones.add(opcionGuardar);
+		opciones.add(opcionVerPuntaje);
+		opciones.add(opcionSalir);
+		
+		menu.add(opciones);
+		menu.add(aboutUs);
+		setJMenuBar(menu);
+	}
 	
-    JFrame frame = new JFrame();
-    frame.getContentPane().add(new Ventana());
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Apéndice de método generado automáticamente
+		
+	}
 
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(800, 800);
-    frame.setVisible(true);
-    frame.setBackground(Color.white);
-    frame.setTitle("GPS BATTLE v1.0");
-  }
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Apéndice de método generado automáticamente
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Apéndice de método generado automáticamente
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Apéndice de método generado automáticamente
+		
+	}
 }
