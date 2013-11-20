@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Observable;
@@ -27,7 +28,7 @@ public class Ventana extends JFrame implements KeyListener, Observer {
 	
 	public Ventana(){	
 		setTitle("Juego GPS CHALLENGE");
-		setSize(640, 640); // Resolucion de la ventana
+		setSize(640, 480); // Resolucion de la ventana
 		setLocationRelativeTo(null); // Ubica la ventana en el centro de la pantalla
 		inicializarConCosas();
 	}
@@ -48,19 +49,22 @@ public class Ventana extends JFrame implements KeyListener, Observer {
 	public void inicializarConCosas(){
 		JMenuBar menu = new JMenuBar();
 		JMenu opciones= new JMenu("Opciones");
-		JMenu aboutUs= new JMenu("About us");
+		JMenu about= new JMenu("About");
 				
 		JMenuItem opcionGuardar = new JMenuItem("Guardar");
 		JMenuItem opcionVerPuntaje= new JMenuItem("Ver Puntaje");
-		JMenuItem opcionSalir = new JMenuItem("Salir"); 
-		//aboutUs.addMenuListener(new AboutUsListener());
+		JMenuItem opcionSalir = new JMenuItem("Salir");
+		
+		about.addMenuListener(new AboutListener());
 		//this.salir=opcionSalir;
 		opciones.add(opcionGuardar);
 		opciones.add(opcionVerPuntaje);
 		opciones.add(opcionSalir);
 		
+		
+		
 		menu.add(opciones);
-		menu.add(aboutUs);
+		menu.add(about);
 		setJMenuBar(menu);
 	}
 	
