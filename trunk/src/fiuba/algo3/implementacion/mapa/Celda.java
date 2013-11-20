@@ -27,7 +27,7 @@ public class Celda{
 		return this.coordenada;
 	}
 	
-	public void agregarContenido(ContenidoDeCelda unContenido) {
+	public void agregarContenido(ContenidoDeCelda unContenido) throws UbicacionEnMapaException {
 		this.contenido = unContenido;
 		this.contenido.setCelda(this);
 	}

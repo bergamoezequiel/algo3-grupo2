@@ -28,7 +28,7 @@ public class CeldaTest{
 	@Test
 	public void testDeberiaAgregarUnContenidoALaCelda(){
 		Mapa unMapa = new Mapa(new Coordenada(3, 3));
-		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(1, 2));		
+		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(2, 2));		
 		Conductor unContenido = new Conductor(new Auto());
 		unaCelda.agregarContenido(unContenido);
 		Assert.assertEquals(unContenido, unaCelda.getContenido());
@@ -38,7 +38,7 @@ public class CeldaTest{
 	@Test
 	public void testDeberiaAgregarYLuegoQuitarUnContenidoDeLaCelda(){
 		Mapa unMapa = new Mapa(new Coordenada(3, 3));
-		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(1, 2));
+		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(2, 2));
 		Conductor unVehiculo = new Conductor(new Auto());		
 		unaCelda.agregarContenido(unVehiculo);
 		

@@ -25,10 +25,9 @@ public class Conductor extends ContenidoDeCelda{
 	}
 	
 	@Override
-	public void setCelda(Celda unaCelda){
+	public void setCelda(Celda unaCelda) throws UbicacionEnMapaException {
 		Coordenada coordenadaInicial = unaCelda.getCoordenada();
-		
-		if (coordenadaInicial.getX()%2 != 0 && coordenadaInicial.getY()%2 != 0){
+		if (coordenadaInicial.getX()%2 != 0 || coordenadaInicial.getY()%2 != 0){
 			throw new UbicacionEnMapaException();
 		}
 		this.celda = unaCelda;
