@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.vehiculos;
 
+import java.util.Observer;
+
 import fiuba.algo3.modelo.coordenadas.Coordenada;
 import fiuba.algo3.modelo.coordenadas.Direccion;
 import fiuba.algo3.modelo.mapa.Celda;
@@ -11,6 +13,7 @@ import fiuba.algo3.modelo.vehiculos.Vehiculo;
 
 public class Conductor extends ContenidoDeCelda{
 	
+	private Observer observador;
 	private int penalizacionDeAvance;
 	private int movimientos;
 	private int alcanceDeVision;
@@ -31,6 +34,10 @@ public class Conductor extends ContenidoDeCelda{
 			throw new UbicacionEnMapaException();
 		}
 		this.celda = unaCelda;
+	}
+
+	public void agregarObservador(Observer unObservador){
+		this.observador = unObservador;
 	}
 	
 	public void cambiarDeVehiculo(Vehiculo unVehiculo){
@@ -83,6 +90,7 @@ public class Conductor extends ContenidoDeCelda{
 			}
 			this.getVehiculo().interactuar(unObjetoEncontrable, this);
 		}
+		//this.observador.update(null, null);
 	}
 	
 }

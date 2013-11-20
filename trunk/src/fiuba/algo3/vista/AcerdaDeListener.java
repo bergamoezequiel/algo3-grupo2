@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
-public class AboutListener implements MenuListener{
+public class AcerdaDeListener implements MenuListener{
 
 	@Override
 	public void menuCanceled(MenuEvent arg0) {
@@ -20,7 +20,7 @@ public class AboutListener implements MenuListener{
 
 	@Override
 	public void menuSelected(MenuEvent arg0) {
-		JFrame unaVentana = new AboutVentana();
+		JFrame unaVentana = new AcercaDeVentana();
 		unaVentana.setVisible(true);
 		unaVentana.setAlwaysOnTop(true);	
 	}
