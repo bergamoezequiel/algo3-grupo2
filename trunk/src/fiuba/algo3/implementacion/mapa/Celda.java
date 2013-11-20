@@ -33,7 +33,7 @@ public class Celda{
 	}
 
 	public void quitarContenido() {
-		this.contenido.setCelda(null);
+		this.contenido.setCeldaNull();
 		this.contenido = null;
 	}
 

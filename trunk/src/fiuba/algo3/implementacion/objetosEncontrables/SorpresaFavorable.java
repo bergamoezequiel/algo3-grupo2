@@ -1,9 +1,7 @@
 package fiuba.algo3.implementacion.objetosEncontrables;
 
-import fiuba.algo3.implementacion.vehiculos.Auto;
 import fiuba.algo3.implementacion.vehiculos.Conductor;
-import fiuba.algo3.implementacion.vehiculos.Moto;
-import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
+
 
 public class SorpresaFavorable extends Sorpresa {
 	double penalizacion;
