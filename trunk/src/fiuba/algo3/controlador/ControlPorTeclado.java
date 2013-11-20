@@ -1,4 +1,4 @@
-package fiuba.algo3.control;
+package fiuba.algo3.controlador;
 
 import java.awt.event.*;
 
