@@ -13,7 +13,7 @@ public class ContenidoDeCeldaTest{
 	@Test
 	public void testSetterYGetterDelContenidoDeCelda(){
 		Mapa unMapa = new Mapa(new Coordenada(3, 3));
-		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(0, 0));
+		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(1, 0));
 		Pozo unPozo = new Pozo();
 		
 		Assert.assertNull(unPozo.getCelda());
