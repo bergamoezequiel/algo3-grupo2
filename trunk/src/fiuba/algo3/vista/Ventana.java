@@ -6,8 +6,8 @@ import java.awt.Graphics2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import fiuba.algo3.implementacion.coordenadas.Coordenada;
-import fiuba.algo3.implementacion.mapa.Mapa;
+import fiuba.algo3.modelo.coordenadas.Coordenada;
+import fiuba.algo3.modelo.mapa.Mapa;
 
 
 public class Ventana extends JPanel {
