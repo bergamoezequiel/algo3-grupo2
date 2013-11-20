@@ -11,12 +11,21 @@ import fiuba.algo3.implementacion.coordenadas.Direccion;
 import fiuba.algo3.implementacion.coordenadas.Izquierda;
 import fiuba.algo3.implementacion.mapa.Celda;
 import fiuba.algo3.implementacion.mapa.Mapa;
+import fiuba.algo3.implementacion.mapa.UbicacionEnMapaException;
 import fiuba.algo3.implementacion.vehiculos.Auto;
 import fiuba.algo3.implementacion.vehiculos.Conductor;
 
 
 public class ConductorTest {
 
+	/*@Test(expected = UbicacionEnMapaException.class) 
+	public void vehiculoDeberiaLanzarExcepcionSiSeCreaEnCoordenadaImpar(){
+		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(1, 0));
+		Conductor unConductor = new Conductor(new Auto());
+		celdaInicial.agregarContenido(unConductor);
+	}*/
+	
 	@Test
 	public void vehiculoDeberiaTener0MovimientosAlCrearse(){
 		Conductor unConductor = new Conductor(new Auto());

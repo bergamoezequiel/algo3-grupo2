@@ -1,9 +1,6 @@
 package fiuba.algo3.implementacion.objetosEncontrables;
 
-import fiuba.algo3.implementacion.vehiculos.Auto;
 import fiuba.algo3.implementacion.vehiculos.Conductor;
-import fiuba.algo3.implementacion.vehiculos.Moto;
-import fiuba.algo3.implementacion.vehiculos.TodoTerreno;
 
 public class SorpresaDesfavorable extends Sorpresa {
 	double penalizacion;
@@ -17,21 +14,21 @@ public class SorpresaDesfavorable extends Sorpresa {
 		int penalizacionAAgregar = ((int) Math.ceil(unConductor.getMovimientos()*this.penalizacion));
 		unConductor.variarMovimientosEn(penalizacionAAgregar);
 	}
-	
-	@Override
-	public void interactuarConMoto(Conductor unConductor) {
-		this.aplicarPenalizacion(unConductor);
-	}
-	
+
 	@Override
 	public void interactuarConAuto(Conductor unConductor) {
-		this.aplicarPenalizacion(unConductor);
-	}	
-	
+		aplicarPenalizacion(unConductor);
+	}
+
 	@Override
-	public void interactuarConTodoTerreno(Conductor unConductor){
-		this.aplicarPenalizacion(unConductor);
-	}	
+	public void interactuarConMoto(Conductor unConductor) {
+		aplicarPenalizacion(unConductor);
+	}
+
+	@Override
+	public void interactuarConTodoTerreno(Conductor unConductor) {
+		aplicarPenalizacion(unConductor);
+	}
 
 
 }

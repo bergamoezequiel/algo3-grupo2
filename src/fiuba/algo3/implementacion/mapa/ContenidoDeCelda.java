@@ -2,13 +2,15 @@ package fiuba.algo3.implementacion.mapa;
 
 public abstract class ContenidoDeCelda {
 	
-	private Celda celda;
+	protected Celda celda;
 	
 	public Celda getCelda(){
 		return this.celda;
 	}
 	
-	public void setCelda(Celda unaCelda){
-		this.celda = unaCelda;
+	public abstract void setCelda(Celda unaCelda);
+	
+	public void setCeldaNull(){
+		this.celda = null;
 	}
 }

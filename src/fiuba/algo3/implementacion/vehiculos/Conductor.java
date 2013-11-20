@@ -1,8 +1,10 @@
 package fiuba.algo3.implementacion.vehiculos;
 
+import fiuba.algo3.implementacion.coordenadas.Coordenada;
 import fiuba.algo3.implementacion.coordenadas.Direccion;
 import fiuba.algo3.implementacion.mapa.Celda;
 import fiuba.algo3.implementacion.mapa.ContenidoDeCelda;
+import fiuba.algo3.implementacion.mapa.UbicacionEnMapaException;
 import fiuba.algo3.implementacion.objetosEncontrables.*;
 import fiuba.algo3.implementacion.vehiculos.Vehiculo;
 
@@ -20,6 +22,16 @@ public class Conductor extends ContenidoDeCelda{
 		this.penalizacionDeAvance = 1;
 		this.vehiculo = unVehiculo;
 		this.alcanceDeVision = 4;
+	}
+	
+	@Override
+	public void setCelda(Celda unaCelda){
+		Coordenada coordenadaInicial = unaCelda.getCoordenada();
+		
+		if (coordenadaInicial.getX()%2 != 0 && coordenadaInicial.getY()%2 != 0){
+			throw new UbicacionEnMapaException();
+		}
+		this.celda = unaCelda;
 	}
 	
 	public void cambiarDeVehiculo(Vehiculo unVehiculo){
@@ -63,15 +75,7 @@ public class Conductor extends ContenidoDeCelda{
 		ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(unaDireccion).getContenido();
 		Interactuable unObjetoEncontrable = (Interactuable) contenidoVecino;
 		
-		if (unObjetoEncontrable == null || this.getVehiculo().meDejanPasar(unObjetoEncontrable)){
-			this.desplazarseASiguienteEsquina(unaDireccion);
-		}
-		
-		if (unObjetoEncontrable != null){
-			this.getVehiculo().interactuar(unObjetoEncontrable, this);
-		}
-
-		/*if (unObjetoEncontrable == null){
+		if (unObjetoEncontrable == null){
 			this.desplazarseASiguienteEsquina(unaDireccion);
 		}
 		else{			
@@ -79,7 +83,7 @@ public class Conductor extends ContenidoDeCelda{
 				this.desplazarseASiguienteEsquina(unaDireccion);
 			}
 			this.getVehiculo().interactuar(unObjetoEncontrable, this);
-		}*/
+		}
 	}
 	
 }
