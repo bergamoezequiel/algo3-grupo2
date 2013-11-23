@@ -29,10 +29,21 @@ import fiuba.algo3.controlador.ControlPorTeclado;
 public class Ventana extends JFrame implements Observer {
 	
 	public Ventana(){	
-		setTitle("Juego GPS CHALLENGE");
-		setSize(640, 480); // Resolucion de la ventana
-		setLocationRelativeTo(null); // Ubica la ventana en el centro de la pantalla
-		inicializarConCosas();
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				Ventana unaVentana = new Ventana(); 
+				unaVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				unaVentana.getContentPane(); 
+				unaVentana.setResizable(false);
+				unaVentana.setVisible(true);               
+			}
+		});
+		
+		//setTitle("Juego GPS CHALLENGE");
+		//setSize(640, 480); // Resolucion de la ventana
+		//setLocationRelativeTo(null); // Ubica la ventana en el centro de la pantalla
+		//inicializarConCosas();
 	}
 	
 	public static void main(String[] args) {
