@@ -24,11 +24,14 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 import fiuba.algo3.controlador.ControlPorTeclado;
+import fiuba.algo3.modelo.Juego;
 
 
 public class Ventana extends JFrame implements Observer {
 	
-	public Ventana(){	
+	private Juego juego;
+	
+	public Ventana(Juego unJuego){	
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
@@ -43,6 +46,8 @@ public class Ventana extends JFrame implements Observer {
 
 			}
 		});
+		
+		juego = unJuego;
 	}
 	
 
@@ -63,12 +68,10 @@ public class Ventana extends JFrame implements Observer {
 		menu.add(opciones);
 		menu.add(acercaDe);
 		setJMenuBar(menu);
-		
 	}
 	
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Apéndice de método generado automáticamente
-		
+		System.out.println("prueba5");
 	}
 }

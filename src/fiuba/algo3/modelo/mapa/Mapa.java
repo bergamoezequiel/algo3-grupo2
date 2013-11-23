@@ -1,10 +1,12 @@
 package fiuba.algo3.modelo.mapa;
 
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 import fiuba.algo3.modelo.coordenadas.Coordenada;
 
-public class Mapa {
+public class Mapa extends Observable{
     
 	private ArrayList<ArrayList<Celda>> celdas;
 	private int filas;
@@ -21,6 +23,9 @@ public class Mapa {
 			}
 			this.celdas.add(columna);            
     	}
+		
+		this.setChanged();
+		this.notifyObservers("hola");
 	}
 
 	public int getCantidadDeFilas() {
