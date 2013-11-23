@@ -1,6 +1,8 @@
 package fiuba.algo3.modelo.mapa;
 
-public abstract class ContenidoDeCelda {
+import java.util.Observable;
+
+public abstract class ContenidoDeCelda extends Observable {
 	
 	protected Celda celda;
 	
