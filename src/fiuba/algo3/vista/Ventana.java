@@ -23,8 +23,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import fiuba.algo3.controlador.ControlPorTeclado;
 
-public class Ventana extends JFrame implements KeyListener, Observer {
+
+public class Ventana extends JFrame implements Observer {
 	
 	public Ventana(){	
 		setTitle("Juego GPS CHALLENGE");
@@ -60,33 +62,14 @@ public class Ventana extends JFrame implements KeyListener, Observer {
 		opciones.add(opcionGuardar);
 		opciones.add(opcionSalir);
 		
-		
-		
 		menu.add(opciones);
 		menu.add(acercaDe);
 		setJMenuBar(menu);
+		
 	}
 	
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Apéndice de método generado automáticamente
-		
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Apéndice de método generado automáticamente
-		
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Apéndice de método generado automáticamente
-		
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
 		// TODO Apéndice de método generado automáticamente
 		
 	}
