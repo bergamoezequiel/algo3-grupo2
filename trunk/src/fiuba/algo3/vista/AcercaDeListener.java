@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
-public class AcerdaDeListener implements MenuListener{
+public class AcercaDeListener implements MenuListener{
 
 	@Override
 	public void menuCanceled(MenuEvent arg0) {
