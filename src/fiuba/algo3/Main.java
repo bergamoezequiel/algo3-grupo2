@@ -6,8 +6,8 @@ import fiuba.algo3.vista.Ventana;
 
 public class Main {
 	public static void main(String args[]){
-		Ventana unaVentana = new Ventana(); //Observador
 		Juego unJuego = new Juego(); //Observado
+		Ventana unaVentana = new Ventana(unJuego); //Observador
 		//MainClass otraVentana = new MainClass();
 		
 		unJuego.addObserver(unaVentana);

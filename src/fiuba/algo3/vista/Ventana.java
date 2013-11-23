@@ -31,7 +31,7 @@ public class Ventana extends JFrame implements Observer {
 	
 	//private Juego juego;
 	
-	public Ventana(){	
+	public Ventana(Juego unJuego){	
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
