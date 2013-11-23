@@ -29,9 +29,9 @@ import fiuba.algo3.modelo.Juego;
 
 public class Ventana extends JFrame implements Observer {
 	
-	private Juego juego;
+	//private Juego juego;
 	
-	public Ventana(Juego unJuego){	
+	public Ventana(){	
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
@@ -47,9 +47,9 @@ public class Ventana extends JFrame implements Observer {
 			}
 		});
 		
-		this.juego = unJuego;
+		//this.juego = unJuego;
 	}
-	
+
 
 	public void inicializarConCosas(){
 		JMenuBar menu  = new JMenuBar();

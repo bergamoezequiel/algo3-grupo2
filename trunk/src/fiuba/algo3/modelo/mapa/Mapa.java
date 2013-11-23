@@ -6,7 +6,7 @@ import java.util.Observer;
 
 import fiuba.algo3.modelo.coordenadas.Coordenada;
 
-public class Mapa extends Observable{
+public class Mapa /*extends Observable*/{
     
 	private ArrayList<ArrayList<Celda>> celdas;
 	private int filas;
