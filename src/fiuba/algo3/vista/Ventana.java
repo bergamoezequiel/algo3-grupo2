@@ -29,7 +29,7 @@ import fiuba.algo3.modelo.Juego;
 
 public class Ventana extends JFrame implements Observer {
 	
-	//private Juego juego;
+	private Juego juego;
 	
 	public Ventana(Juego unJuego){	
 		SwingUtilities.invokeLater(new Runnable() {
@@ -47,7 +47,7 @@ public class Ventana extends JFrame implements Observer {
 			}
 		});
 		
-		//this.juego = unJuego;
+		this.juego = unJuego;
 	}
 
 
