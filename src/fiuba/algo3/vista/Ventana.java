@@ -49,13 +49,13 @@ public class Ventana extends JFrame implements KeyListener, Observer {
 	public void inicializarConCosas(){
 		JMenuBar menu  = new JMenuBar();
 		JMenu opciones = new JMenu("Opciones");
-		JMenu acercaDe = new JMenu("Acerda de..");
+		JMenu acercaDe = new JMenu("Acerca de..");
 		
 		JMenuItem opcionNuevaPartida = new JMenuItem("Nueva Partida");
 		JMenuItem opcionGuardar = new JMenuItem("Guardar");
 		JMenuItem opcionSalir = new JMenuItem("Salir");
 		
-		acercaDe.addMenuListener(new AcerdaDeListener());
+		acercaDe.addMenuListener(new AcercaDeListener());
 		opciones.add(opcionNuevaPartida);
 		opciones.add(opcionGuardar);
 		opciones.add(opcionSalir);
