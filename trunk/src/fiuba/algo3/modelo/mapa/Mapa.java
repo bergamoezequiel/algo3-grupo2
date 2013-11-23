@@ -23,9 +23,6 @@ public class Mapa extends Observable{
 			}
 			this.celdas.add(columna);            
     	}
-		
-		this.setChanged();
-		this.notifyObservers("hola");
 	}
 
 	public int getCantidadDeFilas() {
