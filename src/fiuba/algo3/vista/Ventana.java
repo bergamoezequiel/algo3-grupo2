@@ -29,9 +29,9 @@ import fiuba.algo3.modelo.Juego;
 
 public class Ventana extends JFrame implements Observer {
 	
-	private Juego juego;
+	//private Juego juego;
 	
-	public Ventana(Juego unJuego){	
+	public Ventana(/*Juego unJuego*/){	
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
@@ -47,7 +47,7 @@ public class Ventana extends JFrame implements Observer {
 			}
 		});
 		
-		juego = unJuego;
+		//juego = unJuego;
 	}
 	
 
@@ -72,6 +72,6 @@ public class Ventana extends JFrame implements Observer {
 	
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println("prueba5");
+		//System.out.println("prueba5");
 	}
 }

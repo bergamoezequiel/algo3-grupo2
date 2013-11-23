@@ -16,22 +16,22 @@ public class Juego extends Observable {
 	private int puntaje;
 	
 	public Juego (){
-		Ventana unaVentana = new Ventana(this); //Observador
-		this.addObserver(unaVentana);
+		//Ventana unaVentana = new Ventana(this); //Observador
+		//this.addObserver(unaVentana);
 		
 		this.mapa = new Mapa (new Coordenada(11, 11));
-		this.mapa.addObserver(unaVentana);
+		//this.mapa.addObserver(unaVentana);
 		
-		this.conductor = new Conductor(new Auto());	
-		this.conductor.addObserver(unaVentana);
+		//this.conductor = new Conductor(new Auto());	
+		//this.conductor.addObserver(unaVentana);
 		
-		this.mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
+		//this.mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 		
 		this.puntaje = 0;
 		
 		//Hago update para que cargue las posiciones iniciales de todo.
-		this.setChanged();
-		this.notifyObservers();
+		//this.setChanged();
+		//this.notifyObservers();
 	}
 
 	public Mapa getMapa(){
