@@ -7,14 +7,14 @@ import java.util.Observer;
 
 public class Sujeto {
 	
-	private ArrayList<Observer> observadores;
+	static ArrayList<Observer> observadores;
 	
 	public void agregar (Observer unObservador){
-		this.observadores.add(unObservador);
+		observadores.add(unObservador);
 	}
 	
 	public void eliminar (Observer unObservador){
-		this.observadores.remove(unObservador);
+		observadores.remove(unObservador);
 	}
 	
 	protected void notificar(){

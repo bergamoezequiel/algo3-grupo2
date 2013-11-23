@@ -73,13 +73,7 @@ public class Conductor extends ContenidoDeCelda{
 	public void avanzarEnDireccion(Direccion unaDireccion) {
 		ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(unaDireccion).getContenido();
 		Interactuable unObjetoEncontrable = (Interactuable) contenidoVecino;
-		
-		//Se marca al conductor como que se modifico
-		this.setChanged();
-		//Le avisa a todos los observadores que hubo modificaciones, que haga update
-		//Y que despues de eso desmarquen a todos los que fueron marcados como que cambiaron
-		this.notifyObservers();
-		
+			
 		if (unObjetoEncontrable == null){
 			this.desplazarseASiguienteEsquina(unaDireccion);
 		}
@@ -89,6 +83,10 @@ public class Conductor extends ContenidoDeCelda{
 			}
 			this.getVehiculo().interactuar(unObjetoEncontrable, this);
 		}
+		
+		//Hago update de la vista porque se movio (o intento moverse) el conductor
+		this.setChanged();
+		this.notifyObservers();
 	}
 	
 }
