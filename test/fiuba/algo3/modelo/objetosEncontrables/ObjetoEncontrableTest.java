@@ -12,7 +12,7 @@ import fiuba.algo3.modelo.objetosEncontrables.Pozo;
 public class ObjetoEncontrableTest {
 	@Test(expected = UbicacionEnMapaException.class) 
 	public void vehiculoDeberiaLanzarExcepcionSiSeCreaEnCoordenadaParXyParY(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Pozo unPozo = new Pozo();
 		celdaInicial.agregarContenido(unPozo);
@@ -20,7 +20,7 @@ public class ObjetoEncontrableTest {
 	
 	@Test(expected = UbicacionEnMapaException.class) 
 	public void vehiculoDeberiaLanzarExcepcionSiSeCreaEnCoordenadaImParXyImParY(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(3, 3));
 		Pozo unPozo = new Pozo();
 		celdaInicial.agregarContenido(unPozo);

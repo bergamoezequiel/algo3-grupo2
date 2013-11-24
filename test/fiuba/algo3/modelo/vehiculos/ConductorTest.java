@@ -21,7 +21,7 @@ public class ConductorTest {
 
 	@Test(expected = UbicacionEnMapaException.class) 
 	public void vehiculoDeberiaLanzarExcepcionSiSeCreaEnCoordenadaImpar(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(1, 0));
 		Conductor unConductor = new Conductor(new Auto());
 		celdaInicial.agregarContenido(unConductor);
@@ -58,7 +58,7 @@ public class ConductorTest {
 
 	@Test (expected = UbicacionEnMapaException.class) 
 	public void deberiaLanzarUnaExcepcionSiIntentoAvanzarAUnLugarFueraDelMapa(){
-		Mapa unMapa = new Mapa (new Coordenada(3, 3));
+		Mapa unMapa = new Mapa (1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Conductor unConductor = new Conductor (new Auto());
 		celdaInicial.agregarContenido(unConductor);
@@ -78,7 +78,7 @@ public class ConductorTest {
 	
 	@Test
 	public void vehiculoAlAvanzarDeberiaDesplazarseDosPosicionesSiNoSeEncuentraObstaculosOSorpresas(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Conductor unConductor = new Conductor(new Auto());		
 		celdaInicial.agregarContenido(unConductor);

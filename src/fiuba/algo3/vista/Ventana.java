@@ -53,7 +53,6 @@ public class Ventana extends JFrame implements Observer {
 
 	}
 
-
 	public void inicializarConCosas(){
 		JMenuBar menu  = new JMenuBar();
 		JMenu opciones = new JMenu("Opciones");
@@ -78,7 +77,7 @@ public class Ventana extends JFrame implements Observer {
 		}
 		
 		//Aca estoy agregando el dibujito del mapa.
-		add(new MainClass(this.juego));
+		add(new PantallaDelNivel(this.juego));
 		
 		//Harcodeo de avance hacia arriba del conductor para verificar el update del avanzar.
 		unConductor.avanzarEnDireccion(new Arriba());
@@ -87,7 +86,7 @@ public class Ventana extends JFrame implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		//Aca estoy agregando el dibujito del mapa.
-		add(new MainClass(this.juego));
+		add(new PantallaDelNivel(this.juego));
 		System.out.println("Update de Ventana");
 	}
 }

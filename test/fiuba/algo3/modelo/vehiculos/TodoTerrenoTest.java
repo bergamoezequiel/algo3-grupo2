@@ -15,7 +15,7 @@ import fiuba.algo3.modelo.vehiculos.TodoTerreno;
 public class TodoTerrenoTest {
 	@Test
 	public void TodoTerrenoAlAvanzarNoDeberiaSerPenalizadaYDesplazarse2Posiciones(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 1));
+		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Conductor unConductor = new Conductor(new TodoTerreno());		
 		celdaInicial.agregarContenido(unConductor);

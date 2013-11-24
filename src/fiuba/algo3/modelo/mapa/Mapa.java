@@ -6,16 +6,16 @@ import java.util.Observer;
 
 import fiuba.algo3.modelo.coordenadas.Coordenada;
 
-public class Mapa /*extends Observable*/{
+public class Mapa {
     
 	private ArrayList<ArrayList<Celda>> celdas;
 	private int filas;
 	private int columnas;
 
-	public Mapa(Coordenada unaDimension) {
+	public Mapa(int cantManzanasAncho, int cantManzanasAlto) {
 		this.celdas = new ArrayList<ArrayList<Celda>>();
-		this.filas = unaDimension.getY();
-		this.columnas = unaDimension.getX();
+		this.filas = (cantManzanasAlto*2)+1;
+		this.columnas = (cantManzanasAncho*2)+1;
 		for (int x = 0; x<this.columnas ; x++){
 			ArrayList<Celda> columna = new ArrayList<Celda>();
 			for (int y = 0; y < this.filas; y++){

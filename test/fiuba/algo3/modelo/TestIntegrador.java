@@ -22,7 +22,7 @@ public class TestIntegrador {
 
 	@Test
 	public void pruebaIntegradora(){
-		Mapa unMapa = new Mapa(new Coordenada(10, 10));
+		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Conductor unConductor = new Conductor(new Auto());		
 		celdaInicial.agregarContenido(unConductor);

@@ -20,13 +20,13 @@ public class SorpresaFavorableTest {
 	
 	@Test
 	public void testDeberiaDisminuirLosMovimientosDeLaMotoAlPasarPorUnaSorpresa(){
-		Mapa unMapa = new Mapa(new Coordenada(10, 10));
+		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Conductor unConductor = new Conductor(new Moto());		
 		celdaInicial.agregarContenido(unConductor);
 		
-		Direccion derecha= new Derecha();
-		SorpresaFavorable unaSorpresaFavorable= new SorpresaFavorable();
+		Direccion derecha = new Derecha();
+		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
 		Celda celdaFinal = unMapa.getCeldaEn(new Coordenada(3, 0));
 		celdaFinal.agregarContenido(unaSorpresaFavorable);
 		
@@ -36,18 +36,18 @@ public class SorpresaFavorableTest {
 		//Agarra la sopresa favorable.
 		unConductor.avanzarEnDireccion(derecha);
 		
-		assertEquals (1, unConductor.getMovimientos());
+		assertEquals(1, unConductor.getMovimientos());
 	}
 	
 	@Test
 	public void testDeberiaDisminuirLosMovimientosDelAutoAlPasarPorUnaSorpresa(){
-		Mapa unMapa = new Mapa(new Coordenada(10, 10));
+		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Conductor unConductor = new Conductor(new Auto());		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Direccion derecha= new Derecha();
-		SorpresaFavorable unaSorpresaFavorable= new SorpresaFavorable();
+		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
 		Celda celdaFinal = unMapa.getCeldaEn(new Coordenada(3, 0));
 		celdaFinal.agregarContenido(unaSorpresaFavorable);
 		
@@ -57,18 +57,18 @@ public class SorpresaFavorableTest {
 		//Agarra la sopresa favorable.
 		unConductor.avanzarEnDireccion(derecha);
 		
-		assertEquals (1 , unConductor.getMovimientos());
+		assertEquals(1, unConductor.getMovimientos());
 	}
 	
 	@Test
 	public void testDeberiaDisminuirLosMovimientosDeLaTodoTerrenoAlPasarPorUnaSorpresa(){
-		Mapa unMapa = new Mapa(new Coordenada(10, 10));
+		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Conductor unConductor = new Conductor(new TodoTerreno());		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Direccion derecha= new Derecha();
-		SorpresaFavorable unaSorpresaFavorable= new SorpresaFavorable();
+		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
 		Celda celdaFinal = unMapa.getCeldaEn(new Coordenada(3, 0));
 		celdaFinal.agregarContenido(unaSorpresaFavorable);
 		
@@ -83,23 +83,23 @@ public class SorpresaFavorableTest {
 	
 	@Test
 	public void testLaSorpresaFavorableDeberiaDejarPasarALasMotos(){
-		SorpresaFavorable unaSorpresaFavorable= new SorpresaFavorable();
-		Moto unaMoto= new Moto();
-		Assert.assertEquals(true,unaSorpresaFavorable.dejaPasar(unaMoto));
+		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
+		Moto unaMoto = new Moto();
+		Assert.assertEquals(true, unaSorpresaFavorable.dejaPasar(unaMoto));
 	}
 	
 	@Test
 	public void testLaSorpresaFavorableDeberiaDejarPasarALosAutos(){
-		SorpresaFavorable unaSorpresaFavorable= new SorpresaFavorable();
-		Auto unAuto= new Auto();
-		Assert.assertEquals(true,unaSorpresaFavorable.dejaPasar(unAuto));
+		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
+		Auto unAuto = new Auto();
+		Assert.assertEquals(true, unaSorpresaFavorable.dejaPasar(unAuto));
 	}
 	
 	@Test
 	public void testLaSorpresaFavorableDeberiaDejarPasarALosTodoTerreno(){
-		SorpresaFavorable unaSorpresaFavorable= new SorpresaFavorable();
-		TodoTerreno unTodoTerreno=new TodoTerreno();
-		Assert.assertEquals(true,unaSorpresaFavorable.dejaPasar(unTodoTerreno));
+		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
+		TodoTerreno unTodoTerreno = new TodoTerreno();
+		Assert.assertEquals(true, unaSorpresaFavorable.dejaPasar(unTodoTerreno));
 	}
 
 }

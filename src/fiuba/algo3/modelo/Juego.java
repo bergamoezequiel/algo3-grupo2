@@ -16,7 +16,7 @@ public class Juego extends Observable {
 	private int puntaje;
 	
 	public Juego (){
-		this.mapa = new Mapa (new Coordenada(11, 11));
+		this.mapa = new Mapa (5, 5);
 		this.conductor = new Conductor(new Auto());	
 		this.mapa.getCeldaEn(new Coordenada(2,2)).agregarContenido(this.conductor);
 		

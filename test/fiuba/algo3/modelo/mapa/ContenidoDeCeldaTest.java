@@ -12,7 +12,7 @@ public class ContenidoDeCeldaTest{
 
 	@Test
 	public void testSetterYGetterDelContenidoDeCelda(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Mapa unMapa = new Mapa(2,2);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(1, 0));
 		Pozo unPozo = new Pozo();
 		
