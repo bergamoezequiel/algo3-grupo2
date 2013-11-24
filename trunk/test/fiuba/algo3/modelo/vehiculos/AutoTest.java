@@ -16,7 +16,7 @@ public class AutoTest {
 
 	@Test
 	public void autoAlAvanzarYEncontrarUnPozoDeberiaPenalizarseCon3MovimientosYDesplazarse2Posiciones(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 1));
+		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Conductor unConductor = new Conductor(new Auto());		
 		celdaInicial.agregarContenido(unConductor);

@@ -13,21 +13,21 @@ public class CeldaTest{
 
 	@Test
 	public void testDeberiaInicializarceLaCeldaSinObjeto(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Mapa unMapa = new Mapa(1,1);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(0,0));
 		Assert.assertNull(unaCelda.getContenido());
 	}
 
 	@Test
 	public void testDeberiaInicializarceLaCeldaEnUnaCoordenada(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Mapa unMapa = new Mapa(1,1);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(1, 2));
 		Assert.assertEquals(new Coordenada(1, 2), unaCelda.getCoordenada());
 	}
 	
 	@Test
 	public void testDeberiaAgregarUnContenidoALaCelda(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Mapa unMapa = new Mapa(1,1);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(2, 2));		
 		Conductor unContenido = new Conductor(new Auto());
 		unaCelda.agregarContenido(unContenido);
@@ -37,7 +37,7 @@ public class CeldaTest{
 	
 	@Test
 	public void testDeberiaAgregarYLuegoQuitarUnContenidoDeLaCelda(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 3));
+		Mapa unMapa = new Mapa(1,1);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(2, 2));
 		Conductor unVehiculo = new Conductor(new Auto());		
 		unaCelda.agregarContenido(unVehiculo);
@@ -56,7 +56,7 @@ public class CeldaTest{
 		Conductor unConductor = new Conductor(new Auto());		
 		//Creo un mapa con el doble de tamaño del alcance de vision del conductor.
 		//Ubico al conductor en el centro del mapa.
-		Mapa unMapa = new Mapa(new Coordenada(unConductor.getAlcanceDeVision()*2+2, unConductor.getAlcanceDeVision()*2+2));
+		Mapa unMapa = new Mapa(unConductor.getAlcanceDeVision()+1, unConductor.getAlcanceDeVision()+1);
 		Coordenada coordenadaConductor = new Coordenada(unConductor.getAlcanceDeVision(), unConductor.getAlcanceDeVision());
 		Celda unaCelda = unMapa.getCeldaEn(coordenadaConductor);
 		

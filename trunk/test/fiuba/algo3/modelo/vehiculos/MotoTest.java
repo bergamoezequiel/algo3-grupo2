@@ -15,7 +15,7 @@ import fiuba.algo3.modelo.vehiculos.Moto;
 public class MotoTest {
 	@Test
 	public void motoAlAvanzarYEncontrarUnPozoDeberiaPenalizarseCon3MovimientosYDesplazarse2Posiciones(){
-		Mapa unMapa = new Mapa(new Coordenada(3, 1));
+		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
 		Conductor unConductor = new Conductor(new Moto());		
 		celdaInicial.agregarContenido(unConductor);

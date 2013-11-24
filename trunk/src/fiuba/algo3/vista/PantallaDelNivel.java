@@ -15,7 +15,7 @@ import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
 
-public class MainClass extends Canvas {
+public class PantallaDelNivel extends Canvas {
 	
 	private int MARGEN_IZQUIERDO= 0;
 	private int MARGEN_SUPERIOR = 0;
@@ -24,7 +24,7 @@ public class MainClass extends Canvas {
 
 	
 	
-	public MainClass(Juego unJuego){
+	public PantallaDelNivel(Juego unJuego){
 		/*
 		 * Esto es lo que se ejecuta cuando se llama al constructor de la clase.
 		 * Luego dellamarse al constructor, automaticamente se llama al metodo
