@@ -16,8 +16,8 @@ public class Juego extends Observable {
 	private int puntaje;
 	
 	public Juego (){
-		//Ventana unaVentana = new Ventana(); //Observador
-		//this.addObserver(unaVentana);
+		Ventana unaVentana = new Ventana(this); //Observador
+		this.addObserver(unaVentana);
 		
 		this.mapa = new Mapa (new Coordenada(11, 11));
 		//this.mapa.addObserver(unaVentana);
