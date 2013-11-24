@@ -30,8 +30,8 @@ public class Juego extends Observable {
 		this.puntaje = 0;
 		
 		//Hago update para que cargue las posiciones iniciales de todo.
-		//this.setChanged();
-		//this.notifyObservers();
+		this.setChanged();
+		this.notifyObservers();
 	}
 
 	public Mapa getMapa(){
