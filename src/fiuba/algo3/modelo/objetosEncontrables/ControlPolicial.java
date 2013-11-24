@@ -4,6 +4,7 @@ import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 import fiuba.algo3.modelo.vehiculos.Moto;
 import fiuba.algo3.modelo.vehiculos.TodoTerreno;
+import fiuba.algo3.implementacion.objetosEncontrables.NumeroAleatorio;
 
 
 public class ControlPolicial extends ObjetoEncontrable {
@@ -31,20 +32,38 @@ public class ControlPolicial extends ObjetoEncontrable {
 	public int obtenerPenalizacion(){
 		return this.penalizacion;
 	}
+	
+	public void interactuarConAuto(Conductor unConductor,NumeroAleatorio aleatorio) {
+		if ((aleatorio.obtenerNumero()<=this.probabilidadDePasarAuto)&(aleatorio.obtenerNumero()>0))
+			unConductor.variarMovimientosEn(this.obtenerPenalizacion());
+	}
 
 	@Override
 	public void interactuarConAuto(Conductor unConductor) {
-		unConductor.variarMovimientosEn(this.obtenerPenalizacion());		
+		NumeroAleatorio aleatorio= new NumeroAleatorio();
+		this.interactuarConAuto(unConductor,aleatorio);		
+	}
+	
+	public void interactuarConMoto(Conductor unConductor,NumeroAleatorio aleatorio) {
+		if ((aleatorio.obtenerNumero()<=this.probabilidadDePasarMoto)&(aleatorio.obtenerNumero()>0))
+			unConductor.variarMovimientosEn(this.obtenerPenalizacion());
 	}
 
     @Override
     public void interactuarConMoto(Conductor unConductor) {
-    	unConductor.variarMovimientosEn(this.obtenerPenalizacion());		
+    	NumeroAleatorio aleatorio= new NumeroAleatorio();
+		this.interactuarConMoto(unConductor,aleatorio);			
     }
+    
+    public void interactuarConTodoTerreno(Conductor unConductor,NumeroAleatorio aleatorio) {
+		if ((aleatorio.obtenerNumero()<=this.probabilidadDePasarTodoTerreno)&(aleatorio.obtenerNumero()>0))
+			unConductor.variarMovimientosEn(this.obtenerPenalizacion());
+	}
 
     @Override
     public void interactuarConTodoTerreno(Conductor unConductor) {
-    	unConductor.variarMovimientosEn(this.obtenerPenalizacion());	
+    	NumeroAleatorio aleatorio= new NumeroAleatorio();
+		this.interactuarConTodoTerreno(unConductor,aleatorio);		
     }
 
     public boolean probabilidadDePasarSegunVehiculo(double probabilidad){
@@ -62,16 +81,16 @@ public class ControlPolicial extends ObjetoEncontrable {
     
 	@Override
 	public boolean dejaPasar(Moto unaMoto) {
-		return probabilidadDePasarSegunVehiculo(this.probabilidadDePasarMoto);
+		return true;
 	}
 
     @Override
 	public boolean dejaPasar(Auto unAuto) {
-		return probabilidadDePasarSegunVehiculo(this.probabilidadDePasarAuto);
+		return true;
 	}
 	
 	@Override
 	public boolean dejaPasar(TodoTerreno unTodoTerreno) {
-		return probabilidadDePasarSegunVehiculo(this.probabilidadDePasarTodoTerreno);
+		return true;
 	}
 }
