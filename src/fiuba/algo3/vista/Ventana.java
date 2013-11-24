@@ -32,11 +32,13 @@ public class Ventana extends JFrame implements Observer {
 	private Juego juego;
 	
 	public Ventana(Juego unJuego){	
+		this.juego = unJuego;
+		
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
 				setTitle("Juego GPS CHALLENGE");
-				setSize(640, 480); // Resolucion de la ventana
+				setSize( (juego.getMapa().getCantidadDeFilas()- 2)*50 -10, (juego.getMapa().getCantidadDeColumnas() -1)*50 -5); // Resolucion de la ventana
 				setLocationRelativeTo(null); // Ubica la ventana en el centro de la pantalla
 				inicializarConCosas();
 				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,7 +49,7 @@ public class Ventana extends JFrame implements Observer {
 			}
 		});
 		
-		this.juego = unJuego;
+
 	}
 
 
@@ -68,6 +70,9 @@ public class Ventana extends JFrame implements Observer {
 		menu.add(opciones);
 		menu.add(acercaDe);
 		setJMenuBar(menu);
+		
+		//Aca estoy agregando el dibujito del mapa.
+		add(new MainClass(this.juego));
 	}
 	
 	@Override
