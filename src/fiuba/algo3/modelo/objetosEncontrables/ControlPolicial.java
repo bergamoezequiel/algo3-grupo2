@@ -14,15 +14,6 @@ public class ControlPolicial extends ObjetoEncontrable {
 	final double probabilidadDePasarAuto = 0.5;
 	final double probabilidadDePasarTodoTerreno = 0.3;
 	
-	/*
-	 * Este metodo debera ser borrado, se creo solamente para que los tests
-	 * de ControlPolicial pasen. Ya nos van a explicar en clase como hacer
-	 * para testear un RANDOM.
-	 * 
-	 */
-	private double RANDOM(double numero) {
-		return numero;
-	}
 	
 	public ControlPolicial() {
 		super();
@@ -66,18 +57,6 @@ public class ControlPolicial extends ObjetoEncontrable {
 		this.interactuarConTodoTerreno(unConductor,aleatorio);		
     }
 
-    public boolean probabilidadDePasarSegunVehiculo(double probabilidad){
-    	boolean puedePasar;
-    	//double valorAletorio = Math.random();
-    	double valorAletorio = this.RANDOM(0.6);
-    	if (valorAletorio <= probabilidad){
-    		puedePasar = true;
-    	}
-    	else{
-    		puedePasar = false;
-    	}
-    	return puedePasar;
-    }
     
 	@Override
 	public boolean dejaPasar(Moto unaMoto) {
