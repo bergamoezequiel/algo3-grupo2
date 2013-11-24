@@ -17,17 +17,8 @@ public class Juego extends Observable {
 	
 	public Juego (){
 		this.mapa = new Mapa (new Coordenada(11, 11));
-		//this.mapa.addObserver(unaVentana);
-		
-		Ventana unaVentana = new Ventana(this); //Observador
-		this.addObserver(unaVentana);
-		
-		
-		
-		//this.conductor = new Conductor(new Auto());	
-		//this.conductor.addObserver(unaVentana);
-		
-		//this.mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
+		this.conductor = new Conductor(new Auto());	
+		this.mapa.getCeldaEn(new Coordenada(2,2)).agregarContenido(this.conductor);
 		
 		this.puntaje = 0;
 		

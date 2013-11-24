@@ -25,6 +25,8 @@ import javax.swing.SwingUtilities;
 
 import fiuba.algo3.controlador.ControlPorTeclado;
 import fiuba.algo3.modelo.Juego;
+import fiuba.algo3.modelo.coordenadas.Arriba;
+import fiuba.algo3.modelo.vehiculos.Conductor;
 
 
 public class Ventana extends JFrame implements Observer {
@@ -33,7 +35,6 @@ public class Ventana extends JFrame implements Observer {
 	
 	public Ventana(Juego unJuego){	
 		this.juego = unJuego;
-		
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
@@ -71,12 +72,22 @@ public class Ventana extends JFrame implements Observer {
 		menu.add(acercaDe);
 		setJMenuBar(menu);
 		
+		Conductor unConductor = this.juego.getConductor();
+		if (unConductor != null){
+			unConductor.addObserver(this);
+		}
+		
 		//Aca estoy agregando el dibujito del mapa.
 		add(new MainClass(this.juego));
+		
+		//Harcodeo de avance hacia arriba del conductor para verificar el update del avanzar.
+		unConductor.avanzarEnDireccion(new Arriba());
 	}
 	
 	@Override
 	public void update(Observable o, Object arg) {
-		//System.out.println("prueba5");
+		//Aca estoy agregando el dibujito del mapa.
+		add(new MainClass(this.juego));
+		System.out.println("Update de Ventana");
 	}
 }

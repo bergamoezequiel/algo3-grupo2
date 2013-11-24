@@ -38,11 +38,6 @@ public class MainClass extends Canvas {
 	public void paint(Graphics g) {
   
 		Graphics2D g2 = (Graphics2D) g;		
-		Conductor unConductor = new Conductor (new Auto());
-		
-		//Agrega al conductor en el (0,0)
-		Celda unaCelda = this.juego.getMapa().getCeldaEn(new Coordenada(0, 0));
-		unaCelda.agregarContenido(unConductor);		
 		
 		int filaActual = 0;
 		int columnaActual = 0;
@@ -88,25 +83,11 @@ public class MainClass extends Canvas {
 		/*
 		 * ASI SE MUEVE EL AUTO
 		 */
-		g.setColor(Color.red);
-		g.fillArc(MARGEN_IZQUIERDO + DIMENSION_CUADRADO*unConductor.getCelda().getCoordenada().getX() , MARGEN_SUPERIOR + DIMENSION_CUADRADO*(this.juego.getMapa().getCantidadDeColumnas()-1 - unConductor.getCelda().getCoordenada().getY()), DIMENSION_CUADRADO, DIMENSION_CUADRADO, 360, 360);				
+		
+		Conductor unConductor = this.juego.getConductor();
+		if (unConductor != null){
+			g.setColor(Color.red);
+			g.fillArc(MARGEN_IZQUIERDO + DIMENSION_CUADRADO*unConductor.getCelda().getCoordenada().getX() , MARGEN_SUPERIOR + DIMENSION_CUADRADO*(this.juego.getMapa().getCantidadDeColumnas()-1 - unConductor.getCelda().getCoordenada().getY()), DIMENSION_CUADRADO, DIMENSION_CUADRADO, 360, 360);
+		}
 	}
-	
-	
-
-  
-/*
- * Esto no se deberia ejecutar NUNCA, ejecutar el Main.java para ver las cosas. 
- */
-public static void main(String[] args) {
-	
-    JFrame frame = new JFrame();
-    //frame.getContentPane().add(new MainClass(new Juego()));
-
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(800, 600);
-    frame.setVisible(true);
-    frame.setBackground(Color.white);
-    frame.setTitle("GPS BATTLE v1.0");
-  }
 }
