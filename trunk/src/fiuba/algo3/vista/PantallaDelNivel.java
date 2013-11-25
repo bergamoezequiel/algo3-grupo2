@@ -86,21 +86,16 @@ public class PantallaDelNivel extends Canvas {
 			for (int j = 1; j < this.juego.getMapa().getCantidadDeColumnas(); j+=2) {
 				if (mapa.getCeldaEn(new Coordenada(i,j)).esVisiblePara(conductor)){
 					Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), this.juego.getMapa().getCantidadDeColumnas());
-					g.setColor(Color.orange);
+					g.setColor(Color.black);
 					g.fillRect(coordenadaVista.getX(), coordenadaVista.getY(), anchoCelda, altoCelda);
 					
-					/*
-					 * Dibujo el contorno de las manzanas.
-					 */
-					g.setColor(Color.cyan);
-					g.drawRect(coordenadaVista.getX(), coordenadaVista.getY(), anchoCelda, altoCelda);
+					g.setColor(Color.orange);
+					double contorno = 0.1;
+					int margenAnchura = (int) Math.round(anchoCelda*contorno);
+					int margenAltura = (int) Math.round(altoCelda*contorno);
+					g.fillRect(coordenadaVista.getX()+margenAnchura, coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura);
 				}
 			}
-		}
-		
-		//this.juego.getConductor().avanzarEnDireccion(new Abajo());
-		//this.juego.getConductor().avanzarEnDireccion(new Izquierda());
-		//this.juego.getConductor().avanzarEnDireccion(new Arriba());
-		
+		}		
 	}
 }

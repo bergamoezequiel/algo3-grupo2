@@ -94,7 +94,9 @@ public class Ventana extends JFrame implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		//Aca estoy agregando el dibujito del mapa.
-		add(new PantallaDelNivel(this.juego));
+		PantallaDelNivel unaPantallaDeNivel = new PantallaDelNivel(this.juego);
+		add(unaPantallaDeNivel);
 		System.out.println(arg);
+		
 	}
 }
