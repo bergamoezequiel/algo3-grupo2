@@ -14,12 +14,14 @@ public class Juego extends Observable {
 	private Mapa mapa;
 	private Conductor conductor;	
 	private int puntaje;
+	private Pozo pozo;
 	
 	public Juego (){
 		this.mapa = new Mapa (8, 8);
 		this.conductor = new Conductor(new Auto());	
+		this.pozo = new Pozo();
 		this.mapa.getCeldaEn(new Coordenada(8,8)).agregarContenido(this.conductor);
-		
+		this.mapa.getCeldaEn(new Coordenada(8,9)).agregarContenido(this.pozo);
 		this.puntaje = 0;
 	}
 
