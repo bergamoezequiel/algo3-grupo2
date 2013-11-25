@@ -97,6 +97,7 @@ public class Ventana extends JFrame implements Observer {
 		PantallaDelNivel unaPantallaDeNivel = new PantallaDelNivel(this.juego);
 		add(unaPantallaDeNivel);
 		System.out.println(arg);
+		repaint();
 		
 	}
 }
