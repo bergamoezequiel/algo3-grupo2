@@ -88,11 +88,17 @@ public class PantallaDelNivel extends Canvas {
 					Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), this.juego.getMapa().getCantidadDeColumnas());
 					g.setColor(Color.orange);
 					g.fillRect(coordenadaVista.getX(), coordenadaVista.getY(), anchoCelda, altoCelda);
+					
+					/*
+					 * Dibujo el contorno de las manzanas.
+					 */
+					g.setColor(Color.cyan);
+					g.drawRect(coordenadaVista.getX(), coordenadaVista.getY(), anchoCelda, altoCelda);
 				}
 			}
 		}
 		
-		this.juego.getConductor().avanzarEnDireccion(new Abajo());
+		//this.juego.getConductor().avanzarEnDireccion(new Abajo());
 		//this.juego.getConductor().avanzarEnDireccion(new Arriba());
 		//this.juego.getConductor().avanzarEnDireccion(new Arriba());
 		
