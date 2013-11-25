@@ -30,6 +30,8 @@ public class SorpresaFavorableTest {
 		Celda celdaFinal = unMapa.getCeldaEn(new Coordenada(3, 0));
 		celdaFinal.agregarContenido(unaSorpresaFavorable);
 		
+		
+		
 		//No agarra la sorpresa favorable todavia.
 		unConductor.avanzarEnDireccion(derecha);
 		
@@ -100,6 +102,32 @@ public class SorpresaFavorableTest {
 		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
 		TodoTerreno unTodoTerreno = new TodoTerreno();
 		Assert.assertEquals(true, unaSorpresaFavorable.dejaPasar(unTodoTerreno));
+	}
+	
+	@Test
+	public void AlPasarPorUnaSopresaEstaDeberiaDesaparecerDelMapa(){
+		Mapa unMapa = new Mapa(5,5);
+		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
+		Conductor unConductor = new Conductor(new TodoTerreno(), 4);		
+		celdaInicial.agregarContenido(unConductor);
+		
+		Direccion derecha = new Derecha();
+		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
+		Celda celdaFinal = unMapa.getCeldaEn(new Coordenada(3, 0));
+		celdaFinal.agregarContenido(unaSorpresaFavorable);
+		
+		//No agarra la sorpresa favorable todavia.
+		unConductor.avanzarEnDireccion(derecha);
+		
+		//Agarra la sopresa favorable.
+		unConductor.avanzarEnDireccion(derecha);
+		
+		assertEquals (1 , unConductor.getMovimientos());
+		
+		
+		//La sorpresa deberia haber desaparecido.
+		assertEquals (null, celdaFinal.getContenido());
+		
 	}
 
 }

@@ -18,16 +18,19 @@ public class SorpresaDesfavorable extends Sorpresa {
 	@Override
 	public void interactuarConAuto(Conductor unConductor) {
 		aplicarPenalizacion(unConductor);
+		this.getCelda().quitarContenido();
 	}
 
 	@Override
 	public void interactuarConMoto(Conductor unConductor) {
 		aplicarPenalizacion(unConductor);
+		this.getCelda().quitarContenido();
 	}
 
 	@Override
 	public void interactuarConTodoTerreno(Conductor unConductor) {
 		aplicarPenalizacion(unConductor);
+		this.getCelda().quitarContenido();
 	}
 
 

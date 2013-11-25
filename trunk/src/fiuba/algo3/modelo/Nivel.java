@@ -20,6 +20,7 @@ public class Nivel {
 		this.mapa.getCeldaEn(new Coordenada(8,9)).agregarContenido(new Pozo());
 		this.mapa.getCeldaEn(new Coordenada(1,2)).agregarContenido(new Piquete());
 		this.mapa.getCeldaEn(new Coordenada(2,3)).agregarContenido(new CambioDeVehiculo());
+		this.mapa.getCeldaEn(new Coordenada (3,2)).agregarContenido(new SorpresaFavorable());
 	}
 	
 	public Mapa getMapa(){
