@@ -24,7 +24,7 @@ public class TestIntegrador {
 	public void pruebaIntegradora(){
 		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Auto());		
+		Conductor unConductor = new Conductor(new Auto(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Pozo unPozo = new Pozo();

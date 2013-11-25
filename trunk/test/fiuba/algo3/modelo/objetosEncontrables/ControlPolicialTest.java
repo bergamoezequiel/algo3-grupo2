@@ -15,7 +15,7 @@ public class ControlPolicialTest {
 	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALasMotosDependiendoDelNumeroAleatorio(){
         ControlPolicial unControl = new ControlPolicial();
         Moto unaMoto=new Moto();
-        Conductor unConductor= new Conductor(unaMoto);
+        Conductor unConductor= new Conductor(unaMoto, 4);
         
         /*Tendria que penalizar si el numero aleatorio es menor o igual a 0.7*/
         
@@ -62,7 +62,7 @@ public class ControlPolicialTest {
 	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALosAutosDependiendoDelNumeroAleatorio(){
 		ControlPolicial unControl = new ControlPolicial();
         Auto unAuto=new Auto();
-        Conductor unConductor= new Conductor(unAuto);
+        Conductor unConductor= new Conductor(unAuto, 4);
         
         /*Tendria que penalizar si el numero aleatorio es menor o igual a 0.5*/
         NumeroAleatorio aleatorio= new NumeroAleatorioFalso(0.1);
@@ -108,7 +108,7 @@ public class ControlPolicialTest {
 	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALosTodoTerrenoDependiendoDelNumeroAleatorio(){
 		ControlPolicial unControl = new ControlPolicial();
         TodoTerreno unTodoTerreno=new TodoTerreno();
-        Conductor unConductor= new Conductor(unTodoTerreno);
+        Conductor unConductor= new Conductor(unTodoTerreno, 4);
         
         /*Tendria que penalizar si el numero aleatorio es menor o igual a 0.3*/
         

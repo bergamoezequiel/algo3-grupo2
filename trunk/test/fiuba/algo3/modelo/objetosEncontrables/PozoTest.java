@@ -14,7 +14,7 @@ public class PozoTest {
 	public void ElPozoTendriaQuePenalizarCon3MovimientosALasMotos(){
         Pozo unPozo= new Pozo();
         Moto unaMoto=new Moto();
-        Conductor unConductor= new Conductor(unaMoto);
+        Conductor unConductor= new Conductor(unaMoto, 4);
         unPozo.interactuarConMoto(unConductor);
         Assert.assertEquals(3,unConductor.getMovimientos());
 	}
@@ -23,7 +23,7 @@ public class PozoTest {
 	public void ElPozoTendriaQuePenalizarCon3MovimientosALosAutos(){
         Pozo unPozo= new Pozo();
         Auto unAuto=new Auto();
-        Conductor unConductor= new Conductor(unAuto);
+        Conductor unConductor= new Conductor(unAuto, 4);
         unPozo.interactuarConAuto(unConductor);
         Assert.assertEquals(3,unConductor.getMovimientos());
 	
@@ -33,7 +33,7 @@ public class PozoTest {
 	public void ElPozoNoTendriaQuePenalizarALosTodoTerreno(){
         Pozo unPozo= new Pozo();
         TodoTerreno unTodoTerreno=new TodoTerreno();
-        Conductor unConductor= new Conductor(unTodoTerreno);
+        Conductor unConductor= new Conductor(unTodoTerreno, 4);
         unPozo.interactuarConTodoTerreno(unConductor);
         Assert.assertEquals(0,unConductor.getMovimientos());
 	}

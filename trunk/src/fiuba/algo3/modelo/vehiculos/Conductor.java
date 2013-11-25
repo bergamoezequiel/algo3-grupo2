@@ -16,12 +16,12 @@ public class Conductor extends ContenidoDeCelda{
 	private int alcanceDeVision;
 	private Vehiculo vehiculo;
 	
-	public Conductor(Vehiculo unVehiculo){
+	public Conductor(Vehiculo unVehiculo, int unAlcanceDeVision){
 		super();
 		this.movimientos = 0;
 		this.penalizacionDeAvance = 1;
 		this.vehiculo = unVehiculo;
-		this.alcanceDeVision = 4;
+		this.alcanceDeVision = unAlcanceDeVision;
 	}
 	
 	@Override

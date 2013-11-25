@@ -14,14 +14,12 @@ public class Nivel {
 	public Nivel (int unaDificultad, Vehiculo unVehiculo){		
 		this.movimientosLimites = 60;
 		this.mapa = new Mapa (8, 8);
-		this.conductor = new Conductor(unVehiculo);
-		
-		Pozo unPozo = new Pozo();
-		Piquete unPiquete= new Piquete();
+		this.conductor = new Conductor(unVehiculo, 4);
 		
 		this.mapa.getCeldaEn(new Coordenada(8,8)).agregarContenido(this.conductor);
-		this.mapa.getCeldaEn(new Coordenada(8,9)).agregarContenido(unPozo);
-		this.mapa.getCeldaEn(new Coordenada(1,2)).agregarContenido(unPiquete);
+		this.mapa.getCeldaEn(new Coordenada(8,9)).agregarContenido(new Pozo());
+		this.mapa.getCeldaEn(new Coordenada(1,2)).agregarContenido(new Piquete());
+		this.mapa.getCeldaEn(new Coordenada(2,3)).agregarContenido(new CambioDeVehiculo());
 	}
 	
 	public Mapa getMapa(){

@@ -17,7 +17,7 @@ public class TodoTerrenoTest {
 	public void TodoTerrenoAlAvanzarNoDeberiaSerPenalizadaYDesplazarse2Posiciones(){
 		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new TodoTerreno());		
+		Conductor unConductor = new Conductor(new TodoTerreno(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Pozo unPozo = new Pozo();

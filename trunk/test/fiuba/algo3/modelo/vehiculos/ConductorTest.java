@@ -23,20 +23,20 @@ public class ConductorTest {
 	public void vehiculoDeberiaLanzarExcepcionSiSeCreaEnCoordenadaImpar(){
 		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(1, 0));
-		Conductor unConductor = new Conductor(new Auto());
+		Conductor unConductor = new Conductor(new Auto(), 4);
 		celdaInicial.agregarContenido(unConductor);
 	}
 	
 	@Test
 	public void vehiculoDeberiaTener0MovimientosAlCrearse(){
-		Conductor unConductor = new Conductor(new Auto());
+		Conductor unConductor = new Conductor(new Auto(), 4);
 		Assert.assertEquals(0, unConductor.getMovimientos());
 	}
 	
 	@Test
 	public void vehiculoDeberiaCrearseConUnTipoDeVehiculoAuto(){
 		Auto unAuto = new Auto();
-		Conductor unConductor = new Conductor(unAuto);
+		Conductor unConductor = new Conductor(unAuto, 4);
 		Assert.assertEquals(unAuto, unConductor.getVehiculo());
 	}
 	
@@ -44,7 +44,7 @@ public class ConductorTest {
 	public void conductorDeberiaPoderCambiarDeVehiculo(){
 		
 		Auto unAuto = new Auto();
-		Conductor unConductor = new Conductor(unAuto);
+		Conductor unConductor = new Conductor(unAuto, 4);
 		Moto unaMoto= new Moto();
 		unConductor.cambiarDeVehiculo(unaMoto);
 		Assert.assertEquals(unaMoto, unConductor.getVehiculo());
@@ -52,7 +52,7 @@ public class ConductorTest {
 	@Test
 	public void vehiculoDeberiaCrearseConUnaPenalizacionDeAvanceIgualAUno(){
 		Auto unAuto = new Auto();
-		Conductor unConductor = new Conductor(unAuto);
+		Conductor unConductor = new Conductor(unAuto, 4);
 		Assert.assertEquals(1, unConductor.getPenalizacionDeAvance());
 	}
 
@@ -60,7 +60,7 @@ public class ConductorTest {
 	public void deberiaLanzarUnaExcepcionSiIntentoAvanzarAUnLugarFueraDelMapa(){
 		Mapa unMapa = new Mapa (1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor (new Auto());
+		Conductor unConductor = new Conductor (new Auto(), 4);
 		celdaInicial.agregarContenido(unConductor);
 		
 		//Avanzo a la derecha
@@ -80,7 +80,7 @@ public class ConductorTest {
 	public void vehiculoAlAvanzarDeberiaDesplazarseDosPosicionesSiNoSeEncuentraObstaculosOSorpresas(){
 		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Auto());		
+		Conductor unConductor = new Conductor(new Auto(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		//Avanza a la derecha.

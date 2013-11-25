@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import fiuba.algo3.modelo.Juego;
+import fiuba.algo3.modelo.Nivel;
 import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.mapa.Celda;
 import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
@@ -33,23 +34,23 @@ public class PantallaDelNivel extends JPanel {
 	final int ANCHO_PANTALLA_NIVEL = 600 - MARGEN_IZQUIERDO;
 	final int ALTO_PANTALLA_NIVEL = 600 - MARGEN_SUPERIOR;
 	
-	private Juego juego;
+	private Nivel nivel;
 	private int anchoCelda;
 	private int altoCelda;
 	
 	private Hashtable<Class, Color> hash;
 	
-	public PantallaDelNivel(Juego unJuego){
+	public PantallaDelNivel(Nivel unNivel){
 		/*
 		 * Esto es lo que se ejecuta cuando se llama al constructor de la clase.
 		 * Luego de llamarse al constructor, automaticamente se llama al metodo
 		 * PAINT.
 		 */
 		setBackground(Color.gray);
-		this.juego = unJuego;
+		this.nivel = unNivel;
 		this.hash = new Hashtable();
-		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.juego.getMapa().getCantidadDeColumnas();
-		this.altoCelda = ALTO_PANTALLA_NIVEL / this.juego.getMapa().getCantidadDeFilas();
+		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeColumnas();
+		this.altoCelda = ALTO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeFilas();
 		
 		//Aca se crean los objetos para poder hashearlos con su clse
 		Auto unAuto = new Auto();
@@ -105,8 +106,8 @@ public class PantallaDelNivel extends JPanel {
 	
 	public void paint(Graphics g) {
 		
-		Mapa mapa = this.juego.getMapa();
-		Conductor conductor = this.juego.getConductor();
+		Mapa mapa = this.nivel.getMapa();
+		Conductor conductor = this.nivel.getConductor();
 		int cantColumnasMapa = mapa.getCantidadDeColumnas();
 		int cantFilasMapa = mapa.getCantidadDeFilas();
 
@@ -124,8 +125,8 @@ public class PantallaDelNivel extends JPanel {
 		}
 
 		//Pintando las MANZANAS de naranja.
-		for (int i = 1; i < this.juego.getMapa().getCantidadDeColumnas(); i+=2 ) {
-			for (int j = 1; j < this.juego.getMapa().getCantidadDeFilas(); j+=2) {
+		for (int i = 1; i < this.nivel.getMapa().getCantidadDeColumnas(); i+=2 ) {
+			for (int j = 1; j < this.nivel.getMapa().getCantidadDeFilas(); j+=2) {
 				if (mapa.getCeldaEn(new Coordenada(i,j)).esVisiblePara(conductor)){
 					Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), cantFilasMapa);
 					g.setColor(Color.black);
