@@ -23,23 +23,27 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import fiuba.algo3.controlador.ControlPorTeclado;
+import fiuba.algo3.controlador.*;
 import fiuba.algo3.modelo.Juego;
-import fiuba.algo3.modelo.coordenadas.Arriba;
+import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
 
 public class Ventana extends JFrame implements Observer {
 	
-	private Juego juego;
+	final int RESOLUCIONX = 800;
+	final int RESOLUCIONY = 600;
 	
+	private Juego juego;
+			
 	public Ventana(Juego unJuego){	
 		this.juego = unJuego;
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
 				setTitle("Juego GPS CHALLENGE");
-				setSize( (juego.getMapa().getCantidadDeFilas()- 2)*50 -10, (juego.getMapa().getCantidadDeColumnas() -1)*50 -5); // Resolucion de la ventana
+				setSize(RESOLUCIONX, RESOLUCIONY);
+				//setSize( (juego.getMapa().getCantidadDeFilas()- 2)*50 -10, (juego.getMapa().getCantidadDeColumnas() -1)*50 -5); // Resolucion de la ventana
 				setLocationRelativeTo(null); // Ubica la ventana en el centro de la pantalla
 				inicializarConCosas();
 				setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,13 +84,14 @@ public class Ventana extends JFrame implements Observer {
 		add(new PantallaDelNivel(this.juego));
 		
 		//Harcodeo de avance hacia arriba del conductor para verificar el update del avanzar.
-		unConductor.avanzarEnDireccion(new Arriba());
+		//unConductor.avanzarEnDireccion(new Arriba());
+		//unConductor.avanzarEnDireccion(new Derecha());
 	}
 	
 	@Override
 	public void update(Observable o, Object arg) {
 		//Aca estoy agregando el dibujito del mapa.
 		add(new PantallaDelNivel(this.juego));
-		System.out.println("Update de Ventana");
+		System.out.println(arg);
 	}
 }

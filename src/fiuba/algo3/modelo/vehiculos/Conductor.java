@@ -77,7 +77,7 @@ public class Conductor extends ContenidoDeCelda{
 		if (unObjetoEncontrable == null){
 			this.desplazarseASiguienteEsquina(unaDireccion);
 		}
-		else{			
+		else{
 			if (this.getVehiculo().meDejanPasar(unObjetoEncontrable)) {
 				this.desplazarseASiguienteEsquina(unaDireccion);
 			}
@@ -86,7 +86,7 @@ public class Conductor extends ContenidoDeCelda{
 		
 		//Hago update de la vista porque se movio (o intento moverse) el conductor
 		this.setChanged();
-		this.notifyObservers();
+		this.notifyObservers("Conductor avanza");
 	}
 	
 }

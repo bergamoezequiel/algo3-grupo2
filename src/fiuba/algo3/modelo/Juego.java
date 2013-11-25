@@ -16,15 +16,11 @@ public class Juego extends Observable {
 	private int puntaje;
 	
 	public Juego (){
-		this.mapa = new Mapa (5, 5);
+		this.mapa = new Mapa (8, 8);
 		this.conductor = new Conductor(new Auto());	
-		this.mapa.getCeldaEn(new Coordenada(2,2)).agregarContenido(this.conductor);
+		this.mapa.getCeldaEn(new Coordenada(8,8)).agregarContenido(this.conductor);
 		
 		this.puntaje = 0;
-		
-		//Hago update para que cargue las posiciones iniciales de todo.
-		this.setChanged();
-		this.notifyObservers();
 	}
 
 	public Mapa getMapa(){
