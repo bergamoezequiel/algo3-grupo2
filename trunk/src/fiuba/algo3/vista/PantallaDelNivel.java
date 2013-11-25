@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import fiuba.algo3.modelo.Juego;
 import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.mapa.Celda;
+import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
 import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
@@ -17,77 +18,78 @@ import fiuba.algo3.modelo.vehiculos.Conductor;
 
 public class PantallaDelNivel extends Canvas {
 	
-	private int MARGEN_IZQUIERDO= 0;
-	private int MARGEN_SUPERIOR = 0;
-	private int DIMENSION_CUADRADO = 40;
+	private int MARGEN_IZQUIERDO = 8;
+	private int MARGEN_SUPERIOR = 50;
+	
+	final int ANCHO_PANTALLA_NIVEL = 600 - MARGEN_IZQUIERDO;
+	final int ALTO_PANTALLA_NIVEL = 600 - MARGEN_SUPERIOR;
+	
 	private Juego juego;
-
+	private int anchoCelda;
+	private int altoCelda;
 	
 	
 	public PantallaDelNivel(Juego unJuego){
 		/*
 		 * Esto es lo que se ejecuta cuando se llama al constructor de la clase.
-		 * Luego dellamarse al constructor, automaticamente se llama al metodo
+		 * Luego de llamarse al constructor, automaticamente se llama al metodo
 		 * PAINT.
 		 */
 		setBackground(Color.gray);
 		this.juego = unJuego;
+		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.juego.getMapa().getCantidadDeColumnas();
+		this.altoCelda = ALTO_PANTALLA_NIVEL / this.juego.getMapa().getCantidadDeFilas();
+	}
+	
+	public Coordenada coordenadaModeloAVista(Coordenada unaCoordenada, int cantColumnasMapa){
+		return new Coordenada(unaCoordenada.getX()*anchoCelda, (cantColumnasMapa-1-unaCoordenada.getY())*altoCelda);
+	}
+	
+	public void pintorCeldaNoVisible(Graphics g, Coordenada unaCoordenadaVista){
+		g.setColor(Color.black);
+		g.fillRect(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
+	}
+	
+	public void pintorContenidoDeCelda(Graphics g, Coordenada unaCoordenadaVista, ContenidoDeCelda unContenido){
+		g.setColor(Color.lightGray);
+		g.fillRect(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
 		
+		//En realidad deberia fijarse si es un conductor
+		//Como esta ahora pinta un circulo rojo siempre que se ubique un contenido de celda, sea lo que sea.
+		if (unContenido != null){
+			g.setColor(Color.red);
+			g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);		}
 	}
 	
 	public void paint(Graphics g) {
-  
-		Graphics2D g2 = (Graphics2D) g;		
 		
-		int filaActual = 0;
-		int columnaActual = 0;
+		Mapa mapa = this.juego.getMapa();
+		Conductor conductor = this.juego.getConductor();
+		int cantColumnasMapa = mapa.getCantidadDeColumnas();
+		int cantFilasMapa = mapa.getCantidadDeFilas();
 		
-		//Pintando todo de Gris Oscuro.
-		for (int i = 0; i < this.juego.getMapa().getCantidadDeFilas(); i++) {
-			for (int j = 0; j < this.juego.getMapa().getCantidadDeColumnas(); j++) {
-				g.setColor(Color.darkGray);
-				g.fillRect(MARGEN_IZQUIERDO + columnaActual, MARGEN_SUPERIOR + filaActual, DIMENSION_CUADRADO, DIMENSION_CUADRADO);
-				columnaActual +=DIMENSION_CUADRADO;    
+		for (int i = 0; i < cantFilasMapa; i++) {
+			for (int j = 0; j < cantColumnasMapa; j++) {
+				Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(j,i), this.juego.getMapa().getCantidadDeColumnas());
+				if (mapa.getCeldaEn(new Coordenada(i,j)).esVisiblePara(conductor)){
+					//Aca en realidad habria que dibujar el contenido de esa celda.
+					this.pintorContenidoDeCelda(g, coordenadaVista, mapa.getCeldaEn(new Coordenada(j,i)).getContenido());
+				}
+				else{
+					this.pintorCeldaNoVisible(g, coordenadaVista);
+				}
 			}
-			filaActual += DIMENSION_CUADRADO;
-			columnaActual = 0;
-		}  
-    
-		
-		//Pintando las MANZANAS de naranja.
-		filaActual = DIMENSION_CUADRADO;
-		columnaActual = DIMENSION_CUADRADO;
-		for ( int i = 1; i < this.juego.getMapa().getCantidadDeFilas(); i+=2 ) {
-			for (int j = 1; j < this.juego.getMapa().getCantidadDeColumnas(); j+=2) {
-				g.setColor(Color.orange);
-				g.fillRect(MARGEN_IZQUIERDO + columnaActual, MARGEN_SUPERIOR + filaActual, DIMENSION_CUADRADO, DIMENSION_CUADRADO);
-				columnaActual +=DIMENSION_CUADRADO*2;       
-			}  
-			filaActual +=DIMENSION_CUADRADO*2;
-			columnaActual = DIMENSION_CUADRADO;
 		}
-		
-		
-		
-		/*
-		 * DESCOMENTAR Y VER COMO SE VA MOVIENDO
-		 */
-		
-		//unConductor.avanzarEnDireccion(new Arriba() );
-		//unConductor.avanzarEnDireccion(new Derecha() );
-		//unConductor.avanzarEnDireccion(new Abajo() );
-		//unConductor.avanzarEnDireccion(new Izquierda() );
-		//unConductor.avanzarEnDireccion(new Arriba() );
-		//unConductor.avanzarEnDireccion(new Arriba() );
-		
-		/*
-		 * ASI SE MUEVE EL AUTO
-		 */
-		
-		Conductor unConductor = this.juego.getConductor();
-		if (unConductor != null){
-			g.setColor(Color.red);
-			g.fillArc(MARGEN_IZQUIERDO + DIMENSION_CUADRADO*unConductor.getCelda().getCoordenada().getX() , MARGEN_SUPERIOR + DIMENSION_CUADRADO*(this.juego.getMapa().getCantidadDeColumnas()-1 - unConductor.getCelda().getCoordenada().getY()), DIMENSION_CUADRADO, DIMENSION_CUADRADO, 360, 360);
+
+		//Pintando las MANZANAS de naranja.
+		for (int i = 1; i < this.juego.getMapa().getCantidadDeFilas(); i+=2 ) {
+			for (int j = 1; j < this.juego.getMapa().getCantidadDeColumnas(); j+=2) {
+				if (mapa.getCeldaEn(new Coordenada(i,j)).esVisiblePara(conductor)){
+					Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(j,i), this.juego.getMapa().getCantidadDeColumnas());
+					g.setColor(Color.orange);
+					g.fillRect(coordenadaVista.getX(), coordenadaVista.getY(), anchoCelda, altoCelda);
+				}
+			}
 		}
 	}
 }
