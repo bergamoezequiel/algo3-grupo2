@@ -12,14 +12,16 @@ import fiuba.algo3.vista.Ventana;
 public class Juego extends Observable {
 
 	private Mapa mapa;
-	private Conductor conductor;	
+	private Conductor conductor;    
 	private int puntaje;
 	private Pozo pozo;
 	private Piquete piquete;
 	
 	public Juego (){
-		this.mapa = new Mapa (8, 8);
-		this.conductor = new Conductor(new Auto());	
+		this.mapa = new Mapa (12, 8);
+		this.conductor = new Conductor(new Auto());     
+		this.pozo = new Pozo();
+		this.piquete= new Piquete();
 		this.pozo = new Pozo();
 		this.piquete= new Piquete();
 		this.mapa.getCeldaEn(new Coordenada(8,8)).agregarContenido(this.conductor);
