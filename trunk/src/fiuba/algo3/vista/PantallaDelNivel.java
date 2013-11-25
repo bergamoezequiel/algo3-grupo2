@@ -99,7 +99,7 @@ public class PantallaDelNivel extends Canvas {
 		}
 		
 		//this.juego.getConductor().avanzarEnDireccion(new Abajo());
-		//this.juego.getConductor().avanzarEnDireccion(new Arriba());
+		//this.juego.getConductor().avanzarEnDireccion(new Izquierda());
 		//this.juego.getConductor().avanzarEnDireccion(new Arriba());
 		
 	}
