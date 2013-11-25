@@ -2,6 +2,7 @@ package fiuba.algo3;
 
 import fiuba.algo3.controlador.ControlPorTeclado;
 import fiuba.algo3.modelo.Juego;
+import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.vista.PantallaDelNivel;
 import fiuba.algo3.vista.Ventana;
 
