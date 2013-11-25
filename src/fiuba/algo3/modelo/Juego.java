@@ -18,6 +18,7 @@ public class Juego extends Observable {
 	private int puntaje;
 	private Pozo pozo;
 	private Piquete piquete;
+	private CambioDeVehiculo cambioDeVehiculo;
 	
 	public Juego (){
 		this.usuarios = new ArrayList<Usuario>();
@@ -30,9 +31,13 @@ public class Juego extends Observable {
 		this.piquete= new Piquete();
 		this.pozo = new Pozo();
 		this.piquete= new Piquete();
+		this.cambioDeVehiculo = new CambioDeVehiculo();
+		
 		this.mapa.getCeldaEn(new Coordenada(8,8)).agregarContenido(this.conductor);
 		this.mapa.getCeldaEn(new Coordenada(8,9)).agregarContenido(this.pozo);
 		this.mapa.getCeldaEn(new Coordenada(1,2)).agregarContenido(this.piquete);
+		this.mapa.getCeldaEn(new Coordenada(2,3)).agregarContenido(this.cambioDeVehiculo);
+		
 	}
 
 	public Mapa getMapa(){
@@ -52,3 +57,4 @@ public class Juego extends Observable {
 	}
 
 }
+
