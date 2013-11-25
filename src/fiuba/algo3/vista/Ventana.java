@@ -71,6 +71,8 @@ public class Ventana extends JFrame implements Observer {
 		opciones.add(opcionGuardar);
 		opciones.add(opcionSalir);
 		
+		opcionSalir.addActionListener(new BotonSalirListener());
+		
 		menu.add(opciones);
 		menu.add(acercaDe);
 		setJMenuBar(menu);
