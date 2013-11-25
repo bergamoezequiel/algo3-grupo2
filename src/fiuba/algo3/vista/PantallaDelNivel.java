@@ -43,8 +43,8 @@ public class PantallaDelNivel extends Canvas {
 		this.altoCelda = ALTO_PANTALLA_NIVEL / this.juego.getMapa().getCantidadDeFilas();
 	}
 	
-	public Coordenada coordenadaModeloAVista(Coordenada unaCoordenada, int cantColumnasMapa){
-		return new Coordenada(unaCoordenada.getX()*anchoCelda, (cantColumnasMapa-1-unaCoordenada.getY())*altoCelda);
+	public Coordenada coordenadaModeloAVista(Coordenada unaCoordenada, int cantFilasMapa){
+		return new Coordenada(unaCoordenada.getX()*anchoCelda, (cantFilasMapa-1-unaCoordenada.getY())*altoCelda);
 	}
 	
 	public void pintorCeldaNoVisible(Graphics g, Coordenada unaCoordenadaVista){
@@ -61,15 +61,17 @@ public class PantallaDelNivel extends Canvas {
 		if (unContenido != null){
 			if (unContenido instanceof Conductor ){ 
 				g.setColor(Color.red);
-				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);		}
+				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
+				}
 			}
 			if (unContenido instanceof Pozo ){ 
 				g.setColor(Color.blue);
-				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);		}
+				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
+				}
 			if (unContenido instanceof Piquete ){ 
 				g.setColor(Color.cyan);
-				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);		}
-			
+				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
+				}	
 	}
 	
 	public void paint(Graphics g) {
@@ -78,10 +80,10 @@ public class PantallaDelNivel extends Canvas {
 		Conductor conductor = this.juego.getConductor();
 		int cantColumnasMapa = mapa.getCantidadDeColumnas();
 		int cantFilasMapa = mapa.getCantidadDeFilas();
-		
-		for (int i = 0; i < cantFilasMapa; i++) {
-			for (int j = 0; j < cantColumnasMapa; j++) {
-				Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), this.juego.getMapa().getCantidadDeColumnas());
+
+		for (int i = 0; i < cantColumnasMapa; i++) {
+			for (int j = 0; j < cantFilasMapa; j++) {
+				Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), cantFilasMapa);
 				if (mapa.getCeldaEn(new Coordenada(i,j)).esVisiblePara(conductor)){
 					//Aca en realidad habria que dibujar el contenido de esa celda.
 					this.pintorContenidoDeCelda(g, coordenadaVista, mapa.getCeldaEn(new Coordenada(i,j)).getContenido());
@@ -93,10 +95,10 @@ public class PantallaDelNivel extends Canvas {
 		}
 
 		//Pintando las MANZANAS de naranja.
-		for (int i = 1; i < this.juego.getMapa().getCantidadDeFilas(); i+=2 ) {
-			for (int j = 1; j < this.juego.getMapa().getCantidadDeColumnas(); j+=2) {
+		for (int i = 1; i < this.juego.getMapa().getCantidadDeColumnas(); i+=2 ) {
+			for (int j = 1; j < this.juego.getMapa().getCantidadDeFilas(); j+=2) {
 				if (mapa.getCeldaEn(new Coordenada(i,j)).esVisiblePara(conductor)){
-					Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), this.juego.getMapa().getCantidadDeColumnas());
+					Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), cantFilasMapa);
 					g.setColor(Color.black);
 					g.fillRect(coordenadaVista.getX(), coordenadaVista.getY(), anchoCelda, altoCelda);
 					
@@ -107,6 +109,6 @@ public class PantallaDelNivel extends Canvas {
 					g.fillRect(coordenadaVista.getX()+margenAnchura, coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura);
 				}
 			}
-		}		
+		}
 	}
 }

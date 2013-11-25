@@ -21,7 +21,7 @@ public class Conductor extends ContenidoDeCelda{
 		this.movimientos = 0;
 		this.penalizacionDeAvance = 1;
 		this.vehiculo = unVehiculo;
-		this.alcanceDeVision = 4;
+		this.alcanceDeVision = 20;
 	}
 	
 	@Override
