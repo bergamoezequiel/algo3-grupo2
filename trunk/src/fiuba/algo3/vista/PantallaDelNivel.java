@@ -3,6 +3,7 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.Hashtable;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -30,6 +31,7 @@ public class PantallaDelNivel extends Canvas {
 	private int anchoCelda;
 	private int altoCelda;
 	
+	private Hashtable<Class, Color> hash;
 	
 	public PantallaDelNivel(Juego unJuego){
 		/*
@@ -39,8 +41,18 @@ public class PantallaDelNivel extends Canvas {
 		 */
 		setBackground(Color.gray);
 		this.juego = unJuego;
+		this.hash = new Hashtable();
 		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.juego.getMapa().getCantidadDeColumnas();
 		this.altoCelda = ALTO_PANTALLA_NIVEL / this.juego.getMapa().getCantidadDeFilas();
+		
+		//Aca se crean los objetos para poder hashearlos con su clse
+		Conductor unConductor = new Conductor(new Auto());
+		Pozo unPozo = new Pozo();
+		Piquete unPiquete = new Piquete();
+
+		this.hash.put(unConductor.getClass(), Color.RED);
+		this.hash.put(unPozo.getClass(), Color.CYAN);
+		this.hash.put(unPiquete.getClass(), Color.BLUE);
 	}
 	
 	public Coordenada coordenadaModeloAVista(Coordenada unaCoordenada, int cantFilasMapa){
@@ -59,19 +71,9 @@ public class PantallaDelNivel extends Canvas {
 		//En realidad deberia fijarse si es un conductor
 		//Como esta ahora pinta un circulo rojo siempre que se ubique un contenido de celda, sea lo que sea.
 		if (unContenido != null){
-			if (unContenido instanceof Conductor ){ 
-				g.setColor(Color.red);
-				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
-				}
+			g.setColor((Color)this.hash.get(unContenido.getClass()));
+			g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
 			}
-			if (unContenido instanceof Pozo ){ 
-				g.setColor(Color.blue);
-				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
-				}
-			if (unContenido instanceof Piquete ){ 
-				g.setColor(Color.cyan);
-				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
-				}	
 	}
 	
 	public void paint(Graphics g) {
