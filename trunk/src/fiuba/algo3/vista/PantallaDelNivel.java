@@ -13,10 +13,16 @@ import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.mapa.Celda;
 import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
 import fiuba.algo3.modelo.mapa.Mapa;
+import fiuba.algo3.modelo.objetosEncontrables.CambioDeVehiculo;
+import fiuba.algo3.modelo.objetosEncontrables.ControlPolicial;
 import fiuba.algo3.modelo.objetosEncontrables.Piquete;
 import fiuba.algo3.modelo.objetosEncontrables.Pozo;
+import fiuba.algo3.modelo.objetosEncontrables.SorpresaDesfavorable;
+import fiuba.algo3.modelo.objetosEncontrables.SorpresaFavorable;
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
+import fiuba.algo3.modelo.vehiculos.Moto;
+import fiuba.algo3.modelo.vehiculos.TodoTerreno;
 
 
 public class PantallaDelNivel extends JPanel {
@@ -46,14 +52,29 @@ public class PantallaDelNivel extends JPanel {
 		this.altoCelda = ALTO_PANTALLA_NIVEL / this.juego.getMapa().getCantidadDeFilas();
 		
 		//Aca se crean los objetos para poder hashearlos con su clse
-		Conductor unConductor = new Conductor(new Auto());
+		Auto unAuto = new Auto();
+		Moto unaMoto = new Moto();
+		TodoTerreno unTodoTerreno = new TodoTerreno();
+		
 		Pozo unPozo = new Pozo();
 		Piquete unPiquete = new Piquete();
+		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
+		SorpresaDesfavorable unaSorpresaDesfavorable = new SorpresaDesfavorable();
+		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
+		ControlPolicial unControlPolicial = new ControlPolicial();
 
-		this.hash.put(unConductor.getClass(), Color.RED);
-		this.hash.put(unPozo.getClass(), Color.CYAN);
+		this.hash.put(unAuto.getClass(), Color.RED );
+		this.hash.put(unaMoto.getClass(), Color.YELLOW);
+		this.hash.put(unTodoTerreno.getClass(), Color.ORANGE);
+		
+		this.hash.put(unPozo.getClass(),Color.BLACK);
 		this.hash.put(unPiquete.getClass(), Color.BLUE);
+		this.hash.put(unaSorpresaFavorable.getClass(),Color.CYAN);
+		this.hash.put(unaSorpresaDesfavorable.getClass(), Color.GRAY);
+		this.hash.put(unCambioDeVehiculo.getClass(), Color.GREEN);
+		this.hash.put(unControlPolicial.getClass(), Color.PINK);
 	}
+	
 	
 	public Coordenada coordenadaModeloAVista(Coordenada unaCoordenada, int cantFilasMapa){
 		return new Coordenada(unaCoordenada.getX()*anchoCelda, (cantFilasMapa-1-unaCoordenada.getY())*altoCelda);
@@ -71,9 +92,15 @@ public class PantallaDelNivel extends JPanel {
 		//En realidad deberia fijarse si es un conductor
 		//Como esta ahora pinta un circulo rojo siempre que se ubique un contenido de celda, sea lo que sea.
 		if (unContenido != null){
-			g.setColor((Color)this.hash.get(unContenido.getClass()));
-			g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
+			if (unContenido instanceof Conductor ){
+				g.setColor((Color)this.hash.get(((Conductor) unContenido).getVehiculo().getClass()));
+				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
 			}
+				else{
+					g.setColor((Color)this.hash.get(unContenido.getClass()));
+					g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
+				}
+		}
 	}
 	
 	public void paint(Graphics g) {
