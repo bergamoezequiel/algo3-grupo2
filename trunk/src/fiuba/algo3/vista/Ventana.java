@@ -36,8 +36,9 @@ public class Ventana extends JFrame implements Observer {
 	
 	private Juego juego;
 			
-	public Ventana(Juego unJuego){	
+	public Ventana(Juego unJuego, ControlPorTeclado unControl){	
 		this.juego = unJuego;
+		this.addKeyListener(unControl.getKeyListener());
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
