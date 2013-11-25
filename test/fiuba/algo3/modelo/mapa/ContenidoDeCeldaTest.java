@@ -28,7 +28,7 @@ public class ContenidoDeCeldaTest{
 	public void deberiaDecirmeSiElContenidoDelaCeldaEsUnConductor(){
 		Mapa unMapa = new Mapa (2,2);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada (0,0));
-		Conductor unConductor = new Conductor (new Auto());
+		Conductor unConductor = new Conductor (new Auto(), 4);
 		unaCelda.agregarContenido(unConductor);
 		
 		Assert.assertTrue(unaCelda.getContenido() instanceof Conductor); 

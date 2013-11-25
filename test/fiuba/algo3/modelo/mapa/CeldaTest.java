@@ -29,7 +29,7 @@ public class CeldaTest{
 	public void testDeberiaAgregarUnContenidoALaCelda(){
 		Mapa unMapa = new Mapa(1,1);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(2, 2));		
-		Conductor unContenido = new Conductor(new Auto());
+		Conductor unContenido = new Conductor(new Auto(), 4);
 		unaCelda.agregarContenido(unContenido);
 		Assert.assertEquals(unContenido, unaCelda.getContenido());
 		Assert.assertEquals(unaCelda, unContenido.getCelda());	
@@ -39,7 +39,7 @@ public class CeldaTest{
 	public void testDeberiaAgregarYLuegoQuitarUnContenidoDeLaCelda(){
 		Mapa unMapa = new Mapa(1,1);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(2, 2));
-		Conductor unVehiculo = new Conductor(new Auto());		
+		Conductor unVehiculo = new Conductor(new Auto(), 4);		
 		unaCelda.agregarContenido(unVehiculo);
 		
 		Assert.assertEquals (unVehiculo, unaCelda.getContenido());
@@ -53,7 +53,7 @@ public class CeldaTest{
 	
 	@Test
 	public void testDeberiaDecirmeSiCiertasCeldasSonVisiblesONo(){
-		Conductor unConductor = new Conductor(new Auto());		
+		Conductor unConductor = new Conductor(new Auto(), 4);		
 		//Creo un mapa con el doble de tamaño del alcance de vision del conductor.
 		//Ubico al conductor en el centro del mapa.
 		Mapa unMapa = new Mapa(unConductor.getAlcanceDeVision()+1, unConductor.getAlcanceDeVision()+1);

@@ -22,7 +22,7 @@ public class SorpresaDesfavorableTest {
 	public void deberiaAumentarLosMovimientosDeLaMotoAlPasarPorUnaSorpresa(){
 		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Moto());		
+		Conductor unConductor = new Conductor(new Moto(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Direccion derecha= new Derecha();
@@ -42,7 +42,7 @@ public class SorpresaDesfavorableTest {
 	public void deberiaAumentarLosMovimientosDelAutoAlPasarPorUnaSorpresa(){
 		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Auto());		
+		Conductor unConductor = new Conductor(new Auto(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Direccion derecha = new Derecha();
@@ -63,7 +63,7 @@ public class SorpresaDesfavorableTest {
 	public void deberiaAumentarLosMovimientosDeLaTodoTerrenoAlPasarPorUnaSorpresa(){
 		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new TodoTerreno());		
+		Conductor unConductor = new Conductor(new TodoTerreno(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Direccion derecha = new Derecha();

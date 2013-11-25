@@ -34,7 +34,7 @@ public class CambioDeVehiculoTest {
 	@Test
 	public void testDeberiaCambiarAutoEnTodoTerreno(){
 		Auto unAuto = new Auto();
-		Conductor unConductor = new Conductor(unAuto);
+		Conductor unConductor = new Conductor(unAuto, 4);
 		TodoTerreno unTodoTerreno = new TodoTerreno();
 		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
 		
@@ -45,7 +45,7 @@ public class CambioDeVehiculoTest {
 	@Test
 	public void testDeberiaCambiarMotoEnAuto(){
 		Moto unaMoto = new Moto();
-		Conductor unConductor = new Conductor(unaMoto);
+		Conductor unConductor = new Conductor(unaMoto, 4);
 		Auto unAuto = new Auto();
 		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
 		
@@ -56,7 +56,7 @@ public class CambioDeVehiculoTest {
 	@Test
 	public void testDeberiaCambiarTodoTerrenoEnMoto(){
 		TodoTerreno unTodoTerreno = new TodoTerreno();
-		Conductor unConductor = new Conductor(unTodoTerreno);
+		Conductor unConductor = new Conductor(unTodoTerreno, 4);
 		Moto unaMoto = new Moto();
 		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
 		
