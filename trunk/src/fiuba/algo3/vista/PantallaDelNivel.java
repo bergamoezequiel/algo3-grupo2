@@ -12,6 +12,7 @@ import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.mapa.Celda;
 import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
 import fiuba.algo3.modelo.mapa.Mapa;
+import fiuba.algo3.modelo.objetosEncontrables.Piquete;
 import fiuba.algo3.modelo.objetosEncontrables.Pozo;
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
@@ -65,6 +66,10 @@ public class PantallaDelNivel extends Canvas {
 			if (unContenido instanceof Pozo ){ 
 				g.setColor(Color.blue);
 				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);		}
+			if (unContenido instanceof Piquete ){ 
+				g.setColor(Color.cyan);
+				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);		}
+			
 	}
 	
 	public void paint(Graphics g) {
