@@ -19,7 +19,7 @@ import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
 
-public class PantallaDelNivel extends Canvas {
+public class PantallaDelNivel extends JPanel {
 	
 	private int MARGEN_IZQUIERDO = 8;
 	private int MARGEN_SUPERIOR = 50;
