@@ -12,6 +12,7 @@ import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.mapa.Celda;
 import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
 import fiuba.algo3.modelo.mapa.Mapa;
+import fiuba.algo3.modelo.objetosEncontrables.Pozo;
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
@@ -57,8 +58,13 @@ public class PantallaDelNivel extends Canvas {
 		//En realidad deberia fijarse si es un conductor
 		//Como esta ahora pinta un circulo rojo siempre que se ubique un contenido de celda, sea lo que sea.
 		if (unContenido != null){
-			g.setColor(Color.red);
-			g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);		}
+			if (unContenido instanceof Conductor ){ 
+				g.setColor(Color.red);
+				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);		}
+			}
+			if (unContenido instanceof Pozo ){ 
+				g.setColor(Color.blue);
+				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);		}
 	}
 	
 	public void paint(Graphics g) {
