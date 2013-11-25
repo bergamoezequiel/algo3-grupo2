@@ -25,15 +25,19 @@ public class ControlPorTeclado {
 				switch(location){
 					case KeyEvent.VK_DOWN:
 						conductor.avanzarEnDireccion(new Abajo());
+						System.out.println("Abajo");
 
 					case KeyEvent.VK_UP:
 						conductor.avanzarEnDireccion(new Arriba());
+						System.out.println("Arriba");
 
 					case KeyEvent.VK_LEFT:
 						conductor.avanzarEnDireccion(new Izquierda());
+						System.out.println("Izquierda");
 
 					case KeyEvent.VK_RIGHT:
 						conductor.avanzarEnDireccion(new Derecha());
+						System.out.println("Derecha");
 				}
 			}
 
