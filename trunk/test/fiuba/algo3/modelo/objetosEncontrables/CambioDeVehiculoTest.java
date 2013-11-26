@@ -3,11 +3,12 @@ package fiuba.algo3.modelo.objetosEncontrables;
 import org.junit.Assert;
 import org.junit.Test;
 
+import fiuba.algo3.modelo.coordenadas.*;
+import fiuba.algo3.modelo.mapa.Celda;
+import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.objetosEncontrables.CambioDeVehiculo;
-import fiuba.algo3.modelo.vehiculos.Auto;
-import fiuba.algo3.modelo.vehiculos.Conductor;
-import fiuba.algo3.modelo.vehiculos.Moto;
-import fiuba.algo3.modelo.vehiculos.TodoTerreno;
+import fiuba.algo3.modelo.vehiculos.*;
+
 
 public class CambioDeVehiculoTest {
 	@Test
@@ -31,38 +32,56 @@ public class CambioDeVehiculoTest {
 		Assert.assertEquals(true,unCambioDeVehiculo.dejaPasar(unTodoTerreno));
 	}
 	
-	
+	@Test
 	public void testDeberiaCambiarAutoEnTodoTerreno(){
-		Auto unAuto = new Auto();
-		Conductor unConductor = new Conductor(unAuto, 4);
-		TodoTerreno unTodoTerreno = new TodoTerreno();
-		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
+		Mapa unMapa = new Mapa(6,6);
+		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
+		Conductor unConductor = new Conductor(new Auto(), 4);		
+		celdaInicial.agregarContenido(unConductor);
 		
-		unCambioDeVehiculo.interactuarConAuto(unConductor);
-		Assert.assertEquals(unTodoTerreno, unConductor.getVehiculo());
+		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
+		Celda celdaDelCambio = unMapa.getCeldaEn(new Coordenada(0, 1));
+		celdaDelCambio.agregarContenido(unCambioDeVehiculo);
+		
+		//Paso por el Cambio de Vehiculo.
+		unConductor.avanzarEnDireccion(new Arriba());
+		
+		Assert.assertEquals(new TodoTerreno(), unConductor.getVehiculo());
 		}
 	
-	
+	@Test
 	public void testDeberiaCambiarMotoEnAuto(){
 		
+		Mapa unMapa = new Mapa(6,6);
+		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
+		Conductor unConductor = new Conductor(new Moto(), 4);		
+		celdaInicial.agregarContenido(unConductor);
 		
-		Moto unaMoto = new Moto();
-		Conductor unConductor = new Conductor(unaMoto, 4);
-		Auto unAuto = new Auto();
-		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
+		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
+		Celda celdaDelCambio = unMapa.getCeldaEn(new Coordenada(0, 1));
+		celdaDelCambio.agregarContenido(unCambioDeVehiculo);
 		
-		unCambioDeVehiculo.interactuarConMoto(unConductor);
-		Assert.assertTrue(unConductor.getVehiculo() instanceof Auto);
+		//Paso por el Cambio de Vehiculo.
+		unConductor.avanzarEnDireccion(new Arriba());
+		
+		Assert.assertEquals(new Auto(), unConductor.getVehiculo());
 		}
 	
 	
+	@Test
 	public void testDeberiaCambiarTodoTerrenoEnMoto(){
-		TodoTerreno unTodoTerreno = new TodoTerreno();
-		Conductor unConductor = new Conductor(unTodoTerreno, 4);
-		Moto unaMoto = new Moto();
-		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
+		Mapa unMapa = new Mapa(6,6);
+		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
+		Conductor unConductor = new Conductor(new TodoTerreno(),4);		
+		celdaInicial.agregarContenido(unConductor);
 		
-		unCambioDeVehiculo.interactuarConTodoTerreno(unConductor);
-		Assert.assertEquals(unaMoto, unConductor.getVehiculo());
+		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
+		Celda celdaDelCambio = unMapa.getCeldaEn(new Coordenada(0, 1));
+		celdaDelCambio.agregarContenido(unCambioDeVehiculo);
+		
+		//Paso por el Cambio de Vehiculo.
+		unConductor.avanzarEnDireccion(new Arriba());
+		
+		Assert.assertEquals(new Moto(), unConductor.getVehiculo());
 		}
 }
