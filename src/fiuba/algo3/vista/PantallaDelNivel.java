@@ -31,7 +31,7 @@ import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 import fiuba.algo3.modelo.vehiculos.Moto;
 import fiuba.algo3.modelo.vehiculos.TodoTerreno;
-
+import fiuba.algo3.modelo.objetosEncontrables.Sorpresa;
 
 public class PantallaDelNivel extends JPanel {
 	
@@ -45,12 +45,19 @@ public class PantallaDelNivel extends JPanel {
 	private int anchoCelda;
 	private int altoCelda;
 	
-	private Hashtable<Class, Color> hash;
+	private Hashtable<Class, ImageIcon> hash;
 	
 	ImageIcon dibujo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/1.png")).getImage());
 	ImageIcon dibujo2= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/2.jpg")).getImage());
 	ImageIcon dibujo3= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/3.jpg")).getImage());
 	ImageIcon dibujo4= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/4.jpg")).getImage());
+	ImageIcon dibujo5= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/5.png")).getImage());
+	ImageIcon dibujo6= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/6.bmp")).getImage());
+	ImageIcon dibujo7= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/7.jpg")).getImage());
+	ImageIcon dibujo8= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/8.jpg")).getImage());
+	
+	
+	
 	public PantallaDelNivel(Nivel unNivel){
 		/*
 		 * Esto es lo que se ejecuta cuando se llama al constructor de la clase.
@@ -75,16 +82,16 @@ public class PantallaDelNivel extends JPanel {
 		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
 		ControlPolicial unControlPolicial = new ControlPolicial();
 
-		this.hash.put(unAuto.getClass(), Color.RED );
-		this.hash.put(unaMoto.getClass(), Color.YELLOW);
-		this.hash.put(unTodoTerreno.getClass(), Color.ORANGE);
+		this.hash.put(unAuto.getClass(), dibujo);
+		this.hash.put(unaMoto.getClass(), dibujo2);
+		this.hash.put(unTodoTerreno.getClass(), dibujo3);
 		
-		this.hash.put(unPozo.getClass(),Color.BLACK);
-		this.hash.put(unPiquete.getClass(), Color.BLUE);
-		this.hash.put(unaSorpresaFavorable.getClass(),Color.CYAN);
-		this.hash.put(unaSorpresaDesfavorable.getClass(), Color.GRAY);
-		this.hash.put(unCambioDeVehiculo.getClass(), Color.GREEN);
-		this.hash.put(unControlPolicial.getClass(), Color.PINK);
+		this.hash.put(unPozo.getClass(),dibujo8);
+		this.hash.put(unPiquete.getClass(), dibujo7);
+		this.hash.put(unaSorpresaFavorable.getClass(),dibujo5);
+		this.hash.put(unaSorpresaDesfavorable.getClass(),dibujo5);
+		this.hash.put(unCambioDeVehiculo.getClass(), dibujo5);
+		this.hash.put(unControlPolicial.getClass(), dibujo6);
 	}
 	
 	
@@ -106,21 +113,16 @@ public class PantallaDelNivel extends JPanel {
 		//Como esta ahora pinta un circulo rojo siempre que se ubique un contenido de celda, sea lo que sea.
 		if (unContenido != null){
 			if (unContenido instanceof Conductor ){
-				Auto unAuto=new Auto();
-				if (((Conductor) unContenido).getVehiculo().getClass() == unAuto.getClass()) 
-				g.drawImage(dibujo.getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
-				Moto unaMoto=new Moto();
-				if (((Conductor) unContenido).getVehiculo().getClass() == unaMoto.getClass()) 
-				g.drawImage(dibujo2.getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
-				TodoTerreno unaCamioneta=new TodoTerreno();
-				if (((Conductor) unContenido).getVehiculo().getClass() == unaCamioneta.getClass()) 
-				g.drawImage(dibujo3.getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
+				
+				g.drawImage(((ImageIcon)this.hash.get(((Conductor) unContenido).getVehiculo().getClass())).getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
 				/*				g.setColor((Color)this.hash.get(((Conductor) unContenido).getVehiculo().getClass()));
 				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);*/
 			}
 				else{
-					g.setColor((Color)this.hash.get(unContenido.getClass()));
-					g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
+					g.drawImage(((ImageIcon)this.hash.get(unContenido.getClass())).getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
+			
+/*					g.setColor((Color)this.hash.get(unContenido.getClass()));
+					g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);*/
 				}
 		}
 	}
