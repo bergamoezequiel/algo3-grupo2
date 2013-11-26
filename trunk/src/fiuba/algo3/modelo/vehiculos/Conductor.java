@@ -1,6 +1,6 @@
 package fiuba.algo3.modelo.vehiculos;
 
-import fiuba.algo3.modelo.coordenadas.Coordenada;
+import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.coordenadas.Direccion;
 import fiuba.algo3.modelo.mapa.Celda;
 import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
@@ -15,6 +15,7 @@ public class Conductor extends ContenidoDeCelda{
 	private int movimientos;
 	private int alcanceDeVision;
 	private Vehiculo vehiculo;
+	private Direccion direccion;
 	
 	public Conductor(Vehiculo unVehiculo, int unAlcanceDeVision){
 		super();
@@ -22,6 +23,7 @@ public class Conductor extends ContenidoDeCelda{
 		this.penalizacionDeAvance = 1;
 		this.vehiculo = unVehiculo;
 		this.alcanceDeVision = unAlcanceDeVision;
+		this.direccion = new Derecha();
 	}
 	
 	@Override
@@ -71,15 +73,16 @@ public class Conductor extends ContenidoDeCelda{
 	}
 	
 	public void avanzarEnDireccion(Direccion unaDireccion) {
-		ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(unaDireccion).getContenido();
+		this.setDireccion(unaDireccion);
+		ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(this.getDireccion()).getContenido();
 		Interactuable unObjetoEncontrable = (Interactuable) contenidoVecino;
 			
 		if (unObjetoEncontrable == null){
-			this.desplazarseASiguienteEsquina(unaDireccion);
+			this.desplazarseASiguienteEsquina(this.getDireccion());
 		}
 		else{
 			if (this.getVehiculo().meDejanPasar(unObjetoEncontrable)) {
-				this.desplazarseASiguienteEsquina(unaDireccion);
+				this.desplazarseASiguienteEsquina(this.getDireccion());
 			}
 			this.getVehiculo().interactuar(unObjetoEncontrable, this);
 		}
@@ -87,6 +90,16 @@ public class Conductor extends ContenidoDeCelda{
 		//Hago update de la vista porque se movio (o intento moverse) el conductor
 		this.setChanged();
 		this.notifyObservers("Conductor avanza");
+	}
+	
+	//Le falta su test
+	private void setDireccion(Direccion unaDireccion){
+		this.direccion = unaDireccion;
+	}
+	
+	//Le falta su test
+	public Direccion getDireccion(){
+		return this.direccion;
 	}
 	
 }

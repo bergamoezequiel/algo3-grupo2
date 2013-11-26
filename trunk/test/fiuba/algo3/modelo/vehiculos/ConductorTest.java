@@ -18,7 +18,8 @@ import fiuba.algo3.modelo.vehiculos.Moto;
 
 
 public class ConductorTest {
-
+	
+	
 	@Test(expected = UbicacionEnMapaException.class) 
 	public void vehiculoDeberiaLanzarExcepcionSiSeCreaEnCoordenadaImpar(){
 		Mapa unMapa = new Mapa(1,1);
@@ -87,20 +88,25 @@ public class ConductorTest {
 		Direccion derecha = new Derecha();
 		unConductor.avanzarEnDireccion(derecha);
 		Assert.assertEquals(new Coordenada (2, 0) , unConductor.getCelda().getCoordenada());
-
+		Assert.assertEquals(new Derecha(), unConductor.getDireccion());
+		
 		//Avanza para arriba.
 		Direccion arriba = new Arriba ();
 		unConductor.avanzarEnDireccion(arriba);
 		Assert.assertEquals(new Coordenada (2, 2), unConductor.getCelda().getCoordenada());
+		Assert.assertEquals(new Arriba(), unConductor.getDireccion());
 		
 		//Avanza para la izquierda.
 		Direccion izquierda = new Izquierda ();
 		unConductor.avanzarEnDireccion(izquierda);
 		Assert.assertEquals (new Coordenada(0, 2) , unConductor.getCelda().getCoordenada());
-		
+		Assert.assertEquals(new Izquierda(), unConductor.getDireccion());
+
 		//Avanza para Abajo.
 		Direccion abajo = new Abajo();
 		unConductor.avanzarEnDireccion(abajo);
 		Assert.assertEquals (new Coordenada(0, 0) , unConductor.getCelda().getCoordenada());
+		Assert.assertEquals(new Abajo(), unConductor.getDireccion());
+
 	}
 }
