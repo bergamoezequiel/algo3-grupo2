@@ -16,21 +16,21 @@ public class CambioDeVehiculo extends Sorpresa {
 	public void interactuarConMoto(Conductor unConductor) {
 		Vehiculo unAuto = new Auto();
 		unConductor.cambiarDeVehiculo (unAuto);
-		//this.destruirse();
+		this.destruirse();
 	}
 	
 	@Override
 	public void interactuarConAuto(Conductor unConductor) {
 		Vehiculo unTodoTerreno = new TodoTerreno();
 		unConductor.cambiarDeVehiculo (unTodoTerreno);
-		//this.destruirse();
+		this.destruirse();
 	}
 	
 	@Override
 	public void interactuarConTodoTerreno(Conductor unConductor){
 		Vehiculo unaMoto = new Moto();
 		unConductor.cambiarDeVehiculo (unaMoto);
-		//this.destruirse();
+		this.destruirse();
        }
 
 
