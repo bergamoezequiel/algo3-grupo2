@@ -50,7 +50,7 @@ public class PantallaDelNivel extends JPanel {
 	ImageIcon dibujo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/1.png")).getImage());
 	ImageIcon dibujo2= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/2.jpg")).getImage());
 	ImageIcon dibujo3= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/3.jpg")).getImage());
-	
+	ImageIcon dibujo4= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/4.jpg")).getImage());
 	public PantallaDelNivel(Nivel unNivel){
 		/*
 		 * Esto es lo que se ejecuta cuando se llama al constructor de la clase.
@@ -157,7 +157,8 @@ public class PantallaDelNivel extends JPanel {
 					double contorno = 0.1;
 					int margenAnchura = (int) Math.round(anchoCelda*contorno);
 					int margenAltura = (int) Math.round(altoCelda*contorno);
-					g.fillRect(coordenadaVista.getX()+margenAnchura, coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura);
+					/*g.fillRect(coordenadaVista.getX()+margenAnchura, coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura);*/
+					g.drawImage(dibujo4.getImage(),coordenadaVista.getX()+margenAnchura,  coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura,null);
 				}
 			}
 		}
