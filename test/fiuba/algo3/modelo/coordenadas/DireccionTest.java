@@ -23,7 +23,7 @@ public class DireccionTest {
 	public void testDeberiaSerDistintosEstosDosObjetosDireccion(){
 		Direccion unaDireccion = new Derecha();
 		Direccion otraDireccion = new Izquierda();
-		Assert.assertNotEquals(unaDireccion, otraDireccion);
+		Assert.assertFalse(unaDireccion.equals(otraDireccion));
 	}
 	
 	@Test
