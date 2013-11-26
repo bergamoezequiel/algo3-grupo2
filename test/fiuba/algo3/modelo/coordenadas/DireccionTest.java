@@ -13,6 +13,20 @@ import fiuba.algo3.modelo.coordenadas.Izquierda;
 public class DireccionTest {
 	
 	@Test
+	public void testDeberiaSerIgualesEstosDosObjetosDireccion(){
+		Direccion unaDireccion = new Derecha();
+		Direccion otraDireccion = new Derecha();
+		Assert.assertEquals(unaDireccion, otraDireccion);
+	}
+	
+	@Test
+	public void testDeberiaSerDistintosEstosDosObjetosDireccion(){
+		Direccion unaDireccion = new Derecha();
+		Direccion otraDireccion = new Izquierda();
+		Assert.assertNotEquals(unaDireccion, otraDireccion);
+	}
+	
+	@Test
 	public void testgetDireccionIzquierdaComoCoordenada(){
 		Direccion unaDireccion = new Izquierda();
 		Assert.assertEquals(new Coordenada(-1, 0), unaDireccion.getDireccionComoCoordenada());
