@@ -10,6 +10,10 @@ public abstract class Sorpresa extends ObjetoEncontrable {
 		super();
 	}
 	
+	protected void destruirse(){
+		this.getCelda().quitarContenido();
+	}
+	
 	@Override
 	public boolean dejaPasar(Moto unaMoto) {
 		return true;

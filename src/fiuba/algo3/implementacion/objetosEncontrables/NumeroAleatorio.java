@@ -1,7 +1,5 @@
 package fiuba.algo3.implementacion.objetosEncontrables;
 
-
-
 public class NumeroAleatorio {
 	
 	protected double numero;
@@ -13,5 +11,4 @@ public class NumeroAleatorio {
 	public double obtenerNumero(){
 		return this.numero;
 	}
-	
 }
