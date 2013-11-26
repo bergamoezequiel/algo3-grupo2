@@ -1,36 +1,37 @@
 package fiuba.algo3.vista;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GridLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+//import java.awt.BasicStroke;
+//import java.awt.Color;
+//import java.awt.Graphics;
+//import java.awt.Graphics2D;
+//import java.awt.GridLayout;
+//import java.awt.event.ActionListener;
+//import java.awt.event.KeyEvent;
+//import java.awt.event.KeyListener;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
+//import javax.swing.ImageIcon;
+//import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
+//import javax.swing.JLabel;
+//import javax.swing.JLayeredPane;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+//import javax.swing.JOptionPane;
+//import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 import fiuba.algo3.controlador.*;
 import fiuba.algo3.modelo.Juego;
-import fiuba.algo3.modelo.coordenadas.*;
+//import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
 
 public class Ventana extends JFrame implements Observer {
-	
+
+	private static final long serialVersionUID = 5555565620572460954L;
 	final int RESOLUCIONX = 800;
 	final int RESOLUCIONY = 600;
 	

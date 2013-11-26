@@ -3,11 +3,7 @@ package fiuba.algo3.modelo;
 import java.util.ArrayList;
 import java.util.Observable;
 
-import fiuba.algo3.modelo.mapa.*;
-import fiuba.algo3.modelo.objetosEncontrables.*;
 import fiuba.algo3.modelo.vehiculos.*;
-import fiuba.algo3.modelo.coordenadas.*;
-import fiuba.algo3.vista.Ventana;
 
 
 public class Juego extends Observable {

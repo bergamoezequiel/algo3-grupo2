@@ -1,8 +1,6 @@
 package fiuba.algo3.modelo.mapa;
 
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 
 import fiuba.algo3.modelo.coordenadas.Coordenada;
 

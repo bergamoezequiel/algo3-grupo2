@@ -2,7 +2,6 @@ package fiuba.algo3.modelo.objetosEncontrables;
 
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
-
 public class SorpresaFavorable extends Sorpresa {
 	double penalizacion;
 	
@@ -19,19 +18,19 @@ public class SorpresaFavorable extends Sorpresa {
 	@Override
 	public void interactuarConMoto(Conductor unConductor) {
 		aplicarPenalizacion(unConductor);
-		this.getCelda().quitarContenido();
+		this.destruirse();
 	}
 	
 	@Override
 	public void interactuarConAuto(Conductor unConductor) {
 		aplicarPenalizacion(unConductor);
-		this.getCelda().quitarContenido();
+		this.destruirse();
 	}
 	
 	@Override
 	public void interactuarConTodoTerreno(Conductor unConductor){
 		aplicarPenalizacion(unConductor);
-		this.getCelda().quitarContenido();
+		this.destruirse();
 	}
 
 	

@@ -1,6 +1,6 @@
 package fiuba.algo3.vista;
 
-import javax.swing.JFrame;
+//import javax.swing.JFrame;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 

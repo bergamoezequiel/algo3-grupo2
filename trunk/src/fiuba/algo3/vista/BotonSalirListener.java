@@ -7,12 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
-	public class BotonSalirListener implements ActionListener
-	{
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if (e.getActionCommand().compareTo("Salir")==0) System.exit(0);
-			
-			}
-		
+public class BotonSalirListener implements ActionListener
+{
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getActionCommand().compareTo("Salir")==0) System.exit(0);
+
 	}
+}

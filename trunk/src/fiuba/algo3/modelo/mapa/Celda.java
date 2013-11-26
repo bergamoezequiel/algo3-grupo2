@@ -4,14 +4,11 @@ import fiuba.algo3.modelo.coordenadas.Coordenada;
 import fiuba.algo3.modelo.coordenadas.Direccion;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
-
 public class Celda{
 	
 	private Coordenada coordenada;
 	private ContenidoDeCelda contenido;
 	private Mapa mapa;
-	
-
 	
 	public Celda(Mapa unMapa, Coordenada unaCoordenada){
 		this.coordenada = unaCoordenada;

@@ -1,40 +1,29 @@
 package fiuba.algo3.vista;
-import java.awt.Canvas;
+//import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
+//import java.awt.Graphics2D;
 import java.util.Hashtable;
-import java.io.InputStream;
-import java.awt.Image;
-import java.io.IOException;
+//import java.io.InputStream;
+//import java.awt.Image;
+//import java.io.IOException;
 
 
-import javax.imageio.ImageIO;
+//import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-import javax.swing.JFrame;
+//import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import fiuba.algo3.modelo.Juego;
 import fiuba.algo3.modelo.Nivel;
 import fiuba.algo3.modelo.coordenadas.*;
-import fiuba.algo3.modelo.mapa.Celda;
-import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
-import fiuba.algo3.modelo.mapa.Mapa;
-import fiuba.algo3.modelo.objetosEncontrables.CambioDeVehiculo;
-import fiuba.algo3.modelo.objetosEncontrables.ControlPolicial;
-import fiuba.algo3.modelo.objetosEncontrables.Piquete;
-import fiuba.algo3.modelo.objetosEncontrables.Pozo;
-import fiuba.algo3.modelo.objetosEncontrables.SorpresaDesfavorable;
-import fiuba.algo3.modelo.objetosEncontrables.SorpresaFavorable;
-import fiuba.algo3.modelo.vehiculos.Auto;
-import fiuba.algo3.modelo.vehiculos.Conductor;
-import fiuba.algo3.modelo.vehiculos.Moto;
-import fiuba.algo3.modelo.vehiculos.TodoTerreno;
-import fiuba.algo3.modelo.objetosEncontrables.Sorpresa;
+import fiuba.algo3.modelo.mapa.*;
+import fiuba.algo3.modelo.vehiculos.*;
+import fiuba.algo3.modelo.objetosEncontrables.*;
 
 public class PantallaDelNivel extends JPanel {
 	
+	private static final long serialVersionUID = 9158068573854911242L;
 	private int MARGEN_IZQUIERDO = 8;
 	private int MARGEN_SUPERIOR = 50;
 	
