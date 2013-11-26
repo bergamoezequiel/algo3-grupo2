@@ -5,7 +5,7 @@ import fiuba.algo3.modelo.objetosEncontrables.*;
 public class Auto extends Vehiculo {
 
 	@Override
-	public void interactuar(Interactuable unObjetoEncontrable,	Conductor unConductor) {
+	public void interactuar(Interactuable unObjetoEncontrable, Conductor unConductor) {
 		unObjetoEncontrable.interactuarConAuto(unConductor);
 	}
 
