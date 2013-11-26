@@ -4,6 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.Hashtable;
+import java.io.InputStream;
+import java.awt.Image;
+import java.io.IOException;
+
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -39,6 +46,10 @@ public class PantallaDelNivel extends JPanel {
 	private int altoCelda;
 	
 	private Hashtable<Class, Color> hash;
+	
+	ImageIcon dibujo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/1.png")).getImage());
+	ImageIcon dibujo2= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/2.jpg")).getImage());
+	ImageIcon dibujo3= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/3.jpg")).getImage());
 	
 	public PantallaDelNivel(Nivel unNivel){
 		/*
@@ -77,6 +88,7 @@ public class PantallaDelNivel extends JPanel {
 	}
 	
 	
+	
 	public Coordenada coordenadaModeloAVista(Coordenada unaCoordenada, int cantFilasMapa){
 		return new Coordenada(unaCoordenada.getX()*anchoCelda, (cantFilasMapa-1-unaCoordenada.getY())*altoCelda);
 	}
@@ -94,8 +106,17 @@ public class PantallaDelNivel extends JPanel {
 		//Como esta ahora pinta un circulo rojo siempre que se ubique un contenido de celda, sea lo que sea.
 		if (unContenido != null){
 			if (unContenido instanceof Conductor ){
-				g.setColor((Color)this.hash.get(((Conductor) unContenido).getVehiculo().getClass()));
-				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
+				Auto unAuto=new Auto();
+				if (((Conductor) unContenido).getVehiculo().getClass() == unAuto.getClass()) 
+				g.drawImage(dibujo.getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
+				Moto unaMoto=new Moto();
+				if (((Conductor) unContenido).getVehiculo().getClass() == unaMoto.getClass()) 
+				g.drawImage(dibujo2.getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
+				TodoTerreno unaCamioneta=new TodoTerreno();
+				if (((Conductor) unContenido).getVehiculo().getClass() == unaCamioneta.getClass()) 
+				g.drawImage(dibujo3.getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
+				/*				g.setColor((Color)this.hash.get(((Conductor) unContenido).getVehiculo().getClass()));
+				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);*/
 			}
 				else{
 					g.setColor((Color)this.hash.get(unContenido.getClass()));
