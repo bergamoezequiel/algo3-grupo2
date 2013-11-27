@@ -7,11 +7,11 @@ import fiuba.algo3.modelo.vehiculos.*;
 
 public class Nivel {
 	
-	private Mapa mapa;
-	private Conductor conductor;
-	private int movimientosLimites;
+	protected Mapa mapa;
+	protected Conductor conductor;
+	protected int movimientosLimites;
 	
-	public Nivel (int unaDificultad, Vehiculo unVehiculo){		
+	/*public Nivel (Vehiculo unVehiculo){		
 		this.movimientosLimites = 60;
 		this.mapa = new Mapa (8, 8);
 		this.conductor = new Conductor(unVehiculo, 4);
@@ -21,7 +21,7 @@ public class Nivel {
 		this.mapa.getCeldaEn(new Coordenada(1,2)).agregarContenido(new Piquete());
 		this.mapa.getCeldaEn(new Coordenada(2,3)).agregarContenido(new CambioDeVehiculo());
 		this.mapa.getCeldaEn(new Coordenada (3,2)).agregarContenido(new SorpresaFavorable());
-	}
+	}*/
 	
 	public Mapa getMapa(){
 		return this.mapa;
