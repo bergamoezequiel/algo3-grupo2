@@ -62,21 +62,33 @@ public class Ventana extends JFrame implements Observer {
 	public void inicializarConCosas(){
 		JMenuBar menu  = new JMenuBar();
 		JMenu opciones = new JMenu("Opciones");
-		JMenu acercaDe = new JMenu("Acerca de..");
+		JMenu ayuda = new JMenu("Ayuda");
 		
 		JMenuItem opcionNuevaPartida = new JMenuItem("Nueva Partida");
 		JMenuItem opcionGuardar = new JMenuItem("Guardar");
 		JMenuItem opcionSalir = new JMenuItem("Salir");
+		JMenuItem opcionAcercaDe = new JMenuItem("Acerca de...");
+		JMenuItem opcionInstrucciones = new JMenuItem ("Instrucciones");
 		
-		acercaDe.addMenuListener(new AcercaDeListener());
+		
+
+		//Agrego los botones al Menu Opciones.
 		opciones.add(opcionNuevaPartida);
 		opciones.add(opcionGuardar);
 		opciones.add(opcionSalir);
 		
-		opcionSalir.addActionListener(new BotonSalirListener());
+		//Agrego los botones al Menu Ayuda.
+		ayuda.add(opcionInstrucciones);
+		ayuda.add(opcionAcercaDe);
 		
+		//Agrego los respectivos Listeners de cada boton.
+		opcionSalir.addActionListener(new BotonSalirListener());
+		opcionAcercaDe.addActionListener(new AcercaDeListener());
+		opcionInstrucciones.addActionListener(new InstruccionesListener());
+		
+		//Agrego los menues a la ventana Principal.
 		menu.add(opciones);
-		menu.add(acercaDe);
+		menu.add(ayuda);
 		setJMenuBar(menu);
 		
 		Conductor unConductor = this.juego.getNivelActual().getConductor();
