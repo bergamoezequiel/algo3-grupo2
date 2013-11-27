@@ -14,10 +14,11 @@ public class InstruccionesVentana extends JFrame{
 		setLocation(500, 200);
 		this.setVisible(false);                 
 		this.setTitle("Instrucciones");
-		this.setSize(400,350);
+		this.setSize(430,350);
 		this.setResizable(false);
 		                        
 		String str = "<html><div style='text-align: center;'>"
+				+ "<FONT FACE=verdana"
 				+ "<b>Bienvenidos al juego GPS Challenge! </b><br>"
 				+ "<br>"
 				+ "<br>"
@@ -34,7 +35,7 @@ public class InstruccionesVentana extends JFrame{
 				+ "<br>"
 				+ " Te animas a jugar??<br>"
 				+ " Usa las flechas del teclado para moverte. Mucha Suerte!<br>"		
-				+ "</html></div>";
+				+ "</html></div></font>";
 		
 		JLabel texto= new JLabel(str);
 		this.add(texto);
