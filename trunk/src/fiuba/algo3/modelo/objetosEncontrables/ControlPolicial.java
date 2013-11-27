@@ -3,13 +3,19 @@ package fiuba.algo3.modelo.objetosEncontrables;
 import fiuba.algo3.modelo.vehiculos.*;
 
 public class ControlPolicial extends ObjetoEncontrable {
+	/*
+	 * Se deberia llamar siempre primero al metodo dejarPasar antes que al
+	 * interactuar, ya que el dejarPasar es el que determina por probabilidad
+	 * si el control esta activo o no.
+	 * 
+	 * */
+	
 	int penalizacion;
 	/*Probabilidad de quedar demorados por el control policial*/
 	final double probabilidadDePararMoto = 0.8;
 	final double probabilidadDePararAuto = 0.5;
 	final double probabilidadDePararTodoTerreno = 0.3;
-	private boolean controlActivo;
-	
+	private boolean controlActivo = false;
 	
 	public ControlPolicial() {
 		super();
