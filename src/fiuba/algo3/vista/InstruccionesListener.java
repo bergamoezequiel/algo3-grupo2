@@ -5,13 +5,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
-
-public class AcercaDeListener implements ActionListener{
+public class InstruccionesListener implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand().compareTo("Acerca de...")==0){
-			JFrame unaVentana = new AcercaDeVentana();
+		if (e.getActionCommand().compareTo("Instrucciones")==0){
+			JFrame unaVentana = new InstruccionesVentana();
 			unaVentana.setVisible(true);
 			unaVentana.setAlwaysOnTop(true);
 		}		
@@ -20,6 +19,3 @@ public class AcercaDeListener implements ActionListener{
 
 
 }
-	
-
-
