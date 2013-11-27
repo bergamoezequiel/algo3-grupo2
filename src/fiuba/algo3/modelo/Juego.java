@@ -27,6 +27,7 @@ public class Juego extends Observable {
 	}
 	
 	public void agregarUsuario(Usuario unUsuario){
+		//Falta verificar que no exista un usuario con el mismo nombre previamente
 		this.usuarios.add(unUsuario);
 	}
 	
