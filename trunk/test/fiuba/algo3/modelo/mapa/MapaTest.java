@@ -4,9 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import fiuba.algo3.modelo.coordenadas.Coordenada;
-import fiuba.algo3.modelo.mapa.Celda;
-import fiuba.algo3.modelo.mapa.Mapa;
-import fiuba.algo3.modelo.mapa.UbicacionEnMapaException;
 
 public class MapaTest {
 	@Test

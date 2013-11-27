@@ -4,10 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import fiuba.algo3.modelo.objetosEncontrables.Piquete;
-import fiuba.algo3.modelo.vehiculos.Auto;
-import fiuba.algo3.modelo.vehiculos.Conductor;
-import fiuba.algo3.modelo.vehiculos.Moto;
-import fiuba.algo3.modelo.vehiculos.TodoTerreno;
+import fiuba.algo3.modelo.vehiculos.*;
 
 public class PiqueteTest {
 	@Test

@@ -1,12 +1,7 @@
 package fiuba.algo3.modelo.coordenadas;
 
-
 import org.junit.Assert;
 import org.junit.Test;
-
-import fiuba.algo3.modelo.coordenadas.Arriba;
-import fiuba.algo3.modelo.coordenadas.Coordenada;
-import fiuba.algo3.modelo.coordenadas.Direccion;
 
 public class CoordenadaTest {
 	

@@ -4,7 +4,6 @@ import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 import fiuba.algo3.modelo.vehiculos.Moto;
 import fiuba.algo3.modelo.vehiculos.TodoTerreno;
-import fiuba.algo3.implementacion.objetosEncontrables.NumeroAleatorio;
 
 
 public class ControlPolicial extends ObjetoEncontrable {
