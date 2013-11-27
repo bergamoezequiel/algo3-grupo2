@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import fiuba.algo3.modelo.coordenadas.Coordenada;
-import fiuba.algo3.modelo.vehiculos.Auto;
-import fiuba.algo3.modelo.vehiculos.Moto;
 
 public class VehiculoTest {
 

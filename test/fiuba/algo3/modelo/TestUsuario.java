@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import fiuba.algo3.modelo.mapa.UbicacionEnMapaException;
-
 public class TestUsuario {
 	final String NOMBRE_VALIDO = "Juan";
 	final String NOMBRE_INVALIDO = "";

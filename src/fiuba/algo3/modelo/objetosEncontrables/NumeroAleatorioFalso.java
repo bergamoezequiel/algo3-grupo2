@@ -1,4 +1,5 @@
-package fiuba.algo3.implementacion.objetosEncontrables;
+package fiuba.algo3.modelo.objetosEncontrables;
+
 
 public class NumeroAleatorioFalso extends NumeroAleatorio{
 	

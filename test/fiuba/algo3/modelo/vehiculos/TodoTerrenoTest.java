@@ -3,14 +3,10 @@ package fiuba.algo3.modelo.vehiculos;
 import org.junit.Assert;
 import org.junit.Test;
 
-import fiuba.algo3.modelo.coordenadas.Coordenada;
-import fiuba.algo3.modelo.coordenadas.Derecha;
-import fiuba.algo3.modelo.coordenadas.Direccion;
+import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.mapa.Celda;
 import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.objetosEncontrables.Pozo;
-import fiuba.algo3.modelo.vehiculos.Conductor;
-import fiuba.algo3.modelo.vehiculos.TodoTerreno;
 
 public class TodoTerrenoTest {
 	@Test
