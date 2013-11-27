@@ -16,6 +16,7 @@ public class AcercaDeVentana extends JFrame {
 		this.setResizable(false);
 		                        
 		String str = "<html><div style='text-align: center;'>"
+				+ "<FONT FACE=verdana"
 				+ "<b><u>Algoritmos y Programacion III 2013 </b></u><br>"
 				+ "<br>"
 				+ "<br>"
@@ -27,7 +28,7 @@ public class AcercaDeVentana extends JFrame {
 				+ "<br>"
 				+ "<div style='text-align: left;'>"
 				+ " ® GPS Challenge v1.1<br>"		
-				+ "</html></div>";
+				+ "</html></div></font>";
 		
 		JLabel texto= new JLabel(str);
 
