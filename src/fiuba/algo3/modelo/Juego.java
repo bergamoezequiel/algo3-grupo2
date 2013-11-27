@@ -11,6 +11,7 @@ public class Juego extends Observable {
 	private ArrayList<Usuario> usuarios;  
 	private int puntaje;
 	private Nivel nivelActual;
+	private Usuario usuarioActual;
 	private ArrayList<Nivel> niveles; 
 	
 	public Juego (){
@@ -30,9 +31,21 @@ public class Juego extends Observable {
 		//Falta verificar que no exista un usuario con el mismo nombre previamente
 		this.usuarios.add(unUsuario);
 	}
+
+	public void setNivelActual(Nivel unNivel){
+		this.nivelActual = unNivel;
+	}
 	
 	public Nivel getNivelActual(){
 		return this.nivelActual;
+	}
+	
+	public Usuario getUsuarioActual(){
+		return this.usuarioActual;
+	}
+	
+	public void setUsuarioActual(Usuario unUsuario){
+		this.usuarioActual = unUsuario;
 	}
 
 }

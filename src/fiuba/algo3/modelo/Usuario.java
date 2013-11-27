@@ -1,10 +1,21 @@
 package fiuba.algo3.modelo;
 
-import fiuba.algo3.modelo.mapa.UbicacionEnMapaException;
-
 public class Usuario {
 
 	private String nombre; 
+	
+	@Override
+	public boolean equals (Object unObjeto) {
+		boolean sonIguales = false;
+		
+		if (unObjeto instanceof Usuario) {
+			Usuario unUsuario = (Usuario) unObjeto;
+			if ( this.getNombre() == unUsuario.getNombre() ) {
+				sonIguales = true;
+			}
+		}
+		return sonIguales;
+	}
 	
 	public Usuario (String unNombre) throws NombreDeUsuarioInvalidoException {
 		if (unNombre == ""){
