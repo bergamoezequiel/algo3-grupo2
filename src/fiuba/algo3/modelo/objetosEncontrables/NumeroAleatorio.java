@@ -5,7 +5,7 @@ public class NumeroAleatorio {
 	protected double numero;
 	
 	public NumeroAleatorio(){
-		this.numero= Math.random();
+		this.numero = Math.random();
 	}
 	
 	public double obtenerNumero(){

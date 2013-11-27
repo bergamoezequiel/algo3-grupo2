@@ -19,7 +19,7 @@ public class Juego extends Observable {
 		
 		this.puntaje = 0;
 		
-		this.nivelActual = new Nivel(0, new Auto());		
+		this.nivelActual = new NivelMedio(new Moto());		
 	}
 	
 	public int getPuntaje(){

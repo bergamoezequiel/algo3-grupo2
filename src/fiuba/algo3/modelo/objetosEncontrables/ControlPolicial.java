@@ -1,17 +1,14 @@
 package fiuba.algo3.modelo.objetosEncontrables;
 
-import fiuba.algo3.modelo.vehiculos.Auto;
-import fiuba.algo3.modelo.vehiculos.Conductor;
-import fiuba.algo3.modelo.vehiculos.Moto;
-import fiuba.algo3.modelo.vehiculos.TodoTerreno;
-
+import fiuba.algo3.modelo.vehiculos.*;
 
 public class ControlPolicial extends ObjetoEncontrable {
 	int penalizacion;
 	/*Probabilidad de quedar demorados por el control policial*/
-	final double probabilidadDePasarMoto = 0.7;
-	final double probabilidadDePasarAuto = 0.5;
-	final double probabilidadDePasarTodoTerreno = 0.3;
+	final double probabilidadDePararMoto = 0.8;
+	final double probabilidadDePararAuto = 0.5;
+	final double probabilidadDePararTodoTerreno = 0.3;
+	private boolean controlActivo;
 	
 	
 	public ControlPolicial() {
@@ -23,52 +20,63 @@ public class ControlPolicial extends ObjetoEncontrable {
 		return this.penalizacion;
 	}
 	
-	public void interactuarConAuto(Conductor unConductor,NumeroAleatorio aleatorio) {
-		if ((aleatorio.obtenerNumero()<=this.probabilidadDePasarAuto)&(aleatorio.obtenerNumero()>0))
+	public void interactuarConMoto(Conductor unConductor) {
+		if (this.controlActivo){
 			unConductor.variarMovimientosEn(this.obtenerPenalizacion());
-	}
-
-	@Override
-	public void interactuarConAuto(Conductor unConductor) {
-		NumeroAleatorio aleatorio= new NumeroAleatorio();
-		this.interactuarConAuto(unConductor,aleatorio);		
+		}
 	}
 	
-	public void interactuarConMoto(Conductor unConductor,NumeroAleatorio aleatorio) {
-		if ((aleatorio.obtenerNumero()<=this.probabilidadDePasarMoto)&(aleatorio.obtenerNumero()>0))
+	public void interactuarConAuto(Conductor unConductor) {
+		if (this.controlActivo){
 			unConductor.variarMovimientosEn(this.obtenerPenalizacion());
+		}
+	}
+	
+	public void interactuarConTodoTerreno(Conductor unConductor) {
+		if (this.controlActivo){
+			unConductor.variarMovimientosEn(this.obtenerPenalizacion());
+		}
 	}
 
-    @Override
-    public void interactuarConMoto(Conductor unConductor) {
-    	NumeroAleatorio aleatorio= new NumeroAleatorio();
-		this.interactuarConMoto(unConductor,aleatorio);			
-    }
-    
-    public void interactuarConTodoTerreno(Conductor unConductor,NumeroAleatorio aleatorio) {
-		if ((aleatorio.obtenerNumero()<=this.probabilidadDePasarTodoTerreno)&(aleatorio.obtenerNumero()>0))
-			unConductor.variarMovimientosEn(this.obtenerPenalizacion());
-	}
-
-    @Override
-    public void interactuarConTodoTerreno(Conductor unConductor) {
-    	NumeroAleatorio aleatorio= new NumeroAleatorio();
-		this.interactuarConTodoTerreno(unConductor,aleatorio);		
-    }
-
-    
 	@Override
 	public boolean dejaPasar(Moto unaMoto) {
-		return true;
+		NumeroAleatorio aleatorio = new NumeroAleatorio();
+		return this.dejaPasar(unaMoto, aleatorio);		
 	}
-
-    @Override
+	
+	public boolean dejaPasar(Moto unaMoto, NumeroAleatorio aleatorio){
+		this.controlActivo = false;
+		if (aleatorio.obtenerNumero()<=this.probabilidadDePararMoto){
+			this.controlActivo = true;
+		}
+		return !this.controlActivo;
+	}
+	
+	@Override
 	public boolean dejaPasar(Auto unAuto) {
-		return true;
+		NumeroAleatorio aleatorio = new NumeroAleatorio();
+		return this.dejaPasar(unAuto, aleatorio);		
+	}
+	
+	public boolean dejaPasar(Auto unAuto, NumeroAleatorio aleatorio){
+		this.controlActivo = false;
+		if (aleatorio.obtenerNumero()<=this.probabilidadDePararAuto){
+			this.controlActivo = true;
+		}
+		return !this.controlActivo;
 	}
 	
 	@Override
 	public boolean dejaPasar(TodoTerreno unTodoTerreno) {
-		return true;
+		NumeroAleatorio aleatorio = new NumeroAleatorio();
+		return this.dejaPasar(unTodoTerreno, aleatorio);		
+	}
+	
+	public boolean dejaPasar(TodoTerreno unTodoTerreno, NumeroAleatorio aleatorio){
+		this.controlActivo = false;
+		if (aleatorio.obtenerNumero()<=this.probabilidadDePararTodoTerreno){
+			this.controlActivo = true;
+		}
+		return !this.controlActivo;
 	}
 }
