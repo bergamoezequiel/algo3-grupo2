@@ -15,4 +15,8 @@ public abstract class ContenidoDeCelda extends Observable {
 	public void setCeldaNull(){
 		this.celda = null;
 	}
+	
+	public boolean esSiempreVisible(){
+		return false;
+	}
 }
