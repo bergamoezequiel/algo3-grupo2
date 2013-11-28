@@ -115,6 +115,11 @@ public class PantallaDelNivel extends JPanel {
 				}
 		}
 	}
+	public void pintarPanelDerecho(Graphics g){
+		g.setColor(Color.BLUE);
+		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 50);
+		
+	}
 	
 	public void paint(Graphics g) {
 		
@@ -150,8 +155,11 @@ public class PantallaDelNivel extends JPanel {
 					int margenAltura = (int) Math.round(altoCelda*contorno);
 					g.fillRect(coordenadaVista.getX()+margenAnchura, coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura);
 					g.drawImage(dibujo4.getImage(),coordenadaVista.getX()+margenAnchura,  coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura,null);
+				
 				}
 			}
 		}
+		
+		pintarPanelDerecho(g);
 	}
 }
