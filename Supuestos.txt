@@ -1,0 +1,6 @@
+- Los mapas deben ser cuadrados.
+- El auto avanza en la direccion en la que se presiona la flecha. Si se presiona la flecha izquierda el auto avanza a la izquierda. (temporal, despues se va a cambiar con rotacion)
+- Las sorpresas desaparecen una vez que se interactua con ellas.
+- Hay tres niveles pero en cada partida se juega en un nivel diferente.
+- La dificultad del nivel esta relacionada con la cantidad de objetos en el mapa y el alcance de vision del conductor.
+- La visibilidad no es persistente.
