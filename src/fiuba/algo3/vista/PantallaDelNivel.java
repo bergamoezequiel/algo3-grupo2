@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 //import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import fiuba.algo3.modelo.Juego;
 import fiuba.algo3.modelo.Nivel;
 import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.mapa.*;
@@ -95,9 +96,17 @@ public class PantallaDelNivel extends JPanel {
 			}
 		}
 	}
+	
+	/*
+	 * En el panel derecho se pintan los movimientos actuales y el Vehiculo Actual.
+	 */
 	public void pintarPanelDerecho(Graphics g){
 		g.setColor(Color.BLUE);
 		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 50);
+		g.drawString("Vehiculo Actual:"+this.nivel.getConductor().getVehiculo().getClass().getSimpleName(), ANCHO_PANTALLA_NIVEL, 65);
+		g.drawString("Movimientos Limites: "+(String)Integer.toString(nivel.getMovimientosLimites()), ANCHO_PANTALLA_NIVEL, 130);
+		g.drawString("Puntaje: "+(String)Integer.toString(nivel.getMovimientosRestantes() * this.nivel.getPuntajePorMovimientosSobrantes()), ANCHO_PANTALLA_NIVEL, 150);
+		
 		if(nivel.getJuegoActual().conductorLlego()){
 			g.setColor(Color.RED);
 			g.drawString("FIN", ANCHO_PANTALLA_NIVEL, 80);
