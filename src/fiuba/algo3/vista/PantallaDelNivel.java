@@ -44,7 +44,7 @@ public class PantallaDelNivel extends JPanel {
 	ImageIcon dibujo6= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/6.png")).getImage());
 	ImageIcon dibujo7= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/7.png")).getImage());
 	ImageIcon dibujo8= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/8.jpg")).getImage());
-	
+	ImageIcon dibujo9= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/10.gif")).getImage());
 	
 	
 	public PantallaDelNivel(Nivel unNivel){
@@ -65,6 +65,7 @@ public class PantallaDelNivel extends JPanel {
 		TodoTerreno unTodoTerreno = new TodoTerreno();
 		
 		Pozo unPozo = new Pozo();
+		Llegada unaLLegada =new Llegada();
 		Piquete unPiquete = new Piquete();
 		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
 		SorpresaDesfavorable unaSorpresaDesfavorable = new SorpresaDesfavorable();
@@ -81,6 +82,7 @@ public class PantallaDelNivel extends JPanel {
 		this.hash.put(unaSorpresaDesfavorable.getClass(),dibujo5);
 		this.hash.put(unCambioDeVehiculo.getClass(), dibujo5);
 		this.hash.put(unControlPolicial.getClass(), dibujo6);
+		this.hash.put(unaLLegada.getClass(),dibujo9);
 	}
 	
 	

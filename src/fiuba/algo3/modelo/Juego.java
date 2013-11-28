@@ -20,7 +20,7 @@ public class Juego extends Observable {
 		
 		this.puntaje = 0;
 		
-		this.nivelActual = new NivelModerado(new Moto());		
+		this.nivelActual = new NivelFacil(new Moto());		
 	}
 	
 	public int getPuntaje(){

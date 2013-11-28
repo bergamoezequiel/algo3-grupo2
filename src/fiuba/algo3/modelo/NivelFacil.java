@@ -13,7 +13,11 @@ public class NivelFacil extends Nivel {
 	public NivelFacil (Vehiculo unVehiculo){	
 		this.mapa = new Mapa (8, 8);
 		this.conductor = new Conductor(unVehiculo, 8);
+		mapa.getCeldaEn(new Coordenada(2,5)).agregarContenido(new Llegada());
 		
 		this.mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 	}
 }
+
+
+

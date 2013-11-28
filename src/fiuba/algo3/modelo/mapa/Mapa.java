@@ -2,6 +2,11 @@ package fiuba.algo3.modelo.mapa;
 
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlNs;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import  org.w3c.dom.*;
+
 import fiuba.algo3.modelo.coordenadas.Coordenada;
 
 public class Mapa {
@@ -43,4 +48,7 @@ public class Mapa {
 		return (unaCoordenada.getX() <= this.getCantidadDeColumnas()-1 && unaCoordenada.getX() >= 0) &&
 			(unaCoordenada.getY() <= this.getCantidadDeFilas()-1 && unaCoordenada.getY() >= 0);
 		}
+	
+
+	
 }	
