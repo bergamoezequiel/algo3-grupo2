@@ -8,8 +8,12 @@ package fiuba.algo3.vista;
 //import java.awt.event.ActionListener;
 //import java.awt.event.KeyEvent;
 //import java.awt.event.KeyListener;
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.Observable;
 import java.util.Observer;
+
+
 
 //import javax.swing.ImageIcon;
 //import javax.swing.JButton;
@@ -109,6 +113,7 @@ public class Ventana extends JFrame implements Observer {
 		//Aca estoy agregando el dibujito del mapa.
 		PantallaDelNivel unaPantallaDeNivel = new PantallaDelNivel(this.juego.getNivelActual());
 		add(unaPantallaDeNivel);
+		
 		System.out.println(arg);
 		repaint();
 		

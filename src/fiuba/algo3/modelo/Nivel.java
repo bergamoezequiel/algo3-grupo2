@@ -10,6 +10,8 @@ public class Nivel {
 	protected Mapa mapa;
 	protected Conductor conductor;
 	protected int movimientosLimites;
+	protected Juego juegoActual;
+	protected int puntajePorMovimientoSobrante; 
 	
 	/*public Nivel (Vehiculo unVehiculo){		
 		this.movimientosLimites = 60;
@@ -22,6 +24,7 @@ public class Nivel {
 		this.mapa.getCeldaEn(new Coordenada(2,3)).agregarContenido(new CambioDeVehiculo());
 		this.mapa.getCeldaEn(new Coordenada (3,2)).agregarContenido(new SorpresaFavorable());
 	}*/
+	
 	
 	public Mapa getMapa(){
 		return this.mapa;
@@ -37,5 +40,13 @@ public class Nivel {
 	
 	public int getMovimientosRestantes(){
 		return this.movimientosLimites - this.conductor.getMovimientos();
+	}
+	public void vehiculoCruzoLaMeta(){
+		int puntaje= (getMovimientosRestantes()*puntajePorMovimientoSobrante);
+		System.out.println(puntaje);
+		juegoActual.vehiculoTerminoConPuntaje(puntaje);
+	}
+	public Juego getJuegoActual(){
+		return juegoActual;
 	}
 }

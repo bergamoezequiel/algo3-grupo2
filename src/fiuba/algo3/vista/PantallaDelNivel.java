@@ -100,6 +100,11 @@ public class PantallaDelNivel extends JPanel {
 	public void pintarPanelDerecho(Graphics g){
 		g.setColor(Color.BLUE);
 		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 50);
+		if(nivel.getJuegoActual().conductorLlego()){
+			g.setColor(Color.RED);
+			g.drawString("FIN", ANCHO_PANTALLA_NIVEL, 80);
+			g.drawString("Tu puntaje es:"+(String)Integer.toString(nivel.getJuegoActual().getPuntajeDelConductor()), ANCHO_PANTALLA_NIVEL, 100);
+		}
 		
 	}
 	

@@ -7,10 +7,12 @@ import fiuba.algo3.modelo.vehiculos.*;
 
 public class NivelModerado extends Nivel {
 	
-	final int MOVIMIENTOS_LIMITES = 30;
-	final int puntajePorPuntoSobrante = 2;
 	
-	public NivelModerado (Vehiculo unVehiculo){
+	
+	public NivelModerado (Vehiculo unVehiculo,Juego juego){
+		movimientosLimites=30;
+		puntajePorMovimientoSobrante = 2;
+		this.juegoActual=juego;
 		this.mapa = new Mapa (10, 10);
 		this.conductor = new Conductor(unVehiculo, 6);
 		
