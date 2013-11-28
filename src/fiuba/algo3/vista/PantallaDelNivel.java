@@ -36,15 +36,15 @@ public class PantallaDelNivel extends JPanel {
 	
 	private Hashtable<Class, ImageIcon> hash;
 	
-	ImageIcon dibujo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/1.png")).getImage());
-	ImageIcon dibujo2= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/2.png")).getImage());
-	ImageIcon dibujo3= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/3.png")).getImage());
-	ImageIcon dibujo4= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/4.png")).getImage());
-	ImageIcon dibujo5= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/5.png")).getImage());
-	ImageIcon dibujo6= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/6.png")).getImage());
-	ImageIcon dibujo7= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/7.png")).getImage());
-	ImageIcon dibujo8= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/8.jpg")).getImage());
-	ImageIcon dibujo9= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/10.gif")).getImage());
+	ImageIcon dibujoAuto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/1.png")).getImage());
+	ImageIcon dibujoMoto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/2.png")).getImage());
+	ImageIcon dibujoTodoTerreno= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/3.png")).getImage());
+	ImageIcon dibujoManzana= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/4.png")).getImage());
+	ImageIcon dibujoSorpresa= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/5.png")).getImage());
+	ImageIcon dibujoControlPolicial= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/6.png")).getImage());
+	ImageIcon dibujoPiquete= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/7.png")).getImage());
+	ImageIcon dibujoPozo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/8.jpg")).getImage());
+	ImageIcon dibujoLlegada= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/10.gif")).getImage());
 	
 	
 	public PantallaDelNivel(Nivel unNivel){
@@ -59,30 +59,17 @@ public class PantallaDelNivel extends JPanel {
 		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeColumnas();
 		this.altoCelda = ALTO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeFilas();
 		
-		//Aca se crean los objetos para poder hashearlos con su clse
-		Auto unAuto = new Auto();
-		Moto unaMoto = new Moto();
-		TodoTerreno unTodoTerreno = new TodoTerreno();
 		
-		Pozo unPozo = new Pozo();
-		Llegada unaLLegada =new Llegada();
-		Piquete unPiquete = new Piquete();
-		SorpresaFavorable unaSorpresaFavorable = new SorpresaFavorable();
-		SorpresaDesfavorable unaSorpresaDesfavorable = new SorpresaDesfavorable();
-		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
-		ControlPolicial unControlPolicial = new ControlPolicial();
-
-		this.hash.put(unAuto.getClass(), dibujo);
-		this.hash.put(unaMoto.getClass(), dibujo2);
-		this.hash.put(unTodoTerreno.getClass(), dibujo3);
-		
-		this.hash.put(unPozo.getClass(),dibujo8);
-		this.hash.put(unPiquete.getClass(), dibujo7);
-		this.hash.put(unaSorpresaFavorable.getClass(),dibujo5);
-		this.hash.put(unaSorpresaDesfavorable.getClass(),dibujo5);
-		this.hash.put(unCambioDeVehiculo.getClass(), dibujo5);
-		this.hash.put(unControlPolicial.getClass(), dibujo6);
-		this.hash.put(unaLLegada.getClass(),dibujo9);
+		this.hash.put((new Auto()).getClass(), dibujoAuto);
+		this.hash.put((new Moto()).getClass(), dibujoMoto);
+		this.hash.put((new TodoTerreno()).getClass(), dibujoTodoTerreno);
+		this.hash.put((new Pozo()).getClass(),dibujoPozo);
+		this.hash.put((new Piquete()).getClass(), dibujoPiquete);
+		this.hash.put((new SorpresaFavorable()).getClass(),dibujoSorpresa);
+		this.hash.put((new SorpresaDesfavorable()).getClass(),dibujoSorpresa);
+		this.hash.put((new CambioDeVehiculo()).getClass(), dibujoSorpresa);
+		this.hash.put((new ControlPolicial()).getClass(), dibujoControlPolicial);
+		this.hash.put((new Llegada()).getClass(),dibujoLlegada);
 	}
 	
 	
@@ -156,7 +143,7 @@ public class PantallaDelNivel extends JPanel {
 					int margenAnchura = (int) Math.round(anchoCelda*contorno);
 					int margenAltura = (int) Math.round(altoCelda*contorno);
 					g.fillRect(coordenadaVista.getX()+margenAnchura, coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura);
-					g.drawImage(dibujo4.getImage(),coordenadaVista.getX()+margenAnchura,  coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura,null);
+					g.drawImage(dibujoManzana.getImage(),coordenadaVista.getX()+margenAnchura,  coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura,null);
 				
 				}
 			}
