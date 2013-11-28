@@ -44,7 +44,7 @@ public class PantallaDelNivel extends JPanel {
 	ImageIcon dibujoControlPolicial= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/controlPolicial.png")).getImage());
 	ImageIcon dibujoPiquete= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/7.png")).getImage());
 	ImageIcon dibujoPozo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/pozo.png")).getImage());
-	ImageIcon dibujoLlegada= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/10.gif")).getImage());
+	ImageIcon dibujoLlegada= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/llegada.png")).getImage());
 	ImageIcon dibujoCalle= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/calle.png")).getImage());
 
 	
