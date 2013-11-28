@@ -45,7 +45,8 @@ public class PantallaDelNivel extends JPanel {
 	ImageIcon dibujoPiquete= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/7.png")).getImage());
 	ImageIcon dibujoPozo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/pozo.png")).getImage());
 	ImageIcon dibujoLlegada= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/10.gif")).getImage());
-	
+	ImageIcon dibujoCalle= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/calle.png")).getImage());
+
 	
 	public PantallaDelNivel(Nivel unNivel){
 		/*
@@ -84,14 +85,12 @@ public class PantallaDelNivel extends JPanel {
 	}
 	
 	public void pintorContenidoDeCelda(Graphics g, Coordenada unaCoordenadaVista, ContenidoDeCelda unContenido){
-		g.setColor(Color.lightGray);
-		g.fillRect(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
-		
+		//g.setColor(Color.lightGray);
+		//g.fillRect(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
+		g.drawImage(dibujoCalle.getImage(),unaCoordenadaVista.getX(),  unaCoordenadaVista.getY(), anchoCelda, altoCelda, null);	
 		if (unContenido != null){
 			if (unContenido instanceof Conductor ){
-				
 				g.drawImage(((ImageIcon)this.hash.get(((Conductor) unContenido).getVehiculo().getClass())).getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
-			
 			}
 			else{
 				g.drawImage(((ImageIcon)this.hash.get(unContenido.getClass())).getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
