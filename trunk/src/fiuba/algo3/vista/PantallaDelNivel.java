@@ -36,14 +36,14 @@ public class PantallaDelNivel extends JPanel {
 	
 	private Hashtable<Class, ImageIcon> hash;
 	
-	ImageIcon dibujoAuto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/1.png")).getImage());
-	ImageIcon dibujoMoto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/2.png")).getImage());
-	ImageIcon dibujoTodoTerreno= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/3.png")).getImage());
+	ImageIcon dibujoAuto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/auto.png")).getImage());
+	ImageIcon dibujoMoto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/moto.png")).getImage());
+	ImageIcon dibujoTodoTerreno= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/todoTerreno.png")).getImage());
 	ImageIcon dibujoManzana= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/manzana.png")).getImage());
 	ImageIcon dibujoSorpresa= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/5.png")).getImage());
 	ImageIcon dibujoControlPolicial= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/controlPolicial.png")).getImage());
 	ImageIcon dibujoPiquete= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/7.png")).getImage());
-	ImageIcon dibujoPozo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/8.jpg")).getImage());
+	ImageIcon dibujoPozo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/pozo.png")).getImage());
 	ImageIcon dibujoLlegada= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/10.gif")).getImage());
 	
 	
