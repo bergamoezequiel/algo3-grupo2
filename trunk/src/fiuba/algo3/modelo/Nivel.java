@@ -5,7 +5,7 @@ import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.objetosEncontrables.*;
 import fiuba.algo3.modelo.vehiculos.*;
 
-public class Nivel {
+public abstract class Nivel {
 	
 	protected Mapa mapa;
 	protected Conductor conductor;
@@ -48,5 +48,9 @@ public class Nivel {
 	}
 	public Juego getJuegoActual(){
 		return juegoActual;
+	}
+	
+	public int getPuntajePorMovimientosSobrantes(){
+		return this.puntajePorMovimientoSobrante;
 	}
 }

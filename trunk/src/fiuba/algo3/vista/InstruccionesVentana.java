@@ -14,7 +14,7 @@ public class InstruccionesVentana extends JFrame{
 		setLocation(500, 200);
 		this.setVisible(false);                 
 		this.setTitle("Instrucciones");
-		this.setSize(430,350);
+		this.setSize(470,350);
 		this.setResizable(false);
 		                        
 		String str = "<html><div style='text-align: center;'>"
