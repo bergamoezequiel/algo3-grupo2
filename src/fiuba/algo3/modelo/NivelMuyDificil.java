@@ -5,12 +5,14 @@ import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.objetosEncontrables.*;
 import fiuba.algo3.modelo.vehiculos.*;
 
-public class NivelMedio extends Nivel {
+public class NivelMuyDificil extends Nivel {
 	
-	public NivelMedio (Vehiculo unVehiculo){
-		this.movimientosLimites = 50;
-		this.mapa = new Mapa (6, 6);
-		this.conductor = new Conductor(unVehiculo, 4);
+	final int MOVIMIENTOS_LIMITES = 20;
+	final int puntajePorPuntoSobrante = 4;
+	
+	public NivelMuyDificil (Vehiculo unVehiculo){
+		this.mapa = new Mapa (20, 20);
+		this.conductor = new Conductor(unVehiculo, 3);
 		
 		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 		mapa.getCeldaEn(new Coordenada(1,0)).agregarContenido(new Pozo());
