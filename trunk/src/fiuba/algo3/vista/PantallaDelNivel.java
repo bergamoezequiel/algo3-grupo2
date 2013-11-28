@@ -40,9 +40,9 @@ public class PantallaDelNivel extends JPanel {
 	ImageIcon dibujoMoto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/moto.png")).getImage());
 	ImageIcon dibujoTodoTerreno= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/todoTerreno.png")).getImage());
 	ImageIcon dibujoManzana= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/manzana.png")).getImage());
-	ImageIcon dibujoSorpresa= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/5.png")).getImage());
+	ImageIcon dibujoSorpresa= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/sorpresa.png")).getImage());
 	ImageIcon dibujoControlPolicial= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/controlPolicial.png")).getImage());
-	ImageIcon dibujoPiquete= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/7.png")).getImage());
+	ImageIcon dibujoPiquete= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/piquete.png")).getImage());
 	ImageIcon dibujoPozo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/pozo.png")).getImage());
 	ImageIcon dibujoLlegada= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/llegada.png")).getImage());
 	ImageIcon dibujoCalle= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/calle.png")).getImage());
@@ -85,8 +85,6 @@ public class PantallaDelNivel extends JPanel {
 	}
 	
 	public void pintorContenidoDeCelda(Graphics g, Coordenada unaCoordenadaVista, ContenidoDeCelda unContenido){
-		//g.setColor(Color.lightGray);
-		//g.fillRect(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
 		g.drawImage(dibujoCalle.getImage(),unaCoordenadaVista.getX(),  unaCoordenadaVista.getY(), anchoCelda, altoCelda, null);	
 		if (unContenido != null){
 			if (unContenido instanceof Conductor ){
