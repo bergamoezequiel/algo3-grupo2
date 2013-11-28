@@ -27,6 +27,7 @@ public class PantallaDelNivel extends JPanel {
 	private static final long serialVersionUID = 9158068573854911242L;
 	private int MARGEN_IZQUIERDO = 8;
 	private int MARGEN_SUPERIOR = 50;
+	private int TAMANIO_ICONOS_MENU = 40;
 	
 	final int ANCHO_PANTALLA_NIVEL = 600 - MARGEN_IZQUIERDO;
 	final int ALTO_PANTALLA_NIVEL = 600 - MARGEN_SUPERIOR;
@@ -105,14 +106,29 @@ public class PantallaDelNivel extends JPanel {
 	public void pintarPanelDerecho(Graphics g){
 		g.setColor(Color.BLUE);
 		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 50);
-		g.drawString("Vehiculo Actual:"+this.nivel.getConductor().getVehiculo().getClass().getSimpleName(), ANCHO_PANTALLA_NIVEL, 65);
-		g.drawString("Movimientos Limites: "+(String)Integer.toString(nivel.getMovimientosLimites()), ANCHO_PANTALLA_NIVEL, 130);
+		g.drawString("Vehiculo Actual: ", ANCHO_PANTALLA_NIVEL, 70);
+		g.drawString(this.nivel.getConductor().getVehiculo().getClass().getSimpleName(), ANCHO_PANTALLA_NIVEL + TAMANIO_ICONOS_MENU + 10 , 100);
+		g.drawImage(((ImageIcon)this.hash.get(this.nivel.getConductor().getVehiculo().getClass())).getImage(),ANCHO_PANTALLA_NIVEL, 80, TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU, null);
+		g.drawString("Movimientos Limites: "+(String)Integer.toString(nivel.getMovimientosLimites()), ANCHO_PANTALLA_NIVEL, 150);
 		//g.drawString("Puntaje: "+(String)Integer.toString(nivel.getMovimientosRestantes() * this.nivel.getPuntajePorMovimientosSobrantes()), ANCHO_PANTALLA_NIVEL, 150);
+		
+		/*
+		 * Referencias:
+		 */
+		g.drawString("REFERENCIAS: ", ANCHO_PANTALLA_NIVEL, 280);
+		g.drawString("Sorpresa: ", ANCHO_PANTALLA_NIVEL, 320);
+		//g.drawImage((ImageIcon)this.hash.get(new Pozo()), 80, TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU, null);
+		//g.drawImage(this.hash.get(),ANCHO_PANTALLA_NIVEL, 80, TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU, null);
+		g.drawString("Pozo: ", ANCHO_PANTALLA_NIVEL, 360);
+		g.drawString("Control Policial: ", ANCHO_PANTALLA_NIVEL, 400);
+		g.drawString("Piquete: ", ANCHO_PANTALLA_NIVEL, 440);
+		g.drawString("Snorlax: ", ANCHO_PANTALLA_NIVEL, 480);
+		
 		
 		if(nivel.getJuegoActual().conductorLlego()){
 			g.setColor(Color.RED);
-			g.drawString("FIN", ANCHO_PANTALLA_NIVEL, 80);
-			g.drawString("Tu puntaje es:"+(String)Integer.toString(nivel.getJuegoActual().getPuntajeDelConductor()), ANCHO_PANTALLA_NIVEL, 100);
+			//g.drawString("FIN", ANCHO_PANTALLA_NIVEL, 150);
+			//g.drawString("Tu puntaje es:"+(String)Integer.toString(nivel.getJuegoActual().getPuntajeDelConductor()), ANCHO_PANTALLA_NIVEL, 170);
 		}
 		
 	}
