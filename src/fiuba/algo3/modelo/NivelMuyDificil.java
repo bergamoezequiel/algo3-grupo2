@@ -12,10 +12,12 @@ public class NivelMuyDificil extends Nivel {
 		movimientosLimites = 20;
 		puntajePorMovimientoSobrante = 4;
 		this.juegoActual=juego;
-		this.mapa = new Mapa (20, 20);
+		this.mapa = new Mapa (10, 10);
 		this.conductor = new Conductor(unVehiculo, 3);
 		
+		mapa.getCeldaEn(new Coordenada(5,18)).agregarContenido(new Llegada(this));
 		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
+		
 		mapa.getCeldaEn(new Coordenada(1,0)).agregarContenido(new Pozo());
 		mapa.getCeldaEn(new Coordenada(1,2)).agregarContenido(new Piquete());
 		mapa.getCeldaEn(new Coordenada(4,3)).agregarContenido(new ControlPolicial());

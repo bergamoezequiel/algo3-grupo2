@@ -13,10 +13,12 @@ public class NivelModerado extends Nivel {
 		movimientosLimites=30;
 		puntajePorMovimientoSobrante = 2;
 		this.juegoActual=juego;
-		this.mapa = new Mapa (10, 10);
+		this.mapa = new Mapa (8, 8);
 		this.conductor = new Conductor(unVehiculo, 6);
 		
-		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
+		mapa.getCeldaEn(new Coordenada(1,16)).agregarContenido(new Llegada(this));
+		mapa.getCeldaEn(new Coordenada(14,2)).agregarContenido(this.conductor);
+		
 		mapa.getCeldaEn(new Coordenada(1,0)).agregarContenido(new Pozo());
 		mapa.getCeldaEn(new Coordenada(1,2)).agregarContenido(new Piquete());
 		mapa.getCeldaEn(new Coordenada(4,3)).agregarContenido(new ControlPolicial());
