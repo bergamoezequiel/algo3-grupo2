@@ -39,9 +39,9 @@ public class PantallaDelNivel extends JPanel {
 	ImageIcon dibujoAuto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/1.png")).getImage());
 	ImageIcon dibujoMoto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/2.png")).getImage());
 	ImageIcon dibujoTodoTerreno= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/3.png")).getImage());
-	ImageIcon dibujoManzana= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/4.png")).getImage());
+	ImageIcon dibujoManzana= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/manzana.png")).getImage());
 	ImageIcon dibujoSorpresa= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/5.png")).getImage());
-	ImageIcon dibujoControlPolicial= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/6.png")).getImage());
+	ImageIcon dibujoControlPolicial= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/controlPolicial.png")).getImage());
 	ImageIcon dibujoPiquete= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/7.png")).getImage());
 	ImageIcon dibujoPozo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/8.jpg")).getImage());
 	ImageIcon dibujoLlegada= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/10.gif")).getImage());
@@ -87,21 +87,15 @@ public class PantallaDelNivel extends JPanel {
 		g.setColor(Color.lightGray);
 		g.fillRect(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);
 		
-		//En realidad deberia fijarse si es un conductor
-		//Como esta ahora pinta un circulo rojo siempre que se ubique un contenido de celda, sea lo que sea.
 		if (unContenido != null){
 			if (unContenido instanceof Conductor ){
 				
 				g.drawImage(((ImageIcon)this.hash.get(((Conductor) unContenido).getVehiculo().getClass())).getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
-				/*				g.setColor((Color)this.hash.get(((Conductor) unContenido).getVehiculo().getClass()));
-				g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);*/
-			}
-				else{
-					g.drawImage(((ImageIcon)this.hash.get(unContenido.getClass())).getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
 			
-/*					g.setColor((Color)this.hash.get(unContenido.getClass()));
-					g.fillOval(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);*/
-				}
+			}
+			else{
+				g.drawImage(((ImageIcon)this.hash.get(unContenido.getClass())).getImage(),unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda,null);
+			}
 		}
 	}
 	public void pintarPanelDerecho(Graphics g){
@@ -135,16 +129,7 @@ public class PantallaDelNivel extends JPanel {
 			for (int j = 1; j < this.nivel.getMapa().getCantidadDeFilas(); j+=2) {
 				if (mapa.getCeldaEn(new Coordenada(i,j)).esVisiblePara(conductor)){
 					Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), cantFilasMapa);
-					g.setColor(Color.black);
-					g.fillRect(coordenadaVista.getX(), coordenadaVista.getY(), anchoCelda, altoCelda);
-					
-					g.setColor(Color.orange);
-					double contorno = 0.1;
-					int margenAnchura = (int) Math.round(anchoCelda*contorno);
-					int margenAltura = (int) Math.round(altoCelda*contorno);
-					g.fillRect(coordenadaVista.getX()+margenAnchura, coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura);
-					g.drawImage(dibujoManzana.getImage(),coordenadaVista.getX()+margenAnchura,  coordenadaVista.getY()+margenAltura, anchoCelda-margenAnchura, altoCelda-margenAltura,null);
-				
+					g.drawImage(dibujoManzana.getImage(),coordenadaVista.getX(),  coordenadaVista.getY(), anchoCelda, altoCelda, null);	
 				}
 			}
 		}
