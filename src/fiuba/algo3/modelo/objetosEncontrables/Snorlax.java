@@ -6,11 +6,9 @@ import fiuba.algo3.modelo.vehiculos.Moto;
 import fiuba.algo3.modelo.vehiculos.TodoTerreno;
 
 public class Snorlax extends ObjetoEncontrable{
-	int penalizacion;
 	
 	public Snorlax(){
 		super();
-		this.penalizacion = 0;
 	}
 
 	@Override

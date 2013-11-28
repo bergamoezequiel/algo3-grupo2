@@ -37,17 +37,17 @@ public class PantallaDelNivel extends JPanel {
 	
 	private Hashtable<Class, ImageIcon> hash;
 	
-	ImageIcon dibujoAuto = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/auto.png")).getImage());
-	ImageIcon dibujoMoto = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/moto.png")).getImage());
-	ImageIcon dibujoTodoTerreno = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/todoTerreno.png")).getImage());
-	ImageIcon dibujoManzana = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/manzana.png")).getImage());
-	ImageIcon dibujoSorpresa = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/sorpresa.png")).getImage());
-	ImageIcon dibujoControlPolicial = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/controlPolicial.png")).getImage());
-	ImageIcon dibujoPiquete = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/piquete.png")).getImage());
-	ImageIcon dibujoPozo = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/pozo.png")).getImage());
-	ImageIcon dibujoLlegada = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/llegada.png")).getImage());
-	ImageIcon dibujoCalle = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/calle.png")).getImage());
-	ImageIcon dibujoSnorlax = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/snorlax.png")).getImage());
+	ImageIcon dibujoAuto = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/auto.png")).getImage());
+	ImageIcon dibujoMoto = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/moto.png")).getImage());
+	ImageIcon dibujoTodoTerreno = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/todoTerreno.png")).getImage());
+	ImageIcon dibujoManzana = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/manzana.png")).getImage());
+	ImageIcon dibujoSorpresa = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/sorpresa.png")).getImage());
+	ImageIcon dibujoControlPolicial = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/controlPolicial.png")).getImage());
+	ImageIcon dibujoPiquete = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/piquete.png")).getImage());
+	ImageIcon dibujoPozo = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/pozo.png")).getImage());
+	ImageIcon dibujoLlegada = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/llegada.png")).getImage());
+	ImageIcon dibujoCalle = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/calle.png")).getImage());
+	ImageIcon dibujoSnorlax = new ImageIcon(new ImageIcon(getClass().getResource("/imagenes/snorlax.png")).getImage());
 
 	
 	public PantallaDelNivel(Nivel unNivel){

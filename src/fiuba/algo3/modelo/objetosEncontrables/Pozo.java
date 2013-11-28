@@ -6,8 +6,8 @@ import fiuba.algo3.modelo.vehiculos.Moto;
 import fiuba.algo3.modelo.vehiculos.TodoTerreno;
 
 public class Pozo extends ObjetoEncontrable {
-	int penalizacion;
 	
+	int penalizacion;
 	
 	public Pozo() {
 		super();
@@ -30,7 +30,7 @@ public class Pozo extends ObjetoEncontrable {
 	
 	@Override
 	public void interactuarConTodoTerreno(Conductor unConductor) {
-		unConductor.variarMovimientosEn(0);	
+
 	}
 	
 	@Override
