@@ -37,16 +37,17 @@ public class PantallaDelNivel extends JPanel {
 	
 	private Hashtable<Class, ImageIcon> hash;
 	
-	ImageIcon dibujoAuto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/auto.png")).getImage());
-	ImageIcon dibujoMoto= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/moto.png")).getImage());
-	ImageIcon dibujoTodoTerreno= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/todoTerreno.png")).getImage());
-	ImageIcon dibujoManzana= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/manzana.png")).getImage());
-	ImageIcon dibujoSorpresa= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/sorpresa.png")).getImage());
-	ImageIcon dibujoControlPolicial= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/controlPolicial.png")).getImage());
-	ImageIcon dibujoPiquete= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/piquete.png")).getImage());
-	ImageIcon dibujoPozo= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/pozo.png")).getImage());
-	ImageIcon dibujoLlegada= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/llegada.png")).getImage());
-	ImageIcon dibujoCalle= new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/calle.png")).getImage());
+	ImageIcon dibujoAuto = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/auto.png")).getImage());
+	ImageIcon dibujoMoto = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/moto.png")).getImage());
+	ImageIcon dibujoTodoTerreno = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/todoTerreno.png")).getImage());
+	ImageIcon dibujoManzana = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/manzana.png")).getImage());
+	ImageIcon dibujoSorpresa = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/sorpresa.png")).getImage());
+	ImageIcon dibujoControlPolicial = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/controlPolicial.png")).getImage());
+	ImageIcon dibujoPiquete = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/piquete.png")).getImage());
+	ImageIcon dibujoPozo = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/pozo.png")).getImage());
+	ImageIcon dibujoLlegada = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/llegada.png")).getImage());
+	ImageIcon dibujoCalle = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/calle.png")).getImage());
+	ImageIcon dibujoSnorlax = new ImageIcon(new ImageIcon(getClass().getResource("/Imagenes/snorlax.png")).getImage());
 
 	
 	public PantallaDelNivel(Nivel unNivel){
@@ -67,10 +68,11 @@ public class PantallaDelNivel extends JPanel {
 		this.hash.put((new TodoTerreno()).getClass(), dibujoTodoTerreno);
 		this.hash.put((new Pozo()).getClass(),dibujoPozo);
 		this.hash.put((new Piquete()).getClass(), dibujoPiquete);
+		this.hash.put((new ControlPolicial()).getClass(), dibujoControlPolicial);
+		this.hash.put((new Snorlax()).getClass(), dibujoSnorlax);
 		this.hash.put((new SorpresaFavorable()).getClass(),dibujoSorpresa);
 		this.hash.put((new SorpresaDesfavorable()).getClass(),dibujoSorpresa);
 		this.hash.put((new CambioDeVehiculo()).getClass(), dibujoSorpresa);
-		this.hash.put((new ControlPolicial()).getClass(), dibujoControlPolicial);
 		this.hash.put((new Llegada()).getClass(),dibujoLlegada);
 	}
 	
@@ -105,7 +107,7 @@ public class PantallaDelNivel extends JPanel {
 		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 50);
 		g.drawString("Vehiculo Actual:"+this.nivel.getConductor().getVehiculo().getClass().getSimpleName(), ANCHO_PANTALLA_NIVEL, 65);
 		g.drawString("Movimientos Limites: "+(String)Integer.toString(nivel.getMovimientosLimites()), ANCHO_PANTALLA_NIVEL, 130);
-		g.drawString("Puntaje: "+(String)Integer.toString(nivel.getMovimientosRestantes() * this.nivel.getPuntajePorMovimientosSobrantes()), ANCHO_PANTALLA_NIVEL, 150);
+		//g.drawString("Puntaje: "+(String)Integer.toString(nivel.getMovimientosRestantes() * this.nivel.getPuntajePorMovimientosSobrantes()), ANCHO_PANTALLA_NIVEL, 150);
 		
 		if(nivel.getJuegoActual().conductorLlego()){
 			g.setColor(Color.RED);
