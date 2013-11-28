@@ -13,14 +13,20 @@ public class Juego extends Observable {
 	private Nivel nivelActual;
 	private Usuario usuarioActual;
 	private ArrayList<Nivel> niveles; 
+	private int puntajeFinalConductor;
+	private boolean conductorLlego;
 	
 	public Juego (){
+		conductorLlego=false;
 		this.usuarios = new ArrayList<Usuario>();
 		this.usuarios.add(new Usuario("Samus Aran"));
 		
 		this.puntaje = 0;
 		
-		this.nivelActual = new NivelModerado(new Moto());		
+
+
+		this.nivelActual = new NivelFacil(new Moto(),this);		
+
 	}
 	
 	public int getPuntaje(){
@@ -47,6 +53,18 @@ public class Juego extends Observable {
 	public void setUsuarioActual(Usuario unUsuario){
 		this.usuarioActual = unUsuario;
 	}
-
+	
+	public void vehiculoTerminoConPuntaje(int puntaje){
+		this.puntajeFinalConductor=puntaje;
+		conductorLlego=true;
+		
+		
+	}
+	public boolean conductorLlego(){
+		return conductorLlego;
+	}
+	public int getPuntajeDelConductor(){
+		return puntajeFinalConductor;
+	}
 }
 

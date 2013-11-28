@@ -1,0 +1,2590 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.4533106960950764" branch-rate="0.5714285714285714" lines-covered="267" lines-valid="589" branches-covered="60" branches-valid="105" complexity="1.319526627218935" version="1.9.4.1" timestamp="1385612775566">
+	<sources>
+		<source>C:/Users/Ezequiel/Desktop/eclipse/JAVAPROGRAMAS/algo3-grupo2/src</source>
+	</sources>
+	<packages>
+		<package name="fiuba.algo3" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="fiuba.algo3.Main" filename="fiuba/algo3/Main.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="7" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="main" signature="([Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="9" hits="0" branch="false"/>
+								<line number="10" hits="0" branch="false"/>
+								<line number="12" hits="0" branch="false"/>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="7" hits="0" branch="false"/>
+						<line number="9" hits="0" branch="false"/>
+						<line number="10" hits="0" branch="false"/>
+						<line number="12" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="fiuba.algo3.controlador" line-rate="0.0" branch-rate="0.0" complexity="1.8">
+			<classes>
+				<class name="fiuba.algo3.controlador.ControlPorTeclado" filename="fiuba/algo3/controlador/ControlPorTeclado.java" line-rate="0.0" branch-rate="1.0" complexity="1.8">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="12" hits="0" branch="false"/>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="access$000" signature="(Lfiuba/algo3/controlador/ControlPorTeclado;)Lfiuba/algo3/modelo/vehiculos/Conductor;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="8" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getKeyListener" signature="()Ljava/awt/event/KeyListener;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="17" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="8" hits="0" branch="false"/>
+						<line number="12" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="17" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.controlador.ControlPorTeclado$1" filename="fiuba/algo3/controlador/ControlPorTeclado.java" line-rate="0.0" branch-rate="0.0" complexity="1.8">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/controlador/ControlPorTeclado;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="17" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="keyPressed" signature="(Ljava/awt/event/KeyEvent;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="19" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="keyReleased" signature="(Ljava/awt/event/KeyEvent;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="23" hits="0" branch="false"/>
+								<line number="24" hits="0" branch="false"/>
+								<line number="26" hits="0" branch="true" condition-coverage="0% (0/5)">
+									<conditions>
+										<condition number="0" type="switch" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="28" hits="0" branch="false"/>
+								<line number="29" hits="0" branch="false"/>
+								<line number="30" hits="0" branch="false"/>
+								<line number="33" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="false"/>
+								<line number="35" hits="0" branch="false"/>
+								<line number="38" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="43" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+								<line number="47" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="keyTyped" signature="(Ljava/awt/event/KeyEvent;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="17" hits="0" branch="false"/>
+						<line number="19" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="true" condition-coverage="0% (0/5)">
+							<conditions>
+								<condition number="0" type="switch" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="28" hits="0" branch="false"/>
+						<line number="29" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="47" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="fiuba.algo3.modelo" line-rate="0.0" branch-rate="0.0" complexity="1.1290322580645162">
+			<classes>
+				<class name="fiuba.algo3.modelo.ElementoTablaDePuntuacion" filename="fiuba/algo3/modelo/ElementoTablaDePuntuacion.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/Usuario;I)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="8" hits="0" branch="false"/>
+								<line number="9" hits="0" branch="false"/>
+								<line number="10" hits="0" branch="false"/>
+								<line number="11" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="compareTo" signature="(Lfiuba/algo3/modelo/ElementoTablaDePuntuacion;)I" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="23" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="compareTo" signature="(Ljava/lang/Object;)I" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="3" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNombre" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="14" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPuntaje" signature="()I" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="18" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="3" hits="0" branch="false"/>
+						<line number="8" hits="0" branch="false"/>
+						<line number="9" hits="0" branch="false"/>
+						<line number="10" hits="0" branch="false"/>
+						<line number="11" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.Juego" filename="fiuba/algo3/modelo/Juego.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="19" hits="0" branch="false"/>
+								<line number="20" hits="0" branch="false"/>
+								<line number="21" hits="0" branch="false"/>
+								<line number="22" hits="0" branch="false"/>
+								<line number="24" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+								<line number="30" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="agregarUsuario" signature="(Lfiuba/algo3/modelo/Usuario;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="38" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="conductorLlego" signature="()Z" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="64" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNivelActual" signature="()Lfiuba/algo3/modelo/Nivel;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="46" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPuntaje" signature="()I" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="33" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPuntajeDelConductor" signature="()I" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="67" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUsuarioActual" signature="()Lfiuba/algo3/modelo/Usuario;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="50" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setNivelActual" signature="(Lfiuba/algo3/modelo/Nivel;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="42" hits="0" branch="false"/>
+								<line number="43" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setUsuarioActual" signature="(Lfiuba/algo3/modelo/Usuario;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="54" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="vehiculoTerminoConPuntaje" signature="(I)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="58" hits="0" branch="false"/>
+								<line number="59" hits="0" branch="false"/>
+								<line number="62" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="19" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+						<line number="21" hits="0" branch="false"/>
+						<line number="22" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="58" hits="0" branch="false"/>
+						<line number="59" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+						<line number="64" hits="0" branch="false"/>
+						<line number="67" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.Nivel" filename="fiuba/algo3/modelo/Nivel.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="8" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getConductor" signature="()Lfiuba/algo3/modelo/vehiculos/Conductor;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="34" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getJuegoActual" signature="()Lfiuba/algo3/modelo/Juego;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="50" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMapa" signature="()Lfiuba/algo3/modelo/mapa/Mapa;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="30" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMovimientosLimites" signature="()I" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="38" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMovimientosRestantes" signature="()I" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="vehiculoCruzoLaMeta" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="45" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+								<line number="47" hits="0" branch="false"/>
+								<line number="48" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="8" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+						<line number="47" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.NivelDificil" filename="fiuba/algo3/modelo/NivelDificil.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/vehiculos/Vehiculo;Lfiuba/algo3/modelo/Juego;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="11" hits="0" branch="false"/>
+								<line number="12" hits="0" branch="false"/>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+								<line number="15" hits="0" branch="false"/>
+								<line number="16" hits="0" branch="false"/>
+								<line number="18" hits="0" branch="false"/>
+								<line number="19" hits="0" branch="false"/>
+								<line number="20" hits="0" branch="false"/>
+								<line number="21" hits="0" branch="false"/>
+								<line number="22" hits="0" branch="false"/>
+								<line number="23" hits="0" branch="false"/>
+								<line number="24" hits="0" branch="false"/>
+								<line number="25" hits="0" branch="false"/>
+								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+								<line number="29" hits="0" branch="false"/>
+								<line number="30" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="11" hits="0" branch="false"/>
+						<line number="12" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="16" hits="0" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+						<line number="19" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+						<line number="21" hits="0" branch="false"/>
+						<line number="22" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="false"/>
+						<line number="25" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="29" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.NivelFacil" filename="fiuba/algo3/modelo/NivelFacil.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/vehiculos/Vehiculo;Lfiuba/algo3/modelo/Juego;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+								<line number="15" hits="0" branch="false"/>
+								<line number="16" hits="0" branch="false"/>
+								<line number="17" hits="0" branch="false"/>
+								<line number="18" hits="0" branch="false"/>
+								<line number="19" hits="0" branch="false"/>
+								<line number="21" hits="0" branch="false"/>
+								<line number="22" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="16" hits="0" branch="false"/>
+						<line number="17" hits="0" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+						<line number="19" hits="0" branch="false"/>
+						<line number="21" hits="0" branch="false"/>
+						<line number="22" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.NivelModerado" filename="fiuba/algo3/modelo/NivelModerado.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/vehiculos/Vehiculo;Lfiuba/algo3/modelo/Juego;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="12" hits="0" branch="false"/>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+								<line number="15" hits="0" branch="false"/>
+								<line number="16" hits="0" branch="false"/>
+								<line number="17" hits="0" branch="false"/>
+								<line number="19" hits="0" branch="false"/>
+								<line number="20" hits="0" branch="false"/>
+								<line number="21" hits="0" branch="false"/>
+								<line number="22" hits="0" branch="false"/>
+								<line number="23" hits="0" branch="false"/>
+								<line number="24" hits="0" branch="false"/>
+								<line number="25" hits="0" branch="false"/>
+								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+								<line number="29" hits="0" branch="false"/>
+								<line number="30" hits="0" branch="false"/>
+								<line number="31" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="12" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="16" hits="0" branch="false"/>
+						<line number="17" hits="0" branch="false"/>
+						<line number="19" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+						<line number="21" hits="0" branch="false"/>
+						<line number="22" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="false"/>
+						<line number="25" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="29" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.NivelMuyDificil" filename="fiuba/algo3/modelo/NivelMuyDificil.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/vehiculos/Vehiculo;Lfiuba/algo3/modelo/Juego;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="11" hits="0" branch="false"/>
+								<line number="12" hits="0" branch="false"/>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+								<line number="15" hits="0" branch="false"/>
+								<line number="16" hits="0" branch="false"/>
+								<line number="18" hits="0" branch="false"/>
+								<line number="19" hits="0" branch="false"/>
+								<line number="20" hits="0" branch="false"/>
+								<line number="21" hits="0" branch="false"/>
+								<line number="22" hits="0" branch="false"/>
+								<line number="23" hits="0" branch="false"/>
+								<line number="24" hits="0" branch="false"/>
+								<line number="25" hits="0" branch="false"/>
+								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+								<line number="29" hits="0" branch="false"/>
+								<line number="30" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="11" hits="0" branch="false"/>
+						<line number="12" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="16" hits="0" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+						<line number="19" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+						<line number="21" hits="0" branch="false"/>
+						<line number="22" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="false"/>
+						<line number="25" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="29" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.NombreDeUsuarioInvalidoException" filename="fiuba/algo3/modelo/NombreDeUsuarioInvalidoException.java" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="3" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="3" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.TablaDePuntuaciones" filename="fiuba/algo3/modelo/TablaDePuntuaciones.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="12" hits="0" branch="false"/>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="agregar" signature="(Lfiuba/algo3/modelo/ElementoTablaDePuntuacion;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="17" hits="0" branch="false"/>
+								<line number="18" hits="0" branch="false"/>
+								<line number="19" hits="0" branch="false"/>
+								<line number="20" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="elementoEn" signature="(I)Lfiuba/algo3/modelo/ElementoTablaDePuntuacion;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="27" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="size" signature="()I" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="23" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="12" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="17" hits="0" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+						<line number="19" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.Usuario" filename="fiuba/algo3/modelo/Usuario.java" line-rate="0.0" branch-rate="0.0" complexity="2.3333333333333335">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="20" hits="0" branch="false"/>
+								<line number="21" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="22" hits="0" branch="false"/>
+								<line number="25" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="9" hits="0" branch="false"/>
+								<line number="11" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="12" hits="0" branch="false"/>
+								<line number="13" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="14" hits="0" branch="false"/>
+								<line number="17" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNombre" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="30" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="9" hits="0" branch="false"/>
+						<line number="11" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="12" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="14" hits="0" branch="false"/>
+						<line number="17" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+						<line number="21" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="22" hits="0" branch="false"/>
+						<line number="25" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="fiuba.algo3.modelo.coordenadas" line-rate="1.0" branch-rate="0.75" complexity="1.4285714285714286">
+			<classes>
+				<class name="fiuba.algo3.modelo.coordenadas.Abajo" filename="fiuba/algo3/modelo/coordenadas/Abajo.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="6" hits="3" branch="false"/>
+								<line number="7" hits="3" branch="false"/>
+								<line number="8" hits="3" branch="false"/>
+								<line number="9" hits="3" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="6" hits="3" branch="false"/>
+						<line number="7" hits="3" branch="false"/>
+						<line number="8" hits="3" branch="false"/>
+						<line number="9" hits="3" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.coordenadas.Arriba" filename="fiuba/algo3/modelo/coordenadas/Arriba.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="6" hits="7" branch="false"/>
+								<line number="7" hits="7" branch="false"/>
+								<line number="8" hits="7" branch="false"/>
+								<line number="9" hits="7" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="6" hits="7" branch="false"/>
+						<line number="7" hits="7" branch="false"/>
+						<line number="8" hits="7" branch="false"/>
+						<line number="9" hits="7" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.coordenadas.Coordenada" filename="fiuba/algo3/modelo/coordenadas/Coordenada.java" line-rate="1.0" branch-rate="0.8333333333333334" complexity="1.5">
+					<methods>
+						<method name="&lt;init&gt;" signature="(II)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="8" hits="2008" branch="false"/>
+								<line number="9" hits="2008" branch="false"/>
+								<line number="10" hits="2008" branch="false"/>
+								<line number="11" hits="2008" branch="false"/>
+							</lines>
+						</method>
+						<method name="calcularDistancia" signature="(Lfiuba/algo3/modelo/coordenadas/Coordenada;)D" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="39" hits="9" branch="false"/>
+								<line number="40" hits="9" branch="false"/>
+								<line number="41" hits="9" branch="false"/>
+							</lines>
+						</method>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="0.8333333333333334">
+							<lines>
+								<line number="15" hits="18" branch="false"/>
+								<line number="17" hits="18" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="18" hits="17" branch="false"/>
+								<line number="19" hits="17" branch="true" condition-coverage="75% (3/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="20" hits="16" branch="false"/>
+								<line number="23" hits="18" branch="false"/>
+							</lines>
+						</method>
+						<method name="getX" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="27" hits="593" branch="false"/>
+							</lines>
+						</method>
+						<method name="getY" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="31" hits="570" branch="false"/>
+							</lines>
+						</method>
+						<method name="sumar" signature="(Lfiuba/algo3/modelo/coordenadas/Coordenada;)Lfiuba/algo3/modelo/coordenadas/Coordenada;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="35" hits="88" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="8" hits="2008" branch="false"/>
+						<line number="9" hits="2008" branch="false"/>
+						<line number="10" hits="2008" branch="false"/>
+						<line number="11" hits="2008" branch="false"/>
+						<line number="15" hits="18" branch="false"/>
+						<line number="17" hits="18" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="18" hits="17" branch="false"/>
+						<line number="19" hits="17" branch="true" condition-coverage="75% (3/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="20" hits="16" branch="false"/>
+						<line number="23" hits="18" branch="false"/>
+						<line number="27" hits="593" branch="false"/>
+						<line number="31" hits="570" branch="false"/>
+						<line number="35" hits="88" branch="false"/>
+						<line number="39" hits="9" branch="false"/>
+						<line number="40" hits="9" branch="false"/>
+						<line number="41" hits="9" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.coordenadas.Derecha" filename="fiuba/algo3/modelo/coordenadas/Derecha.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="6" hits="51" branch="false"/>
+								<line number="7" hits="51" branch="false"/>
+								<line number="8" hits="51" branch="false"/>
+								<line number="9" hits="51" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="6" hits="51" branch="false"/>
+						<line number="7" hits="51" branch="false"/>
+						<line number="8" hits="51" branch="false"/>
+						<line number="9" hits="51" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.coordenadas.Direccion" filename="fiuba/algo3/modelo/coordenadas/Direccion.java" line-rate="1.0" branch-rate="0.6666666666666666" complexity="1.75">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="4" hits="65" branch="false"/>
+							</lines>
+						</method>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="0.6666666666666666">
+							<lines>
+								<line number="11" hits="6" branch="false"/>
+								<line number="13" hits="6" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="14" hits="6" branch="false"/>
+								<line number="15" hits="6" branch="true" condition-coverage="75% (3/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="16" hits="5" branch="false"/>
+								<line number="19" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDireccionComoCoordenada" signature="()Lfiuba/algo3/modelo/coordenadas/Coordenada;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="23" hits="86" branch="false"/>
+							</lines>
+						</method>
+						<method name="getX" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="27" hits="12" branch="false"/>
+							</lines>
+						</method>
+						<method name="getY" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="31" hits="10" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="4" hits="65" branch="false"/>
+						<line number="11" hits="6" branch="false"/>
+						<line number="13" hits="6" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="14" hits="6" branch="false"/>
+						<line number="15" hits="6" branch="true" condition-coverage="75% (3/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="16" hits="5" branch="false"/>
+						<line number="19" hits="6" branch="false"/>
+						<line number="23" hits="86" branch="false"/>
+						<line number="27" hits="12" branch="false"/>
+						<line number="31" hits="10" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.coordenadas.Izquierda" filename="fiuba/algo3/modelo/coordenadas/Izquierda.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="7" hits="4" branch="false"/>
+								<line number="8" hits="4" branch="false"/>
+								<line number="9" hits="4" branch="false"/>
+								<line number="10" hits="4" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="7" hits="4" branch="false"/>
+						<line number="8" hits="4" branch="false"/>
+						<line number="9" hits="4" branch="false"/>
+						<line number="10" hits="4" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="fiuba.algo3.modelo.mapa" line-rate="1.0" branch-rate="0.875" complexity="1.4666666666666666">
+			<classes>
+				<class name="fiuba.algo3.modelo.mapa.Celda" filename="fiuba/algo3/modelo/mapa/Celda.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/mapa/Mapa;Lfiuba/algo3/modelo/coordenadas/Coordenada;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="13" hits="1758" branch="false"/>
+								<line number="14" hits="1758" branch="false"/>
+								<line number="15" hits="1758" branch="false"/>
+								<line number="16" hits="1758" branch="false"/>
+								<line number="17" hits="1758" branch="false"/>
+							</lines>
+						</method>
+						<method name="agregarContenido" signature="(Lfiuba/algo3/modelo/mapa/ContenidoDeCelda;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="28" hits="59" branch="false"/>
+								<line number="29" hits="59" branch="false"/>
+								<line number="30" hits="57" branch="false"/>
+							</lines>
+						</method>
+						<method name="esVisiblePara" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="44" hits="5" branch="false"/>
+								<line number="45" hits="5" branch="false"/>
+								<line number="46" hits="5" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="getContenido" signature="()Lfiuba/algo3/modelo/mapa/ContenidoDeCelda;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="20" hits="31" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCoordenada" signature="()Lfiuba/algo3/modelo/coordenadas/Coordenada;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="24" hits="166" branch="false"/>
+							</lines>
+						</method>
+						<method name="getVecino" signature="(Lfiuba/algo3/modelo/coordenadas/Direccion;)Lfiuba/algo3/modelo/mapa/Celda;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="38" hits="82" branch="false"/>
+								<line number="39" hits="82" branch="false"/>
+								<line number="40" hits="81" branch="false"/>
+							</lines>
+						</method>
+						<method name="quitarContenido" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="33" hits="36" branch="false"/>
+								<line number="34" hits="36" branch="false"/>
+								<line number="35" hits="36" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="13" hits="1758" branch="false"/>
+						<line number="14" hits="1758" branch="false"/>
+						<line number="15" hits="1758" branch="false"/>
+						<line number="16" hits="1758" branch="false"/>
+						<line number="17" hits="1758" branch="false"/>
+						<line number="20" hits="31" branch="false"/>
+						<line number="24" hits="166" branch="false"/>
+						<line number="28" hits="59" branch="false"/>
+						<line number="29" hits="59" branch="false"/>
+						<line number="30" hits="57" branch="false"/>
+						<line number="33" hits="36" branch="false"/>
+						<line number="34" hits="36" branch="false"/>
+						<line number="35" hits="36" branch="false"/>
+						<line number="38" hits="82" branch="false"/>
+						<line number="39" hits="82" branch="false"/>
+						<line number="40" hits="81" branch="false"/>
+						<line number="44" hits="5" branch="false"/>
+						<line number="45" hits="5" branch="false"/>
+						<line number="46" hits="5" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.mapa.ContenidoDeCelda" filename="fiuba/algo3/modelo/mapa/ContenidoDeCelda.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="5" hits="75" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCelda" signature="()Lfiuba/algo3/modelo/mapa/Celda;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="10" hits="79" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCeldaNull" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="16" hits="36" branch="false"/>
+								<line number="17" hits="36" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="5" hits="75" branch="false"/>
+						<line number="10" hits="79" branch="false"/>
+						<line number="16" hits="36" branch="false"/>
+						<line number="17" hits="36" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.mapa.Mapa" filename="fiuba/algo3/modelo/mapa/Mapa.java" line-rate="1.0" branch-rate="0.8571428571428571" complexity="2.4">
+					<methods>
+						<method name="&lt;init&gt;" signature="(II)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="18" hits="30" branch="false"/>
+								<line number="19" hits="30" branch="false"/>
+								<line number="20" hits="30" branch="false"/>
+								<line number="21" hits="30" branch="false"/>
+								<line number="22" hits="228" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="23" hits="198" branch="false"/>
+								<line number="24" hits="1956" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="25" hits="1758" branch="false"/>
+								<line number="27" hits="198" branch="false"/>
+								<line number="29" hits="30" branch="false"/>
+							</lines>
+						</method>
+						<method name="coordenadaValida" signature="(Lfiuba/algo3/modelo/coordenadas/Coordenada;)Z" line-rate="1.0" branch-rate="0.75">
+							<lines>
+								<line number="48" hits="129" branch="true" condition-coverage="75% (6/8)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="100%"/>
+										<condition number="2" type="jump" coverage="50%"/>
+										<condition number="3" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="getCantidadDeColumnas" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="36" hits="130" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCantidadDeFilas" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="32" hits="125" branch="false"/>
+							</lines>
+						</method>
+						<method name="getCeldaEn" signature="(Lfiuba/algo3/modelo/coordenadas/Coordenada;)Lfiuba/algo3/modelo/mapa/Celda;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="40" hits="128" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="41" hits="4" branch="false"/>
+								<line number="43" hits="124" branch="false"/>
+								<line number="44" hits="124" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="18" hits="30" branch="false"/>
+						<line number="19" hits="30" branch="false"/>
+						<line number="20" hits="30" branch="false"/>
+						<line number="21" hits="30" branch="false"/>
+						<line number="22" hits="228" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="23" hits="198" branch="false"/>
+						<line number="24" hits="1956" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="25" hits="1758" branch="false"/>
+						<line number="27" hits="198" branch="false"/>
+						<line number="29" hits="30" branch="false"/>
+						<line number="32" hits="125" branch="false"/>
+						<line number="36" hits="130" branch="false"/>
+						<line number="40" hits="128" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="41" hits="4" branch="false"/>
+						<line number="43" hits="124" branch="false"/>
+						<line number="44" hits="124" branch="false"/>
+						<line number="48" hits="129" branch="true" condition-coverage="75% (6/8)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="100%"/>
+								<condition number="2" type="jump" coverage="50%"/>
+								<condition number="3" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.mapa.UbicacionEnMapaException" filename="fiuba/algo3/modelo/mapa/UbicacionEnMapaException.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="4" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="4" hits="6" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="fiuba.algo3.modelo.objetosEncontrables" line-rate="0.8848920863309353" branch-rate="0.9615384615384616" complexity="1.1875">
+			<classes>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.CambioDeVehiculo" filename="fiuba/algo3/modelo/objetosEncontrables/CambioDeVehiculo.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="12" hits="6" branch="false"/>
+								<line number="13" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConAuto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="24" hits="1" branch="false"/>
+								<line number="25" hits="1" branch="false"/>
+								<line number="26" hits="1" branch="false"/>
+								<line number="27" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConMoto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="17" hits="1" branch="false"/>
+								<line number="18" hits="1" branch="false"/>
+								<line number="19" hits="1" branch="false"/>
+								<line number="20" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConTodoTerreno" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="31" hits="1" branch="false"/>
+								<line number="32" hits="1" branch="false"/>
+								<line number="33" hits="1" branch="false"/>
+								<line number="34" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="12" hits="6" branch="false"/>
+						<line number="13" hits="6" branch="false"/>
+						<line number="17" hits="1" branch="false"/>
+						<line number="18" hits="1" branch="false"/>
+						<line number="19" hits="1" branch="false"/>
+						<line number="20" hits="1" branch="false"/>
+						<line number="24" hits="1" branch="false"/>
+						<line number="25" hits="1" branch="false"/>
+						<line number="26" hits="1" branch="false"/>
+						<line number="27" hits="1" branch="false"/>
+						<line number="31" hits="1" branch="false"/>
+						<line number="32" hits="1" branch="false"/>
+						<line number="33" hits="1" branch="false"/>
+						<line number="34" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.ControlPolicial" filename="fiuba/algo3/modelo/objetosEncontrables/ControlPolicial.java" line-rate="0.8285714285714286" branch-rate="1.0" complexity="1.5454545454545454">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="15" hits="3" branch="false"/>
+								<line number="16" hits="3" branch="false"/>
+								<line number="17" hits="3" branch="false"/>
+								<line number="18" hits="3" branch="false"/>
+								<line number="21" hits="3" branch="false"/>
+								<line number="22" hits="3" branch="false"/>
+								<line number="23" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Auto;)Z" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="63" hits="0" branch="false"/>
+								<line number="64" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Auto;Lfiuba/algo3/modelo/objetosEncontrables/NumeroAleatorio;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="68" hits="4" branch="false"/>
+								<line number="69" hits="4" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="70" hits="2" branch="false"/>
+								<line number="72" hits="4" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Moto;)Z" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="49" hits="0" branch="false"/>
+								<line number="50" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Moto;Lfiuba/algo3/modelo/objetosEncontrables/NumeroAleatorio;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="54" hits="4" branch="false"/>
+								<line number="55" hits="4" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="56" hits="2" branch="false"/>
+								<line number="58" hits="4" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/TodoTerreno;)Z" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="77" hits="0" branch="false"/>
+								<line number="78" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/TodoTerreno;Lfiuba/algo3/modelo/objetosEncontrables/NumeroAleatorio;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="82" hits="4" branch="false"/>
+								<line number="83" hits="4" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="84" hits="2" branch="false"/>
+								<line number="86" hits="4" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="interactuarConAuto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="36" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="37" hits="1" branch="false"/>
+								<line number="39" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConMoto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="30" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="31" hits="1" branch="false"/>
+								<line number="33" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConTodoTerreno" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="42" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="43" hits="1" branch="false"/>
+								<line number="45" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="obtenerPenalizacion" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="26" hits="3" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="15" hits="3" branch="false"/>
+						<line number="16" hits="3" branch="false"/>
+						<line number="17" hits="3" branch="false"/>
+						<line number="18" hits="3" branch="false"/>
+						<line number="21" hits="3" branch="false"/>
+						<line number="22" hits="3" branch="false"/>
+						<line number="23" hits="3" branch="false"/>
+						<line number="26" hits="3" branch="false"/>
+						<line number="30" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="31" hits="1" branch="false"/>
+						<line number="33" hits="2" branch="false"/>
+						<line number="36" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="37" hits="1" branch="false"/>
+						<line number="39" hits="2" branch="false"/>
+						<line number="42" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="43" hits="1" branch="false"/>
+						<line number="45" hits="2" branch="false"/>
+						<line number="49" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+						<line number="54" hits="4" branch="false"/>
+						<line number="55" hits="4" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="56" hits="2" branch="false"/>
+						<line number="58" hits="4" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="63" hits="0" branch="false"/>
+						<line number="64" hits="0" branch="false"/>
+						<line number="68" hits="4" branch="false"/>
+						<line number="69" hits="4" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="70" hits="2" branch="false"/>
+						<line number="72" hits="4" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="77" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="82" hits="4" branch="false"/>
+						<line number="83" hits="4" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="84" hits="2" branch="false"/>
+						<line number="86" hits="4" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.Interactuable" filename="fiuba/algo3/modelo/objetosEncontrables/Interactuable.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.Llegada" filename="fiuba/algo3/modelo/objetosEncontrables/Llegada.java" line-rate="0.35714285714285715" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="13" hits="3" branch="false"/>
+								<line number="14" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/Nivel;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="16" hits="0" branch="false"/>
+								<line number="17" hits="0" branch="false"/>
+								<line number="18" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Auto;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="41" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Moto;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="36" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/TodoTerreno;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="46" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConAuto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConMoto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="21" hits="0" branch="false"/>
+								<line number="22" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConTodoTerreno" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="31" hits="0" branch="false"/>
+								<line number="32" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="13" hits="3" branch="false"/>
+						<line number="14" hits="3" branch="false"/>
+						<line number="16" hits="0" branch="false"/>
+						<line number="17" hits="0" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+						<line number="21" hits="0" branch="false"/>
+						<line number="22" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+						<line number="32" hits="0" branch="false"/>
+						<line number="36" hits="1" branch="false"/>
+						<line number="41" hits="1" branch="false"/>
+						<line number="46" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.NumeroAleatorio" filename="fiuba/algo3/modelo/objetosEncontrables/NumeroAleatorio.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="7" hits="6" branch="false"/>
+								<line number="8" hits="6" branch="false"/>
+								<line number="9" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="obtenerNumero" signature="()D" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="12" hits="12" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="7" hits="6" branch="false"/>
+						<line number="8" hits="6" branch="false"/>
+						<line number="9" hits="6" branch="false"/>
+						<line number="12" hits="12" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.NumeroAleatorioFalso" filename="fiuba/algo3/modelo/objetosEncontrables/NumeroAleatorioFalso.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(D)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="6" hits="6" branch="false"/>
+								<line number="7" hits="6" branch="false"/>
+								<line number="8" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="6" hits="6" branch="false"/>
+						<line number="7" hits="6" branch="false"/>
+						<line number="8" hits="6" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.ObjetoEncontrable" filename="fiuba/algo3/modelo/objetosEncontrables/ObjetoEncontrable.java" line-rate="0.875" branch-rate="0.875" complexity="7.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="8" hits="42" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCelda" signature="(Lfiuba/algo3/modelo/mapa/Celda;)V" line-rate="0.8571428571428571" branch-rate="0.875">
+							<lines>
+								<line number="12" hits="15" branch="false"/>
+								<line number="13" hits="15" branch="true" condition-coverage="100% (4/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="14" hits="1" branch="false"/>
+								<line number="17" hits="14" branch="true" condition-coverage="75% (3/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="18" hits="0" branch="false"/>
+								<line number="20" hits="14" branch="false"/>
+								<line number="21" hits="14" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="8" hits="42" branch="false"/>
+						<line number="12" hits="15" branch="false"/>
+						<line number="13" hits="15" branch="true" condition-coverage="100% (4/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="14" hits="1" branch="false"/>
+						<line number="17" hits="14" branch="true" condition-coverage="75% (3/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="18" hits="0" branch="false"/>
+						<line number="20" hits="14" branch="false"/>
+						<line number="21" hits="14" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.Piquete" filename="fiuba/algo3/modelo/objetosEncontrables/Piquete.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="12" hits="6" branch="false"/>
+								<line number="13" hits="6" branch="false"/>
+								<line number="14" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Auto;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="40" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Moto;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="35" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/TodoTerreno;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="45" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConAuto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="27" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConMoto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="22" hits="1" branch="false"/>
+								<line number="23" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConTodoTerreno" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="31" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="obtenerPenalizacion" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="17" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="12" hits="6" branch="false"/>
+						<line number="13" hits="6" branch="false"/>
+						<line number="14" hits="6" branch="false"/>
+						<line number="17" hits="1" branch="false"/>
+						<line number="22" hits="1" branch="false"/>
+						<line number="23" hits="1" branch="false"/>
+						<line number="27" hits="1" branch="false"/>
+						<line number="31" hits="1" branch="false"/>
+						<line number="35" hits="1" branch="false"/>
+						<line number="40" hits="1" branch="false"/>
+						<line number="45" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.Pozo" filename="fiuba/algo3/modelo/objetosEncontrables/Pozo.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="13" hits="11" branch="false"/>
+								<line number="14" hits="11" branch="false"/>
+								<line number="15" hits="11" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Auto;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="38" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Moto;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="43" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/TodoTerreno;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="48" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConAuto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="23" hits="2" branch="false"/>
+								<line number="24" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConMoto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="28" hits="2" branch="false"/>
+								<line number="29" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConTodoTerreno" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="33" hits="2" branch="false"/>
+								<line number="34" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="obtenerPenalizacion" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="18" hits="6" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="13" hits="11" branch="false"/>
+						<line number="14" hits="11" branch="false"/>
+						<line number="15" hits="11" branch="false"/>
+						<line number="18" hits="6" branch="false"/>
+						<line number="23" hits="2" branch="false"/>
+						<line number="24" hits="2" branch="false"/>
+						<line number="28" hits="2" branch="false"/>
+						<line number="29" hits="2" branch="false"/>
+						<line number="33" hits="2" branch="false"/>
+						<line number="34" hits="2" branch="false"/>
+						<line number="38" hits="2" branch="false"/>
+						<line number="43" hits="2" branch="false"/>
+						<line number="48" hits="2" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.Sorpresa" filename="fiuba/algo3/modelo/objetosEncontrables/Sorpresa.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="10" hits="19" branch="false"/>
+								<line number="11" hits="19" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Auto;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="24" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/Moto;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="19" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="dejaPasar" signature="(Lfiuba/algo3/modelo/vehiculos/TodoTerreno;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="29" hits="7" branch="false"/>
+							</lines>
+						</method>
+						<method name="destruirse" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="14" hits="10" branch="false"/>
+								<line number="15" hits="10" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="10" hits="19" branch="false"/>
+						<line number="11" hits="19" branch="false"/>
+						<line number="14" hits="10" branch="false"/>
+						<line number="15" hits="10" branch="false"/>
+						<line number="19" hits="6" branch="false"/>
+						<line number="24" hits="6" branch="false"/>
+						<line number="29" hits="7" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.SorpresaDesfavorable" filename="fiuba/algo3/modelo/objetosEncontrables/SorpresaDesfavorable.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="9" hits="6" branch="false"/>
+								<line number="10" hits="6" branch="false"/>
+								<line number="11" hits="6" branch="false"/>
+							</lines>
+						</method>
+						<method name="aplicarPenalizacion" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="14" hits="3" branch="false"/>
+								<line number="15" hits="3" branch="false"/>
+								<line number="16" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConAuto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="20" hits="1" branch="false"/>
+								<line number="21" hits="1" branch="false"/>
+								<line number="22" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConMoto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="26" hits="1" branch="false"/>
+								<line number="27" hits="1" branch="false"/>
+								<line number="28" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConTodoTerreno" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="32" hits="1" branch="false"/>
+								<line number="33" hits="1" branch="false"/>
+								<line number="34" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="9" hits="6" branch="false"/>
+						<line number="10" hits="6" branch="false"/>
+						<line number="11" hits="6" branch="false"/>
+						<line number="14" hits="3" branch="false"/>
+						<line number="15" hits="3" branch="false"/>
+						<line number="16" hits="3" branch="false"/>
+						<line number="20" hits="1" branch="false"/>
+						<line number="21" hits="1" branch="false"/>
+						<line number="22" hits="1" branch="false"/>
+						<line number="26" hits="1" branch="false"/>
+						<line number="27" hits="1" branch="false"/>
+						<line number="28" hits="1" branch="false"/>
+						<line number="32" hits="1" branch="false"/>
+						<line number="33" hits="1" branch="false"/>
+						<line number="34" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.objetosEncontrables.SorpresaFavorable" filename="fiuba/algo3/modelo/objetosEncontrables/SorpresaFavorable.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="9" hits="7" branch="false"/>
+								<line number="10" hits="7" branch="false"/>
+								<line number="11" hits="7" branch="false"/>
+							</lines>
+						</method>
+						<method name="aplicarPenalizacion" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="14" hits="4" branch="false"/>
+								<line number="15" hits="4" branch="false"/>
+								<line number="16" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConAuto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="26" hits="1" branch="false"/>
+								<line number="27" hits="1" branch="false"/>
+								<line number="28" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConMoto" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="20" hits="1" branch="false"/>
+								<line number="21" hits="1" branch="false"/>
+								<line number="22" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuarConTodoTerreno" signature="(Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="32" hits="2" branch="false"/>
+								<line number="33" hits="2" branch="false"/>
+								<line number="34" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="9" hits="7" branch="false"/>
+						<line number="10" hits="7" branch="false"/>
+						<line number="11" hits="7" branch="false"/>
+						<line number="14" hits="4" branch="false"/>
+						<line number="15" hits="4" branch="false"/>
+						<line number="16" hits="4" branch="false"/>
+						<line number="20" hits="1" branch="false"/>
+						<line number="21" hits="1" branch="false"/>
+						<line number="22" hits="1" branch="false"/>
+						<line number="26" hits="1" branch="false"/>
+						<line number="27" hits="1" branch="false"/>
+						<line number="28" hits="1" branch="false"/>
+						<line number="32" hits="2" branch="false"/>
+						<line number="33" hits="2" branch="false"/>
+						<line number="34" hits="2" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="fiuba.algo3.modelo.vehiculos" line-rate="1.0" branch-rate="0.8571428571428571" complexity="1.380952380952381">
+			<classes>
+				<class name="fiuba.algo3.modelo.vehiculos.Auto" filename="fiuba/algo3/modelo/vehiculos/Auto.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="5" hits="30" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuar" signature="(Lfiuba/algo3/modelo/objetosEncontrables/Interactuable;Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="9" hits="4" branch="false"/>
+								<line number="10" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="meDejanPasar" signature="(Lfiuba/algo3/modelo/objetosEncontrables/Interactuable;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="14" hits="4" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="5" hits="30" branch="false"/>
+						<line number="9" hits="4" branch="false"/>
+						<line number="10" hits="4" branch="false"/>
+						<line number="14" hits="4" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.vehiculos.Conductor" filename="fiuba/algo3/modelo/vehiculos/Conductor.java" line-rate="1.0" branch-rate="0.8" complexity="1.5">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/vehiculos/Vehiculo;I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="21" hits="33" branch="false"/>
+								<line number="22" hits="33" branch="false"/>
+								<line number="23" hits="33" branch="false"/>
+								<line number="24" hits="33" branch="false"/>
+								<line number="25" hits="33" branch="false"/>
+								<line number="26" hits="33" branch="false"/>
+								<line number="27" hits="33" branch="false"/>
+							</lines>
+						</method>
+						<method name="avanzarEnDireccion" signature="(Lfiuba/algo3/modelo/coordenadas/Direccion;)V" line-rate="1.0" branch-rate="0.75">
+							<lines>
+								<line number="76" hits="26" branch="false"/>
+								<line number="77" hits="26" branch="false"/>
+								<line number="78" hits="25" branch="false"/>
+								<line number="80" hits="25" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="81" hits="12" branch="false"/>
+								<line number="84" hits="13" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="85" hits="13" branch="false"/>
+								<line number="87" hits="13" branch="false"/>
+								<line number="91" hits="25" branch="false"/>
+								<line number="92" hits="25" branch="false"/>
+								<line number="93" hits="25" branch="false"/>
+							</lines>
+						</method>
+						<method name="cambiarDeVehiculo" signature="(Lfiuba/algo3/modelo/vehiculos/Vehiculo;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="39" hits="4" branch="false"/>
+								<line number="40" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="desplazarseASiguienteEsquina" signature="(Lfiuba/algo3/modelo/coordenadas/Direccion;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="68" hits="25" branch="false"/>
+								<line number="69" hits="25" branch="false"/>
+								<line number="70" hits="25" branch="false"/>
+								<line number="71" hits="25" branch="false"/>
+								<line number="72" hits="25" branch="false"/>
+								<line number="73" hits="25" branch="false"/>
+							</lines>
+						</method>
+						<method name="getAlcanceDeVision" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="55" hits="13" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDireccion" signature="()Lfiuba/algo3/modelo/coordenadas/Direccion;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="102" hits="55" branch="false"/>
+							</lines>
+						</method>
+						<method name="getMovimientos" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="43" hits="30" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPenalizacionDeAvance" signature="()I" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="51" hits="29" branch="false"/>
+							</lines>
+						</method>
+						<method name="getVehiculo" signature="()Lfiuba/algo3/modelo/vehiculos/Vehiculo;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="47" hits="31" branch="false"/>
+							</lines>
+						</method>
+						<method name="setCelda" signature="(Lfiuba/algo3/modelo/mapa/Celda;)V" line-rate="1.0" branch-rate="0.75">
+							<lines>
+								<line number="31" hits="45" branch="false"/>
+								<line number="32" hits="45" branch="true" condition-coverage="75% (3/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="33" hits="1" branch="false"/>
+								<line number="35" hits="44" branch="false"/>
+								<line number="36" hits="44" branch="false"/>
+							</lines>
+						</method>
+						<method name="setDireccion" signature="(Lfiuba/algo3/modelo/coordenadas/Direccion;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="97" hits="26" branch="false"/>
+								<line number="98" hits="26" branch="false"/>
+							</lines>
+						</method>
+						<method name="variarMovimientosEn" signature="(I)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="59" hits="42" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="60" hits="1" branch="false"/>
+								<line number="63" hits="41" branch="false"/>
+								<line number="65" hits="42" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="21" hits="33" branch="false"/>
+						<line number="22" hits="33" branch="false"/>
+						<line number="23" hits="33" branch="false"/>
+						<line number="24" hits="33" branch="false"/>
+						<line number="25" hits="33" branch="false"/>
+						<line number="26" hits="33" branch="false"/>
+						<line number="27" hits="33" branch="false"/>
+						<line number="31" hits="45" branch="false"/>
+						<line number="32" hits="45" branch="true" condition-coverage="75% (3/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="33" hits="1" branch="false"/>
+						<line number="35" hits="44" branch="false"/>
+						<line number="36" hits="44" branch="false"/>
+						<line number="39" hits="4" branch="false"/>
+						<line number="40" hits="4" branch="false"/>
+						<line number="43" hits="30" branch="false"/>
+						<line number="47" hits="31" branch="false"/>
+						<line number="51" hits="29" branch="false"/>
+						<line number="55" hits="13" branch="false"/>
+						<line number="59" hits="42" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="60" hits="1" branch="false"/>
+						<line number="63" hits="41" branch="false"/>
+						<line number="65" hits="42" branch="false"/>
+						<line number="68" hits="25" branch="false"/>
+						<line number="69" hits="25" branch="false"/>
+						<line number="70" hits="25" branch="false"/>
+						<line number="71" hits="25" branch="false"/>
+						<line number="72" hits="25" branch="false"/>
+						<line number="73" hits="25" branch="false"/>
+						<line number="76" hits="26" branch="false"/>
+						<line number="77" hits="26" branch="false"/>
+						<line number="78" hits="25" branch="false"/>
+						<line number="80" hits="25" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="81" hits="12" branch="false"/>
+						<line number="84" hits="13" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="85" hits="13" branch="false"/>
+						<line number="87" hits="13" branch="false"/>
+						<line number="91" hits="25" branch="false"/>
+						<line number="92" hits="25" branch="false"/>
+						<line number="93" hits="25" branch="false"/>
+						<line number="97" hits="26" branch="false"/>
+						<line number="98" hits="26" branch="false"/>
+						<line number="102" hits="55" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.vehiculos.Moto" filename="fiuba/algo3/modelo/vehiculos/Moto.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="5" hits="17" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuar" signature="(Lfiuba/algo3/modelo/objetosEncontrables/Interactuable;Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="9" hits="4" branch="false"/>
+								<line number="10" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="meDejanPasar" signature="(Lfiuba/algo3/modelo/objetosEncontrables/Interactuable;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="14" hits="4" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="5" hits="17" branch="false"/>
+						<line number="9" hits="4" branch="false"/>
+						<line number="10" hits="4" branch="false"/>
+						<line number="14" hits="4" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.vehiculos.TodoTerreno" filename="fiuba/algo3/modelo/vehiculos/TodoTerreno.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="5" hits="16" branch="false"/>
+							</lines>
+						</method>
+						<method name="interactuar" signature="(Lfiuba/algo3/modelo/objetosEncontrables/Interactuable;Lfiuba/algo3/modelo/vehiculos/Conductor;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="9" hits="5" branch="false"/>
+								<line number="10" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="meDejanPasar" signature="(Lfiuba/algo3/modelo/objetosEncontrables/Interactuable;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="14" hits="5" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="5" hits="16" branch="false"/>
+						<line number="9" hits="5" branch="false"/>
+						<line number="10" hits="5" branch="false"/>
+						<line number="14" hits="5" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.modelo.vehiculos.Vehiculo" filename="fiuba/algo3/modelo/vehiculos/Vehiculo.java" line-rate="1.0" branch-rate="1.0" complexity="1.6666666666666667">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="5" hits="63" branch="false"/>
+							</lines>
+						</method>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="9" hits="8" branch="false"/>
+								<line number="10" hits="8" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="11" hits="7" branch="false"/>
+								<line number="12" hits="7" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="13" hits="6" branch="false"/>
+								<line number="16" hits="8" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="5" hits="63" branch="false"/>
+						<line number="9" hits="8" branch="false"/>
+						<line number="10" hits="8" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="11" hits="7" branch="false"/>
+						<line number="12" hits="7" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="13" hits="6" branch="false"/>
+						<line number="16" hits="8" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="fiuba.algo3.vista" line-rate="0.0" branch-rate="0.0" complexity="1.7222222222222223">
+			<classes>
+				<class name="fiuba.algo3.vista.AcercaDeListener" filename="fiuba/algo3/vista/AcercaDeListener.java" line-rate="0.0" branch-rate="0.0" complexity="2.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="9" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="13" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="14" hits="0" branch="false"/>
+								<line number="15" hits="0" branch="false"/>
+								<line number="16" hits="0" branch="false"/>
+								<line number="19" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="9" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="14" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="16" hits="0" branch="false"/>
+						<line number="19" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.vista.AcercaDeVentana" filename="fiuba/algo3/vista/AcercaDeVentana.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="11" hits="0" branch="false"/>
+								<line number="12" hits="0" branch="false"/>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+								<line number="15" hits="0" branch="false"/>
+								<line number="17" hits="0" branch="false"/>
+								<line number="32" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="false"/>
+								<line number="35" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="11" hits="0" branch="false"/>
+						<line number="12" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="17" hits="0" branch="false"/>
+						<line number="32" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.vista.BotonSalirListener" filename="fiuba/algo3/vista/BotonSalirListener.java" line-rate="0.0" branch-rate="0.0" complexity="2.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="10" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="14" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="16" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="10" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="16" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.vista.InstruccionesListener" filename="fiuba/algo3/vista/InstruccionesListener.java" line-rate="0.0" branch-rate="0.0" complexity="2.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="8" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="12" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+								<line number="15" hits="0" branch="false"/>
+								<line number="18" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="8" hits="0" branch="false"/>
+						<line number="12" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.vista.InstruccionesVentana" filename="fiuba/algo3/vista/InstruccionesVentana.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+								<line number="15" hits="0" branch="false"/>
+								<line number="16" hits="0" branch="false"/>
+								<line number="17" hits="0" branch="false"/>
+								<line number="18" hits="0" branch="false"/>
+								<line number="20" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="16" hits="0" branch="false"/>
+						<line number="17" hits="0" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+						<line number="20" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.vista.NuevoJuegoListener" filename="fiuba/algo3/vista/NuevoJuegoListener.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="9" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="menuCanceled" signature="(Ljavax/swing/event/MenuEvent;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="15" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="menuDeselected" signature="(Ljavax/swing/event/MenuEvent;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="21" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="menuSelected" signature="(Ljavax/swing/event/MenuEvent;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="25" hits="0" branch="false"/>
+								<line number="26" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="9" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="21" hits="0" branch="false"/>
+						<line number="25" hits="0" branch="false"/>
+						<line number="26" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.vista.PantallaDelNivel" filename="fiuba/algo3/vista/PantallaDelNivel.java" line-rate="0.0" branch-rate="0.0" complexity="2.5">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/Nivel;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="27" hits="0" branch="false"/>
+								<line number="28" hits="0" branch="false"/>
+								<line number="30" hits="0" branch="false"/>
+								<line number="31" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+								<line number="43" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+								<line number="47" hits="0" branch="false"/>
+								<line number="48" hits="0" branch="false"/>
+								<line number="51" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+								<line number="58" hits="0" branch="false"/>
+								<line number="59" hits="0" branch="false"/>
+								<line number="60" hits="0" branch="false"/>
+								<line number="61" hits="0" branch="false"/>
+								<line number="64" hits="0" branch="false"/>
+								<line number="65" hits="0" branch="false"/>
+								<line number="66" hits="0" branch="false"/>
+								<line number="67" hits="0" branch="false"/>
+								<line number="68" hits="0" branch="false"/>
+								<line number="69" hits="0" branch="false"/>
+								<line number="70" hits="0" branch="false"/>
+								<line number="71" hits="0" branch="false"/>
+								<line number="72" hits="0" branch="false"/>
+								<line number="73" hits="0" branch="false"/>
+								<line number="74" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="coordenadaModeloAVista" signature="(Lfiuba/algo3/modelo/coordenadas/Coordenada;I)Lfiuba/algo3/modelo/coordenadas/Coordenada;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="79" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="paint" signature="(Ljava/awt/Graphics;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="113" hits="0" branch="false"/>
+								<line number="114" hits="0" branch="false"/>
+								<line number="115" hits="0" branch="false"/>
+								<line number="116" hits="0" branch="false"/>
+								<line number="118" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="119" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="120" hits="0" branch="false"/>
+								<line number="121" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="123" hits="0" branch="false"/>
+								<line number="126" hits="0" branch="false"/>
+								<line number="132" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="133" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="134" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="135" hits="0" branch="false"/>
+								<line number="136" hits="0" branch="false"/>
+								<line number="141" hits="0" branch="false"/>
+								<line number="142" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="pintarPanelDerecho" signature="(Ljava/awt/Graphics;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="101" hits="0" branch="false"/>
+								<line number="102" hits="0" branch="false"/>
+								<line number="103" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="104" hits="0" branch="false"/>
+								<line number="105" hits="0" branch="false"/>
+								<line number="106" hits="0" branch="false"/>
+								<line number="109" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="pintorCeldaNoVisible" signature="(Ljava/awt/Graphics;Lfiuba/algo3/modelo/coordenadas/Coordenada;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="83" hits="0" branch="false"/>
+								<line number="84" hits="0" branch="false"/>
+								<line number="85" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="pintorContenidoDeCelda" signature="(Ljava/awt/Graphics;Lfiuba/algo3/modelo/coordenadas/Coordenada;Lfiuba/algo3/modelo/mapa/ContenidoDeCelda;)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="90" hits="0" branch="false"/>
+								<line number="91" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="92" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="93" hits="0" branch="false"/>
+								<line number="96" hits="0" branch="false"/>
+								<line number="99" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="27" hits="0" branch="false"/>
+						<line number="28" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+						<line number="47" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="58" hits="0" branch="false"/>
+						<line number="59" hits="0" branch="false"/>
+						<line number="60" hits="0" branch="false"/>
+						<line number="61" hits="0" branch="false"/>
+						<line number="64" hits="0" branch="false"/>
+						<line number="65" hits="0" branch="false"/>
+						<line number="66" hits="0" branch="false"/>
+						<line number="67" hits="0" branch="false"/>
+						<line number="68" hits="0" branch="false"/>
+						<line number="69" hits="0" branch="false"/>
+						<line number="70" hits="0" branch="false"/>
+						<line number="71" hits="0" branch="false"/>
+						<line number="72" hits="0" branch="false"/>
+						<line number="73" hits="0" branch="false"/>
+						<line number="74" hits="0" branch="false"/>
+						<line number="79" hits="0" branch="false"/>
+						<line number="83" hits="0" branch="false"/>
+						<line number="84" hits="0" branch="false"/>
+						<line number="85" hits="0" branch="false"/>
+						<line number="90" hits="0" branch="false"/>
+						<line number="91" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="92" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="93" hits="0" branch="false"/>
+						<line number="96" hits="0" branch="false"/>
+						<line number="99" hits="0" branch="false"/>
+						<line number="101" hits="0" branch="false"/>
+						<line number="102" hits="0" branch="false"/>
+						<line number="103" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="104" hits="0" branch="false"/>
+						<line number="105" hits="0" branch="false"/>
+						<line number="106" hits="0" branch="false"/>
+						<line number="109" hits="0" branch="false"/>
+						<line number="113" hits="0" branch="false"/>
+						<line number="114" hits="0" branch="false"/>
+						<line number="115" hits="0" branch="false"/>
+						<line number="116" hits="0" branch="false"/>
+						<line number="118" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="119" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="120" hits="0" branch="false"/>
+						<line number="121" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="123" hits="0" branch="false"/>
+						<line number="126" hits="0" branch="false"/>
+						<line number="132" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="133" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="134" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="135" hits="0" branch="false"/>
+						<line number="136" hits="0" branch="false"/>
+						<line number="141" hits="0" branch="false"/>
+						<line number="142" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.vista.Ventana" filename="fiuba/algo3/vista/Ventana.java" line-rate="0.0" branch-rate="0.0" complexity="1.25">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/modelo/Juego;Lfiuba/algo3/controlador/ControlPorTeclado;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+								<line number="47" hits="0" branch="false"/>
+								<line number="64" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="inicializarConCosas" signature="()V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="67" hits="0" branch="false"/>
+								<line number="68" hits="0" branch="false"/>
+								<line number="69" hits="0" branch="false"/>
+								<line number="71" hits="0" branch="false"/>
+								<line number="72" hits="0" branch="false"/>
+								<line number="73" hits="0" branch="false"/>
+								<line number="74" hits="0" branch="false"/>
+								<line number="75" hits="0" branch="false"/>
+								<line number="80" hits="0" branch="false"/>
+								<line number="81" hits="0" branch="false"/>
+								<line number="82" hits="0" branch="false"/>
+								<line number="85" hits="0" branch="false"/>
+								<line number="86" hits="0" branch="false"/>
+								<line number="89" hits="0" branch="false"/>
+								<line number="90" hits="0" branch="false"/>
+								<line number="91" hits="0" branch="false"/>
+								<line number="94" hits="0" branch="false"/>
+								<line number="95" hits="0" branch="false"/>
+								<line number="96" hits="0" branch="false"/>
+								<line number="98" hits="0" branch="false"/>
+								<line number="99" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="100" hits="0" branch="false"/>
+								<line number="104" hits="0" branch="false"/>
+								<line number="109" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="update" signature="(Ljava/util/Observable;Ljava/lang/Object;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="114" hits="0" branch="false"/>
+								<line number="115" hits="0" branch="false"/>
+								<line number="117" hits="0" branch="false"/>
+								<line number="118" hits="0" branch="false"/>
+								<line number="120" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+						<line number="47" hits="0" branch="false"/>
+						<line number="64" hits="0" branch="false"/>
+						<line number="67" hits="0" branch="false"/>
+						<line number="68" hits="0" branch="false"/>
+						<line number="69" hits="0" branch="false"/>
+						<line number="71" hits="0" branch="false"/>
+						<line number="72" hits="0" branch="false"/>
+						<line number="73" hits="0" branch="false"/>
+						<line number="74" hits="0" branch="false"/>
+						<line number="75" hits="0" branch="false"/>
+						<line number="80" hits="0" branch="false"/>
+						<line number="81" hits="0" branch="false"/>
+						<line number="82" hits="0" branch="false"/>
+						<line number="85" hits="0" branch="false"/>
+						<line number="86" hits="0" branch="false"/>
+						<line number="89" hits="0" branch="false"/>
+						<line number="90" hits="0" branch="false"/>
+						<line number="91" hits="0" branch="false"/>
+						<line number="94" hits="0" branch="false"/>
+						<line number="95" hits="0" branch="false"/>
+						<line number="96" hits="0" branch="false"/>
+						<line number="98" hits="0" branch="false"/>
+						<line number="99" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="100" hits="0" branch="false"/>
+						<line number="104" hits="0" branch="false"/>
+						<line number="109" hits="0" branch="false"/>
+						<line number="114" hits="0" branch="false"/>
+						<line number="115" hits="0" branch="false"/>
+						<line number="117" hits="0" branch="false"/>
+						<line number="118" hits="0" branch="false"/>
+						<line number="120" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="fiuba.algo3.vista.Ventana$1" filename="fiuba/algo3/vista/Ventana.java" line-rate="0.0" branch-rate="1.0" complexity="1.25">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lfiuba/algo3/vista/Ventana;)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="47" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="run" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="50" hits="0" branch="false"/>
+								<line number="51" hits="0" branch="false"/>
+								<line number="53" hits="0" branch="false"/>
+								<line number="54" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+								<line number="56" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+								<line number="58" hits="0" branch="false"/>
+								<line number="60" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="47" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="53" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="58" hits="0" branch="false"/>
+						<line number="60" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>

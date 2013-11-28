@@ -7,17 +7,19 @@ import fiuba.algo3.modelo.vehiculos.*;
 
 public class NivelFacil extends Nivel {
 	
-	final int MOVIMIENTOS_LIMITES = 50;
-	final int puntajePorPuntoSobrante = 1;
 	
-	public NivelFacil (Vehiculo unVehiculo){	
+	
+	
+	public NivelFacil (Vehiculo unVehiculo,Juego juego){	
+		movimientosLimites =50;
+		puntajePorMovimientoSobrante = 1;
+		this.juegoActual=juego;
 		this.mapa = new Mapa (8, 8);
 		this.conductor = new Conductor(unVehiculo, 8);
-		mapa.getCeldaEn(new Coordenada(2,5)).agregarContenido(new Llegada());
+		mapa.getCeldaEn(new Coordenada(15,2)).agregarContenido(new Llegada(this));
 		
 		this.mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 	}
 }
-
 
 
