@@ -18,6 +18,7 @@ public class NivelFacil extends Nivel {
 		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 		
 		mapa.getCeldaEn(new Coordenada(1,0)).agregarContenido(new Pozo());
+		mapa.getCeldaEn(new Coordenada(0,1)).agregarContenido(new Snorlax());
 		mapa.getCeldaEn(new Coordenada(1,2)).agregarContenido(new Piquete());
 		mapa.getCeldaEn(new Coordenada(8,11)).agregarContenido(new ControlPolicial());
 		mapa.getCeldaEn(new Coordenada(12,3)).agregarContenido(new Pozo());
