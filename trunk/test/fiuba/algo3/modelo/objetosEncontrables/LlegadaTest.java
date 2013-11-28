@@ -32,5 +32,9 @@ public class LlegadaTest {
 		Assert.assertEquals(false,laLlegada.dejaPasar(unTodoTerreno));
 	}
 	
-
+	@Test
+	public void laLlegadaDebereiaSerSiempreVisible(){
+		Llegada laLlegada=new Llegada();
+		Assert.assertEquals(true,laLlegada.esSiempreVisible());
+	}
 }

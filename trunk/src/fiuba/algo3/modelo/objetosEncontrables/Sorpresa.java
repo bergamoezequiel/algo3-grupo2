@@ -8,6 +8,7 @@ public abstract class Sorpresa extends ObjetoEncontrable {
 	
 	public Sorpresa(){
 		super();
+
 	}
 	
 	protected void destruirse(){
