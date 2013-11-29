@@ -13,6 +13,10 @@ import java.util.Hashtable;
 
 
 
+
+
+
+
 //import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
@@ -151,6 +155,7 @@ public class PantallaDelNivel extends JPanel {
 		g.setColor(Color.BLUE);
 		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 50);
 		g.drawString("Vehiculo Actual: ", ANCHO_PANTALLA_NIVEL, 70);
+		new PintorConductor().pintar(g, this.nivel.getConductor(), new Coordenada(600, 80), anchoCelda, altoCelda);
 		g.drawString(this.nivel.getConductor().getVehiculo().getClass().getSimpleName(), ANCHO_PANTALLA_NIVEL + TAMANIO_ICONOS_MENU + 10 , 100);
 		//g.drawImage(((ImageIcon)this.hash.get(this.nivel.getConductor().getVehiculo().getClass())).getImage(),ANCHO_PANTALLA_NIVEL, 80, TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU, null);
 		g.drawString("Movimientos Limites: "+(String)Integer.toString(nivel.getMovimientosLimites()), ANCHO_PANTALLA_NIVEL, 150);
@@ -159,12 +164,15 @@ public class PantallaDelNivel extends JPanel {
 		
 		g.drawString("REFERENCIAS: ", ANCHO_PANTALLA_NIVEL, 280);
 		g.drawString("Sorpresa: ", ANCHO_PANTALLA_NIVEL, 320);
-		//g.drawImage((ImageIcon)this.hash.get(new Pozo()), 80, TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU, null);
-		//g.drawImage(this.hash.get(),ANCHO_PANTALLA_NIVEL, 80, TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU, null);
+		new PintorSorpresa().pintar(g, new Coordenada (650,300), anchoCelda, altoCelda);
 		g.drawString("Pozo: ", ANCHO_PANTALLA_NIVEL, 360);
+		new PintorPozo2().pintar(g, new Coordenada (650,340), anchoCelda, altoCelda);
 		g.drawString("Control Policial: ", ANCHO_PANTALLA_NIVEL, 400);
+		new PintorControlPolicial().pintar(g, new Coordenada (690,380), anchoCelda, altoCelda);
 		g.drawString("Piquete: ", ANCHO_PANTALLA_NIVEL, 440);
+		new PintorPiquete().pintar(g, new Coordenada (650,410), anchoCelda, altoCelda);
 		g.drawString("Snorlax: ", ANCHO_PANTALLA_NIVEL, 480);
+		new PintorSnorlax().pintar(g, new Coordenada (650,460), anchoCelda, altoCelda);
 		
 		
 		if(nivel.getJuegoActual().conductorLlego()){
