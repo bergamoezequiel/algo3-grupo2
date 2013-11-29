@@ -76,27 +76,29 @@ public class ConductorTest {
 		Conductor unConductor = crearConductorValido();		
 		celdaInicial.agregarContenido(unConductor);
 		
-		//Avanza a la derecha.
-		unConductor.setDireccion(new Derecha());
-		unConductor.avanzar();
+		//Avanza (Porque ya estaba orientado hacia la derecha en su creacion)
+		unConductor.avanzarEnDireccion(new Derecha());
 		Assert.assertEquals(new Coordenada (2, 0) , unConductor.getCelda().getCoordenada());
 		Assert.assertEquals(new Derecha(), unConductor.getDireccion());
 		
-		//Avanza para arriba.
-		unConductor.setDireccion(new Arriba());
-		unConductor.avanzar();
+		//Se re orienta hacia arriba
+		unConductor.avanzarEnDireccion(new Arriba());
+		//Avanza
+		unConductor.avanzarEnDireccion(new Arriba());
 		Assert.assertEquals(new Coordenada (2, 2), unConductor.getCelda().getCoordenada());
 		Assert.assertEquals(new Arriba(), unConductor.getDireccion());
 		
-		//Avanza para la izquierda.
-		unConductor.setDireccion(new Izquierda());
-		unConductor.avanzar();
+		//Se re orienta hacia izquierda
+		unConductor.avanzarEnDireccion(new Izquierda());
+		//Avanza
+		unConductor.avanzarEnDireccion(new Izquierda());
 		Assert.assertEquals (new Coordenada(0, 2) , unConductor.getCelda().getCoordenada());
 		Assert.assertEquals(new Izquierda(), unConductor.getDireccion());
 
-		//Avanza para Abajo.
-		unConductor.setDireccion(new Abajo());
-		unConductor.avanzar();
+		//Se re orienta hacia abajo
+		unConductor.avanzarEnDireccion(new Abajo());
+		//Avanza
+		unConductor.avanzarEnDireccion(new Abajo());
 		Assert.assertEquals (new Coordenada(0, 0) , unConductor.getCelda().getCoordenada());
 		Assert.assertEquals(new Abajo(), unConductor.getDireccion());
 

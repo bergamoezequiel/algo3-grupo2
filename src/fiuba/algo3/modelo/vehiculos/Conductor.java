@@ -72,7 +72,7 @@ public class Conductor extends ContenidoDeCelda{
 		this.variarMovimientosEn(this.getPenalizacionDeAvance());
 	}
 	
-	public void avanzar(){
+	private void avanzar(){
 		ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(this.getDireccion()).getContenido();
 		Interactuable unObjetoEncontrable = (Interactuable) contenidoVecino;
 			
@@ -88,10 +88,17 @@ public class Conductor extends ContenidoDeCelda{
 	}
 	
 	public void avanzarEnDireccion(Direccion unaDireccion) {
+		/*
+		 * Si el conductor no esta mirando en la direccion en la que desea avanzar
+		 * se va a re orientar en esa direccion.
+		 * En cambio, si el conductor ya estaba orientado hacia la direccion que desea avanzar
+		 * entonces efectivamente va a avanzar.
+		 */
+		
 		if (this.getDireccion().equals(unaDireccion))
 			this.avanzar();
 		else
-			this.setDireccion(unaDireccion);
+			this.girarEnDireccion(unaDireccion);
 		
 		//Hago update de la vista porque se movio (o intento moverse) el conductor
 		this.setChanged();
@@ -99,7 +106,7 @@ public class Conductor extends ContenidoDeCelda{
 	}
 	
 	//Le falta su test
-	void setDireccion(Direccion unaDireccion){
+	private void girarEnDireccion(Direccion unaDireccion){
 		this.direccion = unaDireccion;
 	}
 	
