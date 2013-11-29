@@ -17,7 +17,7 @@ public class PintorConductor extends Pintor{
 		else if (unConductor.getVehiculo() instanceof Auto){
 			new PintorAuto().pintar(g, unaCoordenadaVista, anchoCelda, altoCelda, unConductor.getDireccion());
 		}
-		else if (unConductor.getVehiculo() instanceof Auto){
+		else if (unConductor.getVehiculo() instanceof TodoTerreno){
 			new PintorTodoTerreno().pintar(g, unaCoordenadaVista, anchoCelda, altoCelda, unConductor.getDireccion());
 		}
 
