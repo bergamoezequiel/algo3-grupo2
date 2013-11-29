@@ -10,13 +10,13 @@ public class PintorPiquete extends Pintor{
 
 	final String PATH = "/imagenes/piquete.png";
 	
-	public PintorPiquete(Graphics unG) {
+	/*public PintorPiquete(Graphics unG) {
 		super(unG);
-	}
+	}*/
 	
-	@Override
-	public void pintar(Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda){
+	//@Override
+	public void pintar(Graphics g, Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda){
 		ImageIcon imagenPiquete = new ImageIcon(getClass().getResource(PATH));
-		this.g.drawImage(imagenPiquete.getImage(), unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda, null);
+		g.drawImage(imagenPiquete.getImage(), unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda, null);
 	}
 }
