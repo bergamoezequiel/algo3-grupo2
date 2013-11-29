@@ -10,41 +10,42 @@ import fiuba.algo3.modelo.mapa.UbicacionEnMapaException;
 
 public class ConductorTest {
 	
+	private Conductor crearConductorValido(){
+		return new Conductor(new Auto(), new Derecha(), 4);
+	}
 	
 	@Test(expected = UbicacionEnMapaException.class) 
 	public void vehiculoDeberiaLanzarExcepcionSiSeCreaEnCoordenadaImpar(){
 		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(1, 0));
-		Conductor unConductor = new Conductor(new Auto(), 4);
+		Conductor unConductor = crearConductorValido();
 		celdaInicial.agregarContenido(unConductor);
 	}
 	
 	@Test
 	public void vehiculoDeberiaTener0MovimientosAlCrearse(){
-		Conductor unConductor = new Conductor(new Auto(), 4);
+		Conductor unConductor = crearConductorValido();
 		Assert.assertEquals(0, unConductor.getMovimientos());
 	}
 	
 	@Test
 	public void vehiculoDeberiaCrearseConUnTipoDeVehiculoAuto(){
 		Auto unAuto = new Auto();
-		Conductor unConductor = new Conductor(unAuto, 4);
+		Conductor unConductor = crearConductorValido();
 		Assert.assertEquals(unAuto, unConductor.getVehiculo());
 	}
 	
 	@Test
 	public void conductorDeberiaPoderCambiarDeVehiculo(){
 		
-		Auto unAuto = new Auto();
-		Conductor unConductor = new Conductor(unAuto, 4);
+		Conductor unConductor = crearConductorValido();
 		Moto unaMoto= new Moto();
 		unConductor.cambiarDeVehiculo(unaMoto);
 		Assert.assertEquals(unaMoto, unConductor.getVehiculo());
 	}
 	@Test
 	public void vehiculoDeberiaCrearseConUnaPenalizacionDeAvanceIgualAUno(){
-		Auto unAuto = new Auto();
-		Conductor unConductor = new Conductor(unAuto, 4);
+		Conductor unConductor = crearConductorValido();
 		Assert.assertEquals(1, unConductor.getPenalizacionDeAvance());
 	}
 
@@ -52,7 +53,7 @@ public class ConductorTest {
 	public void deberiaLanzarUnaExcepcionSiIntentoAvanzarAUnLugarFueraDelMapa(){
 		Mapa unMapa = new Mapa (1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor (new Auto(), 4);
+		Conductor unConductor = crearConductorValido();
 		celdaInicial.agregarContenido(unConductor);
 		
 		//Avanzo a la derecha
@@ -68,34 +69,34 @@ public class ConductorTest {
 		
 	}
 	
-	//ARREGLAR @Test
+	@Test
 	public void vehiculoAlAvanzarDeberiaDesplazarseDosPosicionesSiNoSeEncuentraObstaculosOSorpresas(){
 		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Auto(), 4);		
+		Conductor unConductor = crearConductorValido();		
 		celdaInicial.agregarContenido(unConductor);
 		
 		//Avanza a la derecha.
-		Direccion derecha = new Derecha();
-		unConductor.avanzarEnDireccion(derecha);
+		unConductor.setDireccion(new Derecha());
+		unConductor.avanzar();
 		Assert.assertEquals(new Coordenada (2, 0) , unConductor.getCelda().getCoordenada());
 		Assert.assertEquals(new Derecha(), unConductor.getDireccion());
 		
 		//Avanza para arriba.
-		Direccion arriba = new Arriba ();
-		unConductor.avanzarEnDireccion(arriba);
+		unConductor.setDireccion(new Arriba());
+		unConductor.avanzar();
 		Assert.assertEquals(new Coordenada (2, 2), unConductor.getCelda().getCoordenada());
 		Assert.assertEquals(new Arriba(), unConductor.getDireccion());
 		
 		//Avanza para la izquierda.
-		Direccion izquierda = new Izquierda ();
-		unConductor.avanzarEnDireccion(izquierda);
+		unConductor.setDireccion(new Izquierda());
+		unConductor.avanzar();
 		Assert.assertEquals (new Coordenada(0, 2) , unConductor.getCelda().getCoordenada());
 		Assert.assertEquals(new Izquierda(), unConductor.getDireccion());
 
 		//Avanza para Abajo.
-		Direccion abajo = new Abajo();
-		unConductor.avanzarEnDireccion(abajo);
+		unConductor.setDireccion(new Abajo());
+		unConductor.avanzar();
 		Assert.assertEquals (new Coordenada(0, 0) , unConductor.getCelda().getCoordenada());
 		Assert.assertEquals(new Abajo(), unConductor.getDireccion());
 

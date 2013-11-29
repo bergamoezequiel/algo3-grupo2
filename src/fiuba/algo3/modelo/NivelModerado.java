@@ -1,6 +1,7 @@
 package fiuba.algo3.modelo;
 
 import fiuba.algo3.modelo.coordenadas.Coordenada;
+import fiuba.algo3.modelo.coordenadas.Derecha;
 import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.objetosEncontrables.*;
 import fiuba.algo3.modelo.vehiculos.*;
@@ -14,7 +15,7 @@ public class NivelModerado extends Nivel {
 		puntajePorMovimientoSobrante = 2;
 		this.juegoActual=juego;
 		this.mapa = new Mapa (8, 8);
-		this.conductor = new Conductor(unVehiculo, 6);
+		this.conductor = new Conductor(unVehiculo, new Derecha(), 6);
 		
 		mapa.getCeldaEn(new Coordenada(1,16)).agregarContenido(new Llegada(this));
 		mapa.getCeldaEn(new Coordenada(14,2)).agregarContenido(this.conductor);

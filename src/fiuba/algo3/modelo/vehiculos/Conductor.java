@@ -17,13 +17,13 @@ public class Conductor extends ContenidoDeCelda{
 	private Vehiculo vehiculo;
 	private Direccion direccion;
 	
-	public Conductor(Vehiculo unVehiculo, int unAlcanceDeVision){
+	public Conductor(Vehiculo unVehiculo, Direccion unaDireccion, int unAlcanceDeVision){
 		super();
 		this.movimientos = 0;
 		this.penalizacionDeAvance = 1;
 		this.vehiculo = unVehiculo;
 		this.alcanceDeVision = unAlcanceDeVision;
-		this.direccion = new Derecha();
+		this.direccion = unaDireccion;
 	}
 	
 	@Override
@@ -99,7 +99,7 @@ public class Conductor extends ContenidoDeCelda{
 	}
 	
 	//Le falta su test
-	private void setDireccion(Direccion unaDireccion){
+	void setDireccion(Direccion unaDireccion){
 		this.direccion = unaDireccion;
 	}
 	

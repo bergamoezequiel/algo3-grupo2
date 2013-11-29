@@ -4,11 +4,16 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import fiuba.algo3.modelo.coordenadas.Coordenada;
+import fiuba.algo3.modelo.coordenadas.Derecha;
 import fiuba.algo3.modelo.objetosEncontrables.Pozo;
 import fiuba.algo3.modelo.vehiculos.*;
 
 public class ContenidoDeCeldaTest{
-
+	
+	private Conductor crearConductorValido(){
+		return new Conductor(new Auto(), new Derecha(), 4);
+	}
+	
 	@Test
 	public void testSetterYGetterDelContenidoDeCelda(){
 		Mapa unMapa = new Mapa(2,2);
@@ -26,7 +31,7 @@ public class ContenidoDeCeldaTest{
 	public void deberiaDecirmeSiElContenidoDelaCeldaEsUnConductor(){
 		Mapa unMapa = new Mapa (2,2);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada (0,0));
-		Conductor unConductor = new Conductor (new Auto(), 4);
+		Conductor unConductor = crearConductorValido();
 		unaCelda.agregarContenido(unConductor);
 		
 		Assert.assertTrue(unaCelda.getContenido() instanceof Conductor); 

@@ -3,12 +3,16 @@ package fiuba.algo3.modelo.mapa;
 import org.junit.Assert;
 import org.junit.Test;
 
-import fiuba.algo3.modelo.coordenadas.Coordenada;
+import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
 public class CeldaTest{
-
+	
+	private Conductor crearConductorValido(){
+		return new Conductor(new Auto(), new Derecha(), 4);
+	}
+	
 	@Test
 	public void testDeberiaInicializarceLaCeldaSinObjeto(){
 		Mapa unMapa = new Mapa(1,1);
@@ -27,7 +31,7 @@ public class CeldaTest{
 	public void testDeberiaAgregarUnContenidoALaCelda(){
 		Mapa unMapa = new Mapa(1,1);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(2, 2));		
-		Conductor unContenido = new Conductor(new Auto(), 4);
+		Conductor unContenido = crearConductorValido();
 		unaCelda.agregarContenido(unContenido);
 		Assert.assertEquals(unContenido, unaCelda.getContenido());
 		Assert.assertEquals(unaCelda, unContenido.getCelda());	
@@ -37,7 +41,7 @@ public class CeldaTest{
 	public void testDeberiaAgregarYLuegoQuitarUnContenidoDeLaCelda(){
 		Mapa unMapa = new Mapa(1,1);
 		Celda unaCelda = unMapa.getCeldaEn(new Coordenada(2, 2));
-		Conductor unVehiculo = new Conductor(new Auto(), 4);		
+		Conductor unVehiculo = crearConductorValido();		
 		unaCelda.agregarContenido(unVehiculo);
 		
 		Assert.assertEquals (unVehiculo, unaCelda.getContenido());
@@ -51,7 +55,7 @@ public class CeldaTest{
 	
 	@Test
 	public void testDeberiaDecirmeSiCiertasCeldasSonVisiblesONo(){
-		Conductor unConductor = new Conductor(new Auto(), 4);		
+		Conductor unConductor = crearConductorValido();		
 		//Creo un mapa con el doble de tamaño del alcance de vision del conductor.
 		//Ubico al conductor en el centro del mapa.
 		Mapa unMapa = new Mapa(unConductor.getAlcanceDeVision()+1, unConductor.getAlcanceDeVision()+1);
