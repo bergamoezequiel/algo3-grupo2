@@ -21,27 +21,27 @@ public class ControlPorTeclado {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				int location = e.getKeyCode();
-				System.out.println(location);
+				//System.out.println(location);
 
 				switch(location){
 					case KeyEvent.VK_DOWN:
 						conductor.avanzarEnDireccion(new Abajo());
-						System.out.println("Abajo");
+						//System.out.println("Abajo");
 						break;
 
 					case KeyEvent.VK_UP:
 						conductor.avanzarEnDireccion(new Arriba());
-						System.out.println("Arriba");
+						//System.out.println("Arriba");
 						break;
 
 					case KeyEvent.VK_LEFT:
 						conductor.avanzarEnDireccion(new Izquierda());
-						System.out.println("Izquierda");
+						//System.out.println("Izquierda");
 						break;
 
 					case KeyEvent.VK_RIGHT:
 						conductor.avanzarEnDireccion(new Derecha());
-						System.out.println("Derecha");
+						//System.out.println("Derecha");
 						break;
 				}
 			}

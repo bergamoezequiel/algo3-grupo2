@@ -1,0 +1,22 @@
+package fiuba.algo3.vista.pintores;
+
+import java.awt.Graphics;
+
+import javax.swing.ImageIcon;
+
+import fiuba.algo3.modelo.coordenadas.Coordenada;
+
+public class PintorSnorlax extends Pintor{
+
+	final String PATH = "/imagenes/snorlax.png";
+	
+	public PintorSnorlax(Graphics unG) {
+		super(unG);
+	}
+	
+	@Override
+	public void pintar(Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda){
+		ImageIcon imagenSnorlax = new ImageIcon(getClass().getResource(PATH));
+		this.g.drawImage(imagenSnorlax.getImage(), unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda, null);
+	}
+}
