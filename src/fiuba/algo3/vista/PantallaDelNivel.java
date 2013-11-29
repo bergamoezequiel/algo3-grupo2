@@ -63,7 +63,7 @@ public class PantallaDelNivel extends JPanel {
 
 	public void pintarCalles(Graphics g){
 		Mapa mapa = this.nivel.getMapa();
-		Conductor unConductor = this.nivel.getConductor();
+		//Conductor unConductor = this.nivel.getConductor();
 		int cantFilasMapa = mapa.getCantidadDeFilas();
 		int cantColumnasMapa = mapa.getCantidadDeColumnas();
 		
@@ -71,7 +71,7 @@ public class PantallaDelNivel extends JPanel {
 		for (int i = 0; i < cantColumnasMapa; i++ ) {
 			for (int j = 0; j < cantFilasMapa; j++) {
 				Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), cantFilasMapa);
-				new PintorCalle(g).pintar(coordenadaVista, anchoCelda, altoCelda);
+				new PintorCalle().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 			}
 		}
 	}
@@ -88,7 +88,7 @@ public class PantallaDelNivel extends JPanel {
 				Celda unaCelda = mapa.getCeldaEn(new Coordenada(i,j));
 				if (unaCelda.esVisiblePara(unConductor)){
 					Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), cantFilasMapa);
-					new PintorManzana(g).pintar(coordenadaVista, anchoCelda, altoCelda);
+					new PintorManzana().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 				}
 			}
 		}
@@ -109,24 +109,24 @@ public class PantallaDelNivel extends JPanel {
 					
 					//Hardcodeo de objetos, pasar a hash cuando se pueda.
 					if (unaCelda.getContenido() instanceof Conductor)
-						new PintorConductor(g).pintar(coordenadaVista, anchoCelda, altoCelda);
+						new PintorConductor().pintar(g, unConductor, coordenadaVista, anchoCelda, altoCelda);
 					if (unaCelda.getContenido() instanceof Pozo)
-						new PintorPozo2(g).pintar(coordenadaVista, anchoCelda, altoCelda);
+						new PintorPozo2().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 					if (unaCelda.getContenido() instanceof Piquete)
-						new PintorPiquete(g).pintar(coordenadaVista, anchoCelda, altoCelda);
+						new PintorPiquete().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 					if (unaCelda.getContenido() instanceof ControlPolicial)
-						new PintorControlPolicial(g).pintar(coordenadaVista, anchoCelda, altoCelda);
+						new PintorControlPolicial().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 					if (unaCelda.getContenido() instanceof Snorlax)
-						new PintorSnorlax(g).pintar(coordenadaVista, anchoCelda, altoCelda);
+						new PintorSnorlax().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 					if (unaCelda.getContenido() instanceof Sorpresa)
-						new PintorSorpresa(g).pintar(coordenadaVista, anchoCelda, altoCelda);
+						new PintorSorpresa().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 					if (unaCelda.getContenido() instanceof Llegada)
-						new PintorLlegada(g).pintar(coordenadaVista, anchoCelda, altoCelda);
+						new PintorLlegada().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 					
 					
 				}
 				else{
-					new PintorZonaNoVisible(g).pintar(coordenadaVista, anchoCelda, altoCelda);;
+					new PintorZonaNoVisible().pintar(g, coordenadaVista, anchoCelda, altoCelda);;
 				}
 			}
 		}
