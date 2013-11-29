@@ -72,8 +72,7 @@ public class Conductor extends ContenidoDeCelda{
 		this.variarMovimientosEn(this.getPenalizacionDeAvance());
 	}
 	
-	public void avanzarEnDireccion(Direccion unaDireccion) {
-		this.setDireccion(unaDireccion);
+	public void avanzar(){
 		ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(this.getDireccion()).getContenido();
 		Interactuable unObjetoEncontrable = (Interactuable) contenidoVecino;
 			
@@ -86,6 +85,13 @@ public class Conductor extends ContenidoDeCelda{
 			}
 			this.getVehiculo().interactuar(unObjetoEncontrable, this);
 		}
+	}
+	
+	public void avanzarEnDireccion(Direccion unaDireccion) {
+		if (this.getDireccion().equals(unaDireccion))
+			this.avanzar();
+		else
+			this.setDireccion(unaDireccion);
 		
 		//Hago update de la vista porque se movio (o intento moverse) el conductor
 		this.setChanged();
