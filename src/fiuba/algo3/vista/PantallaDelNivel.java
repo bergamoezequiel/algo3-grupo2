@@ -147,13 +147,14 @@ public class PantallaDelNivel extends JPanel {
 	/*
 	 * En el panel derecho se pintan los movimientos actuales y el Vehiculo Actual.
 	 */
-	/*public void pintarPanelDerecho(Graphics g){
+	public void pintarPanelDerecho(Graphics g){
 		g.setColor(Color.BLUE);
 		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 50);
 		g.drawString("Vehiculo Actual: ", ANCHO_PANTALLA_NIVEL, 70);
 		g.drawString(this.nivel.getConductor().getVehiculo().getClass().getSimpleName(), ANCHO_PANTALLA_NIVEL + TAMANIO_ICONOS_MENU + 10 , 100);
-		g.drawImage(((ImageIcon)this.hash.get(this.nivel.getConductor().getVehiculo().getClass())).getImage(),ANCHO_PANTALLA_NIVEL, 80, TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU, null);
+		//g.drawImage(((ImageIcon)this.hash.get(this.nivel.getConductor().getVehiculo().getClass())).getImage(),ANCHO_PANTALLA_NIVEL, 80, TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU, null);
 		g.drawString("Movimientos Limites: "+(String)Integer.toString(nivel.getMovimientosLimites()), ANCHO_PANTALLA_NIVEL, 150);
+
 		//g.drawString("Puntaje: "+(String)Integer.toString(nivel.getMovimientosRestantes() * this.nivel.getPuntajePorMovimientosSobrantes()), ANCHO_PANTALLA_NIVEL, 150);
 		
 		g.drawString("REFERENCIAS: ", ANCHO_PANTALLA_NIVEL, 280);
@@ -172,7 +173,7 @@ public class PantallaDelNivel extends JPanel {
 			//g.drawString("Tu puntaje es:"+(String)Integer.toString(nivel.getJuegoActual().getPuntajeDelConductor()), ANCHO_PANTALLA_NIVEL, 170);
 		}
 		
-	}*/
+	}
 	
 	public void paint(Graphics g) {
 			
@@ -192,6 +193,6 @@ public class PantallaDelNivel extends JPanel {
 		this.pintarCalles(g);
 		this.pintarObjetosEncontrables(g);
 		this.pintarManzanas(g);
-		//this.pintarPanelDerecho(g);
+		this.pintarPanelDerecho(g);
 	}
 }
