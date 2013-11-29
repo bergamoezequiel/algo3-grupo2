@@ -11,32 +11,33 @@ import fiuba.algo3.modelo.vehiculos.*;
 
 
 public class CambioDeVehiculoTest {
+	
 	@Test
 	public void ElCambioDeVehiculoDeberiaDejarPasarALasMotos(){
-		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
-		Moto unaMoto= new Moto();
+		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
+		Moto unaMoto = new Moto();
 		Assert.assertEquals(true,unCambioDeVehiculo.dejaPasar(unaMoto));
 	}
 	
 	@Test
 	public void ElCambioDeVehiculoDeberiaDejarPasarALosAutos(){
-		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
-		Auto unAuto= new Auto();
+		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
+		Auto unAuto = new Auto();
 		Assert.assertEquals(true,unCambioDeVehiculo.dejaPasar(unAuto));
 	}
 	
 	@Test
 	public void ElCambioDeVehiculoDeberiaDejarPasarALosTodoTerreno(){
-		CambioDeVehiculo unCambioDeVehiculo= new CambioDeVehiculo();
-		TodoTerreno unTodoTerreno=new TodoTerreno();
+		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
+		TodoTerreno unTodoTerreno = new TodoTerreno();
 		Assert.assertEquals(true,unCambioDeVehiculo.dejaPasar(unTodoTerreno));
 	}
 	
-	//ARREGLAR @Test
+	@Test
 	public void testDeberiaCambiarAutoEnTodoTerreno(){
 		Mapa unMapa = new Mapa(6,6);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Auto(), 4);		
+		Conductor unConductor = new Conductor(new Auto(), new Arriba(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
@@ -49,12 +50,12 @@ public class CambioDeVehiculoTest {
 		Assert.assertEquals(new TodoTerreno(), unConductor.getVehiculo());
 		}
 	
-	// ARREGLAR @Test
+	@Test
 	public void testDeberiaCambiarMotoEnAuto(){
 		
 		Mapa unMapa = new Mapa(6,6);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Moto(), 4);		
+		Conductor unConductor = new Conductor(new Moto(), new Arriba(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
@@ -68,11 +69,11 @@ public class CambioDeVehiculoTest {
 		}
 	
 	
-	//ARREGLAR @Test
+	@Test
 	public void testDeberiaCambiarTodoTerrenoEnMoto(){
 		Mapa unMapa = new Mapa(6,6);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new TodoTerreno(),4);		
+		Conductor unConductor = new Conductor(new TodoTerreno(), new Arriba(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();

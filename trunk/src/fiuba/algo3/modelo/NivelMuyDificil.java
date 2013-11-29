@@ -1,6 +1,7 @@
 package fiuba.algo3.modelo;
 
 import fiuba.algo3.modelo.coordenadas.Coordenada;
+import fiuba.algo3.modelo.coordenadas.Derecha;
 import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.objetosEncontrables.*;
 import fiuba.algo3.modelo.vehiculos.*;
@@ -13,7 +14,7 @@ public class NivelMuyDificil extends Nivel {
 		puntajePorMovimientoSobrante = 4;
 		this.juegoActual=juego;
 		this.mapa = new Mapa (10, 10);
-		this.conductor = new Conductor(unVehiculo, 3);
+		this.conductor = new Conductor(unVehiculo, new Derecha(), 3);
 		
 		mapa.getCeldaEn(new Coordenada(13,18)).agregarContenido(new Llegada(this));
 		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);

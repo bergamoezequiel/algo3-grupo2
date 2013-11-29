@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.objetosEncontrables.ControlPolicial;
 import fiuba.algo3.modelo.vehiculos.*;
 
@@ -17,7 +18,7 @@ public class ControlPolicialTest {
 	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALasMotosDependiendoDelNumeroAleatorio(){
 		ControlPolicial unControl = new ControlPolicial();
 		Moto unaMoto = new Moto();
-		Conductor unConductor = new Conductor(unaMoto, 4);
+		Conductor unConductor = new Conductor(unaMoto, new Derecha() , 4);
 		
 		//Deberia penalizar
 		NumeroAleatorio aleatorio = new NumeroAleatorioFalso(probabilidadDePararMoto);
@@ -38,7 +39,7 @@ public class ControlPolicialTest {
 	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALosAutosDependiendoDelNumeroAleatorio(){
 		ControlPolicial unControl = new ControlPolicial();
 		Auto unAuto = new Auto();
-		Conductor unConductor = new Conductor(unAuto, 4);
+		Conductor unConductor = new Conductor(unAuto, new Derecha(), 4);
 		
 		//Deberia penalizar
 		NumeroAleatorio aleatorio = new NumeroAleatorioFalso(probabilidadDePararAuto);
@@ -59,7 +60,7 @@ public class ControlPolicialTest {
 	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALosTodoTerrenoDependiendoDelNumeroAleatorio(){
 		ControlPolicial unControl = new ControlPolicial();
 		TodoTerreno unTodoTerreno = new TodoTerreno();
-		Conductor unConductor = new Conductor(unTodoTerreno, 4);
+		Conductor unConductor = new Conductor(unTodoTerreno, new Derecha(), 4);
 		
 		//Deberia penalizar
 		NumeroAleatorio aleatorio = new NumeroAleatorioFalso(probabilidadDePararTodoTerreno);

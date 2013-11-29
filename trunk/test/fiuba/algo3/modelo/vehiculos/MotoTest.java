@@ -13,7 +13,7 @@ public class MotoTest {
 	public void motoAlAvanzarYEncontrarUnPozoDeberiaPenalizarseCon3MovimientosYDesplazarse2Posiciones(){
 		Mapa unMapa = new Mapa(1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Moto(), 4);		
+		Conductor unConductor = new Conductor(new Moto(), new Derecha(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Pozo unPozo = new Pozo();

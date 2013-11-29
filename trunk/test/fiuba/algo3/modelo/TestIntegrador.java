@@ -20,11 +20,11 @@ import fiuba.algo3.modelo.vehiculos.TodoTerreno;
 
 public class TestIntegrador {
 
-	//ARREGLAR@Test
+	@Test
 	public void pruebaIntegradora(){
 		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Auto(), 4);		
+		Conductor unConductor = new Conductor(new Auto(), new Derecha(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Pozo unPozo = new Pozo();
@@ -54,6 +54,10 @@ public class TestIntegrador {
 		Direccion arriba = new Arriba();
 		
 		Celda celdaFinal = celdaActual.getVecino(arriba).getVecino(arriba).getVecino(arriba).getVecino(arriba);
+		
+		//Primero gira hacia arriba porque estaba mirando hacia otro lado.
+		unConductor.avanzarEnDireccion(arriba);
+		//Avanza hacia arriba
 		unConductor.avanzarEnDireccion(arriba);
 		unConductor.avanzarEnDireccion(arriba);
 		
@@ -69,6 +73,9 @@ public class TestIntegrador {
 		Celda celdaDelPiquete  = unMapa.getCeldaEn(new Coordenada (5,4));
 		celdaDelPiquete.agregarContenido(unPiquete);
 		
+		//Primero gira hacia la derecha porque estaba mirando hacia otro lado.
+		unConductor.avanzarEnDireccion(derecha);
+		//Avanza hacia la derecha
 		unConductor.avanzarEnDireccion(derecha);
 		
 		//No se volvio a mover.
@@ -84,6 +91,10 @@ public class TestIntegrador {
 		celdaActual = unConductor.getCelda();
 		
 		Direccion izquierda = new Izquierda();
+		
+		//Primero gira hacia la izquierda porque estaba mirando hacia otro lado.		
+		unConductor.avanzarEnDireccion(izquierda);
+		//Avanza hacia la izquierda
 		unConductor.avanzarEnDireccion(izquierda);
 		
 		//Se deberia mover a la izquierda.
