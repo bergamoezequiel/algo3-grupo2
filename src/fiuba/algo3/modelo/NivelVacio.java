@@ -18,7 +18,7 @@ public class NivelVacio extends Nivel{
 		this.conductor = new Conductor(unVehiculo, new Derecha(), 6);
 		this.getConductor().addObserver(this);
 		
-		mapa.getCeldaEn(new Coordenada(8,7)).agregarContenido(new Llegada());
+		mapa.getCeldaEn(new Coordenada(7,6)).agregarContenido(new Llegada());
 		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 	}
 }

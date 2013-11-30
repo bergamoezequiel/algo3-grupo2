@@ -9,11 +9,6 @@ import fiuba.algo3.modelo.coordenadas.Coordenada;
 
 public class PintorZonaNoVisible extends Pintor{
 
-	/*public PintorZonaNoVisible(Graphics unG) {
-		super(unG);
-	}*/
-	
-	//@Override
 	public void pintar(Graphics g, Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda){
 		g.setColor(Color.black);
 		g.fillRect(unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda);

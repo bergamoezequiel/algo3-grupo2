@@ -10,11 +10,6 @@ public class PintorSorpresa extends Pintor{
 
 	final String PATH = "/imagenes/sorpresa.png";
 	
-	/*public PintorSorpresa(Graphics unG) {
-		super(unG);
-	}*/
-	
-	//@Override
 	public void pintar(Graphics g, Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda){
 		ImageIcon imagenSorpresa = new ImageIcon(getClass().getResource(PATH));
 		g.drawImage(imagenSorpresa.getImage(), unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda, null);

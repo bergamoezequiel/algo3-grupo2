@@ -17,7 +17,7 @@ public class NivelFacil extends Nivel {
 		this.conductor = new Conductor(unVehiculo, new Derecha(), 7);
 		this.getConductor().addObserver(this);
 		
-		mapa.getCeldaEn(new Coordenada(11,12)).agregarContenido(new Llegada());
+		mapa.getCeldaEn(new Coordenada(11,10)).agregarContenido(new Llegada());
 		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 		
 		mapa.getCeldaEn(new Coordenada(1,0)).agregarContenido(new Pozo());

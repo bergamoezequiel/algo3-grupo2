@@ -10,11 +10,6 @@ public class PintorSnorlax extends Pintor{
 
 	final String PATH = "/imagenes/snorlax.png";
 	
-	/*public PintorSnorlax(Graphics unG) {
-		super(unG);
-	}*/
-	
-	//@Override
 	public void pintar(Graphics g, Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda){
 		ImageIcon imagenSnorlax = new ImageIcon(getClass().getResource(PATH));
 		g.drawImage(imagenSnorlax.getImage(), unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda, null);
