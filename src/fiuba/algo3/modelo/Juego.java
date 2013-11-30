@@ -8,7 +8,6 @@ import fiuba.algo3.modelo.vehiculos.*;
 public class Juego extends Observable {
 
 	private ArrayList<Usuario> usuarios;  
-	private int puntaje;
 	private Nivel nivelActual;
 	private Usuario usuarioActual;
 	private ArrayList<Nivel> niveles; 
@@ -29,13 +28,9 @@ public class Juego extends Observable {
 		
 		//conductorLlego = false;
 		this.usuarios = new ArrayList<Usuario>();
-		this.usuarios.add(new Usuario("Samus Aran"));
-		
-		this.puntaje = 0;
-	}
-	
-	public int getPuntaje(){
-		return this.puntaje;
+		Usuario unUsuario =  new Usuario("Samus Aran");
+		this.usuarios.add(unUsuario);
+		this.setUsuarioActual(unUsuario);
 	}
 	
 	public void agregarUsuario(Usuario unUsuario){
@@ -64,20 +59,46 @@ public class Juego extends Observable {
 		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), unPuntaje));	
 	}*/
 
-	public void perdio() {
-		nivelActual = null;
-		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.getPuntaje()));
-	}
-	
-	public void pasoDeNivel() {
-		this.nivelActual.getConductor().deleteObservers();
+	public void pasarDeNivel(){
 		Nivel nivelSiguiente = this.niveles.get(this.niveles.indexOf(this.nivelActual)+1);
 		this.nivelActual = nivelSiguiente;
-		//this.nivelActual.getConductor().addObserver(this);
-		System.out.println("pasoDeNivel");
+		
 		this.setChanged();
 		this.notifyObservers("Juego Pasa De Nivel");
-		//this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.getPuntaje()));
+	}
+	
+	public void gano(){		
+		int puntaje = 0;
+		for (int i = 0; i <= this.niveles.indexOf(this.nivelActual); i++){
+			puntaje += niveles.get(i).getPuntaje();
+		}
+		nivelActual = null;
+		
+		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), puntaje));
+		System.out.println("Gano, su puntaje es: " + puntaje);
+	}
+	
+	public void perdio() {
+		int puntaje = 0;
+		for (int i = 0; i < this.niveles.indexOf(this.nivelActual); i++){
+			puntaje += niveles.get(i).getPuntaje();
+		}
+		nivelActual = null;
+		
+		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), puntaje));
+		System.out.println("Perdio, su puntaje es: " + puntaje);
+	}
+	
+	public void conductorAlcanzoLaLlegadaDelNivelActual() {
+		this.nivelActual.getConductor().deleteObservers();
+		
+		if (this.niveles.indexOf(this.nivelActual)+1 == this.niveles.size()){
+			this.gano();
+		}
+		else{
+			this.pasarDeNivel();
+		}
+
 	}
 }
 

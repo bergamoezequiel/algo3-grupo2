@@ -16,6 +16,7 @@ import java.util.Observer;
 
 
 
+
 //import javax.swing.ImageIcon;
 //import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -30,6 +31,7 @@ import javax.swing.SwingUtilities;
 
 import fiuba.algo3.controlador.*;
 import fiuba.algo3.modelo.Juego;
+import fiuba.algo3.modelo.Nivel;
 import fiuba.algo3.modelo.coordenadas.Coordenada;
 //import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.vehiculos.Conductor;
@@ -114,15 +116,10 @@ public class Ventana extends JFrame implements Observer {
 	
 	@Override
 	public void update(Observable o, Object arg) {
-		//Aca estoy agregando el dibujito del mapa.
-		this.pantallaDelNivel.setNivel(this.juego.getNivelActual());
-		
-		Conductor unConductor = this.juego.getNivelActual().getConductor();
-		Coordenada unaCoordenada = unConductor.getCelda().getCoordenada();
-		System.out.println(unConductor.getID() + ": " + unaCoordenada.getX() + ", " + unaCoordenada.getY());
-		
 		if (arg == "Juego Pasa De Nivel"){
+			Nivel nivelActual = this.juego.getNivelActual();
 			this.juego.getNivelActual().getConductor().addObserver(this);
+			this.pantallaDelNivel.actualizarParametrosGlobalesPara(nivelActual);
 		}
 		
 		repaint();

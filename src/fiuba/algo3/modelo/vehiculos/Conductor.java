@@ -16,7 +16,7 @@ public class Conductor extends ContenidoDeCelda{
 	private int alcanceDeVision;
 	private Vehiculo vehiculo;
 	private Direccion direccion;
-	private double id;
+	private double id;	
 	
 	public Conductor(Vehiculo unVehiculo, Direccion unaDireccion, int unAlcanceDeVision){
 		super();
@@ -106,6 +106,7 @@ public class Conductor extends ContenidoDeCelda{
 		 * entonces efectivamente va a avanzar.
 		 */
 		
+		System.out.println(this.id);
 		if (this.getDireccion().equals(unaDireccion))
 			this.avanzar();
 		else

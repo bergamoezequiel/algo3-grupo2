@@ -10,9 +10,9 @@ public class NivelModerado extends Nivel {
 	
 	public NivelModerado (Vehiculo unVehiculo,Juego juego){
 		this.nombre = "Nivel Moderado";
-		this.movimientosLimites=30;
+		this.movimientosLimites = 40;
 		this.puntajePorMovimientoSobrante = 2;
-		this.juegoActual=juego;
+		this.juegoActual = juego;
 		this.mapa = new Mapa (8, 8);
 		this.conductor = new Conductor(unVehiculo, new Derecha(), 6);
 		this.getConductor().addObserver(this);
