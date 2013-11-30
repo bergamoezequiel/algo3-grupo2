@@ -14,18 +14,25 @@ public class Juego extends Observable {
 	private Usuario usuarioActual;
 	private ArrayList<Nivel> niveles; 
 	private int puntajeFinalConductor;
-	private boolean conductorLlego;
+	//private boolean conductorLlego;
 	private TablaDePuntuaciones tablaDePuntuaciones;
 	
 	public Juego (){
 		this.tablaDePuntuaciones = new TablaDePuntuaciones();
-		conductorLlego = false;
+		
+		this.niveles = new ArrayList<Nivel>();
+		this.niveles.add(new NivelVacio(new Moto(), this));
+		this.niveles.add(new NivelFacil(new Moto(), this));
+		this.niveles.add(new NivelModerado(new Moto(), this));
+		this.niveles.add(new NivelDificil(new Moto(), this));
+		this.niveles.add(new NivelMuyDificil(new Moto(), this));
+		this.setNivelActual(niveles.get(0));
+		
+		//conductorLlego = false;
 		this.usuarios = new ArrayList<Usuario>();
 		this.usuarios.add(new Usuario("Samus Aran"));
 		
 		this.puntaje = 0;
-		
-		this.nivelActual = new NivelFacil(new Moto(),this);
 	}
 	
 	public int getPuntaje(){
@@ -53,17 +60,21 @@ public class Juego extends Observable {
 		this.usuarioActual = unUsuario;
 	}
 	
-	public void vehiculoTerminoConPuntaje(int unPuntaje){
+	/*public void vehiculoTerminoConPuntaje(int unPuntaje){
 		this.puntajeFinalConductor = unPuntaje;
-		conductorLlego = true;
-		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), unPuntaje));
-		
+		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), unPuntaje));	
+	}*/
+
+	public void perdio() {
+		nivelActual = null;
+		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.getPuntaje()));
 	}
-	public boolean conductorLlego(){
-		return conductorLlego;
-	}
-	public int getPuntajeDelConductor(){
-		return puntajeFinalConductor;
+	
+	public void pasoDeNivel() {
+		Nivel nivelAnterior = this.nivelActual;
+		this.nivelActual = this.niveles.get(1/*this.niveles.indexOf(nivelAnterior)*/);
+		System.out.println("pasoDeNivel");
+		//this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.getPuntaje()));
 	}
 }
 

@@ -152,11 +152,11 @@ public class PantallaDelNivel extends JPanel {
 		new PintorSnorlax().pintar(g, new Coordenada (700,500), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
 		
 		
-		if(nivel.getJuegoActual().conductorLlego()){
+		/*if(nivel.getJuegoActual().conductorLlego()){
 			g.setColor(Color.RED);
 			//g.drawString("FIN", ANCHO_PANTALLA_NIVEL, 150);
 			//g.drawString("Tu puntaje es:"+(String)Integer.toString(nivel.getJuegoActual().getPuntajeDelConductor()), ANCHO_PANTALLA_NIVEL, 170);
-		}
+		}*/
 		
 	}
 	

@@ -41,7 +41,6 @@ public class Celda{
 	}
 	
 	public boolean esVisiblePara (Conductor unConductor){
-		
 		Celda celdaConductor = unConductor.getCelda();
 		double distanciaEntreCoordenadas = this.getCoordenada().calcularDistancia(celdaConductor.getCoordenada());
 		return (distanciaEntreCoordenadas <= unConductor.getAlcanceDeVision());

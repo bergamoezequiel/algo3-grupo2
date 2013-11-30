@@ -23,7 +23,7 @@ public class VentanaInicial extends JFrame implements ActionListener {
         setBounds(300,100, 400,400);
         
         setTitle("GPS Challenge");
-        botonNuevo =new JButton("Nuevo Usuario");
+        botonNuevo = new JButton("Nuevo Usuario");
         botonExisto = new JButton ("Ya tengo un Usuario");
         
         botonNuevo.setBounds(100,100,200,30);
@@ -47,6 +47,6 @@ public class VentanaInicial extends JFrame implements ActionListener {
     }
     
     public static void main(String[] ar) {
-        VentanaInicial formulario1=new VentanaInicial();
+        VentanaInicial formulario1 = new VentanaInicial();
     }
 }
