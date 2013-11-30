@@ -113,7 +113,7 @@ public class Ventana extends JFrame implements Observer {
 		//Aca estoy agregando el dibujito del mapa.
 		PantallaDelNivel unaPantallaDeNivel = new PantallaDelNivel(this.juego.getNivelActual());
 		add(unaPantallaDeNivel);
-		
+		System.out.println(this.juego.getNivelActual().getNombre());
 		System.out.println(arg);
 		repaint();
 		

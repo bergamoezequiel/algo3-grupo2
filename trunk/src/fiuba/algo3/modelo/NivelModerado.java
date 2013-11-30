@@ -8,16 +8,16 @@ import fiuba.algo3.modelo.vehiculos.*;
 
 public class NivelModerado extends Nivel {
 	
-	
-	
 	public NivelModerado (Vehiculo unVehiculo,Juego juego){
-		movimientosLimites=30;
-		puntajePorMovimientoSobrante = 2;
+		this.nombre = "Nivel Moderado";
+		this.movimientosLimites=30;
+		this.puntajePorMovimientoSobrante = 2;
 		this.juegoActual=juego;
 		this.mapa = new Mapa (8, 8);
 		this.conductor = new Conductor(unVehiculo, new Derecha(), 6);
+		this.getConductor().addObserver(this);
 		
-		mapa.getCeldaEn(new Coordenada(1,16)).agregarContenido(new Llegada(this));
+		mapa.getCeldaEn(new Coordenada(1,16)).agregarContenido(new Llegada());
 		mapa.getCeldaEn(new Coordenada(14,2)).agregarContenido(this.conductor);
 		
 		mapa.getCeldaEn(new Coordenada(1,0)).agregarContenido(new Pozo());

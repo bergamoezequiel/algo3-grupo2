@@ -8,15 +8,16 @@ import fiuba.algo3.modelo.vehiculos.*;
 
 public class NivelMuyDificil extends Nivel {
 	
-	
 	public NivelMuyDificil (Vehiculo unVehiculo,Juego juego){
-		movimientosLimites = 20;
-		puntajePorMovimientoSobrante = 4;
+		this.nombre = "Nivel Muy Dificil";
+		this.movimientosLimites = 20;
+		this.puntajePorMovimientoSobrante = 4;
 		this.juegoActual=juego;
 		this.mapa = new Mapa (10, 10);
 		this.conductor = new Conductor(unVehiculo, new Derecha(), 3);
+		this.getConductor().addObserver(this);
 		
-		mapa.getCeldaEn(new Coordenada(13,18)).agregarContenido(new Llegada(this));
+		mapa.getCeldaEn(new Coordenada(13,18)).agregarContenido(new Llegada());
 		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 		
 		mapa.getCeldaEn(new Coordenada(1,0)).agregarContenido(new Pozo());

@@ -8,15 +8,17 @@ import fiuba.algo3.modelo.vehiculos.Conductor;
 import fiuba.algo3.modelo.vehiculos.Vehiculo;
 
 public class NivelVacio extends Nivel{		
-		public NivelVacio (Vehiculo unVehiculo,Juego juego){	
-			movimientosLimites = 500;
-			puntajePorMovimientoSobrante = 1;
-			this.juegoActual = juego;
-			this.mapa = new Mapa (5, 5);
-			this.conductor = new Conductor(unVehiculo, new Derecha(), 8);
-			
-			mapa.getCeldaEn(new Coordenada(6,9)).agregarContenido(new Llegada(this));
-			mapa.getCeldaEn(new Coordenada(6,0)).agregarContenido(this.conductor);
-		}
-
+	
+	public NivelVacio (Vehiculo unVehiculo, Juego juego){	
+		this.nombre = "Nivel Vacio";
+		this.movimientosLimites = 1000;
+		this.puntajePorMovimientoSobrante = 0;
+		this.juegoActual = juego;
+		this.mapa = new Mapa (5, 5);
+		this.conductor = new Conductor(unVehiculo, new Derecha(), 8);
+		this.getConductor().addObserver(this);
+		
+		mapa.getCeldaEn(new Coordenada(8,9)).agregarContenido(new Llegada());
+		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 	}
+}

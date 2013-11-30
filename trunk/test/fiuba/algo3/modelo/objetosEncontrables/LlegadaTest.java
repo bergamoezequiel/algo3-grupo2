@@ -31,4 +31,5 @@ public class LlegadaTest {
 		TodoTerreno unTodoTerreno=new TodoTerreno();
 		Assert.assertEquals(false,laLlegada.dejaPasar(unTodoTerreno));
 	}
+
 }

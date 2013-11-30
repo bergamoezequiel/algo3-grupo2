@@ -11,6 +11,7 @@ import fiuba.algo3.modelo.vehiculos.Vehiculo;
 
 public class Conductor extends ContenidoDeCelda{
 	
+	private boolean encontroLlegada;
 	private int penalizacionDeAvance;
 	private int movimientos;
 	private int alcanceDeVision;
@@ -19,6 +20,7 @@ public class Conductor extends ContenidoDeCelda{
 	
 	public Conductor(Vehiculo unVehiculo, Direccion unaDireccion, int unAlcanceDeVision){
 		super();
+		this.encontroLlegada = false;
 		this.movimientos = 0;
 		this.penalizacionDeAvance = 1;
 		this.vehiculo = unVehiculo;
@@ -33,6 +35,14 @@ public class Conductor extends ContenidoDeCelda{
 			throw new UbicacionEnMapaException();
 		}
 		this.celda = unaCelda;
+	}
+	
+	public void encontroLlegada(){
+		this.encontroLlegada = true;
+	}
+	
+	public boolean getEncontroLlegada(){
+		return this.encontroLlegada;
 	}
 	
 	public void cambiarDeVehiculo(Vehiculo unVehiculo){
@@ -102,7 +112,7 @@ public class Conductor extends ContenidoDeCelda{
 		
 		//Hago update de la vista porque se movio (o intento moverse) el conductor
 		this.setChanged();
-		this.notifyObservers("Conductor avanza");
+		this.notifyObservers();
 	}
 	
 	//Le falta su test
