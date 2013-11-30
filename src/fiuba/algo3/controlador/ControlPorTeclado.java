@@ -2,15 +2,17 @@ package fiuba.algo3.controlador;
 
 import java.awt.event.*;
 
+import fiuba.algo3.modelo.Juego;
 import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
 public class ControlPorTeclado {
 
-	private Conductor conductor;
+	private Juego juego;
 
-	public ControlPorTeclado(Conductor unConductor) {
-		this.conductor = unConductor;
+	public ControlPorTeclado(Juego unJuego) {
+		
+		this.juego = unJuego;
 	}
 	
 	public KeyListener getKeyListener(){
@@ -21,26 +23,27 @@ public class ControlPorTeclado {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				int location = e.getKeyCode();
+				Conductor unConductor = juego.getNivelActual().getConductor();
 				//System.out.println(location);
 
 				switch(location){
 					case KeyEvent.VK_DOWN:
-						conductor.avanzarEnDireccion(new Abajo());
+						unConductor.avanzarEnDireccion(new Abajo());
 						//System.out.println("Abajo");
 						break;
 
 					case KeyEvent.VK_UP:
-						conductor.avanzarEnDireccion(new Arriba());
+						unConductor.avanzarEnDireccion(new Arriba());
 						//System.out.println("Arriba");
 						break;
 
 					case KeyEvent.VK_LEFT:
-						conductor.avanzarEnDireccion(new Izquierda());
+						unConductor.avanzarEnDireccion(new Izquierda());
 						//System.out.println("Izquierda");
 						break;
 
 					case KeyEvent.VK_RIGHT:
-						conductor.avanzarEnDireccion(new Derecha());
+						unConductor.avanzarEnDireccion(new Derecha());
 						//System.out.println("Derecha");
 						break;
 				}

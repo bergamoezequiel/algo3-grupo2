@@ -15,6 +15,7 @@ import java.util.Observer;
 
 
 
+
 //import javax.swing.ImageIcon;
 //import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -29,6 +30,7 @@ import javax.swing.SwingUtilities;
 
 import fiuba.algo3.controlador.*;
 import fiuba.algo3.modelo.Juego;
+import fiuba.algo3.modelo.coordenadas.Coordenada;
 //import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
@@ -40,6 +42,7 @@ public class Ventana extends JFrame implements Observer {
 	final int RESOLUCIONY = 600;
 	
 	private Juego juego;
+	private PantallaDelNivel pantallaDelNivel;
 			
 	public Ventana(Juego unJuego, ControlPorTeclado unControl){	
 		this.juego = unJuego;
@@ -101,7 +104,8 @@ public class Ventana extends JFrame implements Observer {
 		}
 		
 		//Aca estoy agregando el dibujito del mapa.
-		add(new PantallaDelNivel(this.juego.getNivelActual()));
+		this.pantallaDelNivel = new PantallaDelNivel(this.juego.getNivelActual());
+		add(pantallaDelNivel);
 		
 		//Harcodeo de avance hacia arriba del conductor para verificar el update del avanzar.
 		//unConductor.avanzarEnDireccion(new Arriba());
@@ -111,10 +115,16 @@ public class Ventana extends JFrame implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		//Aca estoy agregando el dibujito del mapa.
-		PantallaDelNivel unaPantallaDeNivel = new PantallaDelNivel(this.juego.getNivelActual());
-		add(unaPantallaDeNivel);
-		//System.out.println(this.juego.getNivelActual().getNombre());
-		//System.out.println(arg);
+		this.pantallaDelNivel.setNivel(this.juego.getNivelActual());
+		
+		Conductor unConductor = this.juego.getNivelActual().getConductor();
+		Coordenada unaCoordenada = unConductor.getCelda().getCoordenada();
+		System.out.println(unConductor.getID() + ": " + unaCoordenada.getX() + ", " + unaCoordenada.getY());
+		
+		if (arg == "Juego Pasa De Nivel"){
+			this.juego.getNivelActual().getConductor().addObserver(this);
+		}
+		
 		repaint();
 		
 	}

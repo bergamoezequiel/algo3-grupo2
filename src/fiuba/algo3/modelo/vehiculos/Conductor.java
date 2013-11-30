@@ -1,7 +1,6 @@
 package fiuba.algo3.modelo.vehiculos;
 
 import fiuba.algo3.modelo.coordenadas.*;
-import fiuba.algo3.modelo.coordenadas.Direccion;
 import fiuba.algo3.modelo.mapa.Celda;
 import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
 import fiuba.algo3.modelo.mapa.UbicacionEnMapaException;
@@ -17,6 +16,7 @@ public class Conductor extends ContenidoDeCelda{
 	private int alcanceDeVision;
 	private Vehiculo vehiculo;
 	private Direccion direccion;
+	private double id;
 	
 	public Conductor(Vehiculo unVehiculo, Direccion unaDireccion, int unAlcanceDeVision){
 		super();
@@ -26,6 +26,7 @@ public class Conductor extends ContenidoDeCelda{
 		this.vehiculo = unVehiculo;
 		this.alcanceDeVision = unAlcanceDeVision;
 		this.direccion = unaDireccion;
+		this.id = Math.random();
 	}
 	
 	@Override
@@ -123,6 +124,10 @@ public class Conductor extends ContenidoDeCelda{
 	//Le falta su test
 	public Direccion getDireccion(){
 		return this.direccion;
+	}
+
+	public double getID() {
+		return this.id;
 	}
 	
 }
