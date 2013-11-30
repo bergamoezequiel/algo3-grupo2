@@ -16,7 +16,5 @@ public abstract class ContenidoDeCelda extends Observable {
 		this.celda = null;
 	}
 	
-	public boolean esSiempreVisible(){
-		return false;
-	}
+
 }

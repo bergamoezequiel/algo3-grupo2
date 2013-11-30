@@ -41,12 +41,7 @@ public class Celda{
 	}
 	
 	public boolean esVisiblePara (Conductor unConductor){
-		if (contenido!=null){
-			if (contenido.esSiempreVisible()){
-				System.out.println("se grafico la llegada");
-				return true;
-			}
-		}
+		
 		Celda celdaConductor = unConductor.getCelda();
 		double distanciaEntreCoordenadas = this.getCoordenada().calcularDistancia(celdaConductor.getCoordenada());
 		return (distanciaEntreCoordenadas <= unConductor.getAlcanceDeVision());

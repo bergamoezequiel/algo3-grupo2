@@ -46,9 +46,7 @@ public class Llegada extends ObjetoEncontrable implements Interactuable {
 	public boolean dejaPasar(TodoTerreno unTodoTerreno){
 		return false;
 	}
-	public boolean esSiempreVisible(){
-		return true;
-	}	
+		
 }
 
 	
