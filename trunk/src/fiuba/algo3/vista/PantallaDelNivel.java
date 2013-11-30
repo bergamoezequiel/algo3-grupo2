@@ -26,7 +26,7 @@ public class PantallaDelNivel extends JPanel {
 	private int anchoCelda;
 	private int altoCelda;
 	
-	private Hashtable<Class<?>, Pintor> hash;
+	//private Hashtable<Class<?>, Pintor> hash;
 	
 	public PantallaDelNivel(Nivel unNivel){
 		/*
@@ -50,6 +50,7 @@ public class PantallaDelNivel extends JPanel {
 		
 		setBackground(Color.gray);
 		this.nivel = unNivel;
+		System.out.println("Constructor: " + this.nivel.getNombre());
 		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeColumnas();
 		this.altoCelda = ALTO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeFilas();
 	}
@@ -73,6 +74,7 @@ public class PantallaDelNivel extends JPanel {
 	}
 	
 	public void pintarManzanas(Graphics g){
+		System.out.println("pintorManzanas: " + this.nivel.getNombre());
 		Mapa mapa = this.nivel.getMapa();
 		Conductor unConductor = this.nivel.getConductor();
 		int cantFilasMapa = mapa.getCantidadDeFilas();
