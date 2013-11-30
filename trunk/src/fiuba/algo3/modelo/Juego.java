@@ -5,7 +5,6 @@ import java.util.Observable;
 
 import fiuba.algo3.modelo.vehiculos.*;
 
-
 public class Juego extends Observable {
 
 	private ArrayList<Usuario> usuarios;  
@@ -13,7 +12,7 @@ public class Juego extends Observable {
 	private Nivel nivelActual;
 	private Usuario usuarioActual;
 	private ArrayList<Nivel> niveles; 
-	private int puntajeFinalConductor;
+	//private int puntajeFinalConductor;
 	//private boolean conductorLlego;
 	private TablaDePuntuaciones tablaDePuntuaciones;
 	
@@ -71,9 +70,13 @@ public class Juego extends Observable {
 	}
 	
 	public void pasoDeNivel() {
-		Nivel nivelAnterior = this.nivelActual;
-		this.nivelActual = this.niveles.get(1/*this.niveles.indexOf(nivelAnterior)*/);
+		this.nivelActual.getConductor().deleteObservers();
+		Nivel nivelSiguiente = this.niveles.get(this.niveles.indexOf(this.nivelActual)+1);
+		this.nivelActual = nivelSiguiente;
+		//this.nivelActual.getConductor().addObserver(this);
 		System.out.println("pasoDeNivel");
+		this.setChanged();
+		this.notifyObservers("Juego Pasa De Nivel");
 		//this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.getPuntaje()));
 	}
 }

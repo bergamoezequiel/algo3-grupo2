@@ -55,6 +55,10 @@ public class PantallaDelNivel extends JPanel {
 		this.altoCelda = ALTO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeFilas();
 	}
 	
+	public void setNivel(Nivel unNivel){
+		this.nivel = unNivel;
+	}
+	
 	public Coordenada coordenadaModeloAVista(Coordenada unaCoordenada, int cantFilasMapa){
 		return new Coordenada(unaCoordenada.getX()*anchoCelda, (cantFilasMapa-1-unaCoordenada.getY())*altoCelda);
 	}
@@ -152,17 +156,13 @@ public class PantallaDelNivel extends JPanel {
 		new PintorPiquete().pintar(g, new Coordenada (700,450), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
 		g.drawString("Snorlax: ", ANCHO_PANTALLA_NIVEL, 520);
 		new PintorSnorlax().pintar(g, new Coordenada (700,500), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
-		
-		
-		/*if(nivel.getJuegoActual().conductorLlego()){
-			g.setColor(Color.RED);
-			//g.drawString("FIN", ANCHO_PANTALLA_NIVEL, 150);
-			//g.drawString("Tu puntaje es:"+(String)Integer.toString(nivel.getJuegoActual().getPuntajeDelConductor()), ANCHO_PANTALLA_NIVEL, 170);
-		}*/
-		
+				
 	}
 	
 	public void paint(Graphics g) {
+		setBackground(Color.gray);
+		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeColumnas();
+		this.altoCelda = ALTO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeFilas();
 		this.pintarCalles(g);
 		this.pintarObjetosEncontrables(g);
 		this.pintarManzanas(g);

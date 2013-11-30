@@ -14,11 +14,11 @@ public class NivelVacio extends Nivel{
 		this.movimientosLimites = 1000;
 		this.puntajePorMovimientoSobrante = 0;
 		this.juegoActual = juego;
-		this.mapa = new Mapa (5, 5);
-		this.conductor = new Conductor(unVehiculo, new Derecha(), 8);
+		this.mapa = new Mapa (4, 4);
+		this.conductor = new Conductor(unVehiculo, new Derecha(), 6);
 		this.getConductor().addObserver(this);
 		
-		mapa.getCeldaEn(new Coordenada(8,9)).agregarContenido(new Llegada());
+		mapa.getCeldaEn(new Coordenada(8,7)).agregarContenido(new Llegada());
 		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 	}
 }

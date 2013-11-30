@@ -59,7 +59,7 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
         	
         	this.unJuego.agregarUsuario(usuarioNuevo);
         	this.unJuego.setUsuarioActual(usuarioNuevo);
-        	Ventana unaVentana = new Ventana(this.unJuego, new ControlPorTeclado(this.unJuego.getNivelActual().getConductor()));
+        	Ventana unaVentana = new Ventana(this.unJuego, new ControlPorTeclado(this.unJuego));
         	
         }
         if (e.getSource() == botonVolver){
