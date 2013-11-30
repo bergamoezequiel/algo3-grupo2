@@ -9,7 +9,12 @@ import fiuba.algo3.modelo.objetosEncontrables.*;
 import fiuba.algo3.modelo.vehiculos.*;
 
 public abstract class Nivel implements Observer {
-	
+	/*
+	 * PRECONDICION:
+	 * Debe existir un mapa.
+	 * Debe existir un conductor en el mapa.
+	 * Debe existir una llegada en el mapa.
+	 */
 	protected String nombre;
 	protected Mapa mapa;
 	protected Conductor conductor;

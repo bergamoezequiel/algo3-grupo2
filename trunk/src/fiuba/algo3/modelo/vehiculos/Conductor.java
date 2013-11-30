@@ -16,7 +16,6 @@ public class Conductor extends ContenidoDeCelda{
 	private int alcanceDeVision;
 	private Vehiculo vehiculo;
 	private Direccion direccion;
-	private double id;	
 	
 	public Conductor(Vehiculo unVehiculo, Direccion unaDireccion, int unAlcanceDeVision){
 		super();
@@ -26,7 +25,6 @@ public class Conductor extends ContenidoDeCelda{
 		this.vehiculo = unVehiculo;
 		this.alcanceDeVision = unAlcanceDeVision;
 		this.direccion = unaDireccion;
-		this.id = Math.random();
 	}
 	
 	@Override
@@ -84,18 +82,21 @@ public class Conductor extends ContenidoDeCelda{
 	}
 	
 	private void avanzar(){
-		ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(this.getDireccion()).getContenido();
-		Interactuable unObjetoEncontrable = (Interactuable) contenidoVecino;
-			
-		if (unObjetoEncontrable == null){
-			this.desplazarseASiguienteEsquina(this.getDireccion());
-		}
-		else{
-			if (this.getVehiculo().meDejanPasar(unObjetoEncontrable)) {
+		try{
+			ContenidoDeCelda contenidoVecino = this.getCelda().getVecino(this.getDireccion()).getContenido();
+			Interactuable unObjetoEncontrable = (Interactuable) contenidoVecino;
+
+			if (unObjetoEncontrable == null){
 				this.desplazarseASiguienteEsquina(this.getDireccion());
 			}
-			this.getVehiculo().interactuar(unObjetoEncontrable, this);
+			else{
+				if (this.getVehiculo().meDejanPasar(unObjetoEncontrable)) {
+					this.desplazarseASiguienteEsquina(this.getDireccion());
+				}
+				this.getVehiculo().interactuar(unObjetoEncontrable, this);
+			}
 		}
+		catch(UbicacionEnMapaException e){};
 	}
 	
 	public void avanzarEnDireccion(Direccion unaDireccion) {
@@ -106,7 +107,6 @@ public class Conductor extends ContenidoDeCelda{
 		 * entonces efectivamente va a avanzar.
 		 */
 		
-		System.out.println(this.id);
 		if (this.getDireccion().equals(unaDireccion))
 			this.avanzar();
 		else
@@ -125,10 +125,6 @@ public class Conductor extends ContenidoDeCelda{
 	//Le falta su test
 	public Direccion getDireccion(){
 		return this.direccion;
-	}
-
-	public double getID() {
-		return this.id;
 	}
 	
 }
