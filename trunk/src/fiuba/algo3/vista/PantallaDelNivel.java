@@ -160,8 +160,8 @@ public class PantallaDelNivel extends JPanel {
 	
 	public void paint(Graphics g) {
 		this.pintarCalles(g);
-		this.pintarObjetosEncontrables(g);
 		this.pintarManzanas(g);
+		this.pintarObjetosEncontrables(g);	
 		this.pintarPanelDerecho(g);
 	}
 }
