@@ -10,7 +10,7 @@ public class NivelMuyDificil extends Nivel {
 	
 	public NivelMuyDificil (Vehiculo unVehiculo,Juego juego){
 		this.nombre = "Nivel Muy Dificil";
-		this.movimientosLimites = 20;
+		this.movimientosLimites = 40;
 		this.puntajePorMovimientoSobrante = 4;
 		this.juegoActual=juego;
 		this.mapa = new Mapa (10, 10);

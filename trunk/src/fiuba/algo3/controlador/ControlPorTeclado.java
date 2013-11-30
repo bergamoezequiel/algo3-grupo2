@@ -3,6 +3,7 @@ package fiuba.algo3.controlador;
 import java.awt.event.*;
 
 import fiuba.algo3.modelo.Juego;
+import fiuba.algo3.modelo.Nivel;
 import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
@@ -23,29 +24,34 @@ public class ControlPorTeclado {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				int location = e.getKeyCode();
-				Conductor unConductor = juego.getNivelActual().getConductor();
+				
+				Nivel nivelActual = juego.getNivelActual();
+				
 				//System.out.println(location);
+				
+				if (nivelActual != null){
+					Conductor unConductor = nivelActual.getConductor();
+					switch(location){
+						case KeyEvent.VK_DOWN:
+							unConductor.avanzarEnDireccion(new Abajo());
+							//System.out.println("Abajo");
+							break;
 
-				switch(location){
-					case KeyEvent.VK_DOWN:
-						unConductor.avanzarEnDireccion(new Abajo());
-						//System.out.println("Abajo");
-						break;
+						case KeyEvent.VK_UP:
+							unConductor.avanzarEnDireccion(new Arriba());
+							//System.out.println("Arriba");
+							break;
 
-					case KeyEvent.VK_UP:
-						unConductor.avanzarEnDireccion(new Arriba());
-						//System.out.println("Arriba");
-						break;
+						case KeyEvent.VK_LEFT:
+							unConductor.avanzarEnDireccion(new Izquierda());
+							//System.out.println("Izquierda");
+							break;
 
-					case KeyEvent.VK_LEFT:
-						unConductor.avanzarEnDireccion(new Izquierda());
-						//System.out.println("Izquierda");
-						break;
-
-					case KeyEvent.VK_RIGHT:
-						unConductor.avanzarEnDireccion(new Derecha());
-						//System.out.println("Derecha");
-						break;
+						case KeyEvent.VK_RIGHT:
+							unConductor.avanzarEnDireccion(new Derecha());
+							//System.out.println("Derecha");
+							break;
+					}
 				}
 			}
 

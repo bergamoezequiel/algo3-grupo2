@@ -37,11 +37,9 @@ public abstract class Nivel implements Observer {
 		return this.nombre;
 	}
 	
-	/*public void vehiculoCruzoLaMeta(){
-		int puntaje= (getMovimientosRestantes()*puntajePorMovimientoSobrante);
-		System.out.println(puntaje);
-		juegoActual.vehiculoTerminoConPuntaje(puntaje);
-	}*/
+	public int getPuntaje(){
+		return (getMovimientosRestantes() * puntajePorMovimientoSobrante);
+	}
 	
 	public Juego getJuegoActual(){
 		return juegoActual;
@@ -58,7 +56,7 @@ public abstract class Nivel implements Observer {
 		}
 		
 		else if (this.conductor.getEncontroLlegada()){
-			this.juegoActual.pasoDeNivel();
+			this.juegoActual.conductorAlcanzoLaLlegadaDelNivelActual();
 		}
 	}
 }

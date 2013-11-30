@@ -48,15 +48,15 @@ public class PantallaDelNivel extends JPanel {
 		this.hash.put((new CambioDeVehiculo()).getClass(), new PintorSorpresa());
 		this.hash.put((new Llegada()).getClass(), new PintorLlegada());*/
 		
+		this.actualizarParametrosGlobalesPara(unNivel);
+	}
+	
+	public void actualizarParametrosGlobalesPara(Nivel unNivel){
 		setBackground(Color.gray);
 		this.nivel = unNivel;
 		System.out.println("Constructor: " + this.nivel.getNombre());
 		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeColumnas();
 		this.altoCelda = ALTO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeFilas();
-	}
-	
-	public void setNivel(Nivel unNivel){
-		this.nivel = unNivel;
 	}
 	
 	public Coordenada coordenadaModeloAVista(Coordenada unaCoordenada, int cantFilasMapa){
@@ -160,9 +160,6 @@ public class PantallaDelNivel extends JPanel {
 	}
 	
 	public void paint(Graphics g) {
-		setBackground(Color.gray);
-		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeColumnas();
-		this.altoCelda = ALTO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeFilas();
 		this.pintarCalles(g);
 		this.pintarObjetosEncontrables(g);
 		this.pintarManzanas(g);

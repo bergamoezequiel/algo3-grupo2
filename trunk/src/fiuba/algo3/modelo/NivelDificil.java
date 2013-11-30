@@ -11,9 +11,9 @@ public class NivelDificil extends Nivel {
 	
 	public NivelDificil (Vehiculo unVehiculo, Juego juego){
 		this.nombre = "Nivel Dificil";
-		this.movimientosLimites=20;
-		this.puntajePorMovimientoSobrante= 3;
-		this.juegoActual=juego;
+		this.movimientosLimites = 40;
+		this.puntajePorMovimientoSobrante = 3;
+		this.juegoActual = juego;
 		this.mapa = new Mapa (10, 10);
 		this.conductor = new Conductor(unVehiculo, new Derecha(), 5);
 		this.getConductor().addObserver(this);
