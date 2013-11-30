@@ -101,9 +101,7 @@ public class Ventana extends JFrame implements Observer {
 		setJMenuBar(menu);
 		
 		Conductor unConductor = this.juego.getNivelActual().getConductor();
-		if (unConductor != null){
-			unConductor.addObserver(this);
-		}
+		unConductor.addObserver(this);
 		
 		//Aca estoy agregando el dibujito del mapa.
 		this.pantallaDelNivel = new PantallaDelNivel(this.juego.getNivelActual());

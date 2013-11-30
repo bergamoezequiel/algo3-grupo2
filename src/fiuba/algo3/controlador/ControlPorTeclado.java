@@ -23,11 +23,8 @@ public class ControlPorTeclado {
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				int location = e.getKeyCode();
-				
+				int location = e.getKeyCode();	
 				Nivel nivelActual = juego.getNivelActual();
-				
-				//System.out.println(location);
 				
 				if (nivelActual != null){
 					Conductor unConductor = nivelActual.getConductor();

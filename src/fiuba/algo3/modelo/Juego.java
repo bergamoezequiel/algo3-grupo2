@@ -53,11 +53,6 @@ public class Juego extends Observable {
 	public void setUsuarioActual(Usuario unUsuario){
 		this.usuarioActual = unUsuario;
 	}
-	
-	/*public void vehiculoTerminoConPuntaje(int unPuntaje){
-		this.puntajeFinalConductor = unPuntaje;
-		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), unPuntaje));	
-	}*/
 
 	public void pasarDeNivel(){
 		Nivel nivelSiguiente = this.niveles.get(this.niveles.indexOf(this.nivelActual)+1);
@@ -86,7 +81,7 @@ public class Juego extends Observable {
 		nivelActual = null;
 		
 		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), puntaje));
-		System.out.println("Perdio, su puntaje es: " + puntaje);
+		System.out.println(this.getUsuarioActual().getNombre() + " perdiste, tu puntacióne es " + puntaje);
 	}
 	
 	public void conductorAlcanzoLaLlegadaDelNivelActual() {

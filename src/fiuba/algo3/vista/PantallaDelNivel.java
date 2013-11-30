@@ -78,7 +78,6 @@ public class PantallaDelNivel extends JPanel {
 	}
 	
 	public void pintarManzanas(Graphics g){
-		System.out.println("pintorManzanas: " + this.nivel.getNombre());
 		Mapa mapa = this.nivel.getMapa();
 		Conductor unConductor = this.nivel.getConductor();
 		int cantFilasMapa = mapa.getCantidadDeFilas();

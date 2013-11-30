@@ -49,7 +49,7 @@ public class ConductorTest {
 		Assert.assertEquals(1, unConductor.getPenalizacionDeAvance());
 	}
 
-	@Test (expected = UbicacionEnMapaException.class) 
+	@Test
 	public void deberiaLanzarUnaExcepcionSiIntentoAvanzarAUnLugarFueraDelMapa(){
 		Mapa unMapa = new Mapa (1,1);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
@@ -65,8 +65,6 @@ public class ConductorTest {
 		
 		//Deberia haberme quedado en el mismo lugar.
 		Assert.assertEquals(new Coordenada(2, 0), unConductor.getCelda().getCoordenada());		
-		
-		
 	}
 	
 	@Test
