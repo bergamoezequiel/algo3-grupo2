@@ -1,6 +1,6 @@
 package fiuba.algo3.modelo;
 
-
+import org.jdom2.Element;
 public class ElementoTablaDePuntuacion implements Comparable<ElementoTablaDePuntuacion>{
 
 	private String nombre;
@@ -24,4 +24,10 @@ public class ElementoTablaDePuntuacion implements Comparable<ElementoTablaDePunt
 		return this.getPuntaje() - unElementoTablaDePuntuacion.getPuntaje();		
 	}
 
+	public Element serializar(){
+		Element nodoElementoTablaDePuntuacion = new Element("elemento");
+		nodoElementoTablaDePuntuacion.setAttribute("numero", Integer.toString(this.puntaje));
+		nodoElementoTablaDePuntuacion.setAttribute("nombre", this.nombre);
+		return nodoElementoTablaDePuntuacion;
+		}
 }
