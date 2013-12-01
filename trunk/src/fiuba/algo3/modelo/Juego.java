@@ -13,6 +13,7 @@ public class Juego extends Observable {
 	private ArrayList<Nivel> niveles; 
 	private int nroNivelActual;
 	private TablaDePuntuaciones tablaDePuntuaciones;
+	private int puntajeAcumulado;
 	
 	public Juego (){
 		this.tablaDePuntuaciones = new TablaDePuntuaciones();
@@ -24,7 +25,8 @@ public class Juego extends Observable {
 		this.niveles.add(new NivelDificil(Moto.getInstancia(), this));
 		this.niveles.add(new NivelMuyDificil(Moto.getInstancia(), this));
 		this.setNivelActual(niveles.get(0));
-		nroNivelActual = 0;
+		this.nroNivelActual = 0;
+		this.puntajeAcumulado = 0;
 	}
 	
 	public void agregarUsuario(Usuario unUsuario){
@@ -53,6 +55,7 @@ public class Juego extends Observable {
 	}
 
 	public void pasarDeNivel(){
+		this.puntajeAcumulado += niveles.get(this.nroNivelActual).getPuntaje();
 		this.nroNivelActual += 1;
 		Nivel nivelSiguiente = this.niveles.get(this.nroNivelActual);
 		this.nivelActual = nivelSiguiente;
@@ -62,25 +65,19 @@ public class Juego extends Observable {
 	}
 	
 	public void gano(){		
-		int puntaje = 0;
-		for (int i = 0; i <= this.niveles.indexOf(this.nivelActual); i++){
-			puntaje += niveles.get(i).getPuntaje();
-		}
+		this.nroNivelActual = 0;
 		nivelActual = null;
 		
-		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), puntaje));
-		System.out.println("Gano, su puntaje es: " + puntaje);
+		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.puntajeAcumulado));
+		System.out.println("Ganaste, tu puntuacion es " + this.puntajeAcumulado);
 	}
 	
 	public void perdio() {
-		int puntaje = 0;
-		for (int i = 0; i < this.niveles.indexOf(this.nivelActual); i++){
-			puntaje += niveles.get(i).getPuntaje();
-		}
+		this.nroNivelActual = 0;
 		nivelActual = null;
 		
-		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), puntaje));
-		System.out.println(this.getUsuarioActual().getNombre() + " perdiste, tu punttuacion es " + puntaje);
+		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.puntajeAcumulado));
+		System.out.println("Perdiste, tu puntuacion es " + this.puntajeAcumulado);
 	}
 	
 	public void conductorAlcanzoLaLlegadaDelNivelActual() {
