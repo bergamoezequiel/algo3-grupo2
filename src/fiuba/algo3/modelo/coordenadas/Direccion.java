@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.coordenadas;
 
+import org.jdom2.Element;
+
 
 public abstract class Direccion {
 	
@@ -30,4 +32,10 @@ public abstract class Direccion {
 	private int getY(){
 		return this.direccionY;
 	}
+	public Element serializar(){
+		Element nodoDireccion = new Element("elemento");
+		nodoDireccion.setAttribute("x", Integer.toString(this.direccionX));
+		nodoDireccion.setAttribute("y", Integer.toString(this.direccionY));
+		return nodoDireccion;
+		}
 }

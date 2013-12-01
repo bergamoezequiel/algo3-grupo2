@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo;
 
+import org.jdom2.Element;
+
 public class Usuario {
 
 	private String nombre; 
@@ -29,4 +31,10 @@ public class Usuario {
 	public String getNombre(){
 		return this.nombre;
 	}
+	
+	public Element serializar(){
+		Element nodoUsuario = new Element("usuario");
+		nodoUsuario.setAttribute("nombre", this.nombre);
+		return nodoUsuario;
+		}
 }

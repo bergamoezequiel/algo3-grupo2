@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.coordenadas;
 
+import org.jdom2.Element;
+
 //COORDENADAS CARTESIANAS//
 public class Coordenada {
 	private int x;
@@ -40,5 +42,12 @@ public class Coordenada {
 		double distanciaYAlCuadrado = Math.pow(this.getY() - unaCoordenada.getY(), 2);;
 		return Math.sqrt(distanciaXAlCuadrado + distanciaYAlCuadrado);
 	}
+	
+	public Element serializar(){
+		Element nodoCoordenada = new Element("elemento");
+		nodoCoordenada.setAttribute("x", Integer.toString(this.x));
+		nodoCoordenada.setAttribute("y", Integer.toString(this.y));
+		return nodoCoordenada;
+		}
 		
 }

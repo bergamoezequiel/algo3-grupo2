@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.vehiculos;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.mapa.Celda;
 import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
@@ -126,5 +128,15 @@ public class Conductor extends ContenidoDeCelda{
 	public Direccion getDireccion(){
 		return this.direccion;
 	}
+	//falta serializar vehiculo
+	public Element serializar(){
+		Element nodoConductor = new Element("elemento");
+		nodoConductor.setAttribute("llego", Boolean.toString(this.encontroLlegada));
+		nodoConductor.setAttribute("penalizacion", Integer.toString(this.penalizacionDeAvance));
+		nodoConductor.setAttribute("movimientos", Integer.toString(this.movimientos));
+		nodoConductor.setAttribute("vision", Integer.toString(this.alcanceDeVision));
+		nodoConductor.addContent(this.direccion.serializar());
+		return nodoConductor;
+		}
 	
 }
