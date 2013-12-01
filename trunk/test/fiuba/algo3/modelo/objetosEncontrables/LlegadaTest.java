@@ -14,21 +14,21 @@ public class LlegadaTest {
 	@Test
 	public void LaLlegadaDeberiaDejarPasarALasMotos(){
 		Llegada laLlegada=new Llegada();
-		Moto unaMoto= new Moto();
+		Moto unaMoto= Moto.getInstancia();
 		Assert.assertEquals(false,laLlegada.dejaPasar(unaMoto));
 	}
 
 	@Test
 	public void LaLLegadaNoDeberiaDejarPasarALosAutos(){
 		Llegada laLlegada=new Llegada();
-		Auto unAuto= new Auto();
+		Auto unAuto=Auto.getInstancia();
 		Assert.assertEquals(false,laLlegada.dejaPasar(unAuto));
 	}
 
 	@Test
 	public void laLlegadaNoDeberiaDejarPasarALosTodoTerreno(){
 		Llegada laLlegada=new Llegada();
-		TodoTerreno unTodoTerreno=new TodoTerreno();
+		TodoTerreno unTodoTerreno=TodoTerreno.getInstancia();
 		Assert.assertEquals(false,laLlegada.dejaPasar(unTodoTerreno));
 	}
 

@@ -10,7 +10,7 @@ import fiuba.algo3.modelo.vehiculos.Conductor;
 public class CeldaTest{
 	
 	private Conductor crearConductorValido(){
-		return new Conductor(new Auto(), new Derecha(), 4);
+		return new Conductor(Auto.getInstancia(), new Derecha(), 4);
 	}
 	
 	@Test

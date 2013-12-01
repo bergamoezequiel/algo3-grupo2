@@ -17,7 +17,7 @@ public class SorpresaDesfavorableTest {
 	public void deberiaAumentarLosMovimientosDeLaMotoAlPasarPorUnaSorpresa(){
 		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Moto(), new Derecha(), 4);		
+		Conductor unConductor = new Conductor( Moto.getInstancia(), new Derecha(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Direccion derecha= new Derecha();
@@ -37,7 +37,7 @@ public class SorpresaDesfavorableTest {
 	public void deberiaAumentarLosMovimientosDelAutoAlPasarPorUnaSorpresa(){
 		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Auto(), new Derecha(), 4);		
+		Conductor unConductor = new Conductor(Auto.getInstancia(), new Derecha(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Direccion derecha = new Derecha();
@@ -58,7 +58,7 @@ public class SorpresaDesfavorableTest {
 	public void deberiaAumentarLosMovimientosDeLaTodoTerrenoAlPasarPorUnaSorpresa(){
 		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new TodoTerreno(), new Derecha(), 4);		
+		Conductor unConductor = new Conductor(TodoTerreno.getInstancia(), new Derecha(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Direccion derecha = new Derecha();
@@ -78,21 +78,21 @@ public class SorpresaDesfavorableTest {
 	@Test
 	public void testLaSorpresaDesfavorableDeberiaDejarPasarALasMotos(){
 		SorpresaDesfavorable unaSorpresaDesfavorable = new SorpresaDesfavorable();
-		Moto unaMoto = new Moto();
+		Moto unaMoto = Moto.getInstancia();
 		Assert.assertEquals(true, unaSorpresaDesfavorable.dejaPasar(unaMoto));
 	}
 	
 	@Test
 	public void testLaSorpresaDesfavorableDeberiaDejarPasarALosAutos(){
 		SorpresaDesfavorable unaSorpresaDesfavorable = new SorpresaDesfavorable();
-		Auto unAuto = new Auto();
+		Auto unAuto = Auto.getInstancia();
 		Assert.assertEquals(true, unaSorpresaDesfavorable.dejaPasar(unAuto));
 	}
 	
 	@Test
 	public void testLaSorpresaDesfavorableDeberiaDejarPasarALosTodoTerreno(){
 		SorpresaDesfavorable unaSorpresaDesfavorable = new SorpresaDesfavorable();
-		TodoTerreno unTodoTerreno = new TodoTerreno();
+		TodoTerreno unTodoTerreno = TodoTerreno.getInstancia();
 		Assert.assertEquals(true, unaSorpresaDesfavorable.dejaPasar(unTodoTerreno));
 	}
 
