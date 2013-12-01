@@ -28,9 +28,6 @@ public class Juego extends Observable {
 		
 		//conductorLlego = false;
 		this.usuarios = new ArrayList<Usuario>();
-		Usuario unUsuario =  new Usuario("Samus Aran");
-		this.usuarios.add(unUsuario);
-		this.setUsuarioActual(unUsuario);
 	}
 	
 	public void agregarUsuario(Usuario unUsuario){
@@ -81,7 +78,7 @@ public class Juego extends Observable {
 		nivelActual = null;
 		
 		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), puntaje));
-		System.out.println(this.getUsuarioActual().getNombre() + " perdiste, tu puntacióne es " + puntaje);
+		System.out.println(this.getUsuarioActual().getNombre() + " perdiste, tu punttuacion es " + puntaje);
 	}
 	
 	public void conductorAlcanzoLaLlegadaDelNivelActual() {

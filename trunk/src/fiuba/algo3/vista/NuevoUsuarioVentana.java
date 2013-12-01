@@ -38,7 +38,7 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
         botonVolver = new JButton("Volver");
         
         panelCampos = new JPanel();
-        texto = new JTextField(" Ingrese el Nombre Del Usuario       ");
+        texto = new JTextField("Ingrese el Nombre Del Usuario");
         
         add(texto);
         add(botonAceptar);
@@ -53,13 +53,15 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
     	
     	
         if (e.getSource()== botonAceptar) {
-        	dispose();
         	Usuario usuarioNuevo = new Usuario(texto.getText());
         	System.out.println(texto.getText());
         	
         	this.unJuego.agregarUsuario(usuarioNuevo);
         	this.unJuego.setUsuarioActual(usuarioNuevo);
         	Ventana unaVentana = new Ventana(this.unJuego, new ControlPorTeclado(this.unJuego));
+        	unJuego.addObserver(unaVentana);
+        	
+        	dispose();
         	
         }
         if (e.getSource() == botonVolver){
