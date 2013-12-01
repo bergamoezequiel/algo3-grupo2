@@ -11,7 +11,7 @@ public class PiqueteTest {
 	@Test
 	public void ElPiqueteTendriaQuePenalizarCon2MovimientosALasMotos(){
 		Piquete unPiquete = new Piquete();
-		Moto unaMoto = new Moto();
+		Moto unaMoto = Moto.getInstancia();
 		Conductor unConductor = new Conductor(unaMoto, new Derecha(), 4);
 		unPiquete.interactuarConMoto(unConductor);
 		Assert.assertEquals(2, unConductor.getMovimientos());
@@ -20,7 +20,7 @@ public class PiqueteTest {
 	@Test
 	public void ElPiqueteNoTendriaQuePenalizarALosAutos(){
 		Piquete unPiquete = new Piquete();
-		Auto unAuto = new Auto();
+		Auto unAuto = Auto.getInstancia();
 		Conductor unConductor = new Conductor(unAuto, new Derecha(), 4);
 		unPiquete.interactuarConAuto(unConductor);
 		Assert.assertEquals(0, unConductor.getMovimientos());
@@ -30,7 +30,7 @@ public class PiqueteTest {
 	@Test
 	public void ElPiqueteNoTendriaQuePenalizarALosTodoTerreno(){
 		Piquete unPiquete = new Piquete();
-		TodoTerreno unTodoTerreno = new TodoTerreno();
+		TodoTerreno unTodoTerreno =TodoTerreno.getInstancia();
 		Conductor unConductor = new Conductor(unTodoTerreno, new Derecha(), 4);
 		unPiquete.interactuarConTodoTerreno(unConductor);
 		Assert.assertEquals(0, unConductor.getMovimientos());
@@ -39,21 +39,21 @@ public class PiqueteTest {
 	@Test
 	public void ElPiqueteDeberiaDejarPasarALasMotos(){
 		Piquete unPiquete = new Piquete();
-		Moto unaMoto = new Moto();
+		Moto unaMoto =Moto.getInstancia();
 		Assert.assertEquals(true, unPiquete.dejaPasar(unaMoto));
 	}
 
 	@Test
 	public void ElPiqueteNoDeberiaDejarPasarALosAutos(){
 		Piquete unPiquete = new Piquete();
-		Auto unAuto = new Auto();
+		Auto unAuto = Auto.getInstancia();
 		Assert.assertEquals(false, unPiquete.dejaPasar(unAuto));
 	}
 
 	@Test
 	public void ElPiqueteNoDeberiaDejarPasarALosTodoTerreno(){
 		Piquete unPiquete = new Piquete();
-		TodoTerreno unTodoTerreno = new TodoTerreno();
+		TodoTerreno unTodoTerreno = TodoTerreno.getInstancia();
 		Assert.assertEquals(false, unPiquete.dejaPasar(unTodoTerreno));
 	}
 }

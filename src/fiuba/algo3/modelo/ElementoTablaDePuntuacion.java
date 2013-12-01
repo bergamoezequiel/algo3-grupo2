@@ -1,5 +1,6 @@
 package fiuba.algo3.modelo;
 
+
 public class ElementoTablaDePuntuacion implements Comparable<ElementoTablaDePuntuacion>{
 
 	private String nombre;
@@ -22,4 +23,5 @@ public class ElementoTablaDePuntuacion implements Comparable<ElementoTablaDePunt
 	public int compareTo(ElementoTablaDePuntuacion unElementoTablaDePuntuacion) {
 		return this.getPuntaje() - unElementoTablaDePuntuacion.getPuntaje();		
 	}
+
 }

@@ -15,21 +15,21 @@ public class CambioDeVehiculoTest {
 	@Test
 	public void ElCambioDeVehiculoDeberiaDejarPasarALasMotos(){
 		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
-		Moto unaMoto = new Moto();
+		Moto unaMoto = Moto.getInstancia();
 		Assert.assertEquals(true,unCambioDeVehiculo.dejaPasar(unaMoto));
 	}
 	
 	@Test
 	public void ElCambioDeVehiculoDeberiaDejarPasarALosAutos(){
 		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
-		Auto unAuto = new Auto();
+		Auto unAuto = Auto.getInstancia();
 		Assert.assertEquals(true,unCambioDeVehiculo.dejaPasar(unAuto));
 	}
 	
 	@Test
 	public void ElCambioDeVehiculoDeberiaDejarPasarALosTodoTerreno(){
 		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
-		TodoTerreno unTodoTerreno = new TodoTerreno();
+		TodoTerreno unTodoTerreno =TodoTerreno.getInstancia();
 		Assert.assertEquals(true,unCambioDeVehiculo.dejaPasar(unTodoTerreno));
 	}
 	
@@ -37,7 +37,7 @@ public class CambioDeVehiculoTest {
 	public void testDeberiaCambiarAutoEnTodoTerreno(){
 		Mapa unMapa = new Mapa(6,6);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Auto(), new Arriba(), 4);		
+		Conductor unConductor = new Conductor(Auto.getInstancia(), new Arriba(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
@@ -47,7 +47,7 @@ public class CambioDeVehiculoTest {
 		//Paso por el Cambio de Vehiculo.
 		unConductor.avanzarEnDireccion(new Arriba());
 		
-		Assert.assertEquals(new TodoTerreno(), unConductor.getVehiculo());
+		Assert.assertEquals(TodoTerreno.getInstancia(), unConductor.getVehiculo());
 		}
 	
 	@Test
@@ -55,7 +55,7 @@ public class CambioDeVehiculoTest {
 		
 		Mapa unMapa = new Mapa(6,6);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Moto(), new Arriba(), 4);		
+		Conductor unConductor = new Conductor(Moto.getInstancia(), new Arriba(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
@@ -65,7 +65,7 @@ public class CambioDeVehiculoTest {
 		//Paso por el Cambio de Vehiculo.
 		unConductor.avanzarEnDireccion(new Arriba());
 		
-		Assert.assertEquals(new Auto(), unConductor.getVehiculo());
+		Assert.assertEquals( Auto.getInstancia(), unConductor.getVehiculo());
 		}
 	
 	
@@ -73,7 +73,7 @@ public class CambioDeVehiculoTest {
 	public void testDeberiaCambiarTodoTerrenoEnMoto(){
 		Mapa unMapa = new Mapa(6,6);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new TodoTerreno(), new Arriba(), 4);		
+		Conductor unConductor = new Conductor(TodoTerreno.getInstancia(), new Arriba(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		CambioDeVehiculo unCambioDeVehiculo = new CambioDeVehiculo();
@@ -83,6 +83,6 @@ public class CambioDeVehiculoTest {
 		//Paso por el Cambio de Vehiculo.
 		unConductor.avanzarEnDireccion(new Arriba());
 		
-		Assert.assertEquals(new Moto(), unConductor.getVehiculo());
+		Assert.assertEquals(Moto.getInstancia(), unConductor.getVehiculo());
 		}
 }

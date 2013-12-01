@@ -16,6 +16,7 @@ import fiuba.algo3.modelo.objetosEncontrables.Piquete;
 import fiuba.algo3.modelo.objetosEncontrables.Pozo;
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
+import fiuba.algo3.modelo.vehiculos.Moto;
 import fiuba.algo3.modelo.vehiculos.TodoTerreno;
 
 public class TestIntegrador {
@@ -24,7 +25,7 @@ public class TestIntegrador {
 	public void pruebaIntegradora(){
 		Mapa unMapa = new Mapa(5,5);
 		Celda celdaInicial = unMapa.getCeldaEn(new Coordenada(0, 0));
-		Conductor unConductor = new Conductor(new Auto(), new Derecha(), 4);		
+		Conductor unConductor = new Conductor(Auto.getInstancia(), new Derecha(), 4);		
 		celdaInicial.agregarContenido(unConductor);
 		
 		Pozo unPozo = new Pozo();
@@ -100,7 +101,7 @@ public class TestIntegrador {
 		//Se deberia mover a la izquierda.
 		assertEquals(celdaActual.getVecino(izquierda).getVecino(izquierda).getCoordenada(), unConductor.getCelda().getCoordenada());
 		//Deberia haber cambiado mi vehiculo a TodoTerreno.
-		assertEquals (unConductor.getVehiculo(), new TodoTerreno());		
+		assertEquals (unConductor.getVehiculo(),TodoTerreno.getInstancia());		
 												
 	}
 

@@ -11,7 +11,7 @@ public class SnorlaxTest {
 	@Test
 	public void SnorlaxNoTendriaQuePenalizarALasMotos(){
         Snorlax unSnorlax = new Snorlax();
-        Moto unaMoto = new Moto();
+        Moto unaMoto = Moto.getInstancia();
         Conductor unConductor = new Conductor(unaMoto, new Derecha(), 4);
         unSnorlax.interactuarConMoto(unConductor);
         Assert.assertEquals(0, unConductor.getMovimientos());
@@ -20,7 +20,7 @@ public class SnorlaxTest {
 	@Test
 	public void SnorlaxNoTendriaQuePenalizarsALosAutos(){
         Snorlax unSnorlax = new Snorlax();
-        Auto unAuto = new Auto();
+        Auto unAuto = Auto.getInstancia();
         Conductor unConductor = new Conductor(unAuto, new Derecha(), 4);
         unSnorlax.interactuarConAuto(unConductor);
         Assert.assertEquals(0, unConductor.getMovimientos());
@@ -30,7 +30,7 @@ public class SnorlaxTest {
 	@Test
 	public void SnorlaxNoTendriaQuePenalizarALosTodoTerreno(){
         Snorlax unSnorlax = new Snorlax();
-        TodoTerreno unTodoTerreno = new TodoTerreno();
+        TodoTerreno unTodoTerreno = TodoTerreno.getInstancia();
         Conductor unConductor = new Conductor(unTodoTerreno, new Derecha(), 4);
         unSnorlax.interactuarConTodoTerreno(unConductor);
         Assert.assertEquals(0, unConductor.getMovimientos());
@@ -39,21 +39,21 @@ public class SnorlaxTest {
 	@Test
 	public void ElSnorlaxDeberiaDejarPasarALasMotos(){
 		Snorlax unSnorlax = new Snorlax();
-		Moto unaMoto = new Moto();
+		Moto unaMoto = Moto.getInstancia();
 		Assert.assertEquals(false, unSnorlax.dejaPasar(unaMoto));
 	}
 	
 	@Test
 	public void ElSnorlaxDeberiaDejarPasarALosAutos(){
 		Snorlax unSnorlax = new Snorlax();
-		Auto unAuto = new Auto();
+		Auto unAuto = Auto.getInstancia();
 		Assert.assertEquals(false, unSnorlax.dejaPasar(unAuto));
 	}
 	
 	@Test
 	public void ElSnorlaxDeberiaDejarPasarALosTodoTerreno(){
 		Snorlax unSnorlax = new Snorlax();
-		TodoTerreno unTodoTerreno = new TodoTerreno();
+		TodoTerreno unTodoTerreno = TodoTerreno.getInstancia();
 		Assert.assertEquals(false, unSnorlax.dejaPasar(unTodoTerreno));
 	}
 

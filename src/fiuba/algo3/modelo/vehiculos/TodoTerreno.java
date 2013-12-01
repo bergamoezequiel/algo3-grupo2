@@ -3,7 +3,20 @@ package fiuba.algo3.modelo.vehiculos;
 import fiuba.algo3.modelo.objetosEncontrables.*;
 
 public class TodoTerreno extends Vehiculo {
-
+	
+public static TodoTerreno instancia= null;
+	
+	private TodoTerreno(){
+		
+	}
+	
+	public static TodoTerreno getInstancia(){
+		if (instancia==null){
+			instancia=new TodoTerreno();
+		}
+		return instancia;
+	}
+	
 	@Override
 	public void interactuar(Interactuable unObjetoEncontrable,	Conductor unConductor) {
 		unObjetoEncontrable.interactuarConTodoTerreno(unConductor);

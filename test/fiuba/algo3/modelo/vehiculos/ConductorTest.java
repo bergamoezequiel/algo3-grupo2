@@ -11,7 +11,7 @@ import fiuba.algo3.modelo.mapa.UbicacionEnMapaException;
 public class ConductorTest {
 	
 	private Conductor crearConductorValido(){
-		return new Conductor(new Auto(), new Derecha(), 4);
+		return new Conductor(Auto.getInstancia(), new Derecha(), 4);
 	}
 	
 	@Test(expected = UbicacionEnMapaException.class) 
@@ -30,7 +30,7 @@ public class ConductorTest {
 	
 	@Test
 	public void vehiculoDeberiaCrearseConUnTipoDeVehiculoAuto(){
-		Auto unAuto = new Auto();
+		Auto unAuto = Auto.getInstancia();
 		Conductor unConductor = crearConductorValido();
 		Assert.assertEquals(unAuto, unConductor.getVehiculo());
 	}
@@ -39,7 +39,7 @@ public class ConductorTest {
 	public void conductorDeberiaPoderCambiarDeVehiculo(){
 		
 		Conductor unConductor = crearConductorValido();
-		Moto unaMoto= new Moto();
+		Moto unaMoto= Moto.getInstancia();
 		unConductor.cambiarDeVehiculo(unaMoto);
 		Assert.assertEquals(unaMoto, unConductor.getVehiculo());
 	}

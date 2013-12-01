@@ -19,11 +19,11 @@ public class Juego extends Observable {
 		this.tablaDePuntuaciones = new TablaDePuntuaciones();
 		
 		this.niveles = new ArrayList<Nivel>();
-		this.niveles.add(new NivelVacio(new Moto(), this));
-		this.niveles.add(new NivelFacil(new Moto(), this));
-		this.niveles.add(new NivelModerado(new Moto(), this));
-		this.niveles.add(new NivelDificil(new Moto(), this));
-		this.niveles.add(new NivelMuyDificil(new Moto(), this));
+		this.niveles.add(new NivelVacio(Moto.getInstancia(), this));
+		this.niveles.add(new NivelFacil(Moto.getInstancia(), this));
+		this.niveles.add(new NivelModerado(Moto.getInstancia(), this));
+		this.niveles.add(new NivelDificil(Moto.getInstancia(), this));
+		this.niveles.add(new NivelMuyDificil(Moto.getInstancia(), this));
 		this.setNivelActual(niveles.get(0));
 		
 		//conductorLlego = false;

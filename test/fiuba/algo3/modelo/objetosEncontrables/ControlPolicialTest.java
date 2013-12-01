@@ -17,7 +17,7 @@ public class ControlPolicialTest {
 	@Test
 	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALasMotosDependiendoDelNumeroAleatorio(){
 		ControlPolicial unControl = new ControlPolicial();
-		Moto unaMoto = new Moto();
+		Moto unaMoto =Moto.getInstancia();
 		Conductor unConductor = new Conductor(unaMoto, new Derecha() , 4);
 		
 		//Deberia penalizar
@@ -38,7 +38,7 @@ public class ControlPolicialTest {
 	@Test
 	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALosAutosDependiendoDelNumeroAleatorio(){
 		ControlPolicial unControl = new ControlPolicial();
-		Auto unAuto = new Auto();
+		Auto unAuto = Auto.getInstancia();
 		Conductor unConductor = new Conductor(unAuto, new Derecha(), 4);
 		
 		//Deberia penalizar
@@ -59,7 +59,7 @@ public class ControlPolicialTest {
 	@Test
 	public void ElControlPolicialTendriaQuePenalizarCon3MovimientosALosTodoTerrenoDependiendoDelNumeroAleatorio(){
 		ControlPolicial unControl = new ControlPolicial();
-		TodoTerreno unTodoTerreno = new TodoTerreno();
+		TodoTerreno unTodoTerreno = TodoTerreno.getInstancia();
 		Conductor unConductor = new Conductor(unTodoTerreno, new Derecha(), 4);
 		
 		//Deberia penalizar
