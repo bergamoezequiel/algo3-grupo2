@@ -11,13 +11,12 @@ public class Juego extends Observable {
 	private Nivel nivelActual;
 	private Usuario usuarioActual;
 	private ArrayList<Nivel> niveles; 
-	//private int puntajeFinalConductor;
-	//private boolean conductorLlego;
+	private int nroNivelActual;
 	private TablaDePuntuaciones tablaDePuntuaciones;
 	
 	public Juego (){
 		this.tablaDePuntuaciones = new TablaDePuntuaciones();
-		
+		this.usuarios = new ArrayList<Usuario>();
 		this.niveles = new ArrayList<Nivel>();
 		this.niveles.add(new NivelVacio(Moto.getInstancia(), this));
 		this.niveles.add(new NivelFacil(Moto.getInstancia(), this));
@@ -25,9 +24,7 @@ public class Juego extends Observable {
 		this.niveles.add(new NivelDificil(Moto.getInstancia(), this));
 		this.niveles.add(new NivelMuyDificil(Moto.getInstancia(), this));
 		this.setNivelActual(niveles.get(0));
-		
-		//conductorLlego = false;
-		this.usuarios = new ArrayList<Usuario>();
+		nroNivelActual = 0;
 	}
 	
 	public void agregarUsuario(Usuario unUsuario){
@@ -43,6 +40,10 @@ public class Juego extends Observable {
 		return this.nivelActual;
 	}
 	
+	public int getNroNivelActual(){
+		return this.nroNivelActual;
+	}
+	
 	public Usuario getUsuarioActual(){
 		return this.usuarioActual;
 	}
@@ -52,7 +53,8 @@ public class Juego extends Observable {
 	}
 
 	public void pasarDeNivel(){
-		Nivel nivelSiguiente = this.niveles.get(this.niveles.indexOf(this.nivelActual)+1);
+		this.nroNivelActual += 1;
+		Nivel nivelSiguiente = this.niveles.get(this.nroNivelActual);
 		this.nivelActual = nivelSiguiente;
 		
 		this.setChanged();

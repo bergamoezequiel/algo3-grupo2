@@ -1,8 +1,9 @@
 - Los mapas deben ser cuadrados.
-- El auto avanza en la direccion en la que se presiona la flecha. Si se presiona la flecha izquierda el auto avanza a la izquierda. (temporal, despues se va a cambiar con rotacion)
+- El conductor cuando intenta avanzar primero se fija si esta orientado en la direccion en la que quiere avanzar, si es asi avanza, sino simplemente rota hacia la direccion deseada.
 - Las sorpresas desaparecen una vez que se interactua con ellas.
-- Hay tres niveles pero en cada partida se juega en un nivel diferente.
+- Cuando se juega se arranca en el nivel Vacio, luego se pasa al nivel Facil, y asi hasta llegar al Muy Dificil.
+- Cuando el jugador pierde (se queda sin movimientos) se guarda su puntaje en la tabla de puntuaciones de la suma de todos los puntajes que obtuvo en los niveles anteriores al que perdio. En caso de ganar (termino todos los niveles), la suma se hara de la totalidad de los mismos.
 - La dificultad del nivel esta relacionada con la cantidad de objetos en el mapa y el alcance de vision del conductor.
 - La visibilidad no es persistente.
-- Se agrego un Obstaculo Snorlax que no deja pasar a ningun vehiculo, pero tampoco los penaliza.
+- Se agrego un Obstaculo Snorlax que no deja pasar a ningun vehiculo, pero tampoco penaliza.
 - La llegada no es visible naturalmente.

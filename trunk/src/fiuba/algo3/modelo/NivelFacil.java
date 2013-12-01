@@ -13,29 +13,40 @@ public class NivelFacil extends Nivel {
 		this.movimientosLimites = 50;
 		this.puntajePorMovimientoSobrante = 1;
 		this.juegoActual = juego;
-		this.mapa = new Mapa (6, 6);
-		this.conductor = new Conductor(unVehiculo, new Derecha(), 7);
+		this.mapa = new Mapa (4, 4);
+		this.conductor = new Conductor(unVehiculo, new Derecha(), 5);
 		this.getConductor().addObserver(this);
 		
-		mapa.getCeldaEn(new Coordenada(11,10)).agregarContenido(new Llegada());
-		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
+		mapa.getCeldaEn(new Coordenada(7,0)).agregarContenido(new Llegada());
+		mapa.getCeldaEn(new Coordenada(0,8)).agregarContenido(this.conductor);
 		
-		mapa.getCeldaEn(new Coordenada(1,0)).agregarContenido(new Pozo());
+		//Snorlaxs
 		mapa.getCeldaEn(new Coordenada(0,1)).agregarContenido(new Snorlax());
-		mapa.getCeldaEn(new Coordenada(1,2)).agregarContenido(new Piquete());
-		mapa.getCeldaEn(new Coordenada(8,11)).agregarContenido(new ControlPolicial());
-		mapa.getCeldaEn(new Coordenada(12,3)).agregarContenido(new Pozo());
-		mapa.getCeldaEn(new Coordenada(2,5)).agregarContenido(new Piquete());
-		mapa.getCeldaEn(new Coordenada(6,3)).agregarContenido(new ControlPolicial());
-		mapa.getCeldaEn(new Coordenada(4,3)).agregarContenido(new CambioDeVehiculo());
-		mapa.getCeldaEn(new Coordenada(2,5)).agregarContenido(new CambioDeVehiculo());
-		mapa.getCeldaEn(new Coordenada(12,1)).agregarContenido(new CambioDeVehiculo());
-		mapa.getCeldaEn(new Coordenada(7,8)).agregarContenido(new CambioDeVehiculo());
-		mapa.getCeldaEn(new Coordenada(9,2)).agregarContenido(new CambioDeVehiculo());
-		mapa.getCeldaEn(new Coordenada(10,9)).agregarContenido(new SorpresaFavorable());
-		mapa.getCeldaEn(new Coordenada(10,1)).agregarContenido(new SorpresaFavorable());
-		mapa.getCeldaEn(new Coordenada(9,2)).agregarContenido(new SorpresaDesfavorable());
-		mapa.getCeldaEn(new Coordenada(9,6)).agregarContenido(new SorpresaDesfavorable());
+		mapa.getCeldaEn(new Coordenada(1,4)).agregarContenido(new Snorlax());
+		mapa.getCeldaEn(new Coordenada(6,1)).agregarContenido(new Snorlax());
+		mapa.getCeldaEn(new Coordenada(6,3)).agregarContenido(new Snorlax());
+
+		//Piquete
+		mapa.getCeldaEn(new Coordenada(5,0)).agregarContenido(new Piquete());
+	
+		//Cambios de Vehiculo
+		mapa.getCeldaEn(new Coordenada(3,0)).agregarContenido(new CambioDeVehiculo());
+		mapa.getCeldaEn(new Coordenada(0,5)).agregarContenido(new CambioDeVehiculo());
+		
+		//Controles Policiales
+		mapa.getCeldaEn(new Coordenada(3,2)).agregarContenido(new ControlPolicial());
+	
+		//Pozos
+		mapa.getCeldaEn(new Coordenada(1,8)).agregarContenido(new Pozo());
+		
+		//Sorpresas Desfavorables
+		mapa.getCeldaEn(new Coordenada(7,8)).agregarContenido(new SorpresaDesfavorable());
+		mapa.getCeldaEn(new Coordenada(5,6)).agregarContenido(new SorpresaDesfavorable());
+
+		//Sorpresa Favorables
+		mapa.getCeldaEn(new Coordenada(3,6)).agregarContenido(new SorpresaDesfavorable());
+	
+	
 	}
 }
 
