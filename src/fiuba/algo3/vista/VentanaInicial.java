@@ -38,8 +38,8 @@ public class VentanaInicial extends JFrame implements ActionListener {
     
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()== botonNuevo) {
-        	dispose();
         	NuevoUsuarioVentana unaVentana = new NuevoUsuarioVentana();
+        	dispose();
         }
         if (e.getSource() == botonExisto){
         	setVisible(false);

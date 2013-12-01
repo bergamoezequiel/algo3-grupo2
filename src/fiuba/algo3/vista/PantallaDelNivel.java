@@ -133,6 +133,7 @@ public class PantallaDelNivel extends JPanel {
 
 	public void pintarPanelDerecho(Graphics g){
 		g.setColor(Color.BLUE);
+		g.drawString("Usuario Actual:"+ this.nivel.getJuegoActual().getUsuarioActual().getNombre(), ANCHO_PANTALLA_NIVEL, 25);
 		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 50);
 		g.drawString("Vehiculo Actual: ", ANCHO_PANTALLA_NIVEL, 70);
 		g.setColor(Color.black);
