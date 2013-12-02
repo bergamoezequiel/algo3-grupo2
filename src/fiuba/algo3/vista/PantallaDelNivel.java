@@ -69,8 +69,8 @@ public class PantallaDelNivel extends JPanel {
 		int cantColumnasMapa = mapa.getCantidadDeColumnas();
 		
 		//Pinta las CALLES
-		for (int i = 0; i < cantColumnasMapa; i++ ) {
-			for (int j = 0; j < cantFilasMapa; j++) {
+		for (int j = cantFilasMapa-1; j >= 0; j--) {
+			for (int i = cantColumnasMapa-1; i >= 0; i--) {
 				Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), cantFilasMapa);
 				new PintorCalle().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 			}
@@ -84,8 +84,8 @@ public class PantallaDelNivel extends JPanel {
 		int cantColumnasMapa = mapa.getCantidadDeColumnas();
 		
 		//Pinta las MANZANAS
-		for (int i = 1; i < cantColumnasMapa; i+=2 ) {
-			for (int j = 1; j < cantFilasMapa; j+=2) {
+		for (int j = cantFilasMapa-2; j >= 0; j-=2) {
+			for (int i = cantColumnasMapa-2; i >= 0; i-=2) {
 				Celda unaCelda = mapa.getCeldaEn(new Coordenada(i,j));
 				if (unaCelda.esVisiblePara(unConductor)){
 					Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), cantFilasMapa);
@@ -101,8 +101,8 @@ public class PantallaDelNivel extends JPanel {
 		int cantFilasMapa = mapa.getCantidadDeFilas();
 		int cantColumnasMapa = mapa.getCantidadDeColumnas();
 		
-		for (int i = 0; i < cantColumnasMapa; i++) {
-			for (int j = 0; j < cantFilasMapa; j++) {
+		for (int j = cantFilasMapa-1; j >= 0; j--) {
+			for (int i = cantColumnasMapa-1; i >= 0; i--) {
 				Coordenada coordenadaVista = this.coordenadaModeloAVista(new Coordenada(i,j), cantFilasMapa);
 				Celda unaCelda = mapa.getCeldaEn(new Coordenada(i,j));
 				if (unaCelda.esVisiblePara(unConductor)){
@@ -163,6 +163,6 @@ public class PantallaDelNivel extends JPanel {
 		this.pintarCalles(g);
 		this.pintarManzanas(g);
 		this.pintarObjetosEncontrables(g);	
-		//this.pintarPanelDerecho(g);
+		this.pintarPanelDerecho(g);
 	}
 }
