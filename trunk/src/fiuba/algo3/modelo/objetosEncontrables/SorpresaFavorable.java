@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.objetosEncontrables;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
 public class SorpresaFavorable extends Sorpresa {
@@ -33,6 +35,12 @@ public class SorpresaFavorable extends Sorpresa {
 		this.destruirse();
 	}
 
+	public Element serializar () {
+		Element nodofavorable = new Element ("sorpresafavorable");
+		nodofavorable.setAttribute ("tipoDeEncontrable", "favorable");
+		return nodofavorable;                
+	}
+	
 	
 }
 

@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.objetosEncontrables;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.vehiculos.*;
 
 public class Llegada extends ObjetoEncontrable implements Interactuable {
@@ -33,6 +35,14 @@ public class Llegada extends ObjetoEncontrable implements Interactuable {
 	public boolean dejaPasar(TodoTerreno unTodoTerreno){
 		return false;
 	}
+	
+	 public Element serializar () {
+			Element nodoLlegada = new Element ("pozo");
+			nodoLlegada.setAttribute ("tipoDeEncontrable", "Llegada");
+			return nodoLlegada;                
+		}
+	
+	
 
 }
 

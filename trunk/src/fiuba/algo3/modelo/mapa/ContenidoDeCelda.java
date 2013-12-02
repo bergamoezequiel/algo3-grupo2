@@ -1,7 +1,7 @@
 package fiuba.algo3.modelo.mapa;
 
 import java.util.Observable;
-
+import org.jdom2.Element;
 public abstract class ContenidoDeCelda extends Observable {
 	
 	protected Celda celda;
@@ -16,4 +16,5 @@ public abstract class ContenidoDeCelda extends Observable {
 		this.celda = null;
 	}
 	
+	public abstract Element serializar();
 }

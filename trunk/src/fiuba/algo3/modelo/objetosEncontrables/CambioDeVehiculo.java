@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.objetosEncontrables;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 import fiuba.algo3.modelo.vehiculos.Moto;
@@ -33,7 +35,11 @@ public class CambioDeVehiculo extends Sorpresa {
 		this.destruirse();
        }
 
-
+	 public Element serializar () {
+			Element nodoCambio = new Element ("cambioVehicular");
+			nodoCambio.setAttribute ("tipoDeEncontrable", "Cambio");
+			return nodoCambio;                
+		}
 	
 }
 

@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.objetosEncontrables;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 import fiuba.algo3.modelo.vehiculos.Moto;
@@ -44,6 +46,14 @@ public class Piquete extends ObjetoEncontrable {
 	public boolean dejaPasar(TodoTerreno unTodoTerreno){
 		return false;
 	}
+	
+	 public Element serializar () {
+			Element nodoPiquete = new Element ("piquete");
+			nodoPiquete.setAttribute ("tipoDeEncontrable", "Piquete");
+			nodoPiquete.setAttribute("penalizacion", Integer.toString(this.penalizacion));
+			return nodoPiquete;                
+	}
+	
 }
 
 

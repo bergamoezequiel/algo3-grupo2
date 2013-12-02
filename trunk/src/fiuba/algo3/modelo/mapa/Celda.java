@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.mapa;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.coordenadas.Coordenada;
 import fiuba.algo3.modelo.coordenadas.Direccion;
 import fiuba.algo3.modelo.vehiculos.Conductor;
@@ -45,4 +47,12 @@ public class Celda{
 		double distanciaEntreCoordenadas = this.getCoordenada().calcularDistancia(celdaConductor.getCoordenada());
 		return (distanciaEntreCoordenadas <= unConductor.getAlcanceDeVision());
 	}
+	
+	public Element serializar(){
+		Element nodoCelda = new Element("celda");
+		nodoCelda.addContent(this.coordenada.serializar());
+		nodoCelda.addContent(this.contenido.serializar());
+		return nodoCelda;
+		}
+	
 }

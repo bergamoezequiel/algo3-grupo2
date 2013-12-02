@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.objetosEncontrables;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.vehiculos.*;
 
 public class ControlPolicial extends ObjetoEncontrable {
@@ -85,4 +87,13 @@ public class ControlPolicial extends ObjetoEncontrable {
 		}
 		return !this.controlActivo;
 	}
+	
+	 public Element serializar () {
+			Element nodoControl = new Element ("control");
+			nodoControl.setAttribute ("tipoDeEncontrable", "Control");
+			nodoControl.setAttribute("penalizacion", Integer.toString(this.penalizacion));
+			nodoControl.setAttribute("penalizacion", Integer.toString(this.penalizacion));
+			return nodoControl;                
+		}
+	
 }
