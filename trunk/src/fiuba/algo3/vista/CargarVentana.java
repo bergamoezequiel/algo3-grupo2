@@ -25,7 +25,7 @@ public class CargarVentana extends JFrame implements ActionListener{
 		getContentPane().setLayout(new FlowLayout());
 		setBounds(400,250, 400,400);
 		setTitle("Cargar");
-		setVisible(true);
+		setVisible(false);
 		setSize(220,100); 
 		        
 		botonAceptar = new JButton("Aceptar");

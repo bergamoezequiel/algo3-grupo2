@@ -17,6 +17,7 @@ import java.util.Observer;
 
 
 
+
 //import javax.swing.ImageIcon;
 //import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -127,8 +128,14 @@ public class Ventana extends JFrame implements Observer {
 			Nivel nivelActual = this.juego.getNivelActual();
 			this.juego.getNivelActual().getConductor().addObserver(this);
 			this.pantallaDelNivel.actualizarParametrosGlobalesPara(nivelActual);
+		} else if (arg =="Gano"){
+			
+			GanoVentana unaventana = new GanoVentana(this.juego);
+			dispose();
+		} else if (arg =="Perdio"){
+			PerdioVentana unaVentana = new PerdioVentana(this.juego);
+			dispose();
 		}
-		
 		repaint();
 		
 	}

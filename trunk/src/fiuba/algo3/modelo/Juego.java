@@ -80,6 +80,13 @@ public class Juego extends Observable {
 		
 		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.puntajeAcumulado));
 		System.out.println("Ganaste, tu puntuacion es " + this.puntajeAcumulado);
+		
+		this.setChanged();
+		this.notifyObservers("Gano");
+	}
+	
+	public int getPuntajeAcumulado(){
+		return this.puntajeAcumulado;
 	}
 	
 	public void perdio() {
@@ -88,6 +95,9 @@ public class Juego extends Observable {
 		
 		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.puntajeAcumulado));
 		System.out.println("Perdiste, tu puntuacion es " + this.puntajeAcumulado);
+		
+		this.setChanged();
+		this.notifyObservers("Perdio");
 	}
 	
 	public void conductorAlcanzoLaLlegadaDelNivelActual() {

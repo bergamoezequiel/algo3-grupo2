@@ -26,10 +26,9 @@ public class GuardarVentana extends JFrame implements ActionListener{
 	public GuardarVentana(){                  
 		    	
 		getContentPane().setLayout(new FlowLayout());
-		setVisible(true);
+		setVisible(false);
 		setBounds(400,250, 400,400);
 		setTitle("Guardar");
-		setVisible(true);
 		setSize(220,100); 
 		        
 		botonAceptar = new JButton("Aceptar");
