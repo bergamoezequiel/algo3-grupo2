@@ -1,6 +1,7 @@
 package fiuba.algo3.modelo;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.Observable;
 
 import fiuba.algo3.modelo.vehiculos.*;
@@ -10,23 +11,32 @@ public class Juego extends Observable {
 	private ArrayList<Usuario> usuarios;  
 	private Nivel nivelActual;
 	private Usuario usuarioActual;
-	private ArrayList<Nivel> niveles; 
+	private Hashtable<Integer, Nivel> indiceNiveles;
+
 	private int nroNivelActual;
 	private TablaDePuntuaciones tablaDePuntuaciones;
 	private int puntajeAcumulado;
 	
 	public Juego (){
+		this.indiceNiveles = new Hashtable<Integer, Nivel>();
 		this.tablaDePuntuaciones = new TablaDePuntuaciones();
 		this.usuarios = new ArrayList<Usuario>();
-		this.niveles = new ArrayList<Nivel>();
-		this.niveles.add(new NivelVacio(Moto.getInstancia(), this));
-		this.niveles.add(new NivelFacil(Moto.getInstancia(), this));
-		this.niveles.add(new NivelModerado(Moto.getInstancia(), this));
-		this.niveles.add(new NivelDificil(Moto.getInstancia(), this));
-		this.niveles.add(new NivelMuyDificil(Moto.getInstancia(), this));
-		this.setNivelActual(niveles.get(0));
-		this.nroNivelActual = 0;
+
+	}
+	
+	public void iniciarPartida(Usuario unUsuario, Vehiculo tipoDeVehiculo){
+		this.usuarioActual = unUsuario;
 		this.puntajeAcumulado = 0;
+		
+		this.nroNivelActual = 1;
+		
+		this.indiceNiveles.put(1, new NivelVacio(tipoDeVehiculo, this));
+		this.indiceNiveles.put(2, new NivelFacil(tipoDeVehiculo, this));
+		this.indiceNiveles.put(3, new NivelModerado(tipoDeVehiculo, this));
+		this.indiceNiveles.put(4, new NivelDificil(tipoDeVehiculo, this));
+		this.indiceNiveles.put(5, new NivelMuyDificil(tipoDeVehiculo, this));
+		
+		this.setNivelActual(this.indiceNiveles.get(this.nroNivelActual));
 	}
 	
 	public void agregarUsuario(Usuario unUsuario){
@@ -55,9 +65,9 @@ public class Juego extends Observable {
 	}
 
 	public void pasarDeNivel(){
-		this.puntajeAcumulado += niveles.get(this.nroNivelActual).getPuntaje();
+		this.puntajeAcumulado += this.nivelActual.getPuntaje();
 		this.nroNivelActual += 1;
-		Nivel nivelSiguiente = this.niveles.get(this.nroNivelActual);
+		Nivel nivelSiguiente = this.indiceNiveles.get(this.nroNivelActual);
 		this.nivelActual = nivelSiguiente;
 		
 		this.setChanged();
@@ -83,7 +93,7 @@ public class Juego extends Observable {
 	public void conductorAlcanzoLaLlegadaDelNivelActual() {
 		this.nivelActual.getConductor().deleteObservers();
 		
-		if (this.niveles.indexOf(this.nivelActual)+1 == this.niveles.size()){
+		if (this.nroNivelActual == this.indiceNiveles.size()){
 			this.gano();
 		}
 		else{

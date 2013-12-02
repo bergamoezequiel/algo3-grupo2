@@ -10,7 +10,7 @@ public class NivelFacil extends Nivel {
 	
 	public NivelFacil (Vehiculo unVehiculo,Juego juego){	
 		this.nombre = "Nivel Facil";
-		this.movimientosLimites = 50;
+		this.movimientosLimites = 80;
 		this.puntajePorMovimientoSobrante = 1;
 		this.juegoActual = juego;
 		this.mapa = new Mapa (4, 4);
@@ -44,7 +44,7 @@ public class NivelFacil extends Nivel {
 		mapa.getCeldaEn(new Coordenada(5,6)).agregarContenido(new SorpresaDesfavorable());
 
 		//Sorpresa Favorables
-		mapa.getCeldaEn(new Coordenada(3,6)).agregarContenido(new SorpresaDesfavorable());
+		mapa.getCeldaEn(new Coordenada(3,6)).agregarContenido(new SorpresaFavorable());
 	
 	
 	}

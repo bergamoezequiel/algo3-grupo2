@@ -7,12 +7,12 @@ import fiuba.algo3.vista.VentanaInicial;
 
 public class Main {
 	public static void main(String args[]){
-		/*Juego unJuego = new Juego(); //Observado
-		ControlPorTeclado unControl = new ControlPorTeclado(unJuego);
+		Juego unJuego = new Juego(); //Observado
+		/*ControlPorTeclado unControl = new ControlPorTeclado(unJuego);
 		
 		Ventana unaVentana = new Ventana(unJuego, unControl); //Observador
 		unJuego.addObserver(unaVentana);*/
 		
-		VentanaInicial unaVentanaInicial = new VentanaInicial();
+		new VentanaInicial(unJuego);
 	}
 }
