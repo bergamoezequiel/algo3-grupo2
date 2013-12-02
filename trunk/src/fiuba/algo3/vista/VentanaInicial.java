@@ -42,7 +42,7 @@ public class VentanaInicial extends JFrame implements ActionListener {
         	dispose();
         }
         if (e.getSource() == botonExisto){
-        	setVisible(false);
+        	CargarUsuarioVentana unaVentana = new CargarUsuarioVentana();
         }
     }
     

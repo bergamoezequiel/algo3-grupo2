@@ -9,6 +9,7 @@ public class AcercaDeVentana extends JFrame {
 	private static final long serialVersionUID = -4679695047650909454L;
 
 	public AcercaDeVentana(){
+		setLocation(500, 200);
 		this.setVisible(false);                 
 		this.setTitle("Acerca de..");
 		this.setSize(260,250);
