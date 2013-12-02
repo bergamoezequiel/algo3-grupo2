@@ -49,11 +49,16 @@ public class Mapa {
 		return (unaCoordenada.getX() <= this.getCantidadDeColumnas()-1 && unaCoordenada.getX() >= 0) &&
 			(unaCoordenada.getY() <= this.getCantidadDeFilas()-1 && unaCoordenada.getY() >= 0);
 		}
-//falta persistir las celdas	
+	
 	public Element serializar(){
 		Element nodoCoordenada = new Element("mapa");
 		nodoCoordenada.setAttribute("filas", Integer.toString(this.filas));
 		nodoCoordenada.setAttribute("columnas", Integer.toString(this.columnas));
+		for (int x = 0; x<this.columnas ; x++)
+			for (int y = 0; y < this.filas; y++){
+				nodoCoordenada.addContent((celdas.get(x)).get(y).serializar());
+			}
+				
 		return nodoCoordenada;
 		}
 	

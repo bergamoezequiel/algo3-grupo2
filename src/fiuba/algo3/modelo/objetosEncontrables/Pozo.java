@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.objetosEncontrables;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 import fiuba.algo3.modelo.vehiculos.Moto;
@@ -47,6 +49,14 @@ public class Pozo extends ObjetoEncontrable {
 	public boolean dejaPasar(TodoTerreno unTodoTerreno) {
 		return true;
 	}
+	
+	 public Element serializar () {
+			Element nodoPozo = new Element ("pozo");
+			nodoPozo.setAttribute ("tipoDeEncontrable", "Pozo");
+			nodoPozo.setAttribute("penalizacion", Integer.toString(this.penalizacion));
+			return nodoPozo;                
+		}
+	
 }
 
 

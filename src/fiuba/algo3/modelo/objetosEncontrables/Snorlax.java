@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.objetosEncontrables;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 import fiuba.algo3.modelo.vehiculos.Moto;
@@ -39,6 +41,11 @@ public class Snorlax extends ObjetoEncontrable{
 		return false;
 	}
 	
+	 public Element serializar () {
+			Element nodoSnorlax = new Element ("snorlax");
+			nodoSnorlax.setAttribute ("tipoDeEncontrable", "Snorlax");
+			return nodoSnorlax;                
+		}
 	
 
 }
