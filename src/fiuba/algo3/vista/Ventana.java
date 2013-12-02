@@ -71,13 +71,15 @@ public class Ventana extends JFrame implements Observer {
 	public void inicializarConCosas(){
 		JMenuBar menu  = new JMenuBar();
 		JMenu opciones = new JMenu("Opciones");
+		JMenu sistema = new JMenu("Sistema");
 		JMenu ayuda = new JMenu("Ayuda");
 		
 		JMenuItem opcionNuevaPartida = new JMenuItem("Nueva Partida");
-		JMenuItem opcionGuardar = new JMenuItem("Guardar");
 		JMenuItem opcionSalir = new JMenuItem("Salir");
 		JMenuItem opcionAcercaDe = new JMenuItem("Acerca de...");
 		JMenuItem opcionInstrucciones = new JMenuItem ("Instrucciones");
+		JMenuItem opcionGuardar = new JMenuItem ("Guardar");
+		JMenuItem opcionCargar = new JMenuItem ("Cargar");
 		
 		
 
@@ -90,13 +92,20 @@ public class Ventana extends JFrame implements Observer {
 		ayuda.add(opcionInstrucciones);
 		ayuda.add(opcionAcercaDe);
 		
+		//agrego los botones al menu Sistema.
+		sistema.add(opcionGuardar);
+		sistema.add(opcionCargar);
+		
 		//Agrego los respectivos Listeners de cada boton.
 		opcionSalir.addActionListener(new BotonSalirListener());
 		opcionAcercaDe.addActionListener(new AcercaDeListener());
 		opcionInstrucciones.addActionListener(new InstruccionesListener());
+		opcionGuardar.addActionListener(new GuardarListener());
+		opcionCargar.addActionListener(new CargarListener());
 		
 		//Agrego los menues a la ventana Principal.
 		menu.add(opciones);
+		menu.add(sistema);
 		menu.add(ayuda);
 		setJMenuBar(menu);
 		
