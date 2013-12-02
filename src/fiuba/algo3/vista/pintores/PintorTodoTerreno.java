@@ -6,13 +6,14 @@ import javax.swing.ImageIcon;
 
 import fiuba.algo3.modelo.coordenadas.*;
 
-public class PintorTodoTerreno extends Pintor{
+public class PintorTodoTerreno extends PintorVehiculo{
 
 	final String PATH_ARRIBA = "/imagenes/todoTerreno_arriba.png";
 	final String PATH_ABAJO = "/imagenes/todoTerreno_abajo.png";
 	final String PATH_IZQUIERDA = "/imagenes/todoTerreno_izquierda.png";
 	final String PATH_DERECHA = "/imagenes/todoTerreno_derecha.png";
 	
+	@Override
 	public void pintar(Graphics g, Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda, Direccion unaDireccion){
 		ImageIcon imagen = new ImageIcon(getClass().getResource(PATH_ARRIBA));
 		
