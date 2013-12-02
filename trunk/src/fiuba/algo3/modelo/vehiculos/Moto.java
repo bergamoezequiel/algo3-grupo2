@@ -1,6 +1,7 @@
 package fiuba.algo3.modelo.vehiculos;
 
 import fiuba.algo3.modelo.objetosEncontrables.*;
+import org.jdom2.Element;
 
 public class Moto extends Vehiculo {
 	
@@ -26,4 +27,11 @@ public static Moto instancia= null;
 	public boolean meDejanPasar(Interactuable unObjetoEncontrable) {
 		return unObjetoEncontrable.dejaPasar(this);
 	}
+	
+	  public Element serializar () {
+		Element nodoAuto = new Element ("Vehiculo");
+		nodoAuto.setAttribute ("tipoDeVehiculo", "Moto");
+		return nodoAuto;                
+		}
+	 
 }

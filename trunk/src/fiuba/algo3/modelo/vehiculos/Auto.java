@@ -1,5 +1,7 @@
 package fiuba.algo3.modelo.vehiculos;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.objetosEncontrables.*;
 
 public class Auto extends Vehiculo {
@@ -25,4 +27,10 @@ public class Auto extends Vehiculo {
 		return unObjetoEncontrable.dejaPasar(this);
 	}
 
+	 public Element serializar () {
+		Element nodoAuto = new Element ("Vehiculo");
+		nodoAuto.setAttribute ("tipoDeVehiculo", "Auto");
+		return nodoAuto;                
+	}
+	
 }
