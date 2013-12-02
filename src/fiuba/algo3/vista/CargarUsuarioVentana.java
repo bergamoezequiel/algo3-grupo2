@@ -9,27 +9,30 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import fiuba.algo3.modelo.Juego;
+
 public class CargarUsuarioVentana extends JFrame implements ActionListener{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-    private JButton botonAceptar, botonVolver;
-    private JPanel panelCampos;
-    private Choice desplegable;
+	private JButton botonAceptar, botonVolver;
+	private JPanel panelCampos;
+	private Choice desplegable;
+	private Juego juego;
 
-	public CargarUsuarioVentana(){                  
-		    	
+	public CargarUsuarioVentana(Juego unJuego){				  
+		this.juego = unJuego;
 		getContentPane().setLayout(new FlowLayout());
 		setBounds(400,250, 400,400);
 		setTitle("Cargar");
 		setVisible(true);
 		setSize(220,100); 
-		        
+				
 		botonAceptar = new JButton("Aceptar");
 		botonVolver = new JButton("Volver");
-		        
+				
 		panelCampos = new JPanel();
 		desplegable = new Choice();
 		
@@ -42,29 +45,28 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 		desplegable.add("Usuario 2");
 		desplegable.add("Usuario 3");
 		
-		        
+				
 		add(desplegable);
 		add(botonAceptar);
 		add(botonVolver);
-		add(panelCampos);       
-		        
+		add(panelCampos);	   
+				
 		botonAceptar.addActionListener(this);
 		botonVolver.addActionListener(this);
 	}
-		    
-		    public void actionPerformed(ActionEvent e) {
-		    	
-		    	
-		        if (e.getSource()== botonAceptar) {
-		        /*
-		         * Aca iria lo que pasa cuando se pone aceptar.
-		         */
-		        	
-		        	dispose();
-		        	
-		        }
-		        if (e.getSource() == botonVolver){
-		        	dispose();
-		        }
-		    }
+			
+	public void actionPerformed(ActionEvent e) {
+		
+		if (e.getSource()== botonAceptar) {
+		/*
+		 * Aca iria lo que pasa cuando se pone aceptar.
+		 */
+			//this.juego.iniciarPartida(unUsuario, tipoDeVehiculo);
+			dispose();	
+		}
+		if (e.getSource() == botonVolver){
+			dispose();
+		}
+	}
+	
 }

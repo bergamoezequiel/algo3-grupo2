@@ -14,11 +14,11 @@ public class NivelDificil extends Nivel {
 		this.movimientosLimites = 40;
 		this.puntajePorMovimientoSobrante = 3;
 		this.juegoActual = juego;
-		this.mapa = new Mapa (10, 10);
+		this.mapa = new Mapa (7, 7);
 		this.conductor = new Conductor(unVehiculo, new Derecha(), 5);
 		this.getConductor().addObserver(this);
 		
-		mapa.getCeldaEn(new Coordenada(18,5)).agregarContenido(new Llegada());
+		mapa.getCeldaEn(new Coordenada(14,5)).agregarContenido(new Llegada());
 		mapa.getCeldaEn(new Coordenada(0,0)).agregarContenido(this.conductor);
 		
 		mapa.getCeldaEn(new Coordenada(1,0)).agregarContenido(new Pozo());
