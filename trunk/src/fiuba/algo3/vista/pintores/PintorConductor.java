@@ -11,7 +11,7 @@ import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.vehiculos.*;
 
 
-public class PintorConductor extends PintorVehiculo{
+public class PintorConductor extends Pintor{
 
 	private Hashtable<Class<?>, PintorVehiculo> indice;
 	
