@@ -45,8 +45,9 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 		desplegable = new Choice();
 		desplegable.add("Seleccione un Vehiculo ...");
 		desplegable.add("Auto");
-		desplegable.add("Moto");
 		desplegable.add("TodoTerreno");
+		desplegable.add("Moto");
+		
 		
 		add(texto);
 		add(desplegable);
@@ -73,11 +74,11 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 			 * Si el usuario es idiota y elige "seleccione un vehiculo" como vehiculo
 			 * se le asigna una moto.
 			 */
-			switch (desplegable.getSelectedItem()) {
-			case "Auto":
+			switch (desplegable.getSelectedIndex()) {
+			case 1:
 				this.juego.iniciarPartida(usuarioNuevo, Auto.getInstancia());
 				break;
-			case "TodoTerreno":
+			case 2:
 				this.juego.iniciarPartida(usuarioNuevo, TodoTerreno.getInstancia());
 				break;
 
