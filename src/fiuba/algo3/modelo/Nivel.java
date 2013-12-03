@@ -2,11 +2,14 @@ package fiuba.algo3.modelo;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
 import org.jdom2.Document;
 import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
@@ -32,6 +35,9 @@ public abstract class Nivel implements Observer {
 	public Mapa getMapa(){
 		return this.mapa;
 	}
+	public void setMapa(Mapa unMapa){
+		this.mapa=unMapa;
+	}
 	
 	public Conductor getConductor(){
 		return this.conductor;
@@ -40,6 +46,16 @@ public abstract class Nivel implements Observer {
 	public int getMovimientosLimites(){
 		return this.movimientosLimites;
 	}
+	public void setPuntajePorMovimientoSobrante(int puntaje){
+		this.puntajePorMovimientoSobrante=puntaje;
+	}
+	public int getPuntajePorMovimientoSobrante(){
+		return this.puntajePorMovimientoSobrante;
+	}
+	public void setMovimientosLimites(int movimientos){
+		this.movimientosLimites = movimientos;
+	}
+	
 	
 	public int getMovimientosRestantes(){
 		return this.movimientosLimites - this.conductor.getMovimientos();
@@ -59,6 +75,8 @@ public abstract class Nivel implements Observer {
 	
 	public int getPuntajePorMovimientosSobrantes(){
 		return this.puntajePorMovimientoSobrante;
+	
+	
 	}
 	
 	@Override
@@ -91,13 +109,44 @@ public abstract class Nivel implements Observer {
 		docMapa.setRootElement(nivel);
 		System.out.println("se agrego el mapa al documento");	
 		XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
-		xmlOutput.output(docMapa,new FileOutputStream(new File("./src/archivos/nivelFacil.xml")));
+		xmlOutput.output(docMapa,new FileOutputStream(new File("./src/archivos/nivelMuyDificil.xml")));
 		System.out.println("Se escribio el archivo");
 		
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
 		}
-}
+    }
+	
+	public static Nivel CargarNivelXml(String ruta){
+		Nivel nivel= new NivelVacio(Moto.getInstancia(),new Juego());//CAMBIAR LOGICA NIVEL
+		SAXBuilder builder = new SAXBuilder();
+		try {
+			Document lecturaDoc = builder.build(new File(ruta));
+			Element root = lecturaDoc.getRootElement();
+			
+				if(root.getAttributeValue("Nombre").equals("Nivel Vacio")){
+				    nivel = new NivelVacio(Moto.getInstancia(),new Juego());
+					System.out.println("Se creo nivel vacio");	
+				}
+				nivel.setMovimientosLimites(Integer.parseInt(root.getAttributeValue("MovimientosLimites")));
+				System.out.println("Movimientos limites del nivel :"+ Integer.toString(nivel.getMovimientosLimites()) );
+				nivel.setPuntajePorMovimientoSobrante(Integer.parseInt(root.getAttributeValue("PuntajePorMovimientoSobrante")));
+				System.out.println("PuntajePorMovimientoSobrante :"+ Integer.toString(nivel.getPuntajePorMovimientoSobrante()) );
+				Mapa mapa = Mapa.deserializarse(root.getChild("mapa"));
+				nivel.setMapa(mapa);
+				System.out.println("se agrego mapa al nivel");
+	    }
+	    catch(JDOMException  e){
+	    	e.printStackTrace(); 			
+	    }
+		catch(IOException  e){
+			e.printStackTrace(); 			
+		}
+		
+		return nivel;
+	}	
+
+	
 	
 }

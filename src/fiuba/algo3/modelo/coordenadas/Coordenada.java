@@ -49,5 +49,12 @@ public class Coordenada {
 		nodoCoordenada.setAttribute("y", Integer.toString(this.y));
 		return nodoCoordenada;
 		}
+	
+	public static Coordenada deserializarse(Element nodo){
+		Coordenada coordenada = new Coordenada (Integer.parseInt(nodo.getAttributeValue("x")),Integer.parseInt(nodo.getAttributeValue("y"))); 
+		System.out.println(Integer.toString(coordenada.getX()));
+		System.out.println(Integer.toString(coordenada.getY()));
+		return coordenada;
+	}
 		
 }
