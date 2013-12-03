@@ -46,8 +46,9 @@ public class Juego extends Observable {
 	}
 	
 	public void agregarUsuario(Usuario unUsuario){
-		//Falta verificar que no exista un usuario con el mismo nombre previamente
-		this.usuarios.add(unUsuario);
+		if(!this.usuarios.contains(unUsuario)){
+			this.usuarios.add(unUsuario);
+		}
 	}
 
 	public void setNivelActual(Nivel unNivel){
@@ -105,6 +106,10 @@ public class Juego extends Observable {
 		
 		this.setChanged();
 		this.notifyObservers("Perdio");
+	}
+	
+	public int getCantidadDeUsuarios(){
+		return this.usuarios.size();
 	}
 	
 	public void conductorAlcanzoLaLlegadaDelNivelActual() {
