@@ -36,7 +36,7 @@ public class CambioDeVehiculo extends Sorpresa {
        }
 
 	 public Element serializar () {
-			Element nodoCambio = new Element ("cambioVehicular");
+			Element nodoCambio = new Element ("contenido");
 			nodoCambio.setAttribute ("tipoDeEncontrable", "Cambio");
 			return nodoCambio;                
 		}

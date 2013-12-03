@@ -48,7 +48,7 @@ public class Piquete extends ObjetoEncontrable {
 	}
 	
 	 public Element serializar () {
-			Element nodoPiquete = new Element ("piquete");
+			Element nodoPiquete = new Element ("contenido");
 			nodoPiquete.setAttribute ("tipoDeEncontrable", "Piquete");
 			nodoPiquete.setAttribute("penalizacion", Integer.toString(this.penalizacion));
 			return nodoPiquete;                

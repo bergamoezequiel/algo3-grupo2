@@ -2,12 +2,16 @@ package fiuba.algo3.modelo.mapa;
 
 import java.util.ArrayList;
 
-import javax.xml.bind.annotation.XmlNs;
-import javax.xml.bind.annotation.XmlRootElement;
-
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import org.jdom2.Document;
 import org.jdom2.Element;
-import  org.w3c.dom.*;
-
+import org.jdom2.JDOMException;
+import org.jdom2.Text;
+import org.jdom2.input.SAXBuilder;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
 import fiuba.algo3.modelo.coordenadas.Coordenada;
 
 public class Mapa {
@@ -51,15 +55,34 @@ public class Mapa {
 		}
 	
 	public Element serializar(){
-		Element nodoCoordenada = new Element("mapa");
-		nodoCoordenada.setAttribute("filas", Integer.toString(this.filas));
-		nodoCoordenada.setAttribute("columnas", Integer.toString(this.columnas));
+		Element nodoMapa = new Element("mapa");
+		nodoMapa.setAttribute("filas", Integer.toString(this.filas));
+		nodoMapa.setAttribute("columnas", Integer.toString(this.columnas));
+		System.out.println("Se setearon bien las filas y col");
 		for (int x = 0; x<this.columnas ; x++)
 			for (int y = 0; y < this.filas; y++){
-				nodoCoordenada.addContent((celdas.get(x)).get(y).serializar());
+				System.out.println("entro el for");	
+				if ((celdas.get(x).get(y).getContenido())!=null){
+				nodoMapa.addContent((celdas.get(x)).get(y).serializar());}
+				System.out.println("se agregaro una coordenada");	
 			}
-				
-		return nodoCoordenada;
+			
+		return nodoMapa;
 		}
-	
+	public void guardar(){
+		try{
+		Document docMapa =new Document();
+		System.out.println("Se creo el doc");
+		Element mapa = this.serializar();
+		System.out.println("se serializo correctamente el mapa");	
+		docMapa.setRootElement(mapa);
+		System.out.println("se agrego el mapa al documento");	
+		XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
+		xmlOutput.output(docMapa,new FileOutputStream(new File("./src/nivelFacil.xml")));
+		System.out.println("Se escribio el archivo");
+		}
+		catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
 }	

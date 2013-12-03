@@ -51,7 +51,7 @@ public class Pozo extends ObjetoEncontrable {
 	}
 	
 	 public Element serializar () {
-			Element nodoPozo = new Element ("pozo");
+			Element nodoPozo = new Element ("contenido");
 			nodoPozo.setAttribute ("tipoDeEncontrable", "Pozo");
 			nodoPozo.setAttribute("penalizacion", Integer.toString(this.penalizacion));
 			return nodoPozo;                

@@ -129,7 +129,7 @@ public class Conductor extends ContenidoDeCelda{
 		return this.direccion;
 	}
 	//falta serializar vehiculo
-	public Element serializar(){
+	public Element seriali(){
 		Element nodoConductor = new Element("elemento");
 		nodoConductor.setAttribute("llego", Boolean.toString(this.encontroLlegada));
 		nodoConductor.setAttribute("penalizacion", Integer.toString(this.penalizacionDeAvance));
@@ -138,5 +138,9 @@ public class Conductor extends ContenidoDeCelda{
 		nodoConductor.addContent(this.direccion.serializar());
 		return nodoConductor;
 		}
-	
+	public Element serializar () {
+		Element nodofavorable = new Element ("contenido");
+		nodofavorable.setAttribute ("tipoDeEncontrable", "Conductor");
+		return nodofavorable;    
+	}
 }

@@ -89,7 +89,7 @@ public class ControlPolicial extends ObjetoEncontrable {
 	}
 	
 	 public Element serializar () {
-			Element nodoControl = new Element ("control");
+			Element nodoControl = new Element ("contenido");
 			nodoControl.setAttribute ("tipoDeEncontrable", "Control");
 			nodoControl.setAttribute("penalizacion", Integer.toString(this.penalizacion));
 			nodoControl.setAttribute("penalizacion", Integer.toString(this.penalizacion));
