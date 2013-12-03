@@ -29,15 +29,15 @@ public class Juego extends Observable {
 		this.puntajeAcumulado = 0;
 		
 		this.nroNivelActual = 1;
-		String ruta="./src/archivos/NivelVacio.xml";
+		String ruta="./src/archivos/nivelVacio.xml";
 		this.indiceNiveles.put(1, ruta);//falta hacerle llegar el juego al nivel
-		ruta="./src/archivos/NivelFacil.xml";
+		ruta="./src/archivos/nivelFacil.xml";
 		this.indiceNiveles.put(2, ruta);
-		ruta="./src/archivos/NivelModerado.xml";
+		ruta="./src/archivos/nivelModerado.xml";
 		this.indiceNiveles.put(3, ruta);
-		ruta="./src/archivos/NivelDificil.xml";
+		ruta="./src/archivos/nivelDificil.xml";
 		this.indiceNiveles.put(4, ruta);
-		ruta="./src/archivos/NivelMuyDificil.xml";
+		ruta="./src/archivos/nivelMuyDificil.xml";
 		this.indiceNiveles.put(5, ruta);
 		
 		this.setNivelActual(Nivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual)));
