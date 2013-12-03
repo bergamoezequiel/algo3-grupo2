@@ -29,17 +29,17 @@ public class TablaDePuntuaciones {
 		Collections.reverse(this.elementosTablaDePuntuacion);
 	}
 	
-	public int size(){
+	public int getTamanio(){
 		return this.elementosTablaDePuntuacion.size();
 	}
 	
-	public ElementoTablaDePuntuacion elementoEn(int unaPosicion){
+	public ElementoTablaDePuntuacion getElementoEnPosicion(int unaPosicion){
 		return this.elementosTablaDePuntuacion.get(unaPosicion);
 	}
 	
 	public Element serializar(){
 		Element nodoTablaDePuntuacion = new Element("tabla");
-		for(int posicion=0;posicion<this.size();posicion++){
+		for(int posicion=0;posicion<this.getTamanio();posicion++){
 		nodoTablaDePuntuacion.addContent(this.elementosTablaDePuntuacion.get(posicion).serializar());
 		}
 		return nodoTablaDePuntuacion;

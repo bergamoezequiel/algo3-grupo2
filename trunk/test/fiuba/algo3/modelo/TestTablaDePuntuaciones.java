@@ -9,7 +9,7 @@ public class TestTablaDePuntuaciones {
 	@Test
 	public void testTablaDePosicionesDeberiarCrearseVacia(){
 		TablaDePuntuaciones unaTablaDePuntuaciones = new TablaDePuntuaciones();
-		Assert.assertEquals(0, unaTablaDePuntuaciones.size());
+		Assert.assertEquals(0, unaTablaDePuntuaciones.getTamanio());
 	}
 
 	@Test
@@ -22,9 +22,9 @@ public class TestTablaDePuntuaciones {
 		unaTablaDePuntuaciones.agregar(e1);
 		unaTablaDePuntuaciones.agregar(e3);
 		
-		Assert.assertEquals(e1, unaTablaDePuntuaciones.elementoEn(0));
-		Assert.assertEquals(e2, unaTablaDePuntuaciones.elementoEn(1));
-		Assert.assertEquals(e3, unaTablaDePuntuaciones.elementoEn(2));
+		Assert.assertEquals(e1, unaTablaDePuntuaciones.getElementoEnPosicion(0));
+		Assert.assertEquals(e2, unaTablaDePuntuaciones.getElementoEnPosicion(1));
+		Assert.assertEquals(e3, unaTablaDePuntuaciones.getElementoEnPosicion(2));
 	}
 	
 }

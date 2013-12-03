@@ -21,6 +21,7 @@ public class Juego extends Observable {
 		this.indiceNiveles = new Hashtable<Integer, String>();
 		this.tablaDePuntuaciones = new TablaDePuntuaciones();
 		this.usuarios = new ArrayList<Usuario>();
+		this.tablaDePuntuaciones = TablaDePuntuaciones.leerXml();
 
 	}
 	
@@ -88,6 +89,7 @@ public class Juego extends Observable {
 		
 		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.puntajeAcumulado));
 		System.out.println("Ganaste, tu puntuacion es " + this.puntajeAcumulado);
+		this.tablaDePuntuaciones.guardar();
 		
 		this.setChanged();
 		this.notifyObservers("Gano");
@@ -103,6 +105,7 @@ public class Juego extends Observable {
 		
 		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.puntajeAcumulado));
 		System.out.println("Perdiste, tu puntuacion es " + this.puntajeAcumulado);
+		this.tablaDePuntuaciones.guardar();
 		
 		this.setChanged();
 		this.notifyObservers("Perdio");
