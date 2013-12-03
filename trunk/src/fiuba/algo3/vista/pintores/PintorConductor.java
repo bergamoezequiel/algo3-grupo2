@@ -16,7 +16,6 @@ public class PintorConductor extends Pintor{
 	private Hashtable<Class<?>, PintorVehiculo> indice;
 	
 	public PintorConductor(){
-		
 		this.indice = new Hashtable<Class<?>, PintorVehiculo>();
 		
 		this.indice.put(Moto.getInstancia().getClass(), new PintorMoto());
@@ -25,7 +24,6 @@ public class PintorConductor extends Pintor{
 	}
 	
 	public void pintar(Graphics g, Conductor unConductor, Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda){		
-		
 		this.indice.get(unConductor.getVehiculo().getClass()).pintar(g, unaCoordenadaVista, anchoCelda, altoCelda, unConductor.getDireccion());
 	}
 }

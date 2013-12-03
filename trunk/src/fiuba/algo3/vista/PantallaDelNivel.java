@@ -28,7 +28,7 @@ public class PantallaDelNivel extends JPanel {
 	private int altoCelda;
 	private ImageIcon imagen;
 	
-	//private Hashtable<Class<?>, Pintor> hash;
+	private Hashtable<Class<?>, Pintor> hash;
 	
 	public PantallaDelNivel(Nivel unNivel){
 		/*
@@ -37,10 +37,10 @@ public class PantallaDelNivel extends JPanel {
 		 * PAINT.
 		 */
 		
-		/*this.hash = new Hashtable<Class<?>, Pintor>();
-		this.hash.put((new Auto()).getClass(), new PintorConductor());
-		this.hash.put((new Moto()).getClass(), new PintorConductor());
-		this.hash.put((new TodoTerreno()).getClass(), new PintorConductor());
+		this.hash = new Hashtable<Class<?>, Pintor>();
+		this.hash.put(Auto.getInstancia().getClass(), new PintorConductor());
+		this.hash.put(Moto.getInstancia().getClass(), new PintorConductor());
+		this.hash.put(TodoTerreno.getInstancia().getClass(), new PintorConductor());
 		this.hash.put((new Pozo()).getClass(), new PintorPozo2());
 		this.hash.put((new Piquete()).getClass(), new PintorPiquete());
 		this.hash.put((new ControlPolicial()).getClass(), new PintorControlPolicial());
@@ -48,7 +48,7 @@ public class PantallaDelNivel extends JPanel {
 		this.hash.put((new SorpresaFavorable()).getClass(), new PintorSorpresa());
 		this.hash.put((new SorpresaDesfavorable()).getClass(), new PintorSorpresa());
 		this.hash.put((new CambioDeVehiculo()).getClass(), new PintorSorpresa());
-		this.hash.put((new Llegada()).getClass(), new PintorLlegada());*/
+		this.hash.put((new Llegada()).getClass(), new PintorLlegada());
 		
 		this.actualizarParametrosGlobalesPara(unNivel);
 	}
@@ -56,9 +56,8 @@ public class PantallaDelNivel extends JPanel {
 	public void actualizarParametrosGlobalesPara(Nivel unNivel){
 		setBackground(Color.green);
 		this.imagen = new ImageIcon(getClass().getResource("/imagenes/PantallaDeNivel_background.jpg"));
-		System.out.println(getClass().getResource("/imagenes/PantallaDeNivel_background.jpg"));
 		this.nivel = unNivel;
-		System.out.println("Constructor: " + this.nivel.getNombre());
+		System.out.println("Nivel Actual: " + this.nivel.getNombre());
 		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeColumnas();
 		this.altoCelda = ALTO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeFilas();
 	}
@@ -112,24 +111,16 @@ public class PantallaDelNivel extends JPanel {
 				if (unaCelda.esVisiblePara(unConductor)){
 					//Hardcodeo de objetos, pasar a hash cuando se pueda.
 					
-					if (unaCelda.getContenido() instanceof Conductor)
-						new PintorConductor().pintar(g, unConductor, coordenadaVista, anchoCelda, altoCelda);
-					else if (unaCelda.getContenido() instanceof Pozo)
-						new PintorPozo2().pintar(g, coordenadaVista, anchoCelda, altoCelda);
-					else if (unaCelda.getContenido() instanceof Piquete)
-						new PintorPiquete().pintar(g, coordenadaVista, anchoCelda, altoCelda);
-					else if (unaCelda.getContenido() instanceof ControlPolicial)
-						new PintorControlPolicial().pintar(g, coordenadaVista, anchoCelda, altoCelda);
-					else if (unaCelda.getContenido() instanceof Snorlax)
-						new PintorSnorlax().pintar(g, coordenadaVista, anchoCelda, altoCelda);
-					else if (unaCelda.getContenido() instanceof Sorpresa)
-						new PintorSorpresa().pintar(g, coordenadaVista, anchoCelda, altoCelda);
-					else if (unaCelda.getContenido() instanceof Llegada)
-						new PintorLlegada().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 					
+					if (unaCelda.getContenido() != null){
+						if (unaCelda.getContenido() instanceof Conductor)
+							new PintorConductor().pintar(g, unConductor, coordenadaVista, anchoCelda, altoCelda);
+						else
+							this.hash.get(unaCelda.getContenido().getClass()).pintar(g, coordenadaVista, anchoCelda, altoCelda);
+					}
 				}
 				else{
-					new PintorZonaNoVisible().pintar(g, coordenadaVista, anchoCelda, altoCelda);;
+					new PintorZonaNoVisible().pintar(g, coordenadaVista, anchoCelda, altoCelda);
 				}
 			}
 		}

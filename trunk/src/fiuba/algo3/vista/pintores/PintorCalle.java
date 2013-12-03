@@ -10,6 +10,7 @@ public class PintorCalle extends Pintor{
 
 	final String PATH = "/imagenes/calle.png";
 	
+	@Override
 	public void pintar(Graphics g, Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda){
 		ImageIcon imagenCalle = new ImageIcon(getClass().getResource(PATH));
 		g.drawImage(imagenCalle.getImage(), unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda, null);
