@@ -33,7 +33,7 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 		setBounds(400,250, 400,400);
 		setTitle("GPS Challenge");
 		setVisible(true);
-		setSize(230,140);
+		setSize(360,100);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
 		botonAceptar = new JButton("Aceptar");
@@ -43,10 +43,10 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 		texto = new JTextField("Ingrese el Nombre Del Usuario");
 		
 		desplegable = new Choice();
-		desplegable.add("Seleccione un Vehiculo ...");
+		desplegable.add("Moto");
 		desplegable.add("Auto");
 		desplegable.add("TodoTerreno");
-		desplegable.add("Moto");
+
 		
 		
 		add(texto);
@@ -75,15 +75,15 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 			 * se le asigna una moto.
 			 */
 			switch (desplegable.getSelectedIndex()) {
+			case 0:
+				this.juego.iniciarPartida(usuarioNuevo, Moto.getInstancia());
+				break;
 			case 1:
 				this.juego.iniciarPartida(usuarioNuevo, Auto.getInstancia());
 				break;
-			case 2:
-				this.juego.iniciarPartida(usuarioNuevo, TodoTerreno.getInstancia());
-				break;
 
 			default:
-				this.juego.iniciarPartida(usuarioNuevo, Moto.getInstancia());
+				this.juego.iniciarPartida(usuarioNuevo, TodoTerreno.getInstancia());
 				break;
 			}
 			
