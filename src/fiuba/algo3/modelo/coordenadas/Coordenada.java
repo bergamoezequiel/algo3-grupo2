@@ -44,7 +44,7 @@ public class Coordenada {
 	}
 	
 	public Element serializar(){
-		Element nodoCoordenada = new Element("elemento");
+		Element nodoCoordenada = new Element("coordenada");
 		nodoCoordenada.setAttribute("x", Integer.toString(this.x));
 		nodoCoordenada.setAttribute("y", Integer.toString(this.y));
 		return nodoCoordenada;

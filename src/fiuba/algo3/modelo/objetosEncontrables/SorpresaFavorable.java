@@ -36,7 +36,7 @@ public class SorpresaFavorable extends Sorpresa {
 	}
 
 	public Element serializar () {
-		Element nodofavorable = new Element ("sorpresafavorable");
+		Element nodofavorable = new Element ("contenido");
 		nodofavorable.setAttribute ("tipoDeEncontrable", "favorable");
 		return nodofavorable;                
 	}

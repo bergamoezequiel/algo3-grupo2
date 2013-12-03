@@ -42,7 +42,7 @@ public class Snorlax extends ObjetoEncontrable{
 	}
 	
 	 public Element serializar () {
-			Element nodoSnorlax = new Element ("snorlax");
+			Element nodoSnorlax = new Element ("contenido");
 			nodoSnorlax.setAttribute ("tipoDeEncontrable", "Snorlax");
 			return nodoSnorlax;                
 		}

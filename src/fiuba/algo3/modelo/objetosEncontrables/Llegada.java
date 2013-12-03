@@ -37,7 +37,7 @@ public class Llegada extends ObjetoEncontrable implements Interactuable {
 	}
 	
 	 public Element serializar () {
-			Element nodoLlegada = new Element ("pozo");
+			Element nodoLlegada = new Element ("contenido");
 			nodoLlegada.setAttribute ("tipoDeEncontrable", "Llegada");
 			return nodoLlegada;                
 		}
