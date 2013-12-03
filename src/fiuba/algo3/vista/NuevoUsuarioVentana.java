@@ -33,14 +33,14 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 		setBounds(400,250, 400,400);
 		setTitle("Crear Nuevo Usuario");
 		setVisible(true);
-		setSize(360,100);
+		setSize(300,100);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		
 		botonAceptar = new JButton("Aceptar");
 		botonVolver = new JButton("Volver");
 		
 		panelCampos = new JPanel();
-		texto = new JTextField("Ingrese el Nombre Del Usuario");
+		texto = new JTextField("Ingresa tu Nombre");
 		
 		desplegable = new Choice();
 		desplegable.add("Moto");

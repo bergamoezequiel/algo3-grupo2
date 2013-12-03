@@ -83,6 +83,7 @@ public class Ventana extends JFrame implements Observer {
 		JMenuItem opcionInstrucciones = new JMenuItem ("Instrucciones");
 		JMenuItem opcionGuardar = new JMenuItem ("Guardar");
 		JMenuItem opcionCargar = new JMenuItem ("Cargar");
+		JMenuItem opcionRanking = new JMenuItem ("Ver Ranking");
 		
 		
 
@@ -93,6 +94,7 @@ public class Ventana extends JFrame implements Observer {
 		
 		//Agrego los botones al Menu Ayuda.
 		ayuda.add(opcionInstrucciones);
+		ayuda.add(opcionRanking);
 		ayuda.add(opcionAcercaDe);
 		
 		//agrego los botones al menu Sistema.
@@ -105,6 +107,7 @@ public class Ventana extends JFrame implements Observer {
 		opcionInstrucciones.addActionListener(new InstruccionesListener());
 		opcionGuardar.addActionListener(new GuardarListener());
 		opcionCargar.addActionListener(new CargarListener());
+		opcionRanking.addActionListener(new RankingListener());
 		
 		//Agrego los menues a la ventana Principal.
 		menu.add(opciones);
