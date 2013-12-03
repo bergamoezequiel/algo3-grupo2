@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Hashtable;
 
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import fiuba.algo3.modelo.Nivel;
@@ -25,6 +26,7 @@ public class PantallaDelNivel extends JPanel {
 	private Nivel nivel;
 	private int anchoCelda;
 	private int altoCelda;
+	private ImageIcon imagen;
 	
 	//private Hashtable<Class<?>, Pintor> hash;
 	
@@ -52,7 +54,9 @@ public class PantallaDelNivel extends JPanel {
 	}
 	
 	public void actualizarParametrosGlobalesPara(Nivel unNivel){
-		setBackground(Color.gray);
+		setBackground(Color.green);
+		this.imagen = new ImageIcon(getClass().getResource("/imagenes/PantallaDeNivel_background.jpg"));
+		System.out.println(getClass().getResource("/imagenes/PantallaDeNivel_background.jpg"));
 		this.nivel = unNivel;
 		System.out.println("Constructor: " + this.nivel.getNombre());
 		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeColumnas();
@@ -145,7 +149,9 @@ public class PantallaDelNivel extends JPanel {
 		g.drawString("Movimientos Limites: "+(String)Integer.toString(nivel.getMovimientosLimites()), ANCHO_PANTALLA_NIVEL, 150);
 		//g.drawString("Puntaje: "+(String)Integer.toString(nivel.getMovimientosRestantes() * this.nivel.getPuntajePorMovimientosSobrantes()), ANCHO_PANTALLA_NIVEL, 150);
 		
-		g.drawString("REFERENCIAS: ", ANCHO_PANTALLA_NIVEL, 280);
+		g.drawString("REFERENCIAS: ", ANCHO_PANTALLA_NIVEL, 230);
+		g.drawString("Llegada: ", ANCHO_PANTALLA_NIVEL, 270);
+		new PintorLlegada().pintar(g, new Coordenada (700,250), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
 		g.drawString("Sorpresa: ", ANCHO_PANTALLA_NIVEL, 320);
 		new PintorSorpresa().pintar(g, new Coordenada (700,300), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
 		g.drawString("Pozo: ", ANCHO_PANTALLA_NIVEL, 370);
@@ -160,6 +166,8 @@ public class PantallaDelNivel extends JPanel {
 	}
 	
 	public void paint(Graphics g) {
+		g.drawImage(this.imagen.getImage(), 0 , 0, 800, 600, null);
+		
 		this.pintarCalles(g);
 		this.pintarManzanas(g);
 		this.pintarObjetosEncontrables(g);	
