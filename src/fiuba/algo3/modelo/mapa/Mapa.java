@@ -74,15 +74,19 @@ public class Mapa {
 		Document docMapa =new Document();
 		System.out.println("Se creo el doc");
 		Element mapa = this.serializar();
-		System.out.println("se serializo correctamente el mapa");	
+		
 		docMapa.setRootElement(mapa);
 		System.out.println("se agrego el mapa al documento");	
 		XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
 		xmlOutput.output(docMapa,new FileOutputStream(new File("./src/nivelFacil.xml")));
 		System.out.println("Se escribio el archivo");
+		
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
 		}
 	}
+	
+	
+	
 }	
