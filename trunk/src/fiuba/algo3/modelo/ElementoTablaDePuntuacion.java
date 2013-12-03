@@ -6,6 +6,14 @@ public class ElementoTablaDePuntuacion implements Comparable<ElementoTablaDePunt
 	private String nombre;
 	private int puntaje;
 	
+	public ElementoTablaDePuntuacion(Element nodo){
+		this.nombre = nodo.getAttributeValue("nombre");
+		this.puntaje= Integer.parseInt(nodo.getAttributeValue("puntaje")) ;
+		System.out.println("Se creo elemento de tabla con nombre: "+ this.nombre);	
+		System.out.println("y puntaje: "+ Integer.toString(this.puntaje));
+	}
+
+	
 	public ElementoTablaDePuntuacion(Usuario unUsuario, int unPuntaje){
 		this.nombre = unUsuario.getNombre();
 		this.puntaje = unPuntaje;
@@ -26,7 +34,7 @@ public class ElementoTablaDePuntuacion implements Comparable<ElementoTablaDePunt
 
 	public Element serializar(){
 		Element nodoElementoTablaDePuntuacion = new Element("elemento");
-		nodoElementoTablaDePuntuacion.setAttribute("numero", Integer.toString(this.puntaje));
+		nodoElementoTablaDePuntuacion.setAttribute("puntaje", Integer.toString(this.puntaje));
 		nodoElementoTablaDePuntuacion.setAttribute("nombre", this.nombre);
 		return nodoElementoTablaDePuntuacion;
 		}

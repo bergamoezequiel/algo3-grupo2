@@ -14,8 +14,9 @@ public class Main {
 	public static void main(String args[]){
 
 		
+		TablaDePuntuaciones.leerXml();
 	/*	CODIGO PARA GENERAR UN EJEMPLO DE LA TABLA
-	 * TablaDePuntuaciones tabla =new TablaDePuntuaciones();
+	    TablaDePuntuaciones tabla =new TablaDePuntuaciones();
 		Usuario usuario1 = new Usuario("juancito");
 		ElementoTablaDePuntuacion elemento1 = new ElementoTablaDePuntuacion(usuario1, 18);
 		tabla.agregar(elemento1);
@@ -25,8 +26,8 @@ public class Main {
 		Usuario usuario3= new Usuario("lolita");
 		ElementoTablaDePuntuacion elemento3 = new ElementoTablaDePuntuacion(usuario3, 35);
 		tabla.agregar(elemento3);
-		tabla.guardar();*/
-		
+		tabla.guardar();
+		*/
 	
 		/* CODIGO PARA GENERAR LOS ARCHIVOS DE LOS NIVELES  http://www.youtube.com/watch?v=HWoVxBcvy1s
 		 NivelFacil nivel = new NivelFacil(Moto.getInstancia(), juego);
