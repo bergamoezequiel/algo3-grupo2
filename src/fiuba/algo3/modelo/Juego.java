@@ -42,6 +42,7 @@ public class Juego extends Observable {
 		
 		this.setNivelActual(Nivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual)));
 		this.nivelActual.setJuego(this);
+		nivelActual.getConductor().cambiarDeVehiculo(tipoDeVehiculo);
 	}
 	
 	public void agregarUsuario(Usuario unUsuario){
