@@ -38,6 +38,13 @@ public abstract class Nivel implements Observer {
 	public void setMapa(Mapa unMapa){
 		this.mapa=unMapa;
 	}
+	public void setJuego(Juego juego){
+		this.juegoActual=juego;
+	}
+	
+	public void setConductor(Conductor conductor){
+		this.conductor=conductor;
+	}
 	
 	public Conductor getConductor(){
 		return this.conductor;
@@ -133,7 +140,7 @@ public abstract class Nivel implements Observer {
 				System.out.println("Movimientos limites del nivel :"+ Integer.toString(nivel.getMovimientosLimites()) );
 				nivel.setPuntajePorMovimientoSobrante(Integer.parseInt(root.getAttributeValue("PuntajePorMovimientoSobrante")));
 				System.out.println("PuntajePorMovimientoSobrante :"+ Integer.toString(nivel.getPuntajePorMovimientoSobrante()) );
-				Mapa mapa = Mapa.deserializarse(root.getChild("mapa"));
+				Mapa mapa = Mapa.deserializarse(root.getChild("mapa"),nivel);
 				nivel.setMapa(mapa);
 				System.out.println("se agrego mapa al nivel");
 	    }

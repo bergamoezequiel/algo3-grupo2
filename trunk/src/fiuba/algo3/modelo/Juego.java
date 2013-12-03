@@ -11,14 +11,14 @@ public class Juego extends Observable {
 	private ArrayList<Usuario> usuarios;  
 	private Nivel nivelActual;
 	private Usuario usuarioActual;
-	private Hashtable<Integer, Nivel> indiceNiveles;
+	private Hashtable<Integer, String> indiceNiveles;
 
 	private int nroNivelActual;
 	private TablaDePuntuaciones tablaDePuntuaciones;
 	private int puntajeAcumulado;
 	
 	public Juego (){
-		this.indiceNiveles = new Hashtable<Integer, Nivel>();
+		this.indiceNiveles = new Hashtable<Integer, String>();
 		this.tablaDePuntuaciones = new TablaDePuntuaciones();
 		this.usuarios = new ArrayList<Usuario>();
 
@@ -29,14 +29,19 @@ public class Juego extends Observable {
 		this.puntajeAcumulado = 0;
 		
 		this.nroNivelActual = 1;
+		String ruta="./src/archivos/NivelVacio.xml";
+		this.indiceNiveles.put(1, ruta);//falta hacerle llegar el juego al nivel
+		ruta="./src/archivos/NivelFacil.xml";
+		this.indiceNiveles.put(2, ruta);
+		ruta="./src/archivos/NivelModerado.xml";
+		this.indiceNiveles.put(3, ruta);
+		ruta="./src/archivos/NivelDificil.xml";
+		this.indiceNiveles.put(4, ruta);
+		ruta="./src/archivos/NivelMuyDificil.xml";
+		this.indiceNiveles.put(5, ruta);
 		
-		this.indiceNiveles.put(1, new NivelVacio(tipoDeVehiculo, this));
-		this.indiceNiveles.put(2, new NivelFacil(tipoDeVehiculo, this));
-		this.indiceNiveles.put(3, new NivelModerado(tipoDeVehiculo, this));
-		this.indiceNiveles.put(4, new NivelDificil(tipoDeVehiculo, this));
-		this.indiceNiveles.put(5, new NivelMuyDificil(tipoDeVehiculo, this));
-		
-		this.setNivelActual(this.indiceNiveles.get(this.nroNivelActual));
+		this.setNivelActual(Nivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual)));
+		this.nivelActual.setJuego(this);
 	}
 	
 	public void agregarUsuario(Usuario unUsuario){
@@ -67,8 +72,9 @@ public class Juego extends Observable {
 	public void pasarDeNivel(){
 		this.puntajeAcumulado += this.nivelActual.getPuntaje();
 		this.nroNivelActual += 1;
-		Nivel nivelSiguiente = this.indiceNiveles.get(this.nroNivelActual);
+		Nivel nivelSiguiente =Nivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual));
 		this.nivelActual = nivelSiguiente;
+		this.nivelActual.setJuego(this);
 		
 		this.setChanged();
 		this.notifyObservers("Juego Pasa De Nivel");

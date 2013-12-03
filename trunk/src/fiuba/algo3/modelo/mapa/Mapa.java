@@ -14,6 +14,7 @@ import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
 import fiuba.algo3.modelo.ElementoTablaDePuntuacion;
+import fiuba.algo3.modelo.Nivel;
 import fiuba.algo3.modelo.coordenadas.Coordenada;
 import fiuba.algo3.modelo.coordenadas.Derecha;
 import fiuba.algo3.modelo.objetosEncontrables.*;
@@ -105,7 +106,7 @@ public class Mapa {
 		}
 	}
 	// En el lugar del conductor pone siempre el mismo conductor
-	public static Mapa deserializarse(Element nodoMapa){
+	public static Mapa deserializarse(Element nodoMapa,Nivel nivel ){
 		Mapa unMapa = new Mapa();
 		System.out.println("Se creo el mapa");
 		unMapa.setCantidadDeFilas(Integer.parseInt(nodoMapa.getAttributeValue("filas")));
@@ -166,7 +167,10 @@ public class Mapa {
 										    }
 											else{ 
 												if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Conductor")){
-												celda.agregarContenido(new Conductor(Moto.getInstancia(), new Derecha(), 5));
+												Conductor conductor=new Conductor(Moto.getInstancia(), new Derecha(), 5);
+												celda.agregarContenido(conductor);
+												nivel.setConductor(conductor);
+												nivel.getConductor().addObserver(nivel);
 												System.out.println("se agrego un conductor");
 											    }
 									    }
