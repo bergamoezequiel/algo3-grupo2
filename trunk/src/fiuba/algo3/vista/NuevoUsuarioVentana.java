@@ -31,7 +31,7 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 		getContentPane().setLayout(new FlowLayout());
 		setVisible(true);
 		setBounds(400,250, 400,400);
-		setTitle("GPS Challenge");
+		setTitle("Crear Nuevo Usuario");
 		setVisible(true);
 		setSize(360,100);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
