@@ -18,6 +18,8 @@ import java.util.Observer;
 
 
 
+
+import javax.swing.ImageIcon;
 //import javax.swing.ImageIcon;
 //import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -117,9 +119,6 @@ public class Ventana extends JFrame implements Observer {
 		this.pantallaDelNivel = new PantallaDelNivel(this.juego.getNivelActual());
 		add(pantallaDelNivel);
 		
-		//Harcodeo de avance hacia arriba del conductor para verificar el update del avanzar.
-		//unConductor.avanzarEnDireccion(new Arriba());
-		//unConductor.avanzarEnDireccion(new Derecha());
 	}
 	
 	@Override
@@ -130,10 +129,10 @@ public class Ventana extends JFrame implements Observer {
 			this.pantallaDelNivel.actualizarParametrosGlobalesPara(nivelActual);
 		} else if (arg =="Gano"){
 			
-			GanoVentana unaventana = new GanoVentana(this.juego);
+			new GanoVentana(this.juego);
 			dispose();
 		} else if (arg =="Perdio"){
-			PerdioVentana unaVentana = new PerdioVentana(this.juego);
+			new PerdioVentana(this.juego);
 			dispose();
 		}
 		repaint();

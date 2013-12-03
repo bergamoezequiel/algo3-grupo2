@@ -46,8 +46,4 @@ public class VentanaInicial extends JFrame implements ActionListener {
 			new CargarUsuarioVentana(this.juego);
 		}
 	}
-	
-   /* public static void main(String[] ar) {
-		VentanaInicial formulario1 = new VentanaInicial(juego);
-	}*/
 }

@@ -28,16 +28,12 @@ public class Main {
 		tabla.guardar();*/
 		
 	
-		Juego unJuego = new Juego(); //Observado
 		/* CODIGO PARA GENERAR LOS ARCHIVOS DE LOS NIVELES  http://www.youtube.com/watch?v=HWoVxBcvy1s
 		 NivelFacil nivel = new NivelFacil(Moto.getInstancia(), juego);
 		nivel.guardar();*/
-
-		ControlPorTeclado unControl = new ControlPorTeclado(unJuego);
 		
-		Ventana unaVentana = new Ventana(unJuego, unControl); //Observador
-		unJuego.addObserver(unaVentana);
+		Juego unJuego = new Juego(); //Observado
+		new VentanaInicial(unJuego);
 		
-	    new VentanaInicial(unJuego);
 	}
 }
