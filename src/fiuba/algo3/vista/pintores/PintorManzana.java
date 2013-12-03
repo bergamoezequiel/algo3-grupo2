@@ -10,6 +10,7 @@ public class PintorManzana extends Pintor{
 
 	final String PATH = "/imagenes/manzana.png";
 	
+	@Override
 	public void pintar(Graphics g, Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda){
 		ImageIcon imagenManzana = new ImageIcon(getClass().getResource(PATH));
 		g.drawImage(imagenManzana.getImage(), unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda, null);

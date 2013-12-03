@@ -22,7 +22,6 @@
 			this.indice.put(new Derecha().getClass(), new ImageIcon(getClass().getResource(PATH_DERECHA)));
 		}
 
-		
 		@Override
 		public void pintar(Graphics g, Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda, Direccion unaDireccion){		
 			ImageIcon imagen = this.indice.get(unaDireccion.getClass());

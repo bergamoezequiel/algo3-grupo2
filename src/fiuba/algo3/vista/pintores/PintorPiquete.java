@@ -10,6 +10,7 @@ public class PintorPiquete extends Pintor{
 
 	final String PATH = "/imagenes/piquete.png";
 	
+	@Override
 	public void pintar(Graphics g, Coordenada unaCoordenadaVista, int anchoCelda, int altoCelda){
 		ImageIcon imagenPiquete = new ImageIcon(getClass().getResource(PATH));
 		g.drawImage(imagenPiquete.getImage(), unaCoordenadaVista.getX(), unaCoordenadaVista.getY(), anchoCelda, altoCelda, null);
