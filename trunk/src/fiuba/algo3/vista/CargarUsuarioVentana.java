@@ -21,6 +21,7 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 	private JPanel panelCampos;
 	private Choice desplegable;
 	private Juego juego;
+	private Choice desplegableVehiculo;
 
 	public CargarUsuarioVentana(Juego unJuego){				  
 		this.juego = unJuego;
@@ -28,7 +29,7 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 		setBounds(400,250, 400,400);
 		setTitle("Cargar");
 		setVisible(true);
-		setSize(220,100); 
+		setSize(240,140); 
 				
 		botonAceptar = new JButton("Aceptar");
 		botonVolver = new JButton("Volver");
@@ -45,8 +46,14 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 		desplegable.add("Usuario 2");
 		desplegable.add("Usuario 3");
 		
+		desplegableVehiculo = new Choice();
+		desplegableVehiculo.add("Seleccione un Vehiculo ...");
+		desplegableVehiculo.add("Auto");
+		desplegableVehiculo.add("Moto");
+		desplegableVehiculo.add("TodoTerreno");
 				
 		add(desplegable);
+		add(desplegableVehiculo);
 		add(botonAceptar);
 		add(botonVolver);
 		add(panelCampos);	   
