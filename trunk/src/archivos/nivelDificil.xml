@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nivel Nombre="Nivel Dificil" MovimientosLimites="40" PuntajePorMovimientoSobrante="3">
+  <mapa filas="15" columnas="15">
+    <celda>
+      <coordenada x="0" y="0" />
+      <contenido tipoDeEncontrable="Conductor" />
+    </celda>
+    <celda>
+      <coordenada x="1" y="0" />
+      <contenido tipoDeEncontrable="Pozo" penalizacion="3" />
+    </celda>
+    <celda>
+      <coordenada x="1" y="2" />
+      <contenido tipoDeEncontrable="Piquete" penalizacion="2" />
+    </celda>
+    <celda>
+      <coordenada x="2" y="5" />
+      <contenido tipoDeEncontrable="Cambio" />
+    </celda>
+    <celda>
+      <coordenada x="4" y="3" />
+      <contenido tipoDeEncontrable="Cambio" />
+    </celda>
+    <celda>
+      <coordenada x="6" y="3" />
+      <contenido tipoDeEncontrable="Control" penalizacion="3" />
+    </celda>
+    <celda>
+      <coordenada x="7" y="2" />
+      <contenido tipoDeEncontrable="Pozo" penalizacion="3" />
+    </celda>
+    <celda>
+      <coordenada x="7" y="8" />
+      <contenido tipoDeEncontrable="Cambio" />
+    </celda>
+    <celda>
+      <coordenada x="9" y="2" />
+      <contenido tipoDeEncontrable="Cambio" />
+    </celda>
+    <celda>
+      <coordenada x="14" y="5" />
+      <contenido tipoDeEncontrable="Llegada" />
+    </celda>
+  </mapa>
+</nivel>

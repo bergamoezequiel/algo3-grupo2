@@ -15,6 +15,8 @@ public class Main {
 
 		
 		TablaDePuntuaciones.leerXml();
+		String ruta = "./src/archivos/NivelVacio.xml";
+		Nivel.CargarNivelXml(ruta);
 	/*	CODIGO PARA GENERAR UN EJEMPLO DE LA TABLA
 	    TablaDePuntuaciones tabla =new TablaDePuntuaciones();
 		Usuario usuario1 = new Usuario("juancito");
@@ -29,9 +31,9 @@ public class Main {
 		tabla.guardar();
 		*/
 	
-		/* CODIGO PARA GENERAR LOS ARCHIVOS DE LOS NIVELES  http://www.youtube.com/watch?v=HWoVxBcvy1s
-		 NivelFacil nivel = new NivelFacil(Moto.getInstancia(), juego);
-		nivel.guardar();*/
+		// CODIGO PARA GENERAR LOS ARCHIVOS DE LOS NIVELES  http://www.youtube.com/watch?v=HWoVxBcvy1s
+		 Nivel nivel = new NivelMuyDificil(Moto.getInstancia(), new Juego());
+		 nivel.guardar();
 		
 		Juego unJuego = new Juego(); //Observado
 		new VentanaInicial(unJuego);

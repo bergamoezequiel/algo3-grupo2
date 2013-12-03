@@ -1,10 +1,10 @@
 package fiuba.algo3.modelo.mapa;
 
 import java.util.ArrayList;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
@@ -12,7 +12,14 @@ import org.jdom2.Text;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
+
+import fiuba.algo3.modelo.ElementoTablaDePuntuacion;
 import fiuba.algo3.modelo.coordenadas.Coordenada;
+import fiuba.algo3.modelo.coordenadas.Derecha;
+import fiuba.algo3.modelo.objetosEncontrables.*;
+import fiuba.algo3.modelo.vehiculos.Conductor;
+import fiuba.algo3.modelo.vehiculos.Moto;
+
 
 public class Mapa {
     
@@ -20,6 +27,7 @@ public class Mapa {
 	private int filas;
 	private int columnas;
 
+	private Mapa(){}
 	public Mapa(int cantManzanasAncho, int cantManzanasAlto) {
 		this.celdas = new ArrayList<ArrayList<Celda>>();
 		this.filas = (cantManzanasAlto*2)+1;
@@ -39,6 +47,16 @@ public class Mapa {
 
 	public int getCantidadDeColumnas() {
 		return this.columnas;
+	}
+	
+	public void setCantidadDeFilas(int filas) {
+		this.filas=filas;
+		System.out.println("filas del mapa"+ Integer.toString(filas));
+	}
+
+	public void setCantidadDeColumnas(int columnas) {
+		this.columnas=columnas;
+		System.out.println("columnas del mapa"+ Integer.toString(columnas));
 	}
 
 	public Celda getCeldaEn(Coordenada unaCoordenada) throws UbicacionEnMapaException  {
@@ -85,6 +103,82 @@ public class Mapa {
 		catch(Exception ex){
 			ex.printStackTrace();
 		}
+	}
+	// En el lugar del conductor pone siempre el mismo conductor
+	public static Mapa deserializarse(Element nodoMapa){
+		Mapa unMapa = new Mapa();
+		System.out.println("Se creo el mapa");
+		unMapa.setCantidadDeFilas(Integer.parseInt(nodoMapa.getAttributeValue("filas")));
+		unMapa.setCantidadDeColumnas(Integer.parseInt(nodoMapa.getAttributeValue("columnas")));
+		unMapa.celdas = new ArrayList<ArrayList<Celda>>();
+		for (int x = 0; x<unMapa.getCantidadDeColumnas() ; x++){
+			ArrayList<Celda> columna = new ArrayList<Celda>();
+			for (int y = 0; y < unMapa.getCantidadDeFilas(); y++){
+				columna.add(new Celda(unMapa, new Coordenada(x, y)));
+				System.out.println("Se creo celda");
+			}
+			unMapa.celdas.add(columna);            
+    	}
+		
+		for(Element nodoCelda : nodoMapa.getChildren("celda")){
+			System.out.println("entro el for de las celdas");
+			Coordenada coordenada= Coordenada.deserializarse(nodoCelda.getChild("coordenada"));
+			System.out.println("se creo una coordenada");
+			Celda celda = unMapa.getCeldaEn(coordenada);
+			if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Pozo")){
+				celda.agregarContenido(new Pozo());
+				System.out.println("se agrego un pozo");
+			}
+			else{ 
+				if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Piquete")){
+				celda.agregarContenido(new Piquete());
+				System.out.println("se agrego un piquete");
+				}
+				else{ 
+					if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Control")){
+					celda.agregarContenido(new ControlPolicial());
+					System.out.println("se agrego un control policial");
+				    }
+					else{ 
+						if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Llegada")){
+						celda.agregarContenido(new Llegada());
+						System.out.println("se agrego un Llegada");
+					    }
+						else{ 
+							if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Cambio")){
+							celda.agregarContenido(new CambioDeVehiculo());
+							System.out.println("se agrego un cambio de vehiculo");
+						    }
+							else{ 
+								if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Snorlax")){
+								celda.agregarContenido(new Snorlax());
+								System.out.println("se agrego un Snorlax");
+							    }
+								else{ 
+										if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("favorable")){
+										celda.agregarContenido(new SorpresaFavorable());
+										System.out.println("se agrego una sorpresa favorable");
+									    }
+										else{ 
+											if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Desfavorable")){
+											celda.agregarContenido(new SorpresaDesfavorable());
+											System.out.println("se agrego un sorpresa desfavorable");
+										    }
+											else{ 
+												if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Conductor")){
+												celda.agregarContenido(new Conductor(Moto.getInstancia(), new Derecha(), 5));
+												System.out.println("se agrego un conductor");
+											    }
+									    }
+								}}
+							}
+						}
+					}		
+				}
+			}
+		}
+	
+		return unMapa;		
 	}
 	
 	
