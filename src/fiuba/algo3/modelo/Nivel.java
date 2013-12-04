@@ -13,12 +13,10 @@ import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
-import fiuba.algo3.modelo.coordenadas.Coordenada;
 import fiuba.algo3.modelo.mapa.Mapa;
-import fiuba.algo3.modelo.objetosEncontrables.*;
 import fiuba.algo3.modelo.vehiculos.*;
 
-public abstract class Nivel implements Observer {
+public class Nivel implements Observer {
 	/*
 	 * PRECONDICION:
 	 * Debe existir un mapa.
@@ -125,24 +123,20 @@ public abstract class Nivel implements Observer {
 		}
     }
 	
-	public static Nivel CargarNivelXml(String ruta){
-		Nivel nivel= new NivelVacio(Moto.getInstancia(),new Juego());//CAMBIAR LOGICA NIVEL
+	public void CargarNivelXml(String ruta, Vehiculo unVehiculo){
+		//Nivel nivel= new NivelVacio(Moto.getInstancia(),this);//CAMBIAR LOGICA NIVEL
 		SAXBuilder builder = new SAXBuilder();
 		try {
 			Document lecturaDoc = builder.build(new File(ruta));
 			Element root = lecturaDoc.getRootElement();
 			
-				if(root.getAttributeValue("Nombre").equals("Nivel Vacio")){
-				    nivel = new NivelVacio(Moto.getInstancia(),new Juego());
-					System.out.println("Se creo nivel vacio");	
-				}
-				nivel.setMovimientosLimites(Integer.parseInt(root.getAttributeValue("MovimientosLimites")));
-				System.out.println("Movimientos limites del nivel :"+ Integer.toString(nivel.getMovimientosLimites()) );
-				nivel.setPuntajePorMovimientoSobrante(Integer.parseInt(root.getAttributeValue("PuntajePorMovimientoSobrante")));
-				System.out.println("PuntajePorMovimientoSobrante :"+ Integer.toString(nivel.getPuntajePorMovimientoSobrante()) );
-				Mapa mapa = Mapa.deserializarse(root.getChild("mapa"),nivel);
-				nivel.setMapa(mapa);
-				System.out.println("se agrego mapa al nivel");
+			this.setMovimientosLimites(Integer.parseInt(root.getAttributeValue("MovimientosLimites")));
+			System.out.println("Movimientos limites del nivel :"+ Integer.toString(this.getMovimientosLimites()) );
+			this.setPuntajePorMovimientoSobrante(Integer.parseInt(root.getAttributeValue("PuntajePorMovimientoSobrante")));
+			System.out.println("PuntajePorMovimientoSobrante :"+ Integer.toString(this.getPuntajePorMovimientoSobrante()) );
+			Mapa mapa = Mapa.deserializarse(root.getChild("mapa"), this, unVehiculo);
+			this.setMapa(mapa);
+			System.out.println("se agrego mapa al nivel");
 	    }
 	    catch(JDOMException  e){
 	    	e.printStackTrace(); 			
@@ -150,8 +144,6 @@ public abstract class Nivel implements Observer {
 		catch(IOException  e){
 			e.printStackTrace(); 			
 		}
-		
-		return nivel;
 	}	
 
 	

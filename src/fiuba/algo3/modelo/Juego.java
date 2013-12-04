@@ -50,13 +50,14 @@ public class Juego extends Observable {
 		
 	}
 	
-	public void iniciarPartida(Usuario unUsuario, Vehiculo tipoDeVehiculo){
+	public void iniciarPartida(Usuario unUsuario, Vehiculo unVehiculo){
 		this.usuarioActual = unUsuario;
 		this.puntajeAcumulado = 0;
 		
-		this.setNivelActual(Nivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual)));
+		Nivel nuevoNivel = new Nivel();
+		nuevoNivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual), unVehiculo);
+		this.setNivelActual(nuevoNivel);
 		this.nivelActual.setJuego(this);
-		nivelActual.getConductor().cambiarDeVehiculo(tipoDeVehiculo);
 	}
 	
 	// Devuelve true o false dependiendo si pudo agregarlo o no.
@@ -93,7 +94,8 @@ public class Juego extends Observable {
 	public void pasarDeNivel(){
 		this.puntajeAcumulado += this.nivelActual.getPuntaje();
 		this.nroNivelActual += 1;
-		Nivel nivelSiguiente =Nivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual));
+		Nivel nivelSiguiente = new Nivel();
+		nivelSiguiente.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual), this.getNivelActual().getConductor().getVehiculo());
 		this.nivelActual = nivelSiguiente;
 		this.nivelActual.setJuego(this);
 		
@@ -142,7 +144,7 @@ public class Juego extends Observable {
 		  }
 	}
 	
-	public void CargarNivelXml(String unString ){
+	public void CargarNivelXml(String unString/*, Vehiculo unVehiculo*/){
 		System.out.println("Se esta cargando la partida");
 		SAXBuilder builder = new SAXBuilder();
 		try {
@@ -150,7 +152,10 @@ public class Juego extends Observable {
 			Element root = lecturaDoc.getRootElement();
 			this.nroNivelActual =  Integer.parseInt(root.getAttributeValue("nroNivelActual"));
 			this.puntajeAcumulado =  Integer.parseInt(root.getAttributeValue("puntajeAcumulado"));
-			this.setNivelActual(Nivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual)));
+			Nivel nuevoNivel = new Nivel();
+			//En vez de usar this.nivelActual.getConductor.getVehiculo() deberia serializarse el vehiculo de la partida.
+			nuevoNivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual), this.nivelActual.getConductor().getVehiculo());
+			this.setNivelActual(nuevoNivel);
 			this.nivelActual.setJuego(this);
 	    }
 
