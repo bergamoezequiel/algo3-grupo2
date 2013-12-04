@@ -36,6 +36,7 @@ public class Main {
 		 //nivel.guardar();
 		
 		Juego unJuego = new Juego(); //Observado
+		unJuego.CargarNivelXml();
 		new VentanaInicial(unJuego);
 		
 	}

@@ -3,14 +3,19 @@ package fiuba.algo3.modelo;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Observable;
+
 import org.jdom2.Document;
 import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
+import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.vehiculos.*;
 
 public class Juego extends Observable {
@@ -30,12 +35,6 @@ public class Juego extends Observable {
 		this.usuarios = new ArrayList<Usuario>();
 		this.tablaDePuntuaciones = TablaDePuntuaciones.leerXml();
 		
-	}
-	
-	public void iniciarPartida(Usuario unUsuario, Vehiculo tipoDeVehiculo){
-		this.usuarioActual = unUsuario;
-		this.puntajeAcumulado = 0;
-		
 		this.nroNivelActual = 1;
 		String ruta="./src/archivos/nivelVacio.xml";
 		this.indiceNiveles.put(1, ruta);//falta hacerle llegar el juego al nivel
@@ -47,6 +46,12 @@ public class Juego extends Observable {
 		this.indiceNiveles.put(4, ruta);
 		ruta="./src/archivos/nivelMuyDificil.xml";
 		this.indiceNiveles.put(5, ruta);
+		
+	}
+	
+	public void iniciarPartida(Usuario unUsuario, Vehiculo tipoDeVehiculo){
+		this.usuarioActual = unUsuario;
+		this.puntajeAcumulado = 0;
 		
 		this.setNivelActual(Nivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual)));
 		this.nivelActual.setJuego(this);
@@ -130,6 +135,25 @@ public class Juego extends Observable {
 		   ex.printStackTrace();
 		  }
 	}
+	
+	public void CargarNivelXml(){
+		System.out.println("Se esta cargando la partida");
+		SAXBuilder builder = new SAXBuilder();
+		try {
+			Document lecturaDoc = builder.build(new File("./src/archivos/partida.xml"));
+			Element root = lecturaDoc.getRootElement();
+			this.nroNivelActual =  Integer.parseInt(root.getAttributeValue("nroNivelActual"));
+			this.puntajeAcumulado =  Integer.parseInt(root.getAttributeValue("puntajeAcumulado"));
+			this.setNivelActual(Nivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual)));
+	    }
+	    catch(JDOMException  e){
+	    	e.printStackTrace(); 			
+	    }
+		catch(IOException  e){
+			e.printStackTrace(); 			
+		}
+		
+	}	
 	
 	public void perdio() {
 		this.nroNivelActual = 0;
