@@ -125,7 +125,7 @@ public class Juego extends Observable {
 		return nodoJuego;
 	}
 	
-	public void guardar(){
+	public void guardar(String nombre){
 		  try{
 		  Document docjuego =new Document();
 		  System.out.println("Se creo el doc");
@@ -133,7 +133,7 @@ public class Juego extends Observable {
 		  
 		  docjuego.setRootElement(juego); 
 		  XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
-		  xmlOutput.output(docjuego,new FileOutputStream(new File("./src/archivos/partida.xml")));
+		  xmlOutput.output(docjuego,new FileOutputStream(new File("./src/archivos/" + nombre + ".xml")));
 		  System.out.println("Se escribio el archivo");
 		  
 		  }

@@ -17,6 +17,7 @@ public class Main {
 		//TablaDePuntuaciones.leerXml();
 		//String ruta = "./src/archivos/NivelVacio.xml";
 		//Nivel.CargarNivelXml(ruta);
+		
 	/*	CODIGO PARA GENERAR UN EJEMPLO DE LA TABLA
 	    TablaDePuntuaciones tabla =new TablaDePuntuaciones();
 		Usuario usuario1 = new Usuario("juancito");

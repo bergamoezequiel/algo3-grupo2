@@ -105,7 +105,7 @@ public class Ventana extends JFrame implements Observer {
 		opcionSalir.addActionListener(new BotonSalirListener());
 		opcionAcercaDe.addActionListener(new AcercaDeListener());
 		opcionInstrucciones.addActionListener(new InstruccionesListener());
-		opcionGuardar.addActionListener(new GuardarListener());
+		opcionGuardar.addActionListener(new GuardarListener(this.juego));
 		opcionCargar.addActionListener(new CargarJuegoListener(this.juego));
 		opcionRanking.addActionListener(new RankingListener());
 		
