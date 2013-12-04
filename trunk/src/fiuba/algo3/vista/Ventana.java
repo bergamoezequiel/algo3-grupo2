@@ -106,7 +106,7 @@ public class Ventana extends JFrame implements Observer {
 		opcionAcercaDe.addActionListener(new AcercaDeListener());
 		opcionInstrucciones.addActionListener(new InstruccionesListener());
 		opcionGuardar.addActionListener(new GuardarListener());
-		opcionCargar.addActionListener(new CargarListener());
+		opcionCargar.addActionListener(new CargarJuegoListener(this.juego));
 		opcionRanking.addActionListener(new RankingListener());
 		
 		//Agrego los menues a la ventana Principal.
@@ -137,6 +137,7 @@ public class Ventana extends JFrame implements Observer {
 		} else if (arg =="Perdio"){
 			new PerdioVentana(this.juego);
 			dispose();
+
 		}
 		repaint();
 		
