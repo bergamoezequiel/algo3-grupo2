@@ -55,13 +55,11 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
-							}
-			
+			}			
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub				
-			}
-			
+			}			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub				
@@ -95,28 +93,41 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 		
 		if (e.getSource()== botonAceptar) {
 			Usuario usuarioNuevo = new Usuario(texto.getText());
+			boolean usuarioValido = this.juego.agregarUsuario(usuarioNuevo);
+			
 			System.out.println(texto.getText());
 			System.out.println(desplegable.getSelectedItem());
 			
-			switch (desplegable.getSelectedIndex()) {
-			case 0:
-				this.juego.iniciarPartida(usuarioNuevo, Moto.getInstancia());
-				break;
-			case 1:
-				this.juego.iniciarPartida(usuarioNuevo, Auto.getInstancia());
-				break;
-
-			default:
-				this.juego.iniciarPartida(usuarioNuevo, TodoTerreno.getInstancia());
-				break;
+			/*
+			 * Si el usuario no existia anteriormente esta todo bien
+			 * pero si ya existia, le muestro un mensaje de error al
+			 * usuario y le vuelvo a abrir esta ventana.
+			 */
+			if (usuarioValido) {				
+				switch (desplegable.getSelectedIndex()) {
+				case 0:
+					this.juego.iniciarPartida(usuarioNuevo, Moto.getInstancia());
+					break;
+				case 1:
+					this.juego.iniciarPartida(usuarioNuevo, Auto.getInstancia());
+					break;
+				default:
+					this.juego.iniciarPartida(usuarioNuevo, TodoTerreno.getInstancia());
+					break;
+				}
+				
+				Ventana unaVentana = new Ventana(this.juego, new ControlPorTeclado(this.juego));
+				this.juego.addObserver(unaVentana);
+				
+			} else{
+				new NuevoUsuarioVentana(this.juego);
+				JOptionPane.showMessageDialog(null,"Ya existe un Usuario con ese Nombre."); 
+				
 			}
 			
-			Ventana unaVentana = new Ventana(this.juego, new ControlPorTeclado(this.juego));
-			this.juego.addObserver(unaVentana);
-			
-			dispose();
-			
+			dispose();	
 		}
+		
 		if (e.getSource() == botonVolver){
 			setVisible(false);
 			new VentanaInicial(this.juego);

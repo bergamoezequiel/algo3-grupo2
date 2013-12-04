@@ -47,6 +47,7 @@ public class Juego extends Observable {
 		ruta="./src/archivos/nivelMuyDificil.xml";
 		this.indiceNiveles.put(5, ruta);
 		
+		
 	}
 	
 	public void iniciarPartida(Usuario unUsuario, Vehiculo tipoDeVehiculo){
@@ -58,10 +59,15 @@ public class Juego extends Observable {
 		nivelActual.getConductor().cambiarDeVehiculo(tipoDeVehiculo);
 	}
 	
-	public void agregarUsuario(Usuario unUsuario){
+	// Devuelve true o false dependiendo si pudo agregarlo o no.
+	public boolean agregarUsuario(Usuario unUsuario){
+		boolean pudoAgregarlo = false;
 		if(!this.usuarios.contains(unUsuario)){
 			this.usuarios.add(unUsuario);
+			pudoAgregarlo = true;
 		}
+		
+		return pudoAgregarlo;
 	}
 
 	public void setNivelActual(Nivel unNivel){
@@ -182,5 +188,7 @@ public class Juego extends Observable {
 		}
 
 	}
+
+
 }
 
