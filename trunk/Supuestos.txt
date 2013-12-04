@@ -7,3 +7,4 @@
 - La visibilidad no es persistente.
 - Se agrego un Obstaculo Snorlax que no deja pasar a ningun vehiculo, pero tampoco penaliza.
 - La llegada no es visible naturalmente.
+- Cuando se gana la partida el puntaje se multiplica por 5 a modo de bonus.
