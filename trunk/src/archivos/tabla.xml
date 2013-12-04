@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tabla>
+  <elemento puntaje="6070" nombre="Ingresa tu Nombre" />
+  <elemento puntaje="1065" nombre="Ingresa tu Nombre" />
+  <elemento puntaje="1064" nombre="Ingresa tu Nombre" />
   <elemento puntaje="200" nombre="Nicolas" />
   <elemento puntaje="100" nombre="Pedro" />
-
 </tabla>
