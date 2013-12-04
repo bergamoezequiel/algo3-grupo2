@@ -64,6 +64,7 @@ public class Juego extends Observable {
 	
 	// Devuelve true o false dependiendo si pudo agregarlo o no.
 	public boolean agregarUsuario(Usuario unUsuario){
+		System.out.println("se agrego un usuario con el nombre:" + unUsuario.getNombre()+"-.-..---..--.-.");
 		boolean pudoAgregarlo = false;
 		if(!this.usuarios.contains(unUsuario)){
 			this.usuarios.add(unUsuario);
@@ -224,6 +225,29 @@ public class Juego extends Observable {
 			  }
 		}
 		
+	public void CargarLista(){
+		SAXBuilder builder = new SAXBuilder();
+		try {
+			Document lecturaDoc = builder.build(new File("./src/archivos/Usuarios.xml"));
+			Element root = lecturaDoc.getRootElement();
+			for(Element nodoUsuario : root.getChildren("lista")){
+				this.agregarUsuario(new Usuario(nodoUsuario.getAttributeValue("nombre")));
+			}
+	    }
+
+		
+	    catch(JDOMException  e){
+	    	e.printStackTrace(); 			
+	    }
+		catch(IOException  e){
+			e.printStackTrace(); 			
+		}
+		System.out.println("Levante el archivo del mapa");
+		
+		this.setChanged();
+		this.notifyObservers("Juego Pasa De Nivel");
+		
+	}	
 	
 
 
