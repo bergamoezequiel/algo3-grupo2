@@ -21,9 +21,9 @@ public class RankingVentana extends JFrame{
 		
 
 		setLocation(500, 200);
-		this.setVisible(true);                 
+		this.setVisible(false);                 
 		this.setTitle("Ranking");
-		this.setSize(250,unaTabla.getTamanio()*70);
+		this.setSize(250,350);
 		this.setResizable(true);
 		
 	

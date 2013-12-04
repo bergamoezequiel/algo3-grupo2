@@ -142,22 +142,29 @@ public class Juego extends Observable {
 		  }
 	}
 	
-	public void CargarNivelXml(){
+	public void CargarNivelXml(String unString ){
 		System.out.println("Se esta cargando la partida");
 		SAXBuilder builder = new SAXBuilder();
 		try {
-			Document lecturaDoc = builder.build(new File("./src/archivos/partida.xml"));
+			Document lecturaDoc = builder.build(new File(unString));
 			Element root = lecturaDoc.getRootElement();
 			this.nroNivelActual =  Integer.parseInt(root.getAttributeValue("nroNivelActual"));
 			this.puntajeAcumulado =  Integer.parseInt(root.getAttributeValue("puntajeAcumulado"));
 			this.setNivelActual(Nivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual)));
+			this.nivelActual.setJuego(this);
 	    }
+
+		
 	    catch(JDOMException  e){
 	    	e.printStackTrace(); 			
 	    }
 		catch(IOException  e){
 			e.printStackTrace(); 			
 		}
+		System.out.println("Levante el archivo del mapa");
+		
+		this.setChanged();
+		this.notifyObservers("Juego Pasa De Nivel");
 		
 	}	
 	
