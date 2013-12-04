@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<nivel Nombre="Nivel Moderado" MovimientosLimites="40" PuntajePorMovimientoSobrante="2">
+<nivel Nombre="Nivel Moderado" MovimientosLimites="100" PuntajePorMovimientoSobrante="2">
   <mapa filas="11" columnas="11">
     <celda>
       <coordenada x="0" y="9" />
@@ -27,6 +27,10 @@
     </celda>
     <celda>
       <coordenada x="3" y="8" />
+      <contenido tipoDeEncontrable="Piquete" penalizacion="2" />
+    </celda>
+    <celda>
+      <coordenada x="3" y="10" />
       <contenido tipoDeEncontrable="Piquete" penalizacion="2" />
     </celda>
     <celda>
