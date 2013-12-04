@@ -136,7 +136,7 @@ public class Juego extends Observable {
 		  
 		  docjuego.setRootElement(juego); 
 		  XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
-		  xmlOutput.output(docjuego,new FileOutputStream(new File("./src/archivos/" + nombre + ".xml")));
+		  xmlOutput.output(docjuego,new FileOutputStream(new File("./src/partidasGuardadas/" + nombre + ".xml")));
 		  System.out.println("Se escribio el archivo");
 		  
 		  }
