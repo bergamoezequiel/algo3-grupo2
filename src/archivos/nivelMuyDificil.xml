@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<nivel Nombre="Nivel Muy Dificil" MovimientosLimites="40" PuntajePorMovimientoSobrante="4">
+<nivel Nombre="Nivel Muy Dificil" MovimientosLimites="50" PuntajePorMovimientoSobrante="4">
   <mapa filas="17" columnas="17">
     <celda>
       <coordenada x="0" y="0" />
