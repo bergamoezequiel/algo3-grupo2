@@ -3,14 +3,18 @@ package fiuba.algo3.vista;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import fiuba.algo3.controlador.ControlPorTeclado;
+import fiuba.algo3.modelo.Juego;
 import fiuba.algo3.modelo.Usuario;
 
 public class GuardarVentana extends JFrame implements ActionListener{
@@ -22,9 +26,11 @@ public class GuardarVentana extends JFrame implements ActionListener{
     private JButton botonAceptar, botonVolver;
     private JPanel panelCampos;
     private JTextField texto;
+    private Juego juego;
 
-	public GuardarVentana(){                  
+	public GuardarVentana(Juego unJuego){                  
 		    	
+		this.juego = unJuego;
 		getContentPane().setLayout(new FlowLayout());
 		setVisible(false);
 		setBounds(400,250, 400,400);
@@ -44,16 +50,37 @@ public class GuardarVentana extends JFrame implements ActionListener{
 		        
 		botonAceptar.addActionListener(this);
 		botonVolver.addActionListener(this);
+		
+		texto.addMouseListener(new MouseListener() {	
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub	
+			}			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+			}			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub				
+			}			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub				
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				texto.setText("");
+			}
+		});
 		    }
 		    
 		    public void actionPerformed(ActionEvent e) {
 		    	
 		    	
 		        if (e.getSource()== botonAceptar) {
-		        /*
-		         * Aca iria lo que pasa cuando se pone aceptar.
-		         */
-		        	
+		        	this.juego.guardar(this.texto.getText());
+		        	JOptionPane.showMessageDialog(null,"Se guardo el archivo correctamente.");
 		        	dispose();
 		        	
 		        }
