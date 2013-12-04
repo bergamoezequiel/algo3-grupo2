@@ -24,15 +24,15 @@ public class GanoVentana extends JFrame implements ActionListener {
 		getContentPane().setLayout(new FlowLayout());
 		setLocation(500,200);
 		setVisible(true);
-		setSize(300,150);
-		//setBounds(400,250, 400,400);
+		setSize(500,150);
 		setTitle("Ganaste!");
 		
 		String str = "<html>"
 				+ "<FONT FACE=verdana"
 				+ "<br>"
 				+ " Felicidades, "+ unJuego.getUsuarioActual().getNombre() + ", ganaste! <br>"
-				+ " Hiciste " + Integer.toString(unJuego.getPuntajeAcumulado()) +" puntos.<br>"
+				+ " Por el bonus multiplicador de haber terminado la partida<br>"
+				+ " lograste una puntuacion de " + Integer.toString(unJuego.getPuntajeAcumulado()) +" puntos.<br>"
 				+ "<br>"
 				+ "</html></font>";
 		
