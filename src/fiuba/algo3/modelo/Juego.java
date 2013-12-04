@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Observable;
 
+import org.jdom2.Element;
+
 import fiuba.algo3.modelo.vehiculos.*;
 
 public class Juego extends Observable {
@@ -22,7 +24,7 @@ public class Juego extends Observable {
 		this.tablaDePuntuaciones = new TablaDePuntuaciones();
 		this.usuarios = new ArrayList<Usuario>();
 		this.tablaDePuntuaciones = TablaDePuntuaciones.leerXml();
-
+		
 	}
 	
 	public void iniciarPartida(Usuario unUsuario, Vehiculo tipoDeVehiculo){
@@ -97,6 +99,14 @@ public class Juego extends Observable {
 	
 	public int getPuntajeAcumulado(){
 		return this.puntajeAcumulado;
+	}
+	
+	
+	public Element serializar(){
+		Element nodoJuego= new Element("juego");
+		nodoJuego.setAttribute("nroNivelActual", Integer.toString(this.getNroNivelActual()));
+		nodoJuego.setAttribute("puntajeAcumulado", Integer.toString(this.getPuntajeAcumulado()));
+		return nodoJuego;
 	}
 	
 	public void perdio() {
