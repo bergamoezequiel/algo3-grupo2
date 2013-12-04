@@ -2,6 +2,7 @@ package fiuba.algo3.modelo;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.Observable;
 
 import org.jdom2.Document;
@@ -201,6 +202,29 @@ public class Juego extends Observable {
 		}
 
 	}
+	
+	public void guardarListaDeUsuarios(){
+		try{
+			  Document docjuego =new Document();
+			  System.out.println("Se creo el doc");
+			  Element listaDeUsuarios = new Element("lista");
+			  docjuego.setRootElement(listaDeUsuarios); 
+			  Iterator<Usuario> iterador= usuarios.iterator();
+			  while (iterador.hasNext()){
+				  Element nodoUsuario = (iterador.next()).serializar();
+				  listaDeUsuarios.addContent(nodoUsuario);
+			  }
+			  XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
+			  xmlOutput.output(docjuego,new FileOutputStream(new File("./src/archivos/Usuarios.xml")));
+			  System.out.println("Se escribio el archivo");
+			  
+			  }
+			  catch(Exception ex){
+			   ex.printStackTrace();
+			  }
+		}
+		
+	
 
 
 }
