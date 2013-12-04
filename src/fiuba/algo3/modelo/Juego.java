@@ -3,8 +3,13 @@ package fiuba.algo3.modelo;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Observable;
-
+import org.jdom2.Document;
 import org.jdom2.Element;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
+
+import java.io.File;
+import java.io.FileOutputStream;
 
 import fiuba.algo3.modelo.vehiculos.*;
 
@@ -107,6 +112,23 @@ public class Juego extends Observable {
 		nodoJuego.setAttribute("nroNivelActual", Integer.toString(this.getNroNivelActual()));
 		nodoJuego.setAttribute("puntajeAcumulado", Integer.toString(this.getPuntajeAcumulado()));
 		return nodoJuego;
+	}
+	
+	public void guardar(){
+		  try{
+		  Document docjuego =new Document();
+		  System.out.println("Se creo el doc");
+		  Element juego = this.serializar();
+		  
+		  docjuego.setRootElement(juego); 
+		  XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
+		  xmlOutput.output(docjuego,new FileOutputStream(new File("./src/archivos/partida.xml")));
+		  System.out.println("Se escribio el archivo");
+		  
+		  }
+		  catch(Exception ex){
+		   ex.printStackTrace();
+		  }
 	}
 	
 	public void perdio() {
