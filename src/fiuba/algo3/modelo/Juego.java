@@ -19,7 +19,8 @@ import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.vehiculos.*;
 
 public class Juego extends Observable {
-
+	
+	private final int multiplicadorPorGanarJuego = 5;
 	private ArrayList<Usuario> usuarios;  
 	private Nivel nivelActual;
 	private Usuario usuarioActual;
@@ -106,7 +107,7 @@ public class Juego extends Observable {
 	public void gano(){		
 		this.nroNivelActual = 0;
 		nivelActual = null;
-		
+		this.puntajeAcumulado *= this.multiplicadorPorGanarJuego;
 		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.puntajeAcumulado));
 		System.out.println("Ganaste, tu puntuacion es " + this.puntajeAcumulado);
 		this.tablaDePuntuaciones.guardar();
