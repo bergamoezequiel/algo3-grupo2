@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tabla>
   <elemento puntaje="1200" nombre="Manuel Ruiz" />
+  <elemento puntaje="1085" nombre="Ingresa tu Nombre" />
+  <elemento puntaje="1075" nombre="Ingresa tu Nombre" />
   <elemento puntaje="1069" nombre="vghf" />
+  <elemento puntaje="1045" nombre="Ingresa tu Nombre" />
   <elemento puntaje="990" nombre="Ingresa tu Nombre" />
   <elemento puntaje="257" nombre="YAGORUAM" />
   <elemento puntaje="211" nombre="Ruitzei" />
@@ -10,6 +13,7 @@
   <elemento puntaje="193" nombre="Ingresa tu Nombre" />
   <elemento puntaje="184" nombre="Ruitzei" />
   <elemento puntaje="181" nombre="Ingresa tu Nombre" />
+  <elemento puntaje="174" nombre="Ingresa tu Nombre" />
   <elemento puntaje="68" nombre="Ingresa tu Nombre" />
   <elemento puntaje="58" nombre="Ingresa tu Nombre" />
   <elemento puntaje="18" nombre="Mauro" />

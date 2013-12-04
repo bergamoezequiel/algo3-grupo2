@@ -128,17 +128,17 @@ public class PantallaDelNivel extends JPanel {
 
 	public void pintarPanelDerecho(Graphics g){
 		g.setColor(Color.BLUE);
-		g.drawString("Usuario Actual:"+ this.nivel.getJuegoActual().getUsuarioActual().getNombre(), ANCHO_PANTALLA_NIVEL, 25);
-		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 50);
-		g.drawString("Vehiculo Actual: ", ANCHO_PANTALLA_NIVEL, 70);
+		g.drawString("Nombre:"+ this.nivel.getJuegoActual().getUsuarioActual().getNombre(), ANCHO_PANTALLA_NIVEL, 25);
+		g.drawString("Movimientos Limites: "+(String)Integer.toString(nivel.getMovimientosLimites()), ANCHO_PANTALLA_NIVEL, 50);
+		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 75);
+		g.drawString("Vehiculo Actual: ", ANCHO_PANTALLA_NIVEL, 100);
 		g.setColor(Color.black);
-		g.fillRect(600-2, 80-2, TAMANIO_ICONOS_MENU+4, TAMANIO_ICONOS_MENU+4);
-		new PintorCalle().pintar(g, new Coordenada(600, 80), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
-		new PintorConductor().pintar(g, this.nivel.getConductor(), new Coordenada(600, 80), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
-		g.drawString(this.nivel.getConductor().getVehiculo().getClass().getSimpleName(), ANCHO_PANTALLA_NIVEL + TAMANIO_ICONOS_MENU + 16 , 100);
+		g.fillRect(600-2, 110-2, TAMANIO_ICONOS_MENU+4, TAMANIO_ICONOS_MENU+4);
+		new PintorCalle().pintar(g, new Coordenada(600, 110), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
+		new PintorConductor().pintar(g, this.nivel.getConductor(), new Coordenada(600, 110), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
+		g.drawString(this.nivel.getConductor().getVehiculo().getClass().getSimpleName(), ANCHO_PANTALLA_NIVEL + TAMANIO_ICONOS_MENU + 16 , 130);
 		//g.drawImage(((ImageIcon)this.hash.get(this.nivel.getConductor().getVehiculo().getClass())).getImage(),ANCHO_PANTALLA_NIVEL, 80, TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU, null);
-		g.drawString("Movimientos Limites: "+(String)Integer.toString(nivel.getMovimientosLimites()), ANCHO_PANTALLA_NIVEL, 150);
-		//g.drawString("Puntaje: "+(String)Integer.toString(nivel.getMovimientosRestantes() * this.nivel.getPuntajePorMovimientosSobrantes()), ANCHO_PANTALLA_NIVEL, 150);
+		g.drawString("Puntaje: "+(String)Integer.toString(this.nivel.getJuegoActual().getPuntajeAcumulado()), ANCHO_PANTALLA_NIVEL, 200);
 		
 		g.drawString("REFERENCIAS: ", ANCHO_PANTALLA_NIVEL, 230);
 		g.drawString("Llegada: ", ANCHO_PANTALLA_NIVEL, 270);
