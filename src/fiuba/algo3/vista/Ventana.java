@@ -90,11 +90,11 @@ public class Ventana extends JFrame implements Observer {
 		//Agrego los botones al Menu Opciones.
 		opciones.add(opcionNuevaPartida);
 		opciones.add(opcionGuardar);
+		opciones.add(opcionRanking);
 		opciones.add(opcionSalir);
 		
 		//Agrego los botones al Menu Ayuda.
 		ayuda.add(opcionInstrucciones);
-		ayuda.add(opcionRanking);
 		ayuda.add(opcionAcercaDe);
 		
 		//agrego los botones al menu Sistema.

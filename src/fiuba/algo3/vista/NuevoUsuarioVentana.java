@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.text.JTextComponent;
 
 
+
+
 import fiuba.algo3.controlador.ControlPorTeclado;
 import fiuba.algo3.modelo.Juego;
 import fiuba.algo3.modelo.Usuario;
@@ -42,6 +44,34 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 		panelCampos = new JPanel();
 		texto = new JTextField("Ingresa tu Nombre");
 		
+		/*
+		 * Todo esto es para que cuando se clickee se borre todo.
+		 */
+		texto.addMouseListener(new MouseListener() {	
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub	
+			}			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+							}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub				
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				texto.setText("");
+			}
+		});
+		
 		desplegable = new Choice();
 		desplegable.add("Moto");
 		desplegable.add("Auto");
@@ -68,12 +98,6 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 			System.out.println(texto.getText());
 			System.out.println(desplegable.getSelectedItem());
 			
-			//this.juego.agregarUsuario(usuarioNuevo);
-			//this.juego.setUsuarioActual(usuarioNuevo);
-			/*
-			 * Si el usuario es idiota y elige "seleccione un vehiculo" como vehiculo
-			 * se le asigna una moto.
-			 */
 			switch (desplegable.getSelectedIndex()) {
 			case 0:
 				this.juego.iniciarPartida(usuarioNuevo, Moto.getInstancia());
