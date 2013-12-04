@@ -26,7 +26,7 @@ public class TestJuego {
 		Juego unJuego = new Juego();
 		Assert.assertTrue(unJuego.agregarUsuario(new Usuario("A")));
 		
-		//Agrego un usuario que no existía antes.
+		//Agrego un usuario que no existia antes.
 		Assert.assertTrue( unJuego.agregarUsuario(new Usuario("Manuel")));
 		
 		//Intento agregar un usuario con un nombre que ya existe.
