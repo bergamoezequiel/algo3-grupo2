@@ -2,6 +2,10 @@
 <nivel Nombre="Nivel Moderado" MovimientosLimites="40" PuntajePorMovimientoSobrante="2">
   <mapa filas="11" columnas="11">
     <celda>
+      <coordenada x="0" y="9" />
+      <contenido tipoDeEncontrable="Pozo" penalizacion="3" />
+    </celda>
+    <celda>
       <coordenada x="1" y="0" />
       <contenido tipoDeEncontrable="Pozo" penalizacion="3" />
     </celda>
@@ -18,8 +22,20 @@
       <contenido tipoDeEncontrable="Cambio" />
     </celda>
     <celda>
+      <coordenada x="3" y="4" />
+      <contenido tipoDeEncontrable="Control" penalizacion="3" />
+    </celda>
+    <celda>
+      <coordenada x="3" y="8" />
+      <contenido tipoDeEncontrable="Piquete" penalizacion="2" />
+    </celda>
+    <celda>
       <coordenada x="4" y="3" />
       <contenido tipoDeEncontrable="Cambio" />
+    </celda>
+    <celda>
+      <coordenada x="4" y="5" />
+      <contenido tipoDeEncontrable="Control" penalizacion="3" />
     </celda>
     <celda>
       <coordenada x="6" y="3" />
