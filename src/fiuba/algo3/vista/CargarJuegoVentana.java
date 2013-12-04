@@ -34,6 +34,8 @@ public class CargarJuegoVentana extends JFrame{
 		
 		
 		JFileChooser browser = new JFileChooser();
+		File carpetaInicial = new File("./src/archivos");
+		browser.setCurrentDirectory(carpetaInicial);
 		browser.addActionListener(new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
