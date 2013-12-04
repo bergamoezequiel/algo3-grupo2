@@ -23,8 +23,9 @@ public class RankingVentana extends JFrame{
 		setLocation(500, 200);
 		this.setVisible(true);                 
 		this.setTitle("Ranking");
-		this.setSize(250,unaTabla.getTamanio()*100);
+		this.setSize(250,unaTabla.getTamanio()*70);
 		this.setResizable(true);
+		
 	
 		
 		
@@ -35,16 +36,17 @@ public class RankingVentana extends JFrame{
 				+ "<br>"
 				+ "<br>"
 				+ "<br>"
-				+ "<b>TAAAABLA DE POSICION JUAN! </b><br>"
+				+ "<b>Tabla de Posiciones </b><br>"
 				+ "<br>"
 				+ "<TABLE BORDER WIDTH = '40%'>"
 				+ "<TR><TD> Nombre de Usuario </TD><TD> Puntaje</TD>";
 		
-				//Recorre la lista de usuarios.
-				for (int i = 0; i < unaTabla.getTamanio(); i++) {					
-					
+				//Muestra como maximo los mejores 6 puntajes
+				for (int i = 0; i < 6; i++) {					
+						if (i == unaTabla.getTamanio()) break;
 						str += "<TR><TD> " + unaTabla.getElementoEnPosicion(i).getNombre()+ "</TD><TD> " + unaTabla.getElementoEnPosicion(i).getPuntaje()+ " </TD>"
 						+ "</TR>";
+						
 				};
 				
 				str +=  "</TABLE>" 
@@ -55,6 +57,12 @@ public class RankingVentana extends JFrame{
 		JLabel texto= new JLabel(str);
 		this.add(texto);
 		}
+	
+	public static void main(String[] args) {
+		new RankingVentana();
+	}
+	
+
 
 	
 }

@@ -32,8 +32,8 @@ public class Main {
 		*/
 	
 		// CODIGO PARA GENERAR LOS ARCHIVOS DE LOS NIVELES  http://www.youtube.com/watch?v=HWoVxBcvy1s
-		 Nivel nivel = new NivelMuyDificil(Moto.getInstancia(), new Juego());
-		 nivel.guardar();
+		 //Nivel nivel = new NivelMuyDificil(Moto.getInstancia(), new Juego());
+		 //nivel.guardar();
 		
 		Juego unJuego = new Juego(); //Observado
 		new VentanaInicial(unJuego);
