@@ -7,6 +7,7 @@ import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.mapa.Celda;
 import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.mapa.UbicacionEnMapaException;
+import fiuba.algo3.modelo.objetosEncontrables.Llegada;
 
 public class ConductorTest {
 	
@@ -100,5 +101,13 @@ public class ConductorTest {
 		Assert.assertEquals (new Coordenada(0, 0) , unConductor.getCelda().getCoordenada());
 		Assert.assertEquals(new Abajo(), unConductor.getDireccion());
 
+	}
+	
+	@Test
+	public void deberiaEncontrarLaLlegadaCuandoInteractuaConLaLlegada(){
+		Conductor unConductor = new Conductor(Moto.getInstancia(), new Arriba(), 2);
+		Llegada unaLlegada = new Llegada();
+		unConductor.getVehiculo().interactuar(unaLlegada, unConductor);
+		Assert.assertTrue(unConductor.getEncontroLlegada());
 	}
 }
