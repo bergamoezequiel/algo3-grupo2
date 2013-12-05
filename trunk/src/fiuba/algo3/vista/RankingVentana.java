@@ -29,7 +29,7 @@ public class RankingVentana extends JFrame{
 		
 		
 		                        
-		String str = "<html><div style='text-align: center;'>"
+		String str = "<html><div style='text-align:center;'>"
 				+ "<FONT FACE=verdana"
 				+ "<br>"
 				+ "<br>"
