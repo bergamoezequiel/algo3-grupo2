@@ -148,7 +148,6 @@ public class Juego extends Observable {
 	}
 	
 	public void CargarNivelXml(String unString/*, Vehiculo unVehiculo*/){
-		System.out.println("Se esta cargando la partida");
 		SAXBuilder builder = new SAXBuilder();
 		try {
 			Document lecturaDoc = builder.build(new File(unString));
@@ -205,7 +204,6 @@ public class Juego extends Observable {
 	public void guardarListaDeUsuarios(){
 		try{
 			  Document docjuego =new Document();
-			  System.out.println("Se creo el doc");
 			  Element listaDeUsuarios = new Element("lista");
 			  docjuego.setRootElement(listaDeUsuarios); 
 			  Iterator<Usuario> iterador= usuarios.iterator();

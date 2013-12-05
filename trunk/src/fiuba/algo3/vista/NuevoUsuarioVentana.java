@@ -91,8 +91,6 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 			Usuario usuarioNuevo = new Usuario(texto.getText());
 			boolean usuarioValido = this.juego.agregarUsuario(usuarioNuevo);
 			
-			System.out.println(texto.getText());
-			System.out.println(desplegable.getSelectedItem());
 			
 			/*
 			 * Si el usuario no existia anteriormente esta todo bien

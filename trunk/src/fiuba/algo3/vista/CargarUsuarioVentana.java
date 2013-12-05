@@ -70,7 +70,6 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if (e.getSource()== botonAceptar) {
-			System.out.println(desplegable.getSelectedItem());
 			switch (desplegableVehiculo.getSelectedIndex()) {
 			case 0:
 				this.juego.iniciarPartida(new Usuario(desplegable.getSelectedItem()), Auto.getInstancia());
