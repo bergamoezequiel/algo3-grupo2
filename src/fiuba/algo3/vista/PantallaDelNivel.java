@@ -141,7 +141,7 @@ public class PantallaDelNivel extends JPanel {
 		g.setColor(Color.BLUE);
 		g.drawString(this.nivel.getJuegoActual().getUsuarioActual().getNombre(), ANCHO_PANTALLA_NIVEL, 25);
 		g.drawString("Tienes "+(String)Integer.toString(this.nivel.getJuegoActual().getPuntajeAcumulado()) + " puntos!", ANCHO_PANTALLA_NIVEL, 50);
-		g.drawString("Cuidado!, solo te restan ", ANCHO_PANTALLA_NIVEL, 75);
+		g.drawString("Cuidado, te quedan ", ANCHO_PANTALLA_NIVEL, 75);
 		g.drawString((String)Integer.toString(nivel.getMovimientosRestantes()) + " movimientos!", ANCHO_PANTALLA_NIVEL, 100);
 		
 		g.setColor(Color.black);
