@@ -49,7 +49,6 @@ public class TablaDePuntuaciones {
 		try{
 		Document docMapa =new Document();
 		Element tabla = this.serializar();
-		
 		docMapa.setRootElement(tabla);
 		XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
 		xmlOutput.output(docMapa,new FileOutputStream(new File("./src/archivos/tabla.xml")));

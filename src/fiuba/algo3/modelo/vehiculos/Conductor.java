@@ -29,6 +29,12 @@ public class Conductor extends ContenidoDeCelda{
 		this.direccion = unaDireccion;
 	}
 	
+	
+	public ContenidoDeCelda clonar() {
+		return (new Conductor(this.vehiculo,this.direccion,this.alcanceDeVision));
+		
+	}
+	
 	@Override
 	public void setCelda(Celda unaCelda) throws UbicacionEnMapaException {
 		Coordenada coordenadaInicial = unaCelda.getCoordenada();

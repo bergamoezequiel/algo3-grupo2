@@ -2,6 +2,7 @@ package fiuba.algo3.modelo.objetosEncontrables;
 
 import org.jdom2.Element;
 
+import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 import fiuba.algo3.modelo.vehiculos.Moto;
@@ -47,5 +48,9 @@ public class Snorlax extends ObjetoEncontrable{
 			return nodoSnorlax;                
 		}
 	
+	 public ContenidoDeCelda clonar() {
+			return (new Snorlax());
+			
+		}
 
 }

@@ -2,6 +2,7 @@ package fiuba.algo3.modelo.objetosEncontrables;
 
 import org.jdom2.Element;
 
+import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
 import fiuba.algo3.modelo.vehiculos.*;
 
 public class ControlPolicial extends ObjetoEncontrable {
@@ -26,6 +27,9 @@ public class ControlPolicial extends ObjetoEncontrable {
 
 	public int obtenerPenalizacion(){
 		return this.penalizacion;
+	}
+	public static ControlPolicial crearInstancia(){
+		return (new ControlPolicial());
 	}
 	
 	public void interactuarConMoto(Conductor unConductor) {
@@ -95,5 +99,10 @@ public class ControlPolicial extends ObjetoEncontrable {
 			nodoControl.setAttribute("penalizacion", Integer.toString(this.penalizacion));
 			return nodoControl;                
 		}
+	
+	public ContenidoDeCelda clonar() {
+		return (new ControlPolicial());
+		
+	}
 	
 }

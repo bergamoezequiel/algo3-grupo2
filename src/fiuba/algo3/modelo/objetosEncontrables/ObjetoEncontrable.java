@@ -19,5 +19,5 @@ public abstract class ObjetoEncontrable extends ContenidoDeCelda implements Inte
 		}
 		this.celda = unaCelda;
 	}
-	
+
 }

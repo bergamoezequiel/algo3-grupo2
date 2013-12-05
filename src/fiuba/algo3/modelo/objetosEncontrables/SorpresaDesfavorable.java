@@ -2,6 +2,7 @@ package fiuba.algo3.modelo.objetosEncontrables;
 
 import org.jdom2.Element;
 
+import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 
 public class SorpresaDesfavorable extends Sorpresa {
@@ -39,6 +40,10 @@ public class SorpresaDesfavorable extends Sorpresa {
 			Element nodoDesfavorable = new Element ("contenido");
 			nodoDesfavorable.setAttribute ("tipoDeEncontrable", "Desfavorable");
 			return nodoDesfavorable;                
+		}
+	 public ContenidoDeCelda clonar() {
+			return (new SorpresaDesfavorable());
+			
 		}
 }
 
