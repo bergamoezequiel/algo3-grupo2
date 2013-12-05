@@ -36,9 +36,9 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 		this.juego= unJuego;
 		getContentPane().setLayout(new FlowLayout());
 		setBounds(400,250, 400,400);
-		setTitle("Cargar");
+		setTitle("Cargar Usuario Existente");
 		setVisible(true);
-		setSize(240,140); 
+		setSize(260,100); 
 				
 		botonAceptar = new JButton("Aceptar");
 		botonVolver = new JButton("Volver");
@@ -46,16 +46,11 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 		panelCampos = new JPanel();
 		desplegable = new Choice();
 		
-		/*
-		 * Aca se irian agreando los Nombres de los usuarios con un For. 
-		 */
 		ArrayList<Usuario> listaDeUsuarios = unJuego.getListaDeUsuarios();
 		Iterator<Usuario> iterador= listaDeUsuarios.iterator();
 		while (iterador.hasNext()){
 			  desplegable.add(iterador.next().getUsuario().getNombre());
-		  }
-			
-		
+		  }		
 		
 		desplegableVehiculo = new Choice();
 		desplegableVehiculo.add("Auto");
@@ -93,7 +88,8 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 			dispose();	
 		}
 		if (e.getSource() == botonVolver){
-			dispose();
+			new VentanaInicial(this.juego);
+			dispose();			
 		}
 	}
 	

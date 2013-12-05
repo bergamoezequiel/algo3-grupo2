@@ -126,7 +126,7 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 		}
 		
 		if (e.getSource() == botonVolver){
-			setVisible(false);
+			dispose();
 			new VentanaInicial(this.juego);
 		}
 	}
