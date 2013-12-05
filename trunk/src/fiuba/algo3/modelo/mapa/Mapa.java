@@ -94,6 +94,18 @@ public class Mapa {
 	}
 	// En el lugar del conductor pone siempre el mismo conductor
 	public static Mapa deserializarse(Element nodoMapa,Nivel nivel, Vehiculo unVehiculo ){
+		Hashtable<String,ContenidoDeCelda> clases = new Hashtable<String,ContenidoDeCelda>() ;
+		clases.put("Control", new ControlPolicial());
+		clases.put("Pozo", new Pozo());
+		clases.put("Piquete", new Piquete());
+		clases.put("Llegada", new Llegada());
+		clases.put("Cambio", new CambioDeVehiculo());
+		clases.put("Snorlax", new Snorlax());
+		clases.put("Desfavorable",new SorpresaDesfavorable());
+		clases.put("favorable",new SorpresaFavorable());
+		clases.put("Conductor",new Conductor(unVehiculo,new Arriba(),5));
+		
+		
 		Mapa unMapa = new Mapa();
 		unMapa.setCantidadDeFilas(Integer.parseInt(nodoMapa.getAttributeValue("filas")));
 		unMapa.setCantidadDeColumnas(Integer.parseInt(nodoMapa.getAttributeValue("columnas")));
@@ -109,51 +121,13 @@ public class Mapa {
 		for(Element nodoCelda : nodoMapa.getChildren("celda")){
 			Coordenada coordenada= Coordenada.deserializarse(nodoCelda.getChild("coordenada"));
 			Celda celda = unMapa.getCeldaEn(coordenada);
-			if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Pozo")){
-				celda.agregarContenido(new Pozo());
+			celda.agregarContenido(clases.get((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable"))).clonar());
+			if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Conductor")){
+				Conductor cond  =(Conductor) celda.getContenido();
+				nivel.setConductor(cond);
+				nivel.getConductor().addObserver(nivel);
 			}
-			else{ 
-				if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Piquete")){
-				celda.agregarContenido(new Piquete());
-				}
-				else{ 
-					if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Control")){
-					celda.agregarContenido(new ControlPolicial());
-				    }
-					else{ 
-						if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Llegada")){
-						celda.agregarContenido(new Llegada());
-					    }
-						else{ 
-							if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Cambio")){
-							celda.agregarContenido(new CambioDeVehiculo());
-						    }
-							else{ 
-								if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Snorlax")){
-								celda.agregarContenido(new Snorlax());
-							    }
-								else{ 
-										if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("favorable")){
-										celda.agregarContenido(new SorpresaFavorable());
-									    }
-										else{ 
-											if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Desfavorable")){
-											celda.agregarContenido(new SorpresaDesfavorable());
-										    }
-											else{ 
-												if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Conductor")){
-												Conductor conductor=new Conductor(unVehiculo, new Abajo(), 5);
-												celda.agregarContenido(conductor);
-												nivel.setConductor(conductor);
-												nivel.getConductor().addObserver(nivel);
-											    }
-									    }
-								}}
-							}
-						}
-					}		
-				}
-			}
+		
 		}
 	
 		return unMapa;		

@@ -2,6 +2,7 @@ package fiuba.algo3.modelo.objetosEncontrables;
 
 import org.jdom2.Element;
 
+import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
 import fiuba.algo3.modelo.vehiculos.Auto;
 import fiuba.algo3.modelo.vehiculos.Conductor;
 import fiuba.algo3.modelo.vehiculos.Moto;
@@ -53,6 +54,10 @@ public class Piquete extends ObjetoEncontrable {
 			nodoPiquete.setAttribute("penalizacion", Integer.toString(this.penalizacion));
 			return nodoPiquete;                
 	}
+	 public ContenidoDeCelda clonar() {
+			return (new Piquete());
+			
+		}
 	
 }
 

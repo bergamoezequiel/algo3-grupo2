@@ -2,6 +2,7 @@ package fiuba.algo3.modelo.objetosEncontrables;
 
 import org.jdom2.Element;
 
+import fiuba.algo3.modelo.mapa.ContenidoDeCelda;
 import fiuba.algo3.modelo.vehiculos.*;
 
 public class Llegada extends ObjetoEncontrable implements Interactuable {
@@ -40,6 +41,10 @@ public class Llegada extends ObjetoEncontrable implements Interactuable {
 			Element nodoLlegada = new Element ("contenido");
 			nodoLlegada.setAttribute ("tipoDeEncontrable", "Llegada");
 			return nodoLlegada;                
+		}
+	 public ContenidoDeCelda clonar() {
+			return (new Llegada());
+			
 		}
 	
 	

@@ -11,6 +11,7 @@ public abstract class ContenidoDeCelda extends Observable {
 	}
 	
 	public abstract void setCelda(Celda unaCelda);
+	public abstract ContenidoDeCelda clonar();
 	
 	public void setCeldaNull(){
 		this.celda = null;
