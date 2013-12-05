@@ -20,7 +20,7 @@ public class RankingVentana extends JFrame{
 		
 
 		setLocation(500, 200);
-		this.setVisible(false);                 
+		this.setVisible(true);                 
 		this.setTitle("Ranking");
 		this.setSize(250,350);
 		this.setResizable(true);
@@ -55,13 +55,5 @@ public class RankingVentana extends JFrame{
 		
 		JLabel texto= new JLabel(str);
 		this.add(texto);
-		}
-	
-	public static void main(String[] args) {
-		new RankingVentana();
-	}
-	
-
-
-	
+		}	
 }

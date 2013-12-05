@@ -90,7 +90,6 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 			
 			Ventana unaVentana = new Ventana(this.juego, new ControlPorTeclado(this.juego));
 			this.juego.addObserver(unaVentana);
-			//this.juego.iniciarPartida(unUsuario, tipoDeVehiculo);
 			dispose();	
 		}
 		if (e.getSource() == botonVolver){
@@ -98,8 +97,5 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 		}
 	}
 	
-	public static void main(String[] args) {
-		new CargarUsuarioVentana(new Juego());
-	}
-	
+
 }
