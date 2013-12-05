@@ -9,6 +9,8 @@ public class TestJuego {
 	@Test
 	public void testNoDeberiDejarPonerDosUsuariosConElMismoNombre(){
 		Juego unJuego = new Juego();
+		int cantidadDeUsuariosInicial = unJuego.getCantidadDeUsuarios();
+				
 		Usuario unUsuario = new Usuario("Juan");
 		Usuario otroUsuario = new Usuario("Mauro");
 		Usuario tercerUsuario = new Usuario("Juan");
@@ -18,7 +20,7 @@ public class TestJuego {
 		Assert.assertTrue(unJuego.agregarUsuario(otroUsuario));
 		Assert.assertFalse(unJuego.agregarUsuario(tercerUsuario));
 		
-		Assert.assertEquals(2, unJuego.getCantidadDeUsuarios());	
+		Assert.assertEquals(cantidadDeUsuariosInicial +2, unJuego.getCantidadDeUsuarios());	
 	}
 	
 	@Test
