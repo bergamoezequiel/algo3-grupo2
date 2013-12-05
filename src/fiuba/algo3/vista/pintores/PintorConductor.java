@@ -6,7 +6,6 @@ import java.util.Hashtable;
 import javax.swing.ImageIcon;
 
 import fiuba.algo3.modelo.Nivel;
-import fiuba.algo3.modelo.NivelVacio;
 import fiuba.algo3.modelo.coordenadas.*;
 import fiuba.algo3.modelo.vehiculos.*;
 
