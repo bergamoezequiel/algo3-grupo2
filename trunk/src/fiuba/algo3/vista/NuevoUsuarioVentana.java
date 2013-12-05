@@ -99,7 +99,8 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 			 * pero si ya existia, le muestro un mensaje de error al
 			 * usuario y le vuelvo a abrir esta ventana.
 			 */
-			if (usuarioValido) {				
+			if (usuarioValido) {	
+				this.juego.guardarListaDeUsuarios();
 				switch (desplegable.getSelectedIndex()) {
 				case 0:
 					this.juego.iniciarPartida(usuarioNuevo, Moto.getInstancia());

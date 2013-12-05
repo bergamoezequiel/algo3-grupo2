@@ -4,12 +4,21 @@ import java.awt.Choice;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import org.jdom2.Element;
+
+import fiuba.algo3.controlador.ControlPorTeclado;
 import fiuba.algo3.modelo.Juego;
+import fiuba.algo3.modelo.Usuario;
+import fiuba.algo3.modelo.vehiculos.Auto;
+import fiuba.algo3.modelo.vehiculos.Moto;
+import fiuba.algo3.modelo.vehiculos.TodoTerreno;
 
 public class CargarUsuarioVentana extends JFrame implements ActionListener{
 	
@@ -21,8 +30,10 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 	private JPanel panelCampos;
 	private Choice desplegable;
 	private Choice desplegableVehiculo;
+	private Juego juego;
 
-	public CargarUsuarioVentana(Juego unJuego){				  
+	public CargarUsuarioVentana(Juego unJuego){
+		this.juego= unJuego;
 		getContentPane().setLayout(new FlowLayout());
 		setBounds(400,250, 400,400);
 		setTitle("Cargar");
@@ -38,14 +49,15 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 		/*
 		 * Aca se irian agreando los Nombres de los usuarios con un For. 
 		 */
+		ArrayList<Usuario> listaDeUsuarios = unJuego.getListaDeUsuarios();
+		Iterator<Usuario> iterador= listaDeUsuarios.iterator();
+		while (iterador.hasNext()){
+			  desplegable.add(iterador.next().getUsuario().getNombre());
+		  }
+			
 		
-		desplegable.add("Seleccione su Usuario.");
-		desplegable.add("Usuario 1");
-		desplegable.add("Usuario 2");
-		desplegable.add("Usuario 3");
 		
 		desplegableVehiculo = new Choice();
-		desplegableVehiculo.add("Seleccione un Vehiculo ...");
 		desplegableVehiculo.add("Auto");
 		desplegableVehiculo.add("Moto");
 		desplegableVehiculo.add("TodoTerreno");
@@ -63,15 +75,31 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if (e.getSource()== botonAceptar) {
-		/*
-		 * Aca iria lo que pasa cuando se pone aceptar.
-		 */
+			System.out.println(desplegable.getSelectedItem());
+			switch (desplegableVehiculo.getSelectedIndex()) {
+			case 0:
+				this.juego.iniciarPartida(new Usuario(desplegable.getSelectedItem()), Auto.getInstancia());
+				break;
+			case 1:
+				this.juego.iniciarPartida(new Usuario(desplegable.getSelectedItem()), Moto.getInstancia());
+				break;
+			default:
+				this.juego.iniciarPartida(new Usuario(desplegable.getSelectedItem()), TodoTerreno.getInstancia());
+				break;
+			}
+			
+			Ventana unaVentana = new Ventana(this.juego, new ControlPorTeclado(this.juego));
+			this.juego.addObserver(unaVentana);
 			//this.juego.iniciarPartida(unUsuario, tipoDeVehiculo);
 			dispose();	
 		}
 		if (e.getSource() == botonVolver){
 			dispose();
 		}
+	}
+	
+	public static void main(String[] args) {
+		new CargarUsuarioVentana(new Juego());
 	}
 	
 }
