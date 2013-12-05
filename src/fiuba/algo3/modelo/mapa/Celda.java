@@ -49,14 +49,11 @@ public class Celda{
 	}
 	
 	public Element serializar(){
-		System.out.println("se entro en la serializacion de la celda");	
 		Element nodoCelda = new Element("celda");
 		nodoCelda.addContent(this.coordenada.serializar());
-		System.out.println("se agrego la coordenada");
 		if (contenido!=null){
-		nodoCelda.addContent(this.contenido.serializar());
+			nodoCelda.addContent(this.contenido.serializar());
 		}
-		System.out.println("se agrego el contenido");	
 		return nodoCelda;
 		}
 	

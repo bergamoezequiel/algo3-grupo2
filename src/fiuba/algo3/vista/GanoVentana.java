@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import fiuba.algo3.modelo.Juego;
-import fiuba.algo3.modelo.Usuario;
 
 public class GanoVentana extends JFrame implements ActionListener {
 	

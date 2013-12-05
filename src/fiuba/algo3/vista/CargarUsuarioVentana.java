@@ -20,11 +20,9 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 	private JButton botonAceptar, botonVolver;
 	private JPanel panelCampos;
 	private Choice desplegable;
-	private Juego juego;
 	private Choice desplegableVehiculo;
 
 	public CargarUsuarioVentana(Juego unJuego){				  
-		this.juego = unJuego;
 		getContentPane().setLayout(new FlowLayout());
 		setBounds(400,250, 400,400);
 		setTitle("Cargar");

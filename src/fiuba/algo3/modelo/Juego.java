@@ -16,7 +16,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import fiuba.algo3.modelo.mapa.Mapa;
 import fiuba.algo3.modelo.vehiculos.*;
 
 public class Juego extends Observable {
@@ -64,7 +63,6 @@ public class Juego extends Observable {
 	
 	// Devuelve true o false dependiendo si pudo agregarlo o no.
 	public boolean agregarUsuario(Usuario unUsuario){
-		System.out.println("se agrego un usuario con el nombre:" + unUsuario.getNombre()+"-.-..---..--.-.");
 		boolean pudoAgregarlo = false;
 		if(!this.usuarios.contains(unUsuario)){
 			this.usuarios.add(unUsuario);
@@ -111,7 +109,6 @@ public class Juego extends Observable {
 		nivelActual = null;
 		this.puntajeAcumulado *= this.multiplicadorPorGanarJuego;
 		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.puntajeAcumulado));
-		System.out.println("Ganaste, tu puntuacion es " + this.puntajeAcumulado);
 		this.tablaDePuntuaciones.guardar();
 		
 		this.setChanged();
@@ -133,13 +130,11 @@ public class Juego extends Observable {
 	public void guardar(String nombre){
 		  try{
 		  Document docjuego =new Document();
-		  System.out.println("Se creo el doc");
 		  Element juego = this.serializar();
 		  
 		  docjuego.setRootElement(juego); 
 		  XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
 		  xmlOutput.output(docjuego,new FileOutputStream(new File("./src/partidasGuardadas/" + nombre + ".xml")));
-		  System.out.println("Se escribio el archivo");
 		  
 		  }
 		  catch(Exception ex){
@@ -169,7 +164,6 @@ public class Juego extends Observable {
 		catch(IOException  e){
 			e.printStackTrace(); 			
 		}
-		System.out.println("Levante el archivo del mapa");
 		
 		this.setChanged();
 		this.notifyObservers("Juego Pasa De Nivel");
@@ -181,7 +175,6 @@ public class Juego extends Observable {
 		nivelActual = null;
 		
 		this.tablaDePuntuaciones.agregar(new ElementoTablaDePuntuacion(this.getUsuarioActual(), this.puntajeAcumulado));
-		System.out.println("Perdiste, tu puntuacion es " + this.puntajeAcumulado);
 		this.tablaDePuntuaciones.guardar();
 		
 		this.setChanged();
@@ -217,7 +210,6 @@ public class Juego extends Observable {
 			  }
 			  XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
 			  xmlOutput.output(docjuego,new FileOutputStream(new File("./src/archivos/Usuarios.xml")));
-			  System.out.println("Se escribio el archivo");
 			  
 			  }
 			  catch(Exception ex){
@@ -242,7 +234,6 @@ public class Juego extends Observable {
 		catch(IOException  e){
 			e.printStackTrace(); 			
 		}
-		System.out.println("Levante el archivo del mapa");
 		
 		this.setChanged();
 		this.notifyObservers("Juego Pasa De Nivel");
