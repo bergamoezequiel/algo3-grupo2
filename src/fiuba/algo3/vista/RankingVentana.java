@@ -39,7 +39,7 @@ public class RankingVentana extends JFrame{
 				+ "<b>Tabla de Posiciones </b><br>"
 				+ "<br>"
 				+ "<TABLE BORDER WIDTH = '40%'>"
-				+ "<TR><TD> Nombre de Usuario </TD><TD> Puntaje</TD>";
+				+ "<TR><TD> Nombre </TD><TD> Puntaje</TD>";
 		
 				//Muestra como maximo los mejores 6 puntajes
 				for (int i = 0; i < 6; i++) {					

@@ -1,6 +1,12 @@
 package fiuba.algo3.vista;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Hashtable;
 
 import javax.swing.ImageIcon;
@@ -22,6 +28,10 @@ public class PantallaDelNivel extends JPanel {
 	
 	final int ANCHO_PANTALLA_NIVEL = 600 - MARGEN_IZQUIERDO;
 	final int ALTO_PANTALLA_NIVEL = 600 - MARGEN_SUPERIOR;
+	
+	//Ya aparecen en Ventana, deberian juntarse
+	final int RESOLUCIONX = 800;
+	final int RESOLUCIONY = 600;
 	
 	private Nivel nivel;
 	private int anchoCelda;
@@ -127,32 +137,40 @@ public class PantallaDelNivel extends JPanel {
 	}
 
 	public void pintarPanelDerecho(Graphics g){
+		g.setFont(new Font("Verdana", Font.BOLD, 14));
 		g.setColor(Color.BLUE);
-		g.drawString("Nombre:"+ this.nivel.getJuegoActual().getUsuarioActual().getNombre(), ANCHO_PANTALLA_NIVEL, 25);
-		g.drawString("Movimientos Limites: "+(String)Integer.toString(nivel.getMovimientosLimites()), ANCHO_PANTALLA_NIVEL, 50);
-		g.drawString("Movientos Actuales:"+(String)Integer.toString(this.nivel.getConductor().getMovimientos()), ANCHO_PANTALLA_NIVEL, 75);
-		g.drawString("Vehiculo Actual: ", ANCHO_PANTALLA_NIVEL, 100);
-		g.setColor(Color.black);
-		g.fillRect(600-2, 110-2, TAMANIO_ICONOS_MENU+4, TAMANIO_ICONOS_MENU+4);
-		new PintorCalle().pintar(g, new Coordenada(600, 110), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
-		new PintorConductor().pintar(g, this.nivel.getConductor(), new Coordenada(600, 110), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
-		g.drawString(this.nivel.getConductor().getVehiculo().getClass().getSimpleName(), ANCHO_PANTALLA_NIVEL + TAMANIO_ICONOS_MENU + 16 , 130);
-		//g.drawImage(((ImageIcon)this.hash.get(this.nivel.getConductor().getVehiculo().getClass())).getImage(),ANCHO_PANTALLA_NIVEL, 80, TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU, null);
-		g.drawString("Puntaje: "+(String)Integer.toString(this.nivel.getJuegoActual().getPuntajeAcumulado()), ANCHO_PANTALLA_NIVEL, 200);
+		g.drawString(this.nivel.getJuegoActual().getUsuarioActual().getNombre(), ANCHO_PANTALLA_NIVEL, 25);
+		g.drawString("Tienes "+(String)Integer.toString(this.nivel.getJuegoActual().getPuntajeAcumulado()) + " puntos!", ANCHO_PANTALLA_NIVEL, 50);
+		g.drawString("Cuidado!, solo te restan ", ANCHO_PANTALLA_NIVEL, 75);
+		g.drawString((String)Integer.toString(nivel.getMovimientosRestantes()) + " movimientos!", ANCHO_PANTALLA_NIVEL, 100);
 		
-		g.drawString("REFERENCIAS: ", ANCHO_PANTALLA_NIVEL, 230);
-		g.drawString("Llegada: ", ANCHO_PANTALLA_NIVEL, 270);
-		new PintorLlegada().pintar(g, new Coordenada (700,250), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
-		g.drawString("Sorpresa: ", ANCHO_PANTALLA_NIVEL, 320);
-		new PintorSorpresa().pintar(g, new Coordenada (700,300), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
-		g.drawString("Pozo: ", ANCHO_PANTALLA_NIVEL, 370);
-		new PintorPozo2().pintar(g, new Coordenada (700,350), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
-		g.drawString("Control Policial: ", ANCHO_PANTALLA_NIVEL, 420);
-		new PintorControlPolicial().pintar(g, new Coordenada (700,400), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
-		g.drawString("Piquete: ", ANCHO_PANTALLA_NIVEL, 470);
-		new PintorPiquete().pintar(g, new Coordenada (700,450), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
-		g.drawString("Snorlax: ", ANCHO_PANTALLA_NIVEL, 520);
-		new PintorSnorlax().pintar(g, new Coordenada (700,500), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
+		g.setColor(Color.black);
+		int yVehiculo = 140;
+		g.drawString("Vehiculo Actual: ", ANCHO_PANTALLA_NIVEL, yVehiculo);
+		g.fillRect(600-2, yVehiculo+10-2, TAMANIO_ICONOS_MENU+4, TAMANIO_ICONOS_MENU+4);
+		new PintorCalle().pintar(g, new Coordenada(600, yVehiculo+10), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
+		new PintorConductor().pintar(g, this.nivel.getConductor(), new Coordenada(600, yVehiculo+10), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
+		g.drawString(this.nivel.getConductor().getVehiculo().getClass().getSimpleName(), ANCHO_PANTALLA_NIVEL + TAMANIO_ICONOS_MENU + 16 , yVehiculo+30);
+
+		g.drawString("Bonus de nivel: " + (String)Integer.toString(nivel.getPuntajePorMovimientoSobrante()) + "x", ANCHO_PANTALLA_NIVEL, 230);
+		g.setFont(new Font("Verdana", Font.BOLD, 16));
+		int yBaseEnReferencias = 300;
+		int yRelativaEnReferencias = 40;
+		int posicionXreferencias = RESOLUCIONX - TAMANIO_ICONOS_MENU - 15;
+		g.drawString("REFERENCIAS: ", ANCHO_PANTALLA_NIVEL, yBaseEnReferencias - 20);
+		g.setFont(new Font("Verdana", Font.BOLD, 12));
+		g.drawString("Llegada: ", ANCHO_PANTALLA_NIVEL, 20 + yBaseEnReferencias + yRelativaEnReferencias * 0);
+		new PintorLlegada().pintar(g, new Coordenada (posicionXreferencias, yBaseEnReferencias + yRelativaEnReferencias * 0), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
+		g.drawString("Sorpresa: ", ANCHO_PANTALLA_NIVEL, 20+ yBaseEnReferencias + yRelativaEnReferencias * 1);
+		new PintorSorpresa().pintar(g, new Coordenada (posicionXreferencias, yBaseEnReferencias + yRelativaEnReferencias * 1), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
+		g.drawString("Pozo: ", ANCHO_PANTALLA_NIVEL, 20 + yBaseEnReferencias + yRelativaEnReferencias * 2);
+		new PintorPozo2().pintar(g, new Coordenada (posicionXreferencias, yBaseEnReferencias + yRelativaEnReferencias * 2), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
+		g.drawString("Control Policial: ", ANCHO_PANTALLA_NIVEL, 20 + yBaseEnReferencias + yRelativaEnReferencias * 3);
+		new PintorControlPolicial().pintar(g, new Coordenada (posicionXreferencias, yBaseEnReferencias + yRelativaEnReferencias * 3), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
+		g.drawString("Piquete: ", ANCHO_PANTALLA_NIVEL, 20 + yBaseEnReferencias + yRelativaEnReferencias * 4);
+		new PintorPiquete().pintar(g, new Coordenada (posicionXreferencias, yBaseEnReferencias + yRelativaEnReferencias * 4), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
+		g.drawString("Snorlax: ", ANCHO_PANTALLA_NIVEL, 20 + yBaseEnReferencias + yRelativaEnReferencias * 5);
+		new PintorSnorlax().pintar(g, new Coordenada (posicionXreferencias, yBaseEnReferencias + yRelativaEnReferencias * 5), TAMANIO_ICONOS_MENU, TAMANIO_ICONOS_MENU);
 				
 	}
 	
