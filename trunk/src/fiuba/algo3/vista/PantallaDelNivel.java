@@ -1,12 +1,7 @@
 package fiuba.algo3.vista;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.FontFormatException;
 import java.awt.Graphics;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Hashtable;
 
 import javax.swing.ImageIcon;
@@ -67,7 +62,6 @@ public class PantallaDelNivel extends JPanel {
 		setBackground(Color.green);
 		this.imagen = new ImageIcon(getClass().getResource("/imagenes/PantallaDeNivel_background.jpg"));
 		this.nivel = unNivel;
-		System.out.println("Nivel Actual: " + this.nivel.getNombre());
 		this.anchoCelda = ANCHO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeColumnas();
 		this.altoCelda = ALTO_PANTALLA_NIVEL / this.nivel.getMapa().getCantidadDeFilas();
 	}

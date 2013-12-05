@@ -13,7 +13,6 @@ import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
-import fiuba.algo3.modelo.mapa.Celda;
 
 public class TablaDePuntuaciones {
 	
@@ -49,14 +48,11 @@ public class TablaDePuntuaciones {
 	public void guardar(){
 		try{
 		Document docMapa =new Document();
-		System.out.println("Se creo el doc");
 		Element tabla = this.serializar();
 		
 		docMapa.setRootElement(tabla);
-		System.out.println("se agrego el mapa al documento");	
 		XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
 		xmlOutput.output(docMapa,new FileOutputStream(new File("./src/archivos/tabla.xml")));
-		System.out.println("Se escribio el archivo");
 		
 		}
 		catch(Exception ex){

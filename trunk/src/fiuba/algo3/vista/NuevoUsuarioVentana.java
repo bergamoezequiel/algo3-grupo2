@@ -1,10 +1,6 @@
 package fiuba.algo3.vista;
 
 import javax.swing.*;
-import javax.swing.text.JTextComponent;
-
-
-
 
 import fiuba.algo3.controlador.ControlPorTeclado;
 import fiuba.algo3.modelo.Juego;
@@ -13,7 +9,7 @@ import fiuba.algo3.modelo.vehiculos.*;
 
 import java.awt.Choice;
 import java.awt.FlowLayout;
-import java.awt.TextField;
+
 import java.awt.event.*;
 public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 	/**
@@ -21,7 +17,7 @@ public class NuevoUsuarioVentana extends JFrame implements ActionListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private JFrame f;
+
 	private JButton botonAceptar, botonVolver;
 	private JPanel panelCampos;
 	private JTextField texto;

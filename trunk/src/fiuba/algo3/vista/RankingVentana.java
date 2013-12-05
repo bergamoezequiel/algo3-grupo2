@@ -1,6 +1,5 @@
 package fiuba.algo3.vista;
 
-import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;

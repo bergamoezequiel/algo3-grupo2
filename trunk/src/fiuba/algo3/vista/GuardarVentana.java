@@ -8,14 +8,11 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import fiuba.algo3.controlador.ControlPorTeclado;
 import fiuba.algo3.modelo.Juego;
-import fiuba.algo3.modelo.Usuario;
 
 public class GuardarVentana extends JFrame implements ActionListener{
 	

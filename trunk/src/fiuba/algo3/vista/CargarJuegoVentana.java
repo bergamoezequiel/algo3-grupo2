@@ -1,17 +1,15 @@
 package fiuba.algo3.vista;
 
-import java.awt.Choice;
+
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-import javax.swing.JButton;
+
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.plaf.FileChooserUI;
+
 
 import fiuba.algo3.modelo.Juego;
 
@@ -54,8 +52,6 @@ public class CargarJuegoVentana extends JFrame{
 			if (command.equals(JFileChooser.APPROVE_SELECTION)){
 		    	File archivoSeleccionado = selectorArchivo.getSelectedFile();
 		    	this.juego.CargarNivelXml(archivoSeleccionado.getAbsolutePath());
-		    	System.out.println(archivoSeleccionado.getName());
-		    	//System.out.println("asd");
 		    	dispose();
 		    } else if (command.equals(JFileChooser.CANCEL_SELECTION)){
 		    	dispose();

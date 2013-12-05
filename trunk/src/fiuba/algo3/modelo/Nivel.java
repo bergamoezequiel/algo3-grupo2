@@ -102,14 +102,11 @@ public class Nivel implements Observer {
 	public void guardar(){
 		try{
 		Document docMapa =new Document();
-		System.out.println("Se creo el doc");
 		Element nivel = this.serializar();
 		
 		docMapa.setRootElement(nivel);
-		System.out.println("se agrego el mapa al documento");	
 		XMLOutputter xmlOutput =new XMLOutputter(Format.getPrettyFormat());
 		xmlOutput.output(docMapa,new FileOutputStream(new File("./src/archivos/nivelMuyDificil.xml")));
-		System.out.println("Se escribio el archivo");
 		
 		}
 		catch(Exception ex){
@@ -125,12 +122,9 @@ public class Nivel implements Observer {
 			Element root = lecturaDoc.getRootElement();
 			
 			this.setMovimientosLimites(Integer.parseInt(root.getAttributeValue("MovimientosLimites")));
-			System.out.println("Movimientos limites del nivel :"+ Integer.toString(this.getMovimientosLimites()) );
 			this.setPuntajePorMovimientoSobrante(Integer.parseInt(root.getAttributeValue("PuntajePorMovimientoSobrante")));
-			System.out.println("PuntajePorMovimientoSobrante :"+ Integer.toString(this.getPuntajePorMovimientoSobrante()) );
 			Mapa mapa = Mapa.deserializarse(root.getChild("mapa"), this, unVehiculo);
 			this.setMapa(mapa);
-			System.out.println("se agrego mapa al nivel");
 	    }
 	    catch(JDOMException  e){
 	    	e.printStackTrace(); 			

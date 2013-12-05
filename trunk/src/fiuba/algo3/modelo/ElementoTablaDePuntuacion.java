@@ -9,8 +9,6 @@ public class ElementoTablaDePuntuacion implements Comparable<ElementoTablaDePunt
 	public ElementoTablaDePuntuacion(Element nodo){
 		this.nombre = nodo.getAttributeValue("nombre");
 		this.puntaje= Integer.parseInt(nodo.getAttributeValue("puntaje")) ;
-		System.out.println("Se creo elemento de tabla con nombre: "+ this.nombre);	
-		System.out.println("y puntaje: "+ Integer.toString(this.puntaje));
 	}
 
 	
