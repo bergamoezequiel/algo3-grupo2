@@ -242,9 +242,7 @@ public class Juego extends Observable {
 	    }
 		catch(IOException  e){
 			e.printStackTrace(); 			
-		}
-		System.out.println("cargo la lista");
-		
+		}		
 	}	
 	
 
