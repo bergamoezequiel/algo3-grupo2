@@ -1,6 +1,7 @@
 package fiuba.algo3.modelo.mapa;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -106,6 +107,19 @@ public class Mapa {
 	}
 	// En el lugar del conductor pone siempre el mismo conductor
 	public static Mapa deserializarse(Element nodoMapa,Nivel nivel, Vehiculo unVehiculo ){
+		Hashtable<String,ContenidoDeCelda > contenidos=new Hashtable<String,ContenidoDeCelda >() ;
+
+		contenidos.put("Pozo", new Pozo());
+		contenidos.put("Piquete",new Piquete());
+		contenidos.put("Control", new ControlPolicial());
+		contenidos.put("Llegada", new Llegada());
+		contenidos.put("Cambio", new CambioDeVehiculo());
+		contenidos.put("Snorlox", new Snorlax());
+		contenidos.put("favorable", new SorpresaFavorable());
+		contenidos.put("Desfavorable", new SorpresaDesfavorable());
+		
+		
+		
 		Mapa unMapa = new Mapa();
 		System.out.println("Se creo el mapa");
 		unMapa.setCantidadDeFilas(Integer.parseInt(nodoMapa.getAttributeValue("filas")));
@@ -125,65 +139,15 @@ public class Mapa {
 			Coordenada coordenada= Coordenada.deserializarse(nodoCelda.getChild("coordenada"));
 			System.out.println("se creo una coordenada");
 			Celda celda = unMapa.getCeldaEn(coordenada);
-			if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Pozo")){
-				celda.agregarContenido(new Pozo());
-				System.out.println("se agrego un pozo");
-			}
-			else{ 
-				if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Piquete")){
-				celda.agregarContenido(new Piquete());
-				System.out.println("se agrego un piquete");
-				}
-				else{ 
-					if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Control")){
-					celda.agregarContenido(new ControlPolicial());
-					System.out.println("se agrego un control policial");
-				    }
-					else{ 
-						if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Llegada")){
-						celda.agregarContenido(new Llegada());
-						System.out.println("se agrego un Llegada");
-					    }
-						else{ 
-							if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Cambio")){
-							celda.agregarContenido(new CambioDeVehiculo());
-							System.out.println("se agrego un cambio de vehiculo");
-						    }
-							else{ 
-								if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Snorlax")){
-								celda.agregarContenido(new Snorlax());
-								System.out.println("se agrego un Snorlax");
-							    }
-								else{ 
-										if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("favorable")){
-										celda.agregarContenido(new SorpresaFavorable());
-										System.out.println("se agrego una sorpresa favorable");
-									    }
-										else{ 
-											if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Desfavorable")){
-											celda.agregarContenido(new SorpresaDesfavorable());
-											System.out.println("se agrego un sorpresa desfavorable");
-										    }
-											else{ 
-												if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Conductor")){
-												Conductor conductor=new Conductor(unVehiculo, new Abajo(), 5);
-												celda.agregarContenido(conductor);
-												nivel.setConductor(conductor);
-												nivel.getConductor().addObserver(nivel);
-												System.out.println("se agrego un conductor");
-											    }
-									    }
-								}}
-							}
-						}
-					}		
-				}
-			}
-		}
-	
-		return unMapa;		
+			celda.agregarContenido(contenidos.get((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable"))));
+			if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Conductor")){
+			nivel.setConductor((Conductor)contenidos.get((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable"))));
+     		nivel.getConductor().addObserver(nivel);
+     		System.out.println("se agrego un conductor");
+	   }
+			
 	}
-	
-	
+	return unMapa;	
+  }	
 	
 }	
