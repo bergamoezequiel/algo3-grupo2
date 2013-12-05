@@ -227,13 +227,11 @@ public class Juego extends Observable {
 		SAXBuilder builder = new SAXBuilder();
 		try {
 			Document lecturaDoc = builder.build(new File("./src/archivos/Usuarios.xml"));
-<<<<<<< .mine
-			Element root = lecturaDoc.getRootElement();
-			for(Element nodoUsuario : root.getChildren("usuario")){
-=======
+
+
 		    Element root = lecturaDoc.getRootElement();
 			for(Element nodoUsuario : root.getChildren("usuario")){
->>>>>>> .r258
+
 				this.agregarUsuario(new Usuario(nodoUsuario.getAttributeValue("nombre")));
 			}
 	    }
