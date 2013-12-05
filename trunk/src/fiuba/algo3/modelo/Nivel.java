@@ -78,12 +78,6 @@ public class Nivel implements Observer {
 		return juegoActual;
 	}
 	
-	public int getPuntajePorMovimientosSobrantes(){
-		return this.puntajePorMovimientoSobrante;
-	
-	
-	}
-	
 	@Override
 	public void update(Observable o, Object arg) {
 		if (getMovimientosRestantes() <= 0){
