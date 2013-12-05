@@ -114,9 +114,10 @@ public class Mapa {
 		contenidos.put("Control", new ControlPolicial());
 		contenidos.put("Llegada", new Llegada());
 		contenidos.put("Cambio", new CambioDeVehiculo());
-		contenidos.put("Snorlox", new Snorlax());
+		contenidos.put("Snorlax", new Snorlax());
 		contenidos.put("favorable", new SorpresaFavorable());
 		contenidos.put("Desfavorable", new SorpresaDesfavorable());
+		contenidos.put("Conductor", new Conductor(unVehiculo, new Arriba(),5));
 		
 		
 		
@@ -139,11 +140,15 @@ public class Mapa {
 			Coordenada coordenada= Coordenada.deserializarse(nodoCelda.getChild("coordenada"));
 			System.out.println("se creo una coordenada");
 			Celda celda = unMapa.getCeldaEn(coordenada);
+			System.out.println("se obtuvo la celda de la coordenada");
+			System.out.println(nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable"));
 			celda.agregarContenido(contenidos.get((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable"))));
+			
+			System.out.println("se agrego el contenido a la celda -..--.-.-.-.");
 			if ((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable")).equals("Conductor")){
-			nivel.setConductor((Conductor)contenidos.get((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable"))));
-     		nivel.getConductor().addObserver(nivel);
-     		System.out.println("se agrego un conductor");
+				nivel.setConductor((Conductor)contenidos.get((nodoCelda.getChild("contenido").getAttributeValue("tipoDeEncontrable"))));
+				nivel.getConductor().addObserver(nivel);
+				System.out.println("se agrego un conductor");
 	   }
 			
 	}
