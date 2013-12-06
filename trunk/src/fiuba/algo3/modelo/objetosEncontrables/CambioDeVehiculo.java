@@ -34,17 +34,18 @@ public class CambioDeVehiculo extends Sorpresa {
 		Vehiculo unaMoto = Moto.getInstancia();
 		unConductor.cambiarDeVehiculo (unaMoto);
 		this.destruirse();
-       }
+	}
 
 	 public Element serializar () {
 			Element nodoCambio = new Element ("contenido");
 			nodoCambio.setAttribute ("tipoDeEncontrable", "Cambio");
 			return nodoCambio;                
-		}
+	}
+	 
 	 public ContenidoDeCelda clonar() {
 			return (new CambioDeVehiculo());
 			
-		}
+	}
 	
 }
 

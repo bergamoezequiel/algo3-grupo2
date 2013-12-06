@@ -39,7 +39,7 @@ public class Juego extends Observable {
 		
 		this.nroNivelActual = 1;
 		String ruta="./src/archivos/nivelVacio.xml";
-		this.indiceNiveles.put(1, ruta);//falta hacerle llegar el juego al nivel
+		this.indiceNiveles.put(1, ruta);
 		ruta="./src/archivos/nivelFacil.xml";
 		this.indiceNiveles.put(2, ruta);
 		ruta="./src/archivos/nivelModerado.xml";
@@ -68,8 +68,7 @@ public class Juego extends Observable {
 		if(!this.usuarios.contains(unUsuario)){
 			this.usuarios.add(unUsuario);
 			pudoAgregarlo = true;
-		}
-		
+		}		
 		return pudoAgregarlo;
 	}
 
@@ -147,7 +146,7 @@ public class Juego extends Observable {
 		  }
 	}
 	
-	public void CargarNivelXml(String unString/*, Vehiculo unVehiculo*/){
+	public void CargarNivelXml(String unString){
 		SAXBuilder builder = new SAXBuilder();
 		try {
 			Document lecturaDoc = builder.build(new File(unString));
@@ -155,7 +154,6 @@ public class Juego extends Observable {
 			this.nroNivelActual =  Integer.parseInt(root.getAttributeValue("nroNivelActual"));
 			this.puntajeAcumulado =  Integer.parseInt(root.getAttributeValue("puntajeAcumulado"));
 			Nivel nuevoNivel = new Nivel();
-			//En vez de usar this.nivelActual.getConductor.getVehiculo() deberia serializarse el vehiculo de la partida.
 			nuevoNivel.CargarNivelXml(this.indiceNiveles.get(this.nroNivelActual), this.nivelActual.getConductor().getVehiculo());
 			this.setNivelActual(nuevoNivel);
 			this.nivelActual.setJuego(this);
@@ -242,8 +240,5 @@ public class Juego extends Observable {
 			e.printStackTrace(); 			
 		}		
 	}	
-	
-
-
 }
 

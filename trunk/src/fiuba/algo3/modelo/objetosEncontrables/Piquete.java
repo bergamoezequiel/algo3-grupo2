@@ -58,7 +58,6 @@ public class Piquete extends ObjetoEncontrable {
 			return (new Piquete());
 			
 		}
-	
 }
 
 

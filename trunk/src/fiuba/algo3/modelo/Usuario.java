@@ -32,9 +32,6 @@ public class Usuario {
 		return this.nombre;
 	}
 	
-	public Usuario getUsuario(){
-		return (this);
-	}
 	
 	public Element serializar(){
 		Element nodoUsuario = new Element("usuario");

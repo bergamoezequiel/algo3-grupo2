@@ -98,11 +98,10 @@ public class ControlPolicial extends ObjetoEncontrable {
 			nodoControl.setAttribute("penalizacion", Integer.toString(this.penalizacion));
 			nodoControl.setAttribute("penalizacion", Integer.toString(this.penalizacion));
 			return nodoControl;                
-		}
+	}
 	
 	public ContenidoDeCelda clonar() {
-		return (new ControlPolicial());
-		
+		return (new ControlPolicial());	
 	}
 	
 }

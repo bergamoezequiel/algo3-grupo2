@@ -52,7 +52,7 @@ public class GanoVentana extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
         if (e.getSource()== botonMenu) {
         dispose();
-        VentanaInicial unaVentana = new VentanaInicial(new Juego());
+        new VentanaInicial(new Juego());
         	
         }
         if (e.getSource() == botonSalir){

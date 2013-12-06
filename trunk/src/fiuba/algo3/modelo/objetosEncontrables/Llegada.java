@@ -41,14 +41,12 @@ public class Llegada extends ObjetoEncontrable implements Interactuable {
 			Element nodoLlegada = new Element ("contenido");
 			nodoLlegada.setAttribute ("tipoDeEncontrable", "Llegada");
 			return nodoLlegada;                
-		}
+	}
+	 
 	 public ContenidoDeCelda clonar() {
 			return (new Llegada());
 			
-		}
-	
-	
-
+	}
 }
 
 	
