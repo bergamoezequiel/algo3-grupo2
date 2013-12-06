@@ -120,30 +120,21 @@ public class Conductor extends ContenidoDeCelda{
 		else
 			this.girarEnDireccion(unaDireccion);
 		
-		//Hago update de la vista porque se movio (o intento moverse) el conductor
+	
 		this.setChanged();
 		this.notifyObservers();
 	}
 	
-	//Le falta su test
+	
 	private void girarEnDireccion(Direccion unaDireccion){
 		this.direccion = unaDireccion;
 	}
 	
-	//Le falta su test
+	
 	public Direccion getDireccion(){
 		return this.direccion;
 	}
-	//falta serializar vehiculo
-	public Element seriali(){
-		Element nodoConductor = new Element("elemento");
-		nodoConductor.setAttribute("llego", Boolean.toString(this.encontroLlegada));
-		nodoConductor.setAttribute("penalizacion", Integer.toString(this.penalizacionDeAvance));
-		nodoConductor.setAttribute("movimientos", Integer.toString(this.movimientos));
-		nodoConductor.setAttribute("vision", Integer.toString(this.alcanceDeVision));
-		nodoConductor.addContent(this.direccion.serializar());
-		return nodoConductor;
-		}
+	
 	public Element serializar () {
 		Element nodofavorable = new Element ("contenido");
 		nodofavorable.setAttribute ("tipoDeEncontrable", "Conductor");
