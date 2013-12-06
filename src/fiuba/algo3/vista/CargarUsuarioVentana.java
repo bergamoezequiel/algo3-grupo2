@@ -11,8 +11,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import org.jdom2.Element;
-
 import fiuba.algo3.controlador.ControlPorTeclado;
 import fiuba.algo3.modelo.Juego;
 import fiuba.algo3.modelo.Usuario;
@@ -49,7 +47,7 @@ public class CargarUsuarioVentana extends JFrame implements ActionListener{
 		ArrayList<Usuario> listaDeUsuarios = unJuego.getListaDeUsuarios();
 		Iterator<Usuario> iterador= listaDeUsuarios.iterator();
 		while (iterador.hasNext()){
-			  desplegable.add(iterador.next().getUsuario().getNombre());
+			  desplegable.add(iterador.next().getNombre());
 		  }		
 		
 		desplegableVehiculo = new Choice();

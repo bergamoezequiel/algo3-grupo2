@@ -115,7 +115,6 @@ public class Nivel implements Observer {
     }
 	
 	public void CargarNivelXml(String ruta, Vehiculo unVehiculo){
-		//Nivel nivel= new NivelVacio(Moto.getInstancia(),this);//CAMBIAR LOGICA NIVEL
 		SAXBuilder builder = new SAXBuilder();
 		try {
 			Document lecturaDoc = builder.build(new File(ruta));
@@ -132,8 +131,5 @@ public class Nivel implements Observer {
 		catch(IOException  e){
 			e.printStackTrace(); 			
 		}
-	}	
-
-	
-	
+	}		
 }

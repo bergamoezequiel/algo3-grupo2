@@ -77,7 +77,8 @@ public class Mapa {
 			}
 			
 		return nodoMapa;
-		}
+	}
+	
 	public void guardar(){
 		try{
 		Document docMapa =new Document();
@@ -92,7 +93,7 @@ public class Mapa {
 			ex.printStackTrace();
 		}
 	}
-	// En el lugar del conductor pone siempre el mismo conductor
+	
 	public static Mapa deserializarse(Element nodoMapa,Nivel nivel, Vehiculo unVehiculo ){
 		Hashtable<String,ContenidoDeCelda> clases = new Hashtable<String,ContenidoDeCelda>() ;
 		clases.put("Control", new ControlPolicial());
@@ -104,7 +105,6 @@ public class Mapa {
 		clases.put("Desfavorable",new SorpresaDesfavorable());
 		clases.put("favorable",new SorpresaFavorable());
 		clases.put("Conductor",new Conductor(unVehiculo,new Arriba(),5));
-		
 		
 		Mapa unMapa = new Mapa();
 		unMapa.setCantidadDeFilas(Integer.parseInt(nodoMapa.getAttributeValue("filas")));
@@ -131,6 +131,5 @@ public class Mapa {
 		}
 	
 		return unMapa;		
-	}
-	
+	}	
 }	

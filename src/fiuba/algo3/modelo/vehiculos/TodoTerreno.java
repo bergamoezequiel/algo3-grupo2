@@ -29,9 +29,9 @@ public static TodoTerreno instancia= null;
 		return unObjetoEncontrable.dejaPasar(this);
 	}
 
-	  public Element serializar () {
-			Element nodoAuto = new Element ("Vehiculo");
-			nodoAuto.setAttribute ("tipoDeVehiculo", "TodoTerreno");
-			return nodoAuto;                
-			}
+	public Element serializar () {
+		Element nodoAuto = new Element ("Vehiculo");
+		nodoAuto.setAttribute ("tipoDeVehiculo", "TodoTerreno");
+		return nodoAuto;                
+	}
 }

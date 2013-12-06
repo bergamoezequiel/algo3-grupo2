@@ -11,9 +11,9 @@ public class TestJuego {
 		Juego unJuego = new Juego();
 		int cantidadDeUsuariosInicial = unJuego.getCantidadDeUsuarios();
 				
-		Usuario unUsuario = new Usuario("Juan");
-		Usuario otroUsuario = new Usuario("Mauro");
-		Usuario tercerUsuario = new Usuario("Juan");
+		Usuario unUsuario = new Usuario("Rupert");
+		Usuario otroUsuario = new Usuario("8871");
+		Usuario tercerUsuario = new Usuario("Rupert");
 		
 		
 		Assert.assertTrue(unJuego.agregarUsuario(unUsuario));
@@ -26,13 +26,10 @@ public class TestJuego {
 	@Test
 	public void deberiaAvisarmeSiSePudoCrearUnUsuarioConElNombreDado(){
 		Juego unJuego = new Juego();
-		Assert.assertTrue(unJuego.agregarUsuario(new Usuario("A")));
+		Assert.assertTrue(unJuego.agregarUsuario(new Usuario("asdasd123")));
 		
 		//Agrego un usuario que no existia antes.
-		Assert.assertTrue( unJuego.agregarUsuario(new Usuario("Manuel")));
-		
-		//Intento agregar un usuario con un nombre que ya existe.
-		Assert.assertTrue( unJuego.agregarUsuario(new Usuario("Pedro")));
+		Assert.assertTrue( unJuego.agregarUsuario(new Usuario("jjjiii1")));
 	}
 	
 	

@@ -56,11 +56,12 @@ public class Pozo extends ObjetoEncontrable {
 			nodoPozo.setAttribute ("tipoDeEncontrable", "Pozo");
 			nodoPozo.setAttribute("penalizacion", Integer.toString(this.penalizacion));
 			return nodoPozo;                
-		}
+	}
+	 
 	 public ContenidoDeCelda clonar() {
 			return (new Pozo());
 			
-		}
+	}
 	
 }
 
